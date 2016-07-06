@@ -1,0 +1,77 @@
+* {
+    font-family: "Rancho", sans-serif;
+    font-size: 20px;
+}
+body {
+    background-color: #99CCCC;
+}
+header {
+    height: 100px;
+}
+h1 {
+    font-size: 50px;
+    text-align: center;
+}
+ul {
+    list-style: none
+}
+li {
+    display: inline-block;
+}
+
+#stats {
+    display: inline-block;
+    width: 300px;
+    height: auto;
+    margin: 0;
+}
+.games-played {
+
+}
+.label {
+
+}
+.value{
+
+}
+.attempts {
+
+}
+.accuracy {
+
+}
+button {
+
+}
+.reset {
+
+}
+#game-area {
+    display: inline-block;
+    margin-left: 300px;
+
+}
+.card {
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    position: relative;
+    margin: 5px;
+    border: solid azure;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.front {
+
+}
+.back {
+    background-image: url("images/cardback.jpg");
+    width: 200px;
+    height: 200px;
+
+}
+img {
+    width: 200px;
+    height: 200px;
+    border-radius: 5px;
+}
