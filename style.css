@@ -40,6 +40,7 @@ h1 {
     padding: 5px; /*space between text and edge of box*/
     font-size: 2em; /*set h1 font size*/
     display: inline-block; /*inline-block instead of block*/
+    text-shadow: 0 0 100px darkred, 5px 5px  150px orange; /*red-to-orange blur around words*/
 }
 .navLinks {
     float: right; /*float nav links to the right*/
@@ -48,6 +49,7 @@ h1 {
     position: relative; /*positioned relative to default*/
     font-size: 1em; /*set font size*/
     padding: 1%; /*space between text and edge of box*/
+    text-shadow: 0 0 100px darkred, 5px 5px  150px orange; /*red-to-orange blur around words*/
 }
 .stats {
     height: 100vh; /*stats container takes up full height of viewport so cards don't slide to the left*/
