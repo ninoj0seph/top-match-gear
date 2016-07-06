@@ -1,0 +1,194 @@
+<!doctype html>
+<html>
+<head>
+    <title>Match Books!</title>
+    <meta name="description" content="A matching game...with books">
+    <meta name="keywords" content="html, css, positioning, floating">
+    <meta name="author" content="Elizabeth Alfano">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+<style>
+    * {
+        #box-sizing: border-box;
+    }
+    body {
+        margin: 0;
+        font-family: 'Montserrat', sans-serif;
+    }
+    .container {
+        width: 100vw;
+        height: 100vh;
+        position: relative;
+    }
+    header {
+        width: 100%;
+        height: 15vh;
+        background-color: lightblue;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        border-bottom: 1px solid black;
+    }
+    #logo {
+        height: 100%;
+        float: left;
+        position: relative;
+    }
+    h1 {
+        font-size: 5vh;
+        position: absolute;
+        left: 40vw;
+        text-align: center;
+        height: 10vh;
+        color: royalblue;
+        text-shadow: 1px 2px #000000;
+    }
+    nav {
+        position: absolute;
+        right: 0px;
+        bottom: 0px;
+
+    }
+    nav ul {
+        margin: 0;
+        right: 0;
+    }
+    nav ul li {
+        display: inline;
+        margin: 0 2vw;
+        width: 15vw;
+    }
+    nav li a {
+        font-size: 1.5vw;
+        margin: 0;
+        text-decoration: none;
+        color: #000000;
+        text-transform: uppercase;
+    }
+    #fs-2 {
+        position: relative;
+        width: 100%;
+        height: 70vh;
+        top: 20vh;
+    }
+    #fs-2 div {
+        box-sizing: border-box;
+        margin: 10px;
+        height: 100%;
+        background-color: lavender;
+        padding: 1vw;
+        float: left;
+        overflow: hidden;
+    }
+    #fs-2 div:first-child {
+        width: 20%;
+        background-color: lightblue;
+        box-sizing: border-box;
+        border: 1px solid black;
+    }
+    #fs-2 div:last-child {
+        width: 75%;
+    }
+    #cards {
+        margin: 2% 11%;
+    }
+    #cards ul {
+        list-style-type: none;
+        margin: auto;
+        padding: 5px;
+        overflow: hidden;
+    }
+    #cards ul li {
+        float: left;
+        margin: 1vh;
+
+    }
+    #NOTcards li a {
+        display: block;
+        text-align: center;
+        padding: 1px;
+        margin: 1px;
+        text-decoration: none;
+        border: 2px solid;
+        text-transform: uppercase;
+        box-sizing: border-box;
+
+    }
+    #cards img {
+        display: inline;
+        height: 17vh;
+        box-sizing: border-box;
+    }
+    footer {
+        box-sizing: border-box;
+        position: relative;
+        top: 25vh;
+        height: 3vh;
+        width: 100%;
+        padding: 0;
+        text-align: center;
+    }
+    footer p {
+        margin: 0 0;
+        position: absolute;
+        text-align: center;
+        bottom: 0;
+        left: 40vw;
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <!-- feature set 1: header with a ul nav -->
+        <header>
+            <img id="logo" src="images\clientLogo_EA.png" alt="logo">
+            <h1>Match Books</h1>
+            <nav>
+                <ul>
+                    <li><a href="home.html">home</a></li>
+                    <li><a href="about_us.html">about us</a></li>
+                    <li><a href="settings.html">settings</a></li>
+                </ul>
+            </nav>
+        </header>
+        <!-- feature set 2: 2 Column Layout <i>(floats)</i> -->
+        <section id="fs-2">
+            <div>
+                STATS:
+                <section class="games-played">Times Played:</section>
+            </div>
+            <div>
+                <section id="cards">
+                    <ul>
+                        <li><img src="images/cat_wrangling.jpg"></li>
+                        <li><img src="images/cat_wrangling.jpg"></li>
+                        <li><img src="images/cat_wrangling.jpg"></li>
+                        <li><img src="images/cat_wrangling.jpg"></li>
+                        <li><img src="images/cat_wrangling.jpg"></li>
+                        <li><img src="images/cat_wrangling.jpg"></li>
+                    </ul>
+                    <ul>
+                        <li><img src="images/cat_wrangling.jpg"></li>
+                        <li><img src="images/cat_wrangling.jpg"></li>
+                        <li><img src="images/cat_wrangling.jpg"></li>
+                        <li><img src="images/cat_wrangling.jpg"></li>
+                        <li><img src="images/cat_wrangling.jpg"></li>
+                        <li><img src="images/cat_wrangling.jpg"></li>
+                    </ul>
+                    <ul>
+                        <li><img src="images/cat_wrangling.jpg"></li>
+                        <li><img src="images/cat_wrangling.jpg"></li>
+                        <li><img src="images/cat_wrangling.jpg"></li>
+                        <li><img src="images/cat_wrangling.jpg"></li>
+                        <li><img src="images/cat_wrangling.jpg"></li>
+                        <li><img src="images/cat_wrangling.jpg"></li>
+                    </ul>
+                </section>
+            </div>
+        </section>
+        <!-- Feature Set 4 - footer  -->
+        <footer>
+            <p>&COPY; 2016 Elizabeth Alfano</p>
+        </footer>
+    </div>
+</body>
+</html>
