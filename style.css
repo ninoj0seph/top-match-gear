@@ -1,0 +1,49 @@
+@font-face{
+    font-family: Thrones;
+    src: url(thrones.ttf);
+}
+header {
+    position: relative;
+    width: 100%;
+    height: 10vh;
+    margin-bottom: 5vh;
+}
+header > * {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+body {
+    background-image: url('background.jpg');
+    font-family: Thrones;
+}
+button {
+    font-family: Thrones;
+    padding: 5px;
+}
+.logo {
+    height: 6vh;
+    position: relative;
+    display: inline-block;
+}
+h1 {
+    position: relative;
+    left: 20%;
+    margin: 0;
+    padding: 0;
+    width: 25%;
+    display: inline-block;
+    background: -webkit-linear-gradient(darkred, orangered);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.navLinks {
+    float: right;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    padding: 1%;
+    background: -webkit-linear-gradient(darkred, orangered);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
