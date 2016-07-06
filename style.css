@@ -54,6 +54,11 @@ header li{
     margin: 1vw;
     color:white;
 }
+.header_content a{
+    color:inherit;
+    font-size: inherit;
+    text-decoration: none;
+}
 .header_content > h1{
     font-size : 3em;
     margin: 2vh;
@@ -92,32 +97,27 @@ header li{
 .card{
     display: inline-block;
     position: relative;
-    width: 250px;
-    height: 250px;
-    top:30px;
-}
+    width: 12.5vw;
+    height: 12.5vw;
 
-.front {
-    display: inline-block;
-    position:absolute;
-    top:0;
-    left:0;
-    height:250px;
-    width:250px;
+    margin-right:1vw;
+    margin-top:1vh;
 }
-.back {
+.front, .back {
     display: inline-block;
     position:absolute;
     top:0;
     left:0;
-    height:250px;
-    width:250px;
+    height:12.5vw;
+    width:12.5vw;
 }
 .front > img{
     display: inline-block;
-    height:200px;
+    height:10vw;
+    position:relative;
+    top:1vw;
 }
 .back > img{
     display: inline-block;
-    height:230px;
+    height:12.5vw;
 }
