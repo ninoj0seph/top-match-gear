@@ -26,21 +26,23 @@
         position: absolute;
         top: 0px;
         left: 0px;
-        border-bottom: 1px solid black;
+        #border-bottom: 1px solid black;
     }
     #logo {
-        height: 100%;
-        float: left;
-        position: relative;
+        height: 70%;
+        top: 10%;
+        left: 5%;
+        position: absolute;
     }
     h1 {
         font-size: 5vh;
-        position: absolute;
-        left: 40vw;
+        $position: relative;
+        left: 0%;
+        top: -50%;
         text-align: center;
         height: 10vh;
         color: royalblue;
-        text-shadow: 1px 2px #000000;
+        #text-shadow: 1px 2px #000000;
     }
     nav {
         position: absolute;
@@ -79,43 +81,43 @@
         float: left;
         overflow: hidden;
     }
-    #fs-2 div:first-child {
+    #fs-2 > div:first-child {
         width: 20%;
         background-color: lightblue;
         box-sizing: border-box;
-        border: 1px solid black;
+        #border: 1px solid black;
     }
     #fs-2 div:last-child {
         width: 75%;
     }
-    #cards {
-        margin: 2% 11%;
+    #game-area {
+        margin: 2%;
     }
-    #cards ul {
+    #game-area ul {
         list-style-type: none;
         margin: auto;
-        padding: 5px;
+        padding: 0px;
         overflow: hidden;
     }
-    #cards ul li {
+    #game-area ul li {
         float: left;
-        margin: 1vh;
+        margin: 0vh;
 
     }
-    #NOTcards li a {
+    #NOTgame-area li a {
         display: block;
         text-align: center;
         padding: 1px;
         margin: 1px;
         text-decoration: none;
-        border: 2px solid;
+        #border: 2px solid;
         text-transform: uppercase;
         box-sizing: border-box;
 
     }
-    #cards img {
+    #game-area img {
         display: inline;
-        height: 17vh;
+        width: 9vh;
         box-sizing: border-box;
     }
     footer {
@@ -133,6 +135,7 @@
         text-align: center;
         bottom: 0;
         left: 40vw;
+        font-size: 1.25vh;
     }
 </style>
 </head>
@@ -140,7 +143,7 @@
     <div class="container">
         <!-- feature set 1: header with a ul nav -->
         <header>
-            <img id="logo" src="images\clientLogo_EA.png" alt="logo">
+            <img id="logo" src="images/generic_cover.jpg" alt="logo">
             <h1>Match Books</h1>
             <nav>
                 <ul>
@@ -154,33 +157,123 @@
         <section id="fs-2">
             <div>
                 STATS:
-                <section class="games-played">Times Played:</section>
+                <section>
+                    <section class="games-played"></section>
+                    <section class="label">Games Played</section>
+                    <section class="value"></section>
+                </section>
+                <section>
+                    <section class="attempts"></section>
+                    <section class="label">Attempts</section>
+                    <section class="value"></section>
+                </section>
+                <section>
+                    <section class="accuracy"></section>
+                    <section class="label">Accuracy</section>
+                    <section class="value"></section>
+                </section>
+                <button class="reset">Reset Game</button>
             </div>
             <div>
-                <section id="cards">
+                <section id="game-area">
                     <ul>
-                        <li><img src="images/cat_wrangling.jpg"></li>
-                        <li><img src="images/cat_wrangling.jpg"></li>
-                        <li><img src="images/cat_wrangling.jpg"></li>
-                        <li><img src="images/cat_wrangling.jpg"></li>
-                        <li><img src="images/cat_wrangling.jpg"></li>
-                        <li><img src="images/cat_wrangling.jpg"></li>
+                        <li class="card">
+                            <!--<div class="front">
+                                <img src="">
+                            </div>-->
+                            <div class="back">
+                                <img src="images/generic_cover.jpg">
+                            </div>
+                        </li>
+                        <li class="card">
+                            <div class="back">
+                                <img src="images/generic_cover.jpg">
+                            </div>
+                        </li>
+                        <li class="card">
+                            <div class="back">
+                                <img src="images/generic_cover.jpg">
+                            </div>
+                        </li>
+                        <li class="card">
+                            <div class="back">
+                                <img src="images/generic_cover.jpg">
+                            </div>
+                        </li>
+                        <li class="card">
+                            <div class="back">
+                                <img src="images/generic_cover.jpg">
+                            </div>
+                        </li>
+                        <li class="card">
+                            <div class="back">
+                                <img src="images/generic_cover.jpg">
+                            </div>
+                        </li>
                     </ul>
                     <ul>
-                        <li><img src="images/cat_wrangling.jpg"></li>
-                        <li><img src="images/cat_wrangling.jpg"></li>
-                        <li><img src="images/cat_wrangling.jpg"></li>
-                        <li><img src="images/cat_wrangling.jpg"></li>
-                        <li><img src="images/cat_wrangling.jpg"></li>
-                        <li><img src="images/cat_wrangling.jpg"></li>
+                        <li class="card">
+                            <div class="back">
+                                <img src="images/generic_cover.jpg">
+                            </div>
+                        </li>
+                        <li class="card">
+                            <div class="back">
+                                <img src="images/generic_cover.jpg">
+                            </div>
+                        </li>
+                        <li class="card">
+                            <div class="back">
+                                <img src="images/generic_cover.jpg">
+                            </div>
+                        </li>
+                        <li class="card">
+                            <div class="back">
+                                <img src="images/generic_cover.jpg">
+                            </div>
+                        </li>
+                        <li class="card">
+                            <div class="back">
+                                <img src="images/generic_cover.jpg">
+                            </div>
+                        </li>
+                        <li class="card">
+                            <div class="back">
+                                <img src="images/generic_cover.jpg">
+                            </div>
+                        </li>
                     </ul>
                     <ul>
-                        <li><img src="images/cat_wrangling.jpg"></li>
-                        <li><img src="images/cat_wrangling.jpg"></li>
-                        <li><img src="images/cat_wrangling.jpg"></li>
-                        <li><img src="images/cat_wrangling.jpg"></li>
-                        <li><img src="images/cat_wrangling.jpg"></li>
-                        <li><img src="images/cat_wrangling.jpg"></li>
+                        <li class="card">
+                            <div class="back">
+                                <img src="images/generic_cover.jpg">
+                            </div>
+                        </li>
+                        <li class="card">
+                            <div class="back">
+                                <img src="images/generic_cover.jpg">
+                            </div>
+                        </li>
+                        <li class="card">
+                            <div class="back">
+                                <img src="images/generic_cover.jpg">
+                            </div>
+                        </li>
+                        <li class="card">
+                            <div class="back">
+                                <img src="images/generic_cover.jpg">
+                            </div>
+                        </li>
+                        <li class="card">
+                            <div class="back">
+                                <img src="images/generic_cover.jpg">
+                            </div>
+                        </li>
+                        <li class="card">
+                            <div class="back">
+                                <img src="images/generic_cover.jpg">
+                            </div>
+                        </li>
                     </ul>
                 </section>
             </div>
