@@ -40,7 +40,7 @@ a:hover {
 
 #stats {
     float: left;
-    width: 180px;
+    width: 150px;
     margin-left: 5px;
 }
 
@@ -76,7 +76,7 @@ a:hover {
 }
 
 #game-area {
-    margin-left: 180px;
+    margin-left: 150px;
 
 }
 
@@ -106,4 +106,10 @@ img {
     width: 150px;
     height: 150px;
     border-radius: 5px;
+}
+
+.about {
+    margin: 10px;
+    font-family: "Dosis", sans-serif;
+    font-size: 90%;
 }
