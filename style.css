@@ -1,77 +1,103 @@
 * {
     font-family: "Rancho", sans-serif;
-    font-size: 20px;
+    font-size: 105%;
 }
+
 body {
     background-color: #99CCCC;
 }
+
 header {
-    height: 100px;
 }
+
 h1 {
-    font-size: 50px;
+    font-size: 200%;
+    color: #330066;
     text-align: center;
 }
+
 ul {
-    list-style: none
+    list-style: none;
 }
+
 li {
     display: inline-block;
+    margin: 5px;
+}
+
+a {
+    text-decoration: none;
+    color: azure;
+}
+
+a:hover {
+    color: #330066;
 }
 
 #stats {
-    display: inline-block;
-    width: 300px;
-    height: auto;
+    float: left;
+    width: 200px;
     margin: 0;
 }
+
 .games-played {
 
 }
+
 .label {
-
+    height: 10px;
 }
-.value{
 
+.value {
+    background-color: #CCFFCC;
+    height: 25px;
+    width: 100px;
 }
+
 .attempts {
 
 }
+
 .accuracy {
 
 }
-button {
 
-}
 .reset {
-
+    background-color: #FFCC66;
+    border-radius: 10px;
+    width: 100px;
+    margin-top: 15px;
 }
+
 #game-area {
-    display: inline-block;
-    margin-left: 300px;
+    margin-left: 200px;
 
 }
+
 .card {
     display: inline-block;
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     position: relative;
     margin: 5px;
     border: solid azure;
     border-radius: 5px;
     overflow: hidden;
 }
+
 .front {
-
+/*    width: 150px;
+    height: 150px;*/
 }
+
 .back {
-    background-image: url("images/cardback.jpg");
-    width: 200px;
-    height: 200px;
-
+/*    background-image: url("images/cardback.jpg");
+    width: 150px;
+    height: 150px;*/
 }
+
 img {
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     border-radius: 5px;
 }
