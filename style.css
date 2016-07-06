@@ -1,0 +1,85 @@
+body{
+    margin: 0px;
+    padding: 0px;
+}
+main{
+    margin: 0px;
+    padding: 0px;
+}
+
+#stats-container{
+    background-color: black;
+    width: 100vw;
+    height:10vh;
+}
+#drunk-meter-logo{
+height: 100%;
+margin: 0% 2%;
+float: left;
+}
+#drunk-meter-graph{
+height:100%;
+width: 75%;
+background-color: white;
+display:inline-block;
+float: left;
+}
+#drunk-meter-text{
+height: 100%;
+width: 10%;
+float: right;
+background-color: white;
+}
+#game-area-container{
+height: 80vh;
+width: 100vw;
+background-color: darkgray;
+text-align: center;
+}
+#game-area{
+width: 90%;
+height: 100%;
+background-color: lightslategrey;
+margin: 0px 5%;
+}
+#footer{
+    background-color: darkseagreen;
+    height: 10vh;
+    width: 100vw;
+}
+#game-info{
+    text-align: center;
+    height: 100%;
+    width: 90%;
+    background-color: white;
+    margin: 0px 5%;
+}
+#game-info .stats{
+    display: inline-block;
+    margin: 0px 12%;
+    padding: 0px;
+}
+@media only screen and (max-width: 925px){
+    #drunk-meter-text{
+        display: none;
+    }
+    #drunk-meter-logo{
+        display: none;
+    }
+    #drunk-meter-graph{
+        width: 100%;
+    }
+    #game-area{
+        width: 100%;
+        margin: 0%;
+    }
+    #game-info .stats{
+        margin: 0px;
+        width: 100%;
+        float: left;
+    }
+    .stats>p{
+        margin: 2px;
+        text-align: left;
+    }
+}
