@@ -8,21 +8,25 @@ body {
 }
 
 header {
+    height: 100px;
 }
 
 h1 {
-    font-size: 200%;
+    font-size: 225%;
     color: #330066;
-    text-align: center;
+    margin-left: 10px;
+    display: inline;
 }
+
 
 ul {
     list-style: none;
+    display: inline;
 }
 
 li {
-    display: inline-block;
-    margin: 5px;
+    float: right;
+    margin: 10px;
 }
 
 a {
@@ -36,8 +40,8 @@ a:hover {
 
 #stats {
     float: left;
-    width: 200px;
-    margin: 0;
+    width: 180px;
+    margin-left: 5px;
 }
 
 .games-played {
@@ -70,7 +74,7 @@ a:hover {
 }
 
 #game-area {
-    margin-left: 200px;
+    margin-left: 180px;
 
 }
 
