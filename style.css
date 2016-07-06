@@ -19,7 +19,7 @@ header{
     height: 20%;
     position:relative;
 }
-.img{
+header .img{
     position:relative;
     display: inline-block;
     width:15%;
@@ -82,24 +82,42 @@ header li{
 }
 /*-----------game area-------------*/
 #game-area{
+    background-color:white;
+    display: inline-block;
+    position:relative;
     width:85%;
-    display:inline-block;
     height:80%;
-}
-#game-area > :nth-child(2){
-    margin: 1% 0;
-}
-.card_container{
-    position: relative;
-    height:30%;
+    text-align: center;
 }
 .card{
     display: inline-block;
-    position:relative;
-    height:90%;
-    margin:0 1%;
-    top:5%;
+    position: relative;
+    width: 250px;
+    height: 250px;
+    top:30px;
 }
-.front{
-    height:100%;
+
+.front {
+    display: inline-block;
+    position:absolute;
+    top:0;
+    left:0;
+    height:250px;
+    width:250px;
+}
+.back {
+    display: inline-block;
+    position:absolute;
+    top:0;
+    left:0;
+    height:250px;
+    width:250px;
+}
+.front > img{
+    display: inline-block;
+    height:200px;
+}
+.back > img{
+    display: inline-block;
+    height:230px;
 }
