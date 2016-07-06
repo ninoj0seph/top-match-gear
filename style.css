@@ -3,17 +3,19 @@
 }
 header *{
     font-size: initial;
-    #border:1px black solid;
 }
-/* ------ above lines to clear new line character ------ */
+.stats_container *{
+    font-size: initial;
+}
 
+/* ------ above lines to clear new line character ------ */
 body{
     display: inline-block;
     height : 100vh;
     width: 100%;
 }
 header{
-    background-color : lightblue;
+    background-color : black;
     height: 20%;
     position:relative;
 }
@@ -50,10 +52,52 @@ header li{
     position:relative;
     font-size:1.5em;
     margin: 1vw;
-    left:75%;
+    color:white;
 }
 .header_content > h1{
     font-size : 3em;
-    text-align: center;
     margin: 2vh;
+    color:white;
+}
+/*-----------stats-------------*/
+.stats_container{
+    display: inline-block;
+    height:80%;
+    width:15%;
+    background-color: black;
+}
+.stats_container > div{
+    height:10%;
+    margin:0 2vw;
+    position:relative;
+    top:5%;
+}
+.reset{
+    display: block;
+    position:relative;
+}
+.label{
+    font-size:1.2em;
+    color:white;
+}
+/*-----------game area-------------*/
+#game-area{
+    width:85%;
+    display:inline-block;
+    height:80%;
+    border: 1px red solid;
+    box-sizing: border-box;
+}
+.card_container{
+    position: relative;
+}
+.card{
+    display: inline-block;
+    position:relative;
+    left:5%;
+    width: 15%;
+
+}
+.front{
+    width:100%
 }
