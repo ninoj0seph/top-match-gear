@@ -1,11 +1,13 @@
 <!doctype html>
 <html>
 <head>
-    <title>Match Books!</title>
+    <title>Match Books!hhh</title>
     <meta name="description" content="A matching game...with books">
     <meta name="keywords" content="html, css, positioning, floating">
     <meta name="author" content="Elizabeth Alfano">
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="http://learning-fuze.github.io/memory_match/v0.1/script.js"></script>
 <style>
     * {
         #box-sizing: border-box;
@@ -13,6 +15,11 @@
     body {
         margin: 0;
         font-family: 'Montserrat', sans-serif;
+        color: rosybrown;
+    }
+    body.blue_theme {
+        color: royalblue;
+        background-color: lavender;
     }
     .container {
         width: 100vw;
@@ -22,11 +29,15 @@
     header {
         width: 100%;
         height: 15vh;
-        background-color: lightblue;
+        background-color: beige;
+        color: rosybrown;
         position: absolute;
         top: 0px;
         left: 0px;
         #border-bottom: 1px solid black;
+    }
+    header.blue_theme {
+        background-color: lightblue;
     }
     #logo {
         height: 70%;
@@ -41,8 +52,11 @@
         top: -50%;
         text-align: center;
         height: 10vh;
-        color: royalblue;
+        color: rosybrown;
         #text-shadow: 1px 2px #000000;
+    }
+    h1 #blue_theme {
+        color: royalblue;
     }
     nav {
         position: absolute;
@@ -63,35 +77,47 @@
         font-size: 1.5vw;
         margin: 0;
         text-decoration: none;
-        color: #000000;
         text-transform: uppercase;
+        color: rosybrown;
     }
-    #fs-2 {
+    #main {
         position: relative;
         width: 100%;
         height: 70vh;
         top: 20vh;
     }
-    #fs-2 div {
+    #main div {
         box-sizing: border-box;
         margin: 10px;
         height: 100%;
-        background-color: lavender;
+        background-color: beige;
         padding: 1vw;
         float: left;
         overflow: hidden;
     }
-    #fs-2 > div:first-child {
+    #main div #bluetheme {
+        background-color: lavender;
+    }
+    #main > div:first-child {
         width: 20%;
-        background-color: lightblue;
+        background-color: rosybrown;
+        color: saddlebrown;
         box-sizing: border-box;
         #border: 1px solid black;
     }
-    #fs-2 div:last-child {
+    #main > div:first-child #bluetheme {
+        background-color: lightblue;
+    }
+    #main div:last-child {
         width: 75%;
     }
     #game-area {
         margin: 2%;
+    }
+    .card {
+        overflow: hidden;
+        width: 10vw;
+        height: 15vw;
     }
     #game-area ul {
         list-style-type: none;
@@ -102,7 +128,6 @@
     #game-area ul li {
         float: left;
         margin: 0vh;
-
     }
     #NOTgame-area li a {
         display: block;
@@ -139,22 +164,22 @@
     }
 </style>
 </head>
-<body>
+<body class="notblue_theme">
     <div class="container">
         <!-- feature set 1: header with a ul nav -->
-        <header>
+        <header class="notblue_theme">
             <img id="logo" src="images/generic_cover.jpg" alt="logo">
             <h1>Match Books</h1>
             <nav>
                 <ul>
                     <li><a href="home.html">home</a></li>
-                    <li><a href="about_us.html">about us</a></li>
+                    <li><a href="about.html">about us</a></li>
                     <li><a href="settings.html">settings</a></li>
                 </ul>
             </nav>
         </header>
         <!-- feature set 2: 2 Column Layout <i>(floats)</i> -->
-        <section id="fs-2">
+        <section id="main">
             <div>
                 STATS:
                 <section>
@@ -178,68 +203,51 @@
                 <section id="game-area">
                     <ul>
                         <li class="card">
-                            <!--<div class="front">
-                                <img src="">
-                            </div>-->
                             <div class="back">
                                 <img src="images/generic_cover.jpg">
+                            </div>
+                            <div class="front">
+                                <img src="images/catch.jpg">
                             </div>
                         </li>
                         <li class="card">
                             <div class="back">
                                 <img src="images/generic_cover.jpg">
                             </div>
-                        </li>
-                        <li class="card">
-                            <div class="back">
-                                <img src="images/generic_cover.jpg">
+                            <div class="front">
+                                <img src="images/cat_wrangling.jpg">
                             </div>
                         </li>
                         <li class="card">
                             <div class="back">
                                 <img src="images/generic_cover.jpg">
                             </div>
-                        </li>
-                        <li class="card">
-                            <div class="back">
-                                <img src="images/generic_cover.jpg">
+                            <div class="front">
+                                <img src="images/catcher.jpg">
                             </div>
                         </li>
                         <li class="card">
                             <div class="back">
                                 <img src="images/generic_cover.jpg">
                             </div>
-                        </li>
-                    </ul>
-                    <ul>
-                        <li class="card">
-                            <div class="back">
-                                <img src="images/generic_cover.jpg">
+                            <div class="front">
+                                <img src="images/gatsby.jpg">
                             </div>
                         </li>
                         <li class="card">
                             <div class="back">
                                 <img src="images/generic_cover.jpg">
                             </div>
-                        </li>
-                        <li class="card">
-                            <div class="back">
-                                <img src="images/generic_cover.jpg">
+                            <div class="front">
+                                <img src="images/catcher.jpg">
                             </div>
                         </li>
                         <li class="card">
                             <div class="back">
                                 <img src="images/generic_cover.jpg">
                             </div>
-                        </li>
-                        <li class="card">
-                            <div class="back">
-                                <img src="images/generic_cover.jpg">
-                            </div>
-                        </li>
-                        <li class="card">
-                            <div class="back">
-                                <img src="images/generic_cover.jpg">
+                            <div class="front">
+                                <img src="images/1984.jpg">
                             </div>
                         </li>
                     </ul>
@@ -248,30 +256,98 @@
                             <div class="back">
                                 <img src="images/generic_cover.jpg">
                             </div>
-                        </li>
-                        <li class="card">
-                            <div class="back">
-                                <img src="images/generic_cover.jpg">
+                            <div class="front">
+                                <img src="images/mockingbird.jpg">
                             </div>
                         </li>
                         <li class="card">
                             <div class="back">
                                 <img src="images/generic_cover.jpg">
                             </div>
-                        </li>
-                        <li class="card">
-                            <div class="back">
-                                <img src="images/generic_cover.jpg">
+                            <div class="front">
+                                <img src="images/littleprince.jpg">
                             </div>
                         </li>
                         <li class="card">
                             <div class="back">
                                 <img src="images/generic_cover.jpg">
                             </div>
+                            <div class="front">
+                                <img src="images/moby.jpg">
+                            </div>
                         </li>
                         <li class="card">
                             <div class="back">
                                 <img src="images/generic_cover.jpg">
+                            </div>
+                            <div class="front">
+                                <img src="images/catch.jpg">
+                            </div>
+                        </li>
+                        <li class="card">
+                            <div class="back">
+                                <img src="images/generic_cover.jpg">
+                            </div>
+                            <div class="front">
+                                <img src="images/1984.jpg">
+                            </div>
+                        </li>
+                        <li class="card">
+                            <div class="back">
+                                <img src="images/generic_cover.jpg">
+                            </div>
+                            <div class="front">
+                                <img src="images/catcher.jpg">
+                            </div>
+                        </li>
+                    </ul>
+                    <ul>
+                        <li class="card">
+                            <div class="back">
+                                <img src="images/generic_cover.jpg">
+                            </div>
+                            <div class="front">
+                                <img src="images/cat_wrangling.jpg">
+                            </div>
+                        </li>
+                        <li class="card">
+                            <div class="back">
+                                <img src="images/generic_cover.jpg">
+                            </div>
+                            <div class="front">
+                                <img src="images/fahrenheit.jpg">
+                            </div>
+                        </li>
+                        <li class="card">
+                            <div class="back">
+                                <img src="images/generic_cover.jpg">
+                            </div>
+                            <div class="front">
+                                <img src="images/gatsby.jpg">
+                            </div>
+                        </li>
+                        <li class="card">
+                            <div class="back">
+                                <img src="images/generic_cover.jpg">
+                            </div>
+                            <div class="front">
+                                <img src="images/littleprince.jpg">
+                            </div>
+                        </li>
+                        <li class="card">
+                            <div class="back">
+                                <img src="images/generic_cover.jpg">
+                            </div>
+                            <div class="front">
+                                <img src="images/moby.jpg">
+                            </div>
+                        </li>
+                        <li class="card">
+                            <div class="back">
+                                <img src="images/generic_cover.jpg">
+                            </div>
+                            <div class="front">
+                                <img src="images/mockingbird.jpg">
                             </div>
                         </li>
                     </ul>

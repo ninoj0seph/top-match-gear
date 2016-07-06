@@ -1,0 +1,38 @@
+.home_page {
+    text-align: center;
+}
+.home_page img {
+    height: 200px;
+    float: left;
+}
+.about_me p {
+    font-size: 12px;
+}
+.about_me h2 {
+    color: forestgreen;
+}
+.skills h2 {
+    font-style: italic;
+}
+.skills h3 {
+    font-weight: bold;
+}
+.experience h1, .skills h1 {
+    font-family: 'Montserrat', sans-serif;
+}
+#experience_list {
+    background-color: palegreen;
+
+}
+#experience_list ul {
+    list-style: square inside none;
+}
+#skills_list li {
+    color: darkgreen;
+}
+.nav_menu li {
+    list-style: none;
+    display: inline;
+    font-size: 110%;
+    margin: 2%;
+}
