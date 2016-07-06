@@ -3,25 +3,48 @@ body{
     font-family:"SansSerif", "Rockwell", "Times New Roman";
 }
 .main{
-    background-color: orange;
-    width:100%;
+
     text-align: center;
+    background-image: url('Images/landscape.png');
+    background-repeat: no-repeat;
+    background-position: center;
 }
-.bottom-nav{
-    border:1px solid black;
-    height:25vh;
-    margin:40px;
+.main-area{
+
 }
 .cards{
-    border:1px solid black;
-    /*height:75vh;*/
-    padding: 25px;
+
+    padding: 20px;
 }
 header{
-    background-color: #6ab7ff;
+    background-image: url("Images/background birds.png");
+    padding:5px;
+    border-radius: 25px;
+    margin-top: 5px;
+    margin-bottom:5px;
+
 }
 .bird-cards{
     border: 1px solid black;
     /*width:100px;*/
     margin: 4px;
+    opacity: .8;
+}
+.bird-cards:hover{
+    opacity:1;
+}
+/*-------------------------------stats--------------------------------------*/
+.bottom-nav{
+    border:1px solid black;
+    margin:40px;
+    text-align: left;
+    background-color: white;
+    border-radius: 25px;
+}
+#stats{
+    display: inline-block;
+    text-align: left;
+}
+#reset-game{
+    margin:8px;
 }
