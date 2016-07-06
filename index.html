@@ -1,104 +1,169 @@
 <!DOCTYPE html>
+<!--root element-->
 <html>
+<!--page metadata and links-->
 <head>
+    <!--title of page-->
+    <title>Westeros Match</title>
+    <!--set character set-->
+    <meta charset="UTF-8">
+    <!--link to Bootstrap CDN-->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <!--link to external stylesheet-->
     <link href="style.css" type="text/css" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="http://learning-fuze.github.io/memory_match/v0.1/script.js"></script>
 </head>
+<!--visible content-->
 <body>
+<!--page header-->
 <header>
+    <!--logo image takes up 2 columns in boostrap grid-->
     <img class="logo col-xs-2" src="logo.png">
+    <!--page heading-->
     <h1>Westeros Match</h1>
+    <!--link to settings-->
     <a class="navLinks" href="#">Settings</a>
+    <!--link to about-->
     <a class="navLinks" href="#">About</a>
 </header>
+<!--stats container, takes up 2 columns in bootstrap grid-->
 <div class="stats col-xs-2">
+    <!--game played container-->
     <div class="gamesPlayed">
-        <p class="label">Games Played</p>
-        <p class="value"></p>
+        <p class="label">Games Played</p> <!--games played label element-->
+        <p class="value"></p> <!--empty value element-->
     </div>
+    <!--attempts container-->
     <div class="attempts">
-        <p class="label">Attempts</p>
-        <p class="value"></p>
+        <p class="label">Attempts</p> <!--attempts label element-->
+        <p class="value"></p> <!--empty value element-->
     </div>
+    <!--accuracy container-->
     <div class="accuracy">
-        <p class="label">Accuracy</p>
-        <p class="value"></p>
+        <p class="label">Accuracy</p> <!--accuracy label element-->
+        <p class="value"></p> <!--empty value element-->
     </div>
-    <button class="reset">Reset Game</button>
+    <button class="reset">Reset Game</button> <!--reset button-->
 </div>
+<!--game area container, takes up 10 columns in bootstrap grid-->
 <div class="gameArea col-xs-10">
+    <!--card element, takes up 3 columns on extra small screens, 2 columns on small and medium screens, and 1 column on large and extra-large screens-->
     <div class="card col-xs-3 col-sm-2 col-lg-1">
+        <!--card front container with image inside-->
         <div class="front"><img src="arya.jpg"></div>
         <div class="back"><img src="iron_throne.jpg"></div>
     </div>
+    <!--card element, takes up 3 columns on extra small screens, 2 columns on small and medium screens, and 1 column on large and extra-large screens-->
     <div class="card col-xs-3 col-sm-2 col-lg-1">
+        <!--card front container with image inside-->
         <div class="front"><img src="bran.jpg"></div>
         <div class="back"><img src="iron_throne.jpg"></div>
     </div>
+    <!--card element, takes up 3 columns on extra small screens, 2 columns on small and medium screens, and 1 column on large and extra-large screens-->
     <div class="card col-xs-3 col-sm-2 col-lg-1">
+        <!--card front container with image inside-->
         <div class="front"><img src="cersei.jpg"></div>
         <div class="back"><img src="iron_throne.jpg"></div>
     </div>
+    <!--card element, takes up 3 columns on extra small screens, 2 columns on small and medium screens, and 1 column on large and extra-large screens-->
     <div class="card col-xs-3 col-sm-2 col-lg-1">
+        <!--card front container with image inside-->
         <div class="front"><img src="tyrion.jpg"></div>
         <div class="back"><img src="iron_throne.jpg"></div>
     </div>
+    <!--card element, takes up 3 columns on extra small screens, 2 columns on small and medium screens, and 1 column on large and extra-large screens-->
     <div class="card col-xs-3 col-sm-2 col-lg-1">
+        <!--card front container with image inside-->
         <div class="front"><img src="dany.jpg"></div>
         <div class="back"><img src="iron_throne.jpg"></div>
     </div>
+    <!--card element, takes up 3 columns on extra small screens, 2 columns on small and medium screens, and 1 column on large and extra-large screens-->
     <div class="card col-xs-3  col-sm-2 col-lg-1">
+        <!--card front container with image inside-->
         <div class="front"><img src="jon.jpg"></div>
         <div class="back"><img src="iron_throne.jpg"></div>
     </div>
+    <!--card element, takes up 3 columns on extra small screens, 2 columns on small and medium screens, and 1 column on large and extra-large screens-->
     <div class="card col-xs-3  col-sm-2 col-lg-1">
+        <!--card front container with image inside-->
         <div class="front"><img src="nightking.jpg"></div>
+        <!--card back container with image inside-->
         <div class="back"><img src="iron_throne.jpg"></div>
     </div>
+    <!--card element, takes up 3 columns on extra small screens, 2 columns on small and medium screens, and 1 column on large and extra-large screens-->
     <div class="card col-xs-3  col-sm-2 col-lg-1">
+        <!--card front container with image inside-->
         <div class="front"><img src="euron.jpg"></div>
+        <!--card front container with image inside-->
         <div class="back"><img src="iron_throne.jpg"></div>
     </div>
+    <!--card element, takes up 3 columns on extra small screens, 2 columns on small and medium screens, and 1 column on large and extra-large screens-->
     <div class="card col-xs-3 col-sm-2 col-lg-1">
+        <!--card front container with image inside-->
         <div class="front"><img src="melisandre.jpg"></div>
+        <!--card front container with image inside-->
         <div class="back"><img src="iron_throne.jpg"></div>
     </div>
+    <!--card element, takes up 3 columns on extra small screens, 2 columns on small and medium screens, and 1 column on large and extra-large screens-->
     <div class="card col-xs-3 col-sm-2 col-lg-1">
+        <!--card front container with image inside-->
         <div class="front"><img src="jon.jpg"></div>
+        <!--card front container with image inside-->
         <div class="back"><img src="iron_throne.jpg"></div>
     </div>
+    <!--card element, takes up 3 columns on extra small screens, 2 columns on small and medium screens, and 1 column on large and extra-large screens-->
     <div class="card col-xs-3  col-sm-2 col-lg-1">
+        <!--card front container with image inside-->
         <div class="front"><img src="tyrion.jpg"></div>
+        <!--card front container with image inside-->
         <div class="back"><img src="iron_throne.jpg"></div>
     </div>
+    <!--card element, takes up 3 columns on extra small screens, 2 columns on small and medium screens, and 1 column on large and extra-large screens-->
     <div class="card col-xs-3 col-sm-2 col-lg-1">
+        <!--card front container with image inside-->
         <div class="front"><img src="bran.jpg"></div>
+        <!--card front container with image inside-->
         <div class="back"><img src="iron_throne.jpg"></div>
     </div>
+    <!--card element, takes up 3 columns on extra small screens, 2 columns on small and medium screens, and 1 column on large and extra-large screens-->
     <div class="card col-xs-3 col-sm-2 col-lg-1">
+        <!--card front container with image inside-->
         <div class="front"><img src="cersei.jpg"></div>
+        <!--card front container with image inside-->
         <div class="back"><img src="iron_throne.jpg"></div>
     </div>
+    <!--card element, takes up 3 columns on extra small screens, 2 columns on small and medium screens, and 1 column on large and extra-large screens-->
     <div class="card col-xs-3 col-sm-2 col-lg-1">
+        <!--card front container with image inside-->
         <div class="front"><img src="dany.jpg"></div>
+        <!--card front container with image inside-->
         <div class="back"><img src="iron_throne.jpg"></div>
     </div>
+    <!--card element, takes up 3 columns on extra small screens, 2 columns on small and medium screens, and 1 column on large and extra-large screens-->
     <div class="card col-xs-3 col-sm-2 col-lg-1">
+        <!--card front container with image inside-->
         <div class="front"><img src="euron.jpg"></div>
+        <!--card front container with image inside-->
         <div class="back"><img src="iron_throne.jpg"></div>
     </div>
+    <!--card element, takes up 3 columns on extra small screens, 2 columns on small and medium screens, and 1 column on large and extra-large screens-->
     <div class="card col-xs-3 col-sm-2 col-lg-1">
+        <!--card front container with image inside-->
         <div class="front"><img src="melisandre.jpg"></div>
+        <!--card front container with image inside-->
         <div class="back"><img src="iron_throne.jpg"></div>
     </div>
+    <!--card element, takes up 3 columns on extra small screens, 2 columns on small and medium screens, and 1 column on large and extra-large screens-->
     <div class="card col-xs-3 col-sm-2 col-lg-1">
+        <!--card front container with image inside-->
         <div class="front"><img src="arya.jpg"></div>
+        <!--card front container with image inside-->
         <div class="back"><img src="iron_throne.jpg"></div>
     </div>
+    <!--card element, takes up 3 columns on extra small screens, 2 columns on small and medium screens, and 1 column on large and extra-large screens-->
     <div class="card col-xs-3 col-sm-2 col-lg-1">
+        <!--card front container with image inside-->
         <div class="front"><img src="nightking.jpg"></div>
+        <!--card front container with image inside-->
         <div class="back"><img src="iron_throne.jpg"></div>
     </div>
 </div>
