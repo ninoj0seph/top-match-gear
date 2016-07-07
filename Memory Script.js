@@ -20,49 +20,19 @@ $(document).ready(function(){
             second_card_clicked = $(this).children($('.back')).children($('img')).attr('class');
             console.log(second_card_clicked);
                 if(first_card_clicked==second_card_clicked){
-                    alert('Great Match');
+                    alert("Great Match You Found " + second_card_clicked);
                     $(this).remove();
                 }
                 else{
-                    alert("Try Again")
+                    alert("Try Again");
                     $('.back').css('z-index', '0');
                 }
 
         }
 
-       // if (first_card_clicked != null) {
-       //     first_card_clicked = $(this).children($('.back')).children($('img')).attr('class');
-       //     console.log(first_card_clicked);
-       //
-       //
-       // }
 
 
    });
-
-
-
-
-
-       // else{
-       //     second_card_clicked = $(this);
-       //     if(first_card_clicked == second_card_clicked){
-       //         match_counter++;
-       //         first_card_clicked=null;
-       //         second_card_clicked=null;
-       //         if(match_counter===total_possible_matched){
-       //             alert('you won');
-       //         }
-       //         else{
-       //
-       //         }
-       //     }
-       //     else{
-       //
-       //     }
-       // }
-       // });
-
 
 
 
