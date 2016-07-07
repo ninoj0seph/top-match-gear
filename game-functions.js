@@ -2,16 +2,16 @@
 
 $(document).ready(function(){
 
-    var cardObj = {};
-    
-    for(var i = 0; i < 30; i++) {
-
-        cardObj[i] = {
-            id: i,
-            imgLink: 'images/stella.jpg',
-
+    function Card (id, imgLink) {
+        this.id = id;
+        this.imgLink = '';
+        this.consoleTest = function consoleTest() {
+            console.log( this.id + " " + this.imgLink);
         };
-
     }
-    console.log(card[i]);
+
+    //instantiate
+    var newCard = new Card(1, 'images/stella.jpg');
+
+
 });
