@@ -121,3 +121,26 @@ header li{
     display: inline-block;
     height:12.5vw;
 }
+/* ---------------- */
+#about_body{
+    background-color: white;
+}
+#josh_pic{
+    height:50vh;
+    margin:1vh 1vw;
+}
+#about_body  *  {
+    font-size: initial;
+}
+#josh_intro{
+    margin:1vh 1vw;
+}
+#about_description{
+    display:inline-block;
+    width:50%;
+    margin:1vh 1vw;
+}
+#portfolio_link{
+    display:block;
+    margin:1vh 1vw;
+}
