@@ -8,8 +8,10 @@ var match_counter = 0;
 
 $(document).ready(function(){
    $('.card-contain').one('mouseup',function card_clicked(){
-       $(this).children('.front').css('z-index', '0');
-       })
+       $(this).children('.back').css('z-index', '1');
+       first_card_clicked = $(this).children('img').className;
+       console.log(first_card_clicked);
+       });
 
 
 
