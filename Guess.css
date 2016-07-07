@@ -2,6 +2,16 @@ body{
     background-color: #6ab7ff;
     font-family:"SansSerif", "Rockwell", "Times New Roman";
 }
+
+h1{
+    font-weight:bold;
+    font-size: 50px;
+}
+h1::first-letter{
+    font-size: 80px;
+    color: red;
+}
+
 .main{
 
     text-align: center;
@@ -9,11 +19,8 @@ body{
     background-repeat: no-repeat;
     background-position: center;
 }
-.main-area{
 
-}
 .cards{
-
     padding: 20px;
 }
 header{
@@ -27,10 +34,15 @@ header{
 .bird-cards{
     border: 1px solid black;
     /*width:100px;*/
-    margin: 4px;
-    opacity: .8;
+
 }
-.bird-cards:hover{
+.back:hover{
+    z-index: 1;
+}
+.front:hover{
+    z-index: 0;
+}
+.bird-cards2:hover{
     opacity:1;
 }
 /*-------------------------------stats--------------------------------------*/
@@ -40,11 +52,38 @@ header{
     text-align: left;
     background-color: white;
     border-radius: 25px;
+    margin-top: 80px;
 }
 #stats{
     display: inline-block;
     text-align: left;
+
 }
 #reset-game{
-    margin:8px;
+    margin: 8px;
+}
+.back{
+    position:absolute;
+
+}
+.back img{
+    height: 125px;
+    width: 125px;
+}
+.front{
+    position: absolute;
+    z-index: 1;
+}
+.front img{
+    height: 125px;
+    width: 125px;
+}
+.card-contain{
+    position: relative;
+}
+.card-rows{
+    margin: 50px;
+}
+#fish{
+    padding-left: 100px;
 }

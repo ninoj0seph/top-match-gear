@@ -5,120 +5,200 @@
     <meta name ="Guessing Game">
     <meta name="author" content="Nicholas Porter">
     <meta name="keywords" content="Birds, Neary Lagoon, Santa Cruz, Wetland Walk">
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="http://learning-fuze.github.io/memory_match/v0.1/script.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+    <script src="meory%20match%20script.js"></script>
     <link rel="stylesheet" href="Guess.css">
     <title>Guessing Game</title>
 </head>
 <body>
 <div class="main container-fluid">
-    <header><h1>Santa Cruz Birds Memory Match</h1></header>
+    <header>
+        <logo><img src="Images/NearyLagoon.jpg"></logo>
+        <h1>Santa Cruz Birds Memory Match</h1></header>
     <div class="row">
-        <div class="cards col-xs-12">
-            <div class="row">
-                <div class="col-xs-4 col-sm-3 col-lg-2">
-                    <div class="bird-cards thumbnail">
-                        <img src="Images/monarch.jpeg" alt="Monarch Butterfly">
+        <div class="cards col-xs-12 card-rows">
+            <div class="card-area row">
+                <!---------------------card1---------------------------->
+                <div class="col-xs-2 col-sm-3 col-lg-2 card-contain">
+                    <div class="bird-cards front ">
+                        <img  class="coot" src="Images/monarch.jpeg" alt="Monarch Butterfly">
+                    </div>
+                    <div class="bird-cards back ">
+                        <img  class="coot" src="Images/AmericanCoot.jpg" alt="Monarch Butterfly">
                     </div>
                 </div>
-                <div class="col-xs-4 col-sm-3 col-lg-2">
-                    <div class="bird-cards thumbnail">
-                        <img src="Images/monarch.jpeg" alt="Monarch Butterfly">
+                <!---------------------card1---------------------------->
+                <div class="col-xs-2 col-sm-3 col-lg-2 card-contain">
+                    <div class="bird-cards front ">
+                        <img  class="coot" src="Images/monarch.jpeg" alt="Monarch Butterfly">
+                    </div>
+                    <div class="bird-cards back ">
+                        <img  class="coot" src="Images/AmericanCoot.jpg" alt="Monarch Butterfly">
                     </div>
                 </div>
-                <div class="col-xs-4 col-sm-3 col-lg-2">
-                    <div class="bird-cards thumbnail">
-                        <img src="Images/monarch.jpeg" alt="Monarch Butterfly">
+                <!---------------------card1---------------------------->
+                <div class="col-xs-2 col-sm-3 col-lg-2 card-contain">
+                    <div class="bird-cards front ">
+                        <img class="hummingbird" src="Images/monarch.jpeg" alt="Monarch Butterfly">
+                    </div>
+                    <div class="bird-cards back ">
+                        <img class="hummingbird" src="Images/Anna's%20Hummingbird.jpg" alt="Monarch Butterfly">
                     </div>
                 </div>
-                <div class="col-xs-4 col-sm-3 col-lg-2">
-                    <div class="bird-cards thumbnail">
-                        <img src="Images/monarch.jpeg" alt="Monarch Butterfly">
+                <!---------------------card1---------------------------->
+                <div class="col-xs-2 col-sm-3 col-lg-2 card-contain">
+                    <div class="bird-cards front ">
+                        <img class="hummingbird"  src="Images/monarch.jpeg" alt="Monarch Butterfly">
                     </div>
-                </div>
-                <div class="col-xs-4 col-sm-3 col-lg-2">
-                    <div class="bird-cards thumbnail">
-                        <img src="Images/monarch.jpeg" alt="Monarch Butterfly">
-                    </div>
-                </div>
-                <div class="col-xs-4 col-sm-3 col-lg-2">
-                    <div class="bird-cards thumbnail">
-                        <img src="Images/monarch.jpeg" alt="Monarch Butterfly">
-                    </div>
-                </div>
-                <div class="col-xs-4  col-sm-3 col-lg-2">
-                    <div class="bird-cards thumbnail">
-                        <img src="Images/monarch.jpeg" alt="Monarch Butterfly">
-                    </div>
-                </div>
-                <div class="col-xs-4  col-sm-3 col-lg-2">
-                    <div class="bird-cards thumbnail">
-                        <img src="Images/monarch.jpeg" alt="Monarch Butterfly">
-                    </div>
-                </div>
-                <div class="col-xs-4  col-sm-3 col-lg-2">
-                    <div class="bird-cards thumbnail">
-                        <img src="Images/monarch.jpeg" alt="Monarch Butterfly">
-                    </div>
-                </div>
-                <div class="col-xs-4  col-sm-3 col-lg-2">
-                    <div class="bird-cards thumbnail">
-                        <img src="Images/monarch.jpeg" alt="Monarch Butterfly">
-                    </div>
-                </div>
-                <div class="col-xs-4  col-sm-3 col-lg-2">
-                    <div class="bird-cards thumbnail">
-                        <img src="Images/monarch.jpeg" alt="Monarch Butterfly">
-                    </div>
-                </div>
-                <div class="col-xs-4  col-sm-3 col-lg-2">
-                    <div class="bird-cards thumbnail">
-                        <img src="Images/monarch.jpeg" alt="Monarch Butterfly">
-                    </div>
-                </div>
-                <div class="col-xs-4  col-sm-3 col-lg-2">
-                    <div class="bird-cards thumbnail">
-                        <img src="Images/monarch.jpeg" alt="Monarch Butterfly">
-                    </div>
-                </div>
-                <div class="col-xs-4  col-sm-3 col-lg-2">
-                    <div class="bird-cards thumbnail">
-                        <img src="Images/monarch.jpeg" alt="Monarch Butterfly">
-                    </div>
-                </div>
-                <div class="col-xs-4  col-sm-3 col-lg-2">
-                    <div class="bird-cards thumbnail">
-                        <img src="Images/monarch.jpeg" alt="Monarch Butterfly">
-                    </div>
-                </div>
-                <div class="col-xs-4  col-sm-3 col-lg-2">
-                    <div class="bird-cards thumbnail">
-                        <img src="Images/monarch.jpeg" alt="Monarch Butterfly">
-                    </div>
-                </div>
-                <div class="col-xs-4  col-sm-3 col-lg-2">
-                    <div class="bird-cards thumbnail">
-                        <img src="Images/monarch.jpeg" alt="Monarch Butterfly">
-                    </div>
-                </div>
-                <div class="col-xs-4  col-sm-3 col-lg-2">
-                    <div class="bird-cards thumbnail">
-                        <img src="Images/monarch.jpeg" alt="Monarch Butterfly">
+                    <div class="bird-cards back ">
+                        <img class="hummingbird"  src="Images/Anna's%20Hummingbird.jpg" alt="Monarch Butterfly">
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="bottom-nav col-md-10">
-        <ul id="stats"><h3>Stats:</h3>
-            <li>Times Played</li>
-            <li>Number of Tries</li>
-            <li>Accuracy</li>
-            <button id="reset-game">Reset Game</button>
-        </ul>
+        <!---------------------card1---------------------------->
+        <div class="cards col-xs-12 card-rows">
+            <div class="card-area row">
 
+                <div class="col-xs-2 col-sm-3 col-lg-2 card-contain">
+                    <div class="bird-cards front ">
+                        <img class="cormorant" src="Images/monarch.jpeg" alt="Monarch Butterfly">
+                    </div>
+                    <div class="bird-cards back ">
+                        <img class="cormorant" src="Images/double%20crested%20comorant.jpg" alt="Monarch Butterfly">
+                    </div>
+                </div>
+                <!---------------------card1---------------------------->
+                <div class="col-xs-2 col-sm-3 col-lg-2 card-contain">
+                    <div class="bird-cards front ">
+                        <img class="cormorant"  src="Images/monarch.jpeg" alt="Monarch Butterfly">
+                    </div>
+                    <div class="bird-cards back ">
+                        <img class="cormorant"  src="Images/double%20crested%20comorant.jpg" alt="Monarch Butterfly">
+                    </div>
+                </div>
+                <!---------------------card1---------------------------->
+                <div class="col-xs-2  col-sm-3 col-lg-2">
+                    <div class="bird-cards front ">
+                        <img class="heron" src="Images/monarch.jpeg" alt="Monarch Butterfly">
+                    </div>
+                    <div class="bird-cards back ">
+                        <img class="heron" src="Images/great-blue-heron.jpg" alt="Monarch Butterfly">
+                    </div>
+                </div>
+                <!---------------------card1---------------------------->
+                <div class="col-xs-2  col-sm-3 col-lg-2">
+                    <div class="bird-cards front ">
+                        <img class="heron" src="Images/monarch.jpeg" alt="Monarch Butterfly">
+                    </div>
+                    <div class="bird-cards back ">
+                        <img class="heron" src="Images/great-blue-heron.jpg" alt="Monarch Butterfly">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!---------------------card1---------------------------->
+        <div class="cards col-xs-12 card-rows">
+            <div class="card-area row">
+                <div class="col-xs-2  col-sm-3 col-lg-2">
+                    <div class="bird-cards front ">
+                        <img class="mallard" src="Images/monarch.jpeg" alt="Monarch Butterfly">
+                    </div>
+                    <div class="bird-cards back ">
+                        <img class="mallard" src="Images/Mallard%20Duck.jpg" alt="Monarch Butterfly">
+                    </div>
+                </div>
+                <!---------------------card1---------------------------->
+                <div class="col-xs-2  col-sm-3 col-lg-2">
+                    <div class="bird-cards front ">
+                        <img class="mallard" src="Images/monarch.jpeg" alt="Monarch Butterfly">
+                    </div>
+                    <div class="bird-cards back ">
+                        <img class="mallard" src="Images/Mallard%20Duck.jpg" alt="Monarch Butterfly">
+                    </div>
+                </div>
+                <!---------------------card1---------------------------->
+                <div class="col-xs-2  col-sm-3 col-lg-2">
+                    <div class="bird-cards front ">
+                        <img class="dove" src="Images/monarch.jpeg" alt="Monarch Butterfly">
+                    </div>
+                    <div class="bird-cards back ">
+                        <img class="dove" src="Images/mourning-dove.jpg" alt="Monarch Butterfly">
+                    </div>
+                </div>
+                <!---------------------card1---------------------------->
+                <div class="col-xs-2  col-sm-3 col-lg-2">
+                    <div class="bird-cards front ">
+                        <img class="dove" src="Images/monarch.jpeg" alt="Monarch Butterfly">
+                    </div>
+                    <div class="bird-cards back ">
+                        <img class="dove" src="Images/mourning-dove.jpg" alt="Monarch Butterfly">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!---------------------card1---------------------------->
+        <div class="cards col-xs-12 card-rows">
+            <div class="card-area row">
+                <div class="col-xs-2  col-sm-3 col-lg-2">
+                    <div class="bird-cards front ">
+                        <img class="grebe" src="Images/monarch.jpeg" alt="Monarch Butterfly">
+                    </div>
+                    <div class="bird-cards back ">
+                        <img class="grebe" src="Images/PiedbilledGrebe.jpg" alt="Monarch Butterfly">
+                    </div>
+                </div>
+                <!---------------------card1---------------------------->
+                <div class="col-xs-2  col-sm-3 col-lg-2">
+                    <div class="bird-cards front ">
+                        <img class="grebe" src="Images/monarch.jpeg" alt="Monarch Butterfly">
+                    </div>
+                    <div class="bird-cards back ">
+                        <img class="grebe" src="Images/PiedbilledGrebe.jpg" alt="Monarch Butterfly">
+                    </div>
+                </div>
+                <!---------------------card1---------------------------->
+                <div class="col-xs-2  col-sm-3 col-lg-2">
+                    <div class="bird-cards front ">
+                        <img class='woodduck' src="Images/monarch.jpeg" alt="Monarch Butterfly">
+                    </div>
+                    <div class="bird-cards back ">
+                        <img class='woodduck' src="Images/wood-duck-pair.jpg" alt="Monarch Butterfly">
+                    </div>
+                </div>
+                <!---------------------card1---------------------------->
+                <div class="col-xs-2  col-sm-3 col-lg-2">
+                    <div class="bird-cards front ">
+                        <img class='woodduck' src="Images/monarch.jpeg" alt="Monarch Butterfly">
+                    </div>
+                    <div class="bird-cards back ">
+                        <img class='woodduck' src="Images/wood-duck-pair.jpg" alt="Monarch Butterfly">
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
     </div>
 </div>
+<div class="bottom-nav col-md-10">
+    <ul id="stats"><h3>Stats:</h3>
+        <li class="games-played">Times Played
+            <ul>
+                <li></li>
+            </ul>
+        </li>
+        <li class="attempts">Number of Tries</li>
+        <li>Accuracy</li>
+        <button id="reset-game">Reset Game</button>
+    </ul>
+
+</div>
+<img id='fish' src="Images/fish.png">
 
 </body>
 </html>
