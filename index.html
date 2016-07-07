@@ -8,181 +8,7 @@
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="http://learning-fuze.github.io/memory_match/v0.1/script.js"></script>
-<style>
-    * {
-        #box-sizing: border-box;
-    }
-    body {
-        margin: 0;
-        font-family: 'Montserrat', sans-serif;
-        color: rosybrown;
-    }
-    body.blue_theme {
-        color: royalblue;
-        background-color: lavender;
-    }
-    .container {
-        width: 100vw;
-        height: 100vh;
-        position: relative;
-    }
-    header {
-        width: 100%;
-        height: 15vh;
-        background-color: beige;
-        color: rosybrown;
-        position: absolute;
-        top: 0px;
-        left: 0px;
-        #border-bottom: 1px solid black;
-    }
-    header.blue_theme {
-        background-color: lightblue;
-    }
-    #logo {
-        height: 70%;
-        top: 10%;
-        left: 5%;
-        position: absolute;
-    }
-    h1 {
-        font-size: 5vh;
-        #position: relative;
-        text-align: center;
-        #height: 10vh;
-        color: rosybrown;
-        #text-shadow: 1px 2px #000000;
-    }
-    h1 #bluetheme {
-        color: royalblue;
-    }
-    nav {
-        position: absolute;
-        right: 0px;
-        bottom: 0px;
-
-    }
-    nav ul {
-        margin: 0;
-        right: 0;
-    }
-    nav ul li {
-        display: inline;
-        margin: 0 2vw;
-        width: 15vw;
-    }
-    nav li a {
-        font-size: 1.5vw;
-        margin: 0;
-        text-decoration: none;
-        text-transform: uppercase;
-        color: rosybrown;
-    }
-    #main {
-        position: relative;
-        width: 100%;
-        height: 70vh;
-        top: 20vh;
-    }
-    #main div {
-        box-sizing: border-box;
-        margin: 10px;
-        height: 100%;
-        background-color: beige;
-        padding: 1vw;
-        float: left;
-        overflow: hidden;
-    }
-    #main div #bluetheme {
-        background-color: lavender;
-    }
-    #main > div:first-child {
-        width: 20%;
-        background-color: rosybrown;
-        color: saddlebrown;
-        box-sizing: border-box;
-        #border: 1px solid black;
-    }
-    #main > div:first-child #bluetheme {
-        background-color: lightblue;
-    }
-    div#game-area   {
-        width: 75%;
-    }
-    #game-area {
-        margin: 2%;
-    }
-    div#row1.rows {
-        position: relative;
-        display: inline-block;
-        float: left;
-        height: 15vh;
-    }
-    div#row2.rows {
-        position: relative;
-        display: inline-block;
-        float: left;
-        height: 15vh;
-    }
-    div#row3.rows {
-        position: relative;
-        display: inline-block;
-        float: left;
-        height: 15vh;
-    }
-    #game-area .rows .card {
-        overflow: hidden;
-        width: 10vw;
-        height: 15vw;
-        margin: 0;
-    }
-    .card > div {
-        height: 15vw;
-    }
-    #game-area div {
-        #list-style-type: none;
-        margin: auto;
-        padding: 0px;
-        overflow: hidden;
-    }
-    #game-area div {
-        float: left;
-        margin: 1vh;
-    }
-    #NOTgame-area li a {
-        display: block;
-        text-align: center;
-        padding: 1px;
-        margin: 1px;
-        text-decoration: none;
-        #border: 2px solid;
-        text-transform: uppercase;
-        box-sizing: border-box;
-
-    }
-    #game-area img {
-        display: inline-block;
-        width: 9vh;
-        box-sizing: border-box;
-    }
-    footer {
-        box-sizing: border-box;
-        position: relative;
-        top: 25vh;
-        height: 3vh;
-        width: 100%;
-        padding: 0;
-        text-align: center;
-    }
-    footer p {
-        margin: 0 0;
-        position: absolute;
-        text-align: center;
-        bottom: 0;
-        left: 40vw;
-        font-size: 1.25vh;
-    }
-</style>
+    <link rel="stylesheet" href="style.css" type="text/css"/>
 </head>
 <body class="notblue_theme">
     <div class="container">
@@ -194,7 +20,6 @@
                 <ul>
                     <li><a href="index.html">home</a></li>
                     <li><a href="about.html">about us</a></li>
-                    <li><a href="settings.html">settings</a></li>
                 </ul>
             </nav>
         </header>
@@ -227,7 +52,7 @@
                                 <img src="images/generic_cover.jpg">
                             </div>
                             <div class="front">
-                                <img src="images/catch.jpg">
+                                <img src="images/cat_wrangling.jpg">
                             </div>
                         </div>
                         <div class="card">
@@ -243,23 +68,7 @@
                                 <img src="images/generic_cover.jpg">
                             </div>
                             <div class="front">
-                                <img src="images/catcher.jpg">
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="back">
-                                <img src="images/generic_cover.jpg">
-                            </div>
-                            <div class="front">
-                                <img src="images/gatsby.jpg">
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="back">
-                                <img src="images/generic_cover.jpg">
-                            </div>
-                            <div class="front">
-                                <img src="images/catcher.jpg">
+                                <img src="images/1984.jpg">
                             </div>
                         </div>
                         <div class="card">
@@ -268,6 +77,22 @@
                             </div>
                             <div class="front">
                                 <img src="images/1984.jpg">
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="back">
+                                <img src="images/generic_cover.jpg">
+                            </div>
+                            <div class="front">
+                                <img src="images/catch.jpg">
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="back">
+                                <img src="images/generic_cover.jpg">
+                            </div>
+                            <div class="front">
+                                <img src="images/catch.jpg">
                             </div>
                         </div>
                     </div>
@@ -277,39 +102,7 @@
                                 <img src="images/generic_cover.jpg">
                             </div>
                             <div class="front">
-                                <img src="images/mockingbird.jpg">
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="back">
-                                <img src="images/generic_cover.jpg">
-                            </div>
-                            <div class="front">
-                                <img src="images/littleprince.jpg">
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="back">
-                                <img src="images/generic_cover.jpg">
-                            </div>
-                            <div class="front">
-                                <img src="images/moby.jpg">
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="back">
-                                <img src="images/generic_cover.jpg">
-                            </div>
-                            <div class="front">
-                                <img src="images/catch.jpg">
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="back">
-                                <img src="images/generic_cover.jpg">
-                            </div>
-                            <div class="front">
-                                <img src="images/1984.jpg">
+                                <img src="images/catcher.jpg">
                             </div>
                         </div>
                         <div class="card">
@@ -320,14 +113,12 @@
                                 <img src="images/catcher.jpg">
                             </div>
                         </div>
-                    </div>
-                    <div class="rows" id="row3">
                         <div class="card">
                             <div class="back">
                                 <img src="images/generic_cover.jpg">
                             </div>
                             <div class="front">
-                                <img src="images/cat_wrangling.jpg">
+                                <img src="images/fahrenheit.jpg">
                             </div>
                         </div>
                         <div class="card">
@@ -351,6 +142,24 @@
                                 <img src="images/generic_cover.jpg">
                             </div>
                             <div class="front">
+                                <img src="images/gatsby.jpg">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rows" id="row3">
+                        <div class="card">
+                            <div class="back">
+                                <img src="images/generic_cover.jpg">
+                            </div>
+                            <div class="front">
+                                <img src="images/littleprince.jpg">
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="back">
+                                <img src="images/generic_cover.jpg">
+                            </div>
+                            <div class="front">
                                 <img src="images/littleprince.jpg">
                             </div>
                         </div>
@@ -360,6 +169,22 @@
                             </div>
                             <div class="front">
                                 <img src="images/moby.jpg">
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="back">
+                                <img src="images/generic_cover.jpg">
+                            </div>
+                            <div class="front">
+                                <img src="images/moby.jpg">
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="back">
+                                <img src="images/generic_cover.jpg">
+                            </div>
+                            <div class="front">
+                                <img src="images/mockingbird.jpg">
                             </div>
                         </div>
                         <div class="card">
