@@ -36,15 +36,13 @@ header{
     /*width:100px;*/
 
 }
-.back:hover{
-    z-index: 1;
-}
-.front:hover{
-    z-index: 0;
-}
-.bird-cards2:hover{
-    opacity:1;
-}
+/*.back:hover{*/
+    /*z-index: 1;*/
+/*}*/
+/*.front:hover{*/
+    /*z-index: 0;*/
+/*}*/
+
 /*-------------------------------stats--------------------------------------*/
 .bottom-nav{
     border:1px solid black;
