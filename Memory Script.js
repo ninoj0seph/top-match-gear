@@ -25,8 +25,8 @@ $(document).ready(function(){
             second_card_clicked = $(this).children($('.back')).children($('img')).attr('class');
             console.log(second_card_clicked);
                 if(first_card_clicked==second_card_clicked){
-                    alert("Great Match You Found " + second_card_clicked);
-                    $(this).remove();
+                    alert("Great Match You Found: " + second_card_clicked);
+                    // $(this).remove();
                     match_counter++;
 //----------------------this is the number of matches and type of birds---------------------------
                     var matches = $('<li>',{
@@ -34,12 +34,6 @@ $(document).ready(function(){
                         html: 'Match ' + match_counter +" - " + " Bird Name: " + second_card_clicked,
                         style: 'color: blue; list-style-type: none'
                     });
-//---------------------this displays the accuracy of the player----------------------------------
-                    var accuracy = $('<p>',{
-                        appendTo: $('.accuracy'),
-                        html: match_counter/click_counter *10 + "%"
-                    });
-
                 }
                 else{
                     alert("Try Again");
@@ -48,14 +42,16 @@ $(document).ready(function(){
  //--------------------this displays that you win to the window----------------------------------
            if(match_counter == 8){
                var you_win = $('<div>',{
-                   appendTo:$('.youWin'),
-                   style: "height:200px; width: 300px; background-color: red; font-size:20px; position:absolute; z-index:1; float:right",
+                   appendTo:$('h1'),
+                   style: "height:100px; width: 300px; background-color: red; font-size:20px; position:absolute; z-index:1;padding-top:30px;border-radius:20px",
                    text: 'You found all the bird matches!'
                });
-               alert('You found all the bird matches!')
+               alert('You found all the bird matches!');
+               $('.back').css('z-index', '1');
            }
         }
-
+//---------------------this displays the accuracy of the player----------------------------------
+        $('.accuracy').html(((match_counter*2)/click_counter).toFixed(2) *100 + "%")
 
    });
 
