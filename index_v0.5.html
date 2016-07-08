@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>May the match be with you</title>
+    <link rel="stylesheet" type="text/css" href="memory_style.css">
+    <script src="https://code.jquery.com/jquery-3.0.0.min.js" integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0=" crossorigin="anonymous"></script>
+    <script src="v0.5_mm_js.js"></script>
+</head>
+<body>
+<header>
+    <!--game logo-->
+    <figure></figure>
+    <h1>May The Match Be With You!</h1>
+    <div class="menu">
+        <!--setting links-->
+        <p>Settings</p>
+        <!--about links-->
+        <p><a href="about.html">About</a></p>
+    </div>
+</header>
+<!--Stats bar-->
+<div id="bodyContainer"><!--added to format elements in body-->
+    <section class="statsBar">
+        <div class="gamesPlayed">
+            <p class="label">Games Played</p>
+            <div class="value"></div>
+        </div>
+        <div class="attempts">
+            <p class="label">Attempts</p>
+            <div class="value"></div>
+        </div>
+        <div class="accuracy">
+            <p class="label">Accuracy</p>
+            <div class="value"></div>
+        </div>
+        <button class="resetGame">Reset Game</button>
+    </section>
+    <article>
+        <div id="gameArea">
+            <!--Cards-->
+            <div class="card">
+                <div class="cardFront"><img src="boba.jpg" alt="boba fett"></div>
+                <div class="cardBack"><img src="choose side.jpg" alt="choose rebel or imperial side"></div>
+            </div>
+            <div class="card">
+                <div class="cardFront"><img src="boba.jpg" alt="boba fett"></div>
+                <div class="cardBack"><img src="choose side.jpg" alt="choose rebel or imperial side"></div>
+            </div>
+            <div class="card">
+                <div class="cardFront"><img src="chewie.jpg" alt="chewbaca"></div>
+                <div class="cardBack"><img src="choose side.jpg" alt="choose rebel or imperial side"></div>
+            </div>
+            <div class="card">
+                <div class="cardFront"><img src="chewie.jpg" alt="chewbaca"></div>
+                <div class="cardBack"><img src="choose side.jpg" alt="choose rebel or imperial side"></div>
+            </div>
+        </div>
+    </article>
+</div>
+<!--Footer holds lightsaber health bar-->
+<footer class="lightSaber">
+
+</footer>
+</body>
+</html>
