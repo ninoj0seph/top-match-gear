@@ -7,7 +7,7 @@ var total_possible_matched = 2;
 var match_counter = 0;
 var timesClicked = 0;
 var click_counter=0;
-var randomize_cards = [[$('.American-Coot'),'AmericanCoot.jpg'],[$('.American-Coot'),'AmericanCoot.jpg'],[$('.mallard-duck'),'Mallard Duck.jpg'],[$('.mallard-duck'),'Mallard Duck.jpg'],[$('.mourning-dove'),'mourning-dove.jpg'],[$('.mourning-dove'),'mourning-dove.jpg']];
+var randomize_cards = [[$('.American-Coot'),'AmericanCoot.jpg'],[$('.American-Coot'),'AmericanCoot.jpg'],[$('.mallard-duck'),'Mallard Duck.jpg'],[$('.mallard-duck'),'Mallard Duck.jpg'],[$('.mourning-dove'),'mourning-dove.jpg'],[$('.mourning-dove'),'mourning-dove.jpg'],[$('.Wood-duck'),'wood-duck-pain.jpg'],[$('.Wood-duck'),'wood-duck-pain.jpg'],[$('.pied-billed-grebe'),'PiedBilledGrebe.jpg'],[$('.pied-billed-grebe'),'PiedBilledGrebe.jpg'], [$('.great-blue-heron'),'great-blue-heron.jpg'], [$('.great-blue-heron'),'great-blue-heron.jpg']];
 
 function randomize_cards1(){
 
@@ -18,7 +18,7 @@ function randomize_cards1(){
 
 
 $(document).ready(function(){
-   $('.card-contain').on('mouseup',function card_clicked() {
+   $('.card-contain').one('mouseup',function card_clicked() {
        $(this).children('.back').css('z-index', '1');
        click_counter++;
        timesClicked++;
