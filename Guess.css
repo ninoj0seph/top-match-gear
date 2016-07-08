@@ -23,6 +23,9 @@ h1::first-letter{
 .cards{
     padding: 20px;
 }
+.card-contain{
+    border-radius: 20px;
+}
 header{
     background-image: url("Images/background birds.png");
     padding:5px;
@@ -33,6 +36,7 @@ header{
 }
 .bird-cards{
     border: 1px solid black;
+
     /*width:100px;*/
 
 }
