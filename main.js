@@ -40,14 +40,12 @@ function card_clicked(clicked_card){
         }
     }
 }
-
 function  showBack(){
     first_card_clicked.find('.back').show();
     second_card_clicked.find('.back').show();
     first_card_clicked = null;
     second_card_clicked = null;
 }
-
 function hideBack(card) {
     $(card).find('.back').hide();
 }
