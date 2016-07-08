@@ -30,6 +30,7 @@ $(document).ready(function(){
                     match_counter++;
 //----------------------this is the number of matches and type of birds---------------------------
                     var matches = $('<li>',{
+                        addClass: 'birdName',
                         appendTo: $('.attempts'),
                         html: 'Match ' + match_counter +" - " + " Bird Name: " + second_card_clicked,
                         style: 'color: blue; list-style-type: none'
@@ -50,10 +51,26 @@ $(document).ready(function(){
                $('.back').css('z-index', '1');
            }
         }
-//---------------------this displays the accuracy of the player----------------------------------
-        $('.accuracy').html(((match_counter*2)/click_counter).toFixed(2) *100 + "%")
 
+//---------------------this displays the accuracy of the player----------------------------------
+       var accuracy = ((match_counter*2)/click_counter).toFixed(2) *100;
+       $('.accuracy').html(accuracy+ "%");
+       $('.accuracy').show();
    });
+    
+//---------------------reset button specs--------------------------------------------------------
+    $('#reset-game').on('mouseup', function(){
+        first_card_clicked = null;
+        second_card_clicked = null;
+        total_possible_matched = 2;
+        match_counter = 0;
+        timesClicked = 0;
+        click_counter=0;
+        accuracy = 0;
+        $('.accuracy').hide();
+        $('.back').css('z-index', '0');
+        $('.birdName').remove();
+    });
 
 
 
