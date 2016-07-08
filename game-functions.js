@@ -1,17 +1,70 @@
-
-
 $(document).ready(function(){
+    var cardCount = 0;
+    var matchCount = 0;
+    var firstFlip;
+    var secondFlip;
+    var cardBack = "url('images/card-back.jpg')";
+    var myImages = [
+        'asahi','bluemoon', 'bud', 'coors', 'corona','guinness', 'heineken', 'kirin', 'michelob', 'miller',
+        'modelo', 'newcastle', 'sapporo', 'stella', 'xx', 'asahi','bluemoon', 'bud', 'coors', 'corona',
+        'guinness', 'heineken', 'kirin', 'michelob', 'miller', 'modelo', 'newcastle', 'sapporo', 'stella', 'xx'
+    ];
+    var randomNumber;
+    var myImagesLen;
+    var splicedImage;
+    var i = 0;
 
-    function Card (id, imgLink) {
-        this.id = id;
-        this.imgLink = '';
-        this.consoleTest = function consoleTest() {
-            console.log( this.id + " " + this.imgLink);
-        };
+    $.each($('.back-card'), function(){
+        myImagesLen = myImages.length - 1;
+        randomNumber = Math.floor((Math.random() * myImagesLen) + 0);
+        splicedImage = myImages.splice(randomNumber, 1);
+        splicedImage = "url('images/" + splicedImage + ".jpg')"
+
+        $(this).attr('image-link', splicedImage)
+        .click(function(){
+            $(this).css('background-image', $(this).attr('image-link'))
+            checkCard($(this));
+        });
+        i++;
+    });
+
+    function checkCard(cardClicked){
+        if (cardCount === 0){
+            firstFlip = cardClicked;
+            cardCount += 1;
+            cardClicked.css('pointer-events', 'none');
+            console.log('first card');
+        } else if(cardCount === 1){
+            secondFlip = cardClicked;
+            cardCount = 0;
+            console.log('second card');
+
+            if (firstFlip.attr('image-link') === secondFlip.attr('image-link')){
+                console.log('match');
+                matchCount += 1;
+                setTimeout(function(){
+                    firstFlip.css('background-image', 'none').css('background-color', 'transparent').off('click').removeClass('back-card');
+                    $('.back-card').css('pointer-events', 'auto');
+                },1800);
+                setTimeout(function(){
+                    secondFlip.css('background-image', 'none').css('background-color', 'transparent').off('click').removeClass('back-card');
+                    $('.back-card').css('pointer-events', 'auto');
+                },1800);
+                if(matchCount > 14){
+                    alert('winner winner chicken dinner');
+                }
+            }else{
+                console.log('no match');
+                $('.back-card').css('pointer-events', 'none');
+                setTimeout(function(){
+                   firstFlip.css('background-image', cardBack);
+                    $('.back-card').css('pointer-events', 'auto');
+                },1800);
+                setTimeout(function(){
+                   secondFlip.css('background-image', cardBack);
+                    $('.back-card').css('pointer-events', 'auto');
+                },1800);
+            }
+        }
     }
-
-    //instantiate
-    var newCard = new Card(1, 'images/stella.jpg');
-
-
 });

@@ -29,7 +29,7 @@ body{
     border: 3px solid white;
     height:40%;
     width: 90%;
-    vertical-align: middle;
+    /*vertical-align: middle;*/
     border-radius: 30px;
     overflow: hidden;
 }
@@ -118,11 +118,11 @@ body{
     height: 18%;
 }
 .back-card:hover{
-    position:relative;
-    top: -5px;
-    -webkit-box-shadow: 4px 7px 8px 1px rgba(199,169,18,1);
-    -moz-box-shadow: 4px 7px 8px 1px rgba(199,169,18,1);
-    box-shadow: 4px 7px 8px 1px rgba(199,169,18,1);
+    /*position:relative;*/
+    /*top: -5px;*/
+    /*!*-webkit-box-shadow: 4px 7px 8px 1px rgba(199,169,18,1);*!*/
+    /*!*-moz-box-shadow: 4px 7px 8px 1px rgba(199,169,18,1);*!*/
+    /*!*box-shadow: 4px 7px 8px 1px rgba(199,169,18,1);*!*/
 }
 #settings{
     margin: 0px;
@@ -135,7 +135,6 @@ body{
     background-image: url('images/settings.png');
     background-size: cover;
 }
-
 @media only screen and (max-width: 1045px){
     #game-area{
         width: 100%;
