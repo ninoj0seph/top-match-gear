@@ -7,6 +7,14 @@ var total_possible_matched = 2;
 var match_counter = 0;
 var timesClicked = 0;
 var click_counter=0;
+var randomize_cards = [[$('.American-Coot'),'AmericanCoot.jpg'],[$('.American-Coot'),'AmericanCoot.jpg'],[$('.mallard-duck'),'Mallard Duck.jpg'],[$('.mallard-duck'),'Mallard Duck.jpg'],[$('.mourning-dove'),'mourning-dove.jpg'],[$('.mourning-dove'),'mourning-dove.jpg']];
+
+function randomize_cards1(){
+
+    var rand_num = Math.floor(Math.random());
+    randomize_cards[rand_num];
+
+}
 
 
 $(document).ready(function(){
