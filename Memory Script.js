@@ -4,6 +4,7 @@
 var first_card_clicked = null;
 var second_card_clicked = null;
 var total_possible_matched = 2;
+var times_played = 1;
 var match_counter = 0;
 var timesClicked = 0;
 var click_counter=0;
@@ -15,8 +16,8 @@ function randomize_cards1(){
     randomize_cards[rand_num];
 
 }
-
-
+//--------------------------card_contain variable is made so that the info is stored in cache------------------------------------
+var card_contain  = $('.card-contain');
 $(document).ready(function(){
    $('.card-contain').one('mouseup',function card_clicked() {
        $(this).children('.back').css('z-index', '1');
@@ -78,6 +79,8 @@ $(document).ready(function(){
         $('.accuracy').hide();
         $('.back').css('z-index', '0');
         $('.birdName').remove();
+        $('.times-played').append('</br>' + times_played++);
+        
     });
 
 
