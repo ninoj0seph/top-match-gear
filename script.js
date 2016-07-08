@@ -5,39 +5,61 @@ var first_card_clicked = null;
 var second_card_clicked = null;
 var total_possible_matches = 2; //total possible matches
 var match_counter = 0;
+var two_cards_clicked = false;
 
-
+$(document).ready( function(){
+    $('.card').on('click',card_clicked);
+    // $(".card").click(card_clicked);
+});
 function card_clicked(e){
-    $(this).find(".back").hide(); //"this" is the element that the event was triggered on
+    console.log(e);//e is the event object
+    if(two_cards_clicked){
+        return;
+    }
     if(first_card_clicked == null){
+        $(this).find('.back').hide();
         first_card_clicked = $(this);
-        return first_card_clicked; //first card set
+        console.log("first card back hidden");
+        first_card_clicked.off('click');
     }
     else{
-        second_card_clicked = $(this); //second card is also set
-        if(first_card_clicked.find('.front').find('img').attr('src') == second_card_clicked.find('.front').find('img').attr('src')){//if first and second picked imgs are same,
-            //how come we cannot compare first_card_clicked and second_card_clicked directly? why do we have to find the actual src and compare them?
-            match_counter += 1; //increment match_counter by 1
-            console.log(match_counter); //for testing
-            first_card_clicked = null; //set first_card_clicked null to start fresh
-            second_card_clicked = null; //set second_card_clicked null to start fresh
-            if(match_counter == total_possible_matches){
-                alert('you won!');
+        two_cards_clicked = true;
+        $(this).find('.back').hide();
+        second_card_clicked = $(this);
+        console.log("second card back hidden");
+        if(first_card_clicked.find('.front').find('img').attr('src') == second_card_clicked.find('.front').find('img').attr('src')){
+            two_cards_clicked = false;
+            match_counter +=1;
+            console.log("cards matched!");
+            second_card_clicked.off('click');
+            //the event handler 'click' is on 'card' element which the event was triggered. (this)
+            console.log("event handlers on matched card removed");
+            //remove event handler off();
+            if(total_possible_matches == match_counter){
+                var hello = $('<div>').addClass("you_won").html("You Won WOOHOO!")
+                $('#game-area').append(hello);
+                $('.card').find('.back').show();
             }
             else{
-                //click handler functionality is complete, return
-                return //maybe unnecessary?
+                first_card_clicked = null;
+                second_card_clicked = null;
+                return;
             }
         }
         else{
-            first_card_clicked.find('.back').show(); //to flip it
-            second_card_clicked.find('.back').show(); //to flip it
+            setTimeout(wait_two_seconds,2000);
+            return;
         }
     }
-
-
 }
 
-$(document).ready( function(){
-    $(".card").click(card_clicked);
-});
+function wait_two_seconds(){
+    two_cards_clicked = false;
+    first_card_clicked.on('click', card_clicked);
+    second_card_clicked.on('click', card_clicked);
+    first_card_clicked.find('.back').show(); //to flip it back
+    second_card_clicked.find('.back').show(); //to flip it back
+    first_card_clicked = null;
+    second_card_clicked = null;
+}
+
