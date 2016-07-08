@@ -22,7 +22,7 @@ $(document).ready(function(){
 
         $(this).attr('image-link', splicedImage)
         .click(function(){
-            $(this).css('background-image', $(this).attr('image-link'))
+            $(this).css('background-image', $(this).attr('image-link'));
             checkCard($(this));
         });
         i++;
@@ -32,38 +32,31 @@ $(document).ready(function(){
         if (cardCount === 0){
             firstFlip = cardClicked;
             cardCount += 1;
-            cardClicked.css('pointer-events', 'none');
-            console.log('first card');
+            cardClicked.css('pointer-events', 'none'); //console.log('first card');
         } else if(cardCount === 1){
             secondFlip = cardClicked;
-            cardCount = 0;
-            console.log('second card');
-
-            if (firstFlip.attr('image-link') === secondFlip.attr('image-link')){
-                console.log('match');
+            cardCount = 0; //console.log('second card');
+            // $('.back-card').css('pointer-events', 'none');
+            if (firstFlip.attr('image-link') === secondFlip.attr('image-link')){ //console.log('match');
                 matchCount += 1;
-                setTimeout(function(){
-                    firstFlip.css('background-image', 'none').css('background-color', 'transparent').off('click').removeClass('back-card');
-                    $('.back-card').css('pointer-events', 'auto');
-                },1800);
-                setTimeout(function(){
-                    secondFlip.css('background-image', 'none').css('background-color', 'transparent').off('click').removeClass('back-card');
-                    $('.back-card').css('pointer-events', 'auto');
-                },1800);
-                if(matchCount > 14){
+
+                firstFlip.css('background-image', 'none').css('background-color', 'transparent').off('click').removeClass('back-card');
+                secondFlip.css('background-image', 'none').css('background-color', 'transparent').off('click').removeClass('back-card');
+
+                $('.back-card').css('pointer-events', 'auto'); ///////////
+                if(matchCount > 14){ //check if win
                     alert('winner winner chicken dinner');
                 }
-            }else{
-                console.log('no match');
+            }else{//console.log('no match');
                 $('.back-card').css('pointer-events', 'none');
                 setTimeout(function(){
                    firstFlip.css('background-image', cardBack);
                     $('.back-card').css('pointer-events', 'auto');
-                },1800);
+                },1500);
                 setTimeout(function(){
                    secondFlip.css('background-image', cardBack);
                     $('.back-card').css('pointer-events', 'auto');
-                },1800);
+                },1500);
             }
         }
     }
