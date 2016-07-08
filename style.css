@@ -1,5 +1,5 @@
 * {
-    font-family: "Rancho", sans-serif;
+    font-family: "Rancho", "Comic Sans MS", sans-serif;
     font-size: 105%;
 }
 
@@ -82,12 +82,10 @@ a:hover {
 
 .card {
     display: inline-block;
-    width: 150px;
-    height: 150px;
+    width: 156px;
+    height: 156px;
     position: relative;
     margin: 5px;
-    border: solid azure;
-    border-radius: 5px;
     overflow: hidden;
 }
 
@@ -105,6 +103,7 @@ a:hover {
 img {
     width: 150px;
     height: 150px;
+    border: solid azure;
     border-radius: 5px;
 }
 
