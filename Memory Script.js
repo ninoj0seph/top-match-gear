@@ -16,10 +16,10 @@ function randomize_cards1(){
     randomize_cards[rand_num];
 
 }
-//--------------------------card_contain variable is made so that the info is stored in cache------------------------------------
-var card_contain  = $('.card-contain');
+//--------------------------card_area variable is made so that the info is stored in cache------------------------------------
+var card_area  = $('.card-area');
 $(document).ready(function(){
-   $('.card-contain').one('mouseup',function card_clicked() {
+   $('.card-contain').on('mouseup',function card_clicked() {
        $(this).children('.back').css('z-index', '1');
        click_counter++;
        timesClicked++;
@@ -34,7 +34,7 @@ $(document).ready(function(){
             second_card_clicked = $(this).children($('.back')).children($('img')).attr('class');
             console.log(second_card_clicked);
                 if(first_card_clicked==second_card_clicked){
-                    alert("Great Match You Found: " + second_card_clicked);
+                    // alert("Great Match You Found: " + second_card_clicked);
                     // $(this).remove();
                     match_counter++;
 //----------------------this is the number of matches and type of birds---------------------------
@@ -80,7 +80,7 @@ $(document).ready(function(){
         $('.back').css('z-index', '0');
         $('.birdName').remove();
         $('.times-played').append('</br>' + times_played++);
-        
+
     });
 
 

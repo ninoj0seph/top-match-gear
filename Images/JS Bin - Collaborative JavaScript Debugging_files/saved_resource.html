@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!-- saved from url=(0028)http://null.jsbin.com/runner -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script>var __blocked={methods:["open","print","alert","prompt","confirm"],old:{}};for(var m in __blocked.methods){try {__blocked.old[m]=window[m];window[m]=function(){};}catch(e){}}</script>
+
+
+
+  <title>Live Feed Dialouge </title>
+<script src="./jquery-3.0.0.js"></script>
+  
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+<style id="jsbin-css">
+#live-feed{
+    margin-top: 20px;
+}
+#new-feed{
+  border:2px solid black;
+  border-radius:20px;
+  background-color: lightblue
+  
+}
+.george{
+  color:blue;
+}
+.erica{
+  color:red;
+}
+</style>
+</head>
+<body>
+  <p>
+    George
+  <input id="value">
+  <button id="button1">submit</button>
+  </p>
+<br>
+<br>
+Erica 
+<input id="value2">
+<button id="button2">submit</button>
+<p></p>
+<div id="live-feed">
+
+  <h1>Live Feed:</h1>
+  <p id="new-feed"><p class="george"><strong> George: </strong>the</p><p class="erica"><strong> Erica: </strong>the</p></p><p>
+  
+</p></div>
+<script>try {$('#button1').on('click', function(){
+  var input_val = $('#value').val();
+  $('#new-feed').append($('<p>',{
+    addClass:'george',
+    html:'<strong> George: </strong>' + input_val
+  }));
+});
+
+
+$('#button2').on('click', function(){
+  var input_val = $('#value2').val();
+  $('#new-feed').append($('<p>',{
+    addClass:'erica',
+    html: '<strong> Erica: </strong>' + input_val
+  }));
+});
+    
+    
+    
+    
+var person = {
+  name: "george",
+  gender: 'male',
+  hair: 'black',
+  age:22
+};
+} catch (error) { throw error; }
+
+//# sourceURL=fireqam.js
+</script>
+
+
+<!--jsbin live harness--><script>for(var m in __blocked.methods){try{window[m]=__blocked.old[m];delete __blocked;}catch(e){}};</script></body></html>
