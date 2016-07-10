@@ -6,6 +6,8 @@
 ////second_card_clicked assigned to null
 ////total_possible_matches assign to number of total possible matches (in this case 2)
 ////match_counter assigned to 0
+
+
 var first_card_clicked = null;
 var second_card_clicked = null;
 var total_possible_matched = 9;
@@ -16,9 +18,9 @@ $(document).ready(function(){
 //Add a click handler to each card by 1 of these 2 method
 ////jQuery - Intermediate
 //////Add click method to a jQuery Selector with the parameter equal to a function called card_clicked
+    //$('.card').click(card_clicked);
     $('.card').on('click',card_clicked);
 });
-
 //Declare card_clicked function in the script.js file with the following functionality in it
 function card_clicked(e){
     if(two_cards_clicked){
@@ -50,7 +52,7 @@ function card_clicked(e){
             //increment match_counter by 1
             match_counter += 1;
             second_card_clicked.off('click');
-            console.log("second event handler off");
+            console.log("second_card event handler off");
             //reset both variables defined above to null again and then wait for next card click
             first_card_clicked = null;
             second_card_clicked = null;
@@ -84,7 +86,7 @@ function card_clicked(e){
 function var_reset(){
     //put event handlers back on
     $('.card').on('click',card_clicked);
-    console.log('all event handler on');
+    console.log('all event handler is on');
     //Show card back on both elements that are flipped over
     first_card_clicked.find('.back').show();
     second_card_clicked.find('.back').show();
@@ -95,66 +97,5 @@ function var_reset(){
     //click handler functionality is complete, return
 }
 
-
-
-
-// var first_card_clicked = null;
-// var second_card_clicked = null;
-// var total_possible_matches = 2; //total possible matches
-// var match_counter = 0;
-// var two_cards_clicked = false;
-//
-// $(document).ready(function () {
-//     $('.card').on('click', card_clicked);
-//     // $(".card").click(card_clicked);
-// });
-// function card_clicked(e) {
-//     console.log(e);//e is the event object
-//     if (two_cards_clicked) {
-//         return;
-//     }
-//     if (first_card_clicked == null) {
-//         $(this).find('.back').hide();
-//         first_card_clicked = $(this);
-//         console.log("first card back hidden");
-//         first_card_clicked.off('click');
-//     }
-//     else {
-//         two_cards_clicked = true;
-//         $(this).find('.back').hide();
-//         second_card_clicked = $(this);
-//         console.log("second card back hidden");
-//         if (first_card_clicked.find('.front').find('img').attr('src') == second_card_clicked.find('.front').find('img').attr('src')) {
-//             two_cards_clicked = false;
-//             match_counter += 1;
-//             console.log("cards matched!");
-//             second_card_clicked.off('click');
-//             //the event handler 'click' is on 'card' element which the event was triggered. (this)
-//             console.log("event handlers on matched card removed");
-//             //remove event handler off();
-//             if (total_possible_matches == match_counter) {
-//                 var hello = $('<div>').addClass("you_won").html("You Won WOOHOO!")
-//                 $('#game-area').append(hello);
-//             }
-//             else {
-//                 first_card_clicked = null;
-//                 second_card_clicked = null;
-//                 return;
-//             }
-//         }
-//         else {
-//             setTimeout(reset_values, 2000);
-//             return;
-//         }
-//     }
-// }
-// function reset_values() {
-//     two_cards_clicked = false;
-//     first_card_clicked.on('click', card_clicked);
-//     second_card_clicked.on('click', card_clicked);
-//     first_card_clicked.find('.back').show(); //to flip it back
-//     second_card_clicked.find('.back').show(); //to flip it back
-//     first_card_clicked = null;
-//     second_card_clicked = null;
-// }
-//
+//all event handlers need to be off when two cards are not matched for 2 seconds
+//after 2 seconds of pause, event handlers need to be put back on to all UNMATCHED CARD
