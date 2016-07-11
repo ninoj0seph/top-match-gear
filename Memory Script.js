@@ -48,7 +48,8 @@ $(document).ready(function(){
                 }
                 else{
                     alert("Try Again");
-                    $(this).find('.back').css('z-index', '0');
+                    $('.back').css('z-index', '0');
+                    //$(this).find('.back').css('z-index', '0');
                 }
  //--------------------this displays that you win to the window----------------------------------
            if(match_counter == 8){
