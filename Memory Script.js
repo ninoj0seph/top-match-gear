@@ -43,13 +43,12 @@ $(document).ready(function(){
                         addClass: 'birdName',
                         appendTo: $('.attempts'),
                         html: 'Match ' + match_counter +" - " + " Bird Name: " + second_card_clicked,
-                        style: 'color: blue; list-style-type: none'
+                        style: 'color: blue; list-style-type: none',
                     });
                 }
                 else{
                     alert("Try Again");
-                    $('.back').css('z-index', '0');
-                  //  $(this).children($('.back')).css('z-index', '0');
+                    $(this).find('.back').css('z-index', '0');
                 }
  //--------------------this displays that you win to the window----------------------------------
            if(match_counter == 8){
