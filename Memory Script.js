@@ -81,7 +81,10 @@ $(document).ready(function(){
         $('.accuracy').hide();
         $('.back').css('z-index', '0');
         $('.birdName').remove();
-        $('.times-played').append('</br>' + times_played++);
+        $('<p>',{
+            html: times_played++,
+            appendTo: $('times_played')
+        });
 
     });
 
