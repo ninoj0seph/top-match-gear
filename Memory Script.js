@@ -43,7 +43,7 @@ $(document).ready(function(){
                         addClass: 'birdName',
                         appendTo: $('.attempts'),
                         html: 'Match ' + match_counter +" - " + " Bird Name: " + second_card_clicked,
-                        style: 'color: blue; list-style-type: none',
+                        style: 'color: blue; list-style-type: none'
                     });
                 }
                 else{
@@ -81,10 +81,7 @@ $(document).ready(function(){
         $('.accuracy').hide();
         $('.back').css('z-index', '0');
         $('.birdName').remove();
-        $('<p>',{
-            html: times_played++,
-            appendTo: $('times_played')
-        });
+        $('.times-played').html(times_played++);
 
     });
 
