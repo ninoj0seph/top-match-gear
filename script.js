@@ -85,7 +85,7 @@ function card_clicked(e){
 }
 function var_reset(){
     //put event handlers back on
-    $('.card').on('click',card_clicked);
+   
     console.log('all event handler is on');
     //Show card back on both elements that are flipped over
     first_card_clicked.find('.back').show();
@@ -99,3 +99,4 @@ function var_reset(){
 
 //all event handlers need to be off when two cards are not matched for 2 seconds
 //after 2 seconds of pause, event handlers need to be put back on to all UNMATCHED CARD
+//add class "matched" whenever there is a matched pair. take handlers back on to only not:pseduo class matched at the end
