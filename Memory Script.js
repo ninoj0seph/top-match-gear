@@ -86,10 +86,6 @@ $(document).ready(function(){
 
     });
 
-
-
-
-
-
+    
 });
 
