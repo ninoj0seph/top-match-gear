@@ -20,26 +20,32 @@ var click_counter=0;
 var card_area  = $('.card-area');
 
 $(document).ready(function(){
-   $('.card-contain').on('mouseup',function card_clicked() {
-       $(this).children('.back').css('z-index', '1');
-       click_counter++;
-       timesClicked++;
 
-       if(timesClicked === 1){
+   $('.card-contain').on('mouseup',function card_clicked() {
+       $(this).children('.back').css('z-index', '1'); //shows the bird image
+       click_counter++; //increases the click counter by one
+       timesClicked++; // increases variable later used for accuracy
+
+       if(timesClicked === 1){ //condtional to store  bird-class name in variable
            first_card_clicked = $(this).children($('.back')).children($('img')).attr('class');
            console.log(first_card_clicked);
        }
-       if(timesClicked > 1){
+
+
+       if(timesClicked > 1){  //conditional to store second bird name in variable
             $(this).css('z-index', '1');
             timesClicked = 0;
             second_card_clicked = $(this).children($('.back')).children($('img')).attr('class');
             console.log(second_card_clicked);
+
                 if(first_card_clicked==second_card_clicked){
                     alert("Great Match You Found: " + second_card_clicked);
-                    // $(this).remove();
+                   //  $(this).remove();
+                   // $(this).removeClass('.back');
                     match_counter++;
+
 //----------------------this is the number of matches and type of birds---------------------------
-                    var matches = $('<li>',{
+                    var matches = $('<li>',{ //new info (attempts) to be added to the stats
                         addClass: 'birdName',
                         appendTo: $('.attempts'),
                         html: 'Match ' + match_counter +" - " + " Bird Name: " + second_card_clicked,
@@ -48,8 +54,8 @@ $(document).ready(function(){
                 }
                 else{
                     alert("Try Again");
-                    $('.back').css('z-index', '0');
-                    //$(this).find('.back').css('z-index', '0');
+                   // $('.back').css('z-index', '0');
+                     $(this).children('.back').css('z-index', '0'); //returns all the cards to the front
                 }
  //--------------------this displays that you win to the window----------------------------------
            if(match_counter == 8){
