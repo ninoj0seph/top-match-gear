@@ -1,61 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta charset="UTF-8">
-    <link href='https://fonts.googleapis.com/css?family=Indie+Flower|Patrick+Hand|Berkshire+Swash' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Patrick+Hand' rel='stylesheet' type='text/css'>
     <link type="text/css" rel="stylesheet" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+
     <script src="game-functions.js"></script>
     <title>Memory Match</title>
 </head>
 <body>
 <div id="main">
-
     <div id="stats-container">
-
         <div id="drunk-meter-graph">
             <div id="prog-bar-full"><div id="prog-bar-fill"></div></div>
         </div>
-
     </div>
-
     <div id="game-area-container">
-
         <div id="game-area">
             <table id="card-grid">
                 <tr>
-                    <td class="back-card" ></td>
-                    <td class="back-card" ></td>
-                    <td class="back-card" ></td>
-                    <td class="back-card" ></td>
-                    <td class="back-card" ></td>
-                    <td class="back-card" ></td>
+                    <td class="back-card"></td>
+                    <td class="back-card"></td>
+                    <td class="back-card"></td>
+                    <td class="back-card"></td>
+                    <td class="back-card"></td>
+                    <td class="back-card"></td>
                 </tr>
                 <tr>
-                    <td class="back-card" ></td>
-                    <td class="back-card" ></td>
-                    <td class="back-card" ></td>
-                    <td class="back-card" ></td>
-                    <td class="back-card" ></td>
-                    <td class="back-card" ></td>
+                    <td class="back-card"></td>
+                    <td class="back-card"></td>
+                    <td class="back-card"></td>
+                    <td class="back-card"></td>
+                    <td class="back-card"></td>
+                    <td class="back-card"></td>
                 </tr>
                 <tr>
-                    <td class="back-card" ></td>
-                    <td class="back-card" ></td>
-                    <td class="back-card" ></td>
-                    <td class="back-card" ></td>
-                    <td class="back-card" ></td>
-                    <td class="back-card" ></td>
+                    <td class="back-card"></td>
+                    <td class="back-card"></td>
+                    <td class="back-card"></td>
+                    <td class="back-card"></td>
+                    <td class="back-card"></td>
+                    <td class="back-card"></td>
                 </tr>
                 <tr>
-                    <td class="back-card" ></td>
-                    <td class="back-card" ></td>
-                    <td class="back-card" ></td>
-                    <td class="back-card" ></td>
-                    <td class="back-card" ></td>
-                    <td class="back-card" ></td>
+                    <td class="back-card"></td>
+                    <td class="back-card"></td>
+                    <td class="back-card"></td>
+                    <td class="back-card"></td>
+                    <td class="back-card"></td>
+                    <td class="back-card"></td>
                 </tr>
                 <tr>
                     <td class="back-card" ></td>
@@ -67,25 +62,37 @@
                 </tr>
             </table>
         </div>
-
     </div>
-
     <div id="footer">
-
         <div id="game-info">
             <div class="stats">
-                <p>Accuracy: <span id="accuracy" class="play-stats">100%</span></p>
+                <p>Accuracy: <span id="accuracy" class="play-stats">0%</span></p>
             </div>
             <div class="stats">
                 <p>Attempts: <span id="attempts" class="play-stats">0</span></p>
             </div>
             <div class="stats">
-                <p>Played: <span id="games-played" class="play-stats">0</span></p>
+                <p>Played: <span id="games-played" class="play-stats">1</span></p>
             </div>
         </div>
         <a href="#settings"><div id="settings"></div></a>
     </div>
-
+    <div id="my-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">×</span>
+                <h3>Thank You for playing!</h3>
+            </div>
+            <div class="modal-body">
+                <p>Beer is one of my favorite things.</p>
+                <p><a href="https://google.com">BrianPhanIsBomb.com</a></p>
+                <p><a href="bacCalc.html">BAC Calculator - Coming soon.</a></p>
+            </div>
+            <div class="modal-footer">
+                <h5>Always, please drink responsibly.</h5>
+            </div>
+        </div>
+    </div>
 </div>
 </body>
 </html>

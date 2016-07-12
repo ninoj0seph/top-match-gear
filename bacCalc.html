@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Blood Alcohol Content Calculator</title>
+    <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="bacCalc.js"></script>
+</head>
+<body>
+
+<div class=".container-fluid">
+
+    <form class="form-horizontal">
+        <fieldset>
+
+            <legend>Blood Alcohol Content Calculator</legend>
+
+            <!-- Weight -->
+            <div class="form-group">
+                <label class="col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-1 control-label" for="weight">Weight</label>
+                <div class="col-md-4 col-md-offset-0 col-xs-5 col-xs-offset-1">
+                    <select id="weight" name="weight" class="form-control">
+                    </select>
+                </div>
+            </div>
+
+            <!-- Gender -->
+            <div class="form-group">
+                <label class="col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-1 control-label" for="gender">Gender</label>
+                <div class="col-md-4 col-md-offset-0 col-xs-5 col-xs-offset-1">
+                    <select id="gender" name="gender" class="form-control">
+                        <option value="0.68">Male</option>
+                        <option value="0.51">Female</option>
+                        <option value="0.61">Hermaphrodite</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Start Time -->
+            <div class="form-group">
+                <label class="col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-1 control-label" for="start-time">Start Time</label>
+                <div class="col-md-4 col-md-offset-0 col-xs-5 col-xs-offset-1">
+                    <input type="time" id="start-time" name="start-time" class="form-control">
+                    </input>
+                </div>
+            </div>
+
+            <!-- End Time -->
+            <div class="form-group">
+                <label class="col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-1 control-label" for="end-time">End Time</label>
+                <div class="col-md-4 col-md-offset-0 col-xs-5 col-xs-offset-1">
+                    <input type ="time" id="end-time" name="end-time" class="form-control">
+                    </input>
+                </div>
+            </div>
+
+            <!-- Amount Drank -->
+            <div class="form-group">
+                <label class="col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-1 control-label" for="amount-drank">Amount Drank</label>
+                <div class="col-md-4 col-md-offset-0 col-xs-5 col-xs-offset-1">
+                    <select id="amount-drank" name="amount-drank" class="form-control">
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-4 col-md-offset-0 col-xs-11 col-xs-offset-1 control-label" for="amount-drank"></label>
+                <div class="col-md-8">
+                    <div class="form-group row">
+                        <label for="abv" class="col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-1 control-label">Abv%</label>
+                        <div class="col-md-2 col-xs-3 ">
+                            <input type="text" class="form-control" id="abv">
+                        </div>
+                        <label for="ounces" class="col-md-1 col-xs-2 control-label">ounces</label>
+                        <div class="col-md-2 col-xs-3">
+                            <input type="text" class="form-control" id="ounces">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <!--Calculate Button-->
+            <div class="form-group">
+                <label class="col-md-4 col-md-offset-0 col-xs-10 col-xs-offset-1 control-label" for="calculate"></label>
+                <div class="col-md-4 col-md-offset-0 col-xs-10 col-xs-offset-1">
+                    <input type="submit" id="calculate" name="calculate" class="form-control btn-danger">
+                    </input>
+                </div>
+            </div>
+
+        </fieldset>
+    </form>
+
+    <!-- Submit -->
+
+
+</div>
+
+</body>
+</html>
