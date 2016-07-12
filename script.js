@@ -1,30 +1,29 @@
 /*Created by Rosemarie Gonzales on 7/6/16.*/
 
 $(document).ready(function () {
+    //Display #stats div
+    display_stats($("#stats"));
     //When a card is clicked, execute the following code:
     $(".card").click(function () {
         card_clicked($(this));
     });
     //When the 'Reset Game' button is clicked, execute the following code:
-    $(".reset").click(function () {
-        location.reload();
-    });
+    $(".reset").click(reset_stats);
 });
 
 var first_card_clicked = null;
 var second_card_clicked = null;
-var total_possible_matches = 2;
-var match_counter = 0;
 var card_back1 = null;
 var card_back2 = null;
+var total_possible_matches = 2;
+var match_counter = 0;
+var matches = 0;
+var attempts = 0;
+var accuracy = 0;
+var games_played = 0;
 
 
 function card_clicked(clicked_card) {
-
-    /* Previous code..Keep for future referece:
-     var card_back = clicked_card.find(".back");
-     card_back.hide();*/
-
     //Get <div> element with class of .back for assignment to either card_back1 or card_back2.
     var card_back = clicked_card.children("div.back");
 
@@ -48,6 +47,9 @@ function card_clicked(clicked_card) {
 
         second_card_clicked = card_src;
         console.log(second_card_clicked);//to check the value assigned to second_card_clicked
+        attempts++;
+        console.log("attempts :" + attempts);//to check value of attempts
+        display_stats($("#stats"));//update displayed value of attempts in stats
 
         //Test to see if cards clicked match.
         if (first_card_clicked == second_card_clicked) {
@@ -56,16 +58,17 @@ function card_clicked(clicked_card) {
             match_counter++;
             console.log(match_counter);
 
+            matches++;
+            console.log("matches: " + matches);//check value of matches
+            display_stats($("#stats"));
+
             //reset variables to null
             first_card_clicked = null;
             second_card_clicked = null;
 
             //check if match_counter is equivalent to total_possible_matches
             if (match_counter == total_possible_matches) {
-                return $("#game-area").html("You are a Memory Match Master!").css({
-                    "padding": "100px",
-                    "text-align": "center"
-                }).animate({"font-size": "250%"});
+                $("#winner").text("You are a Memory Match Master!").css("font-size", "200%");
             }
         }
         else {
@@ -84,4 +87,39 @@ function card_clicked(clicked_card) {
             console.log(second_card_clicked);//to check that value is back to null
         }
     }
+}
+
+function display_stats(stats_div){
+    var games_played_value = stats_div.find(".games-played .value");
+    var attempts_value = stats_div.find(".attempts .value");
+    var accuracy_value = stats_div.find(".accuracy .value");
+    if (games_played_value != null){
+        games_played_value.empty();
+        games_played_value.append(games_played);
+    }
+    if (attempts_value != null){
+        attempts_value.empty();
+        attempts_value.append(attempts);
+    }
+    if ((matches != 0) && (attempts != 0)){
+        accuracy = (Math.round((matches / attempts) * 100));
+        accuracy_value.empty();
+        accuracy_value.append(accuracy + "%");
+    }
+    else {
+        accuracy_value.empty();
+        accuracy_value.append(accuracy + "%");
+    }
+}
+
+
+function reset_stats(){
+    match_counter = 0;
+    accuracy = 0;
+    matches = 0;
+    attempts = 0;
+    games_played++;
+    display_stats($("#stats"));
+    $(".card .back").show();
+    $("#winner").empty();
 }

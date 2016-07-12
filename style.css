@@ -18,7 +18,6 @@ h1 {
     display: inline;
 }
 
-
 ul {
     list-style: none;
     display: inline;
@@ -45,11 +44,21 @@ a:hover {
 }
 
 .games-played {
+    height: 75px;
+}
 
+.attempts {
+    height: 75px;
+}
+
+.accuracy {
+    height: 75px;
 }
 
 .label {
-    height: 10px;
+    height: 25px;
+    margin-top: 5px;
+    width: 100px;
 }
 
 .value {
@@ -57,15 +66,8 @@ a:hover {
     height: 25px;
     width: 100px;
     border-radius: 5px;
+    margin-top: 5px;
     text-align: center;
-}
-
-.attempts {
-
-}
-
-.accuracy {
-
 }
 
 .reset {
@@ -75,9 +77,13 @@ a:hover {
     margin-top: 15px;
 }
 
+#winner {
+    display: block;
+    text-align: center;
+}
+
 #game-area {
     margin-left: 150px;
-
 }
 
 .card {
@@ -90,14 +96,14 @@ a:hover {
 }
 
 .front {
-/*    width: 150px;
-    height: 150px;*/
+    /*    width: 150px;
+        height: 150px;*/
 }
 
 .back {
-/*    background-image: url("images/cardback.jpg");
-    width: 150px;
-    height: 150px;*/
+    /*    background-image: url("images/cardback.jpg");
+        width: 150px;
+        height: 150px;*/
 }
 
 img {
