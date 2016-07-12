@@ -26,6 +26,7 @@ function card_clicked() {
         if (card1_src == card2_src) {//if match
             match_counter ++; //adds 1 each time two cards are matched
             attempts ++; //after second card clicked attempts increases by 1
+            accuracy = (Math.round((match_counter / attempts) * 100) + "%");
             display_stats();//displays correct attempts with wrong attempts
             first_card_clicked = null;
             second_card_clicked = null;
@@ -42,6 +43,7 @@ function card_clicked() {
             first_card_clicked = null;
             second_card_clicked = null;
             attempts ++; //after second card clicked attempts increases by 1
+            accuracy = (Math.round((match_counter / attempts) * 100) + "%");
             display_stats();
             //console.log(attempts);
             return;
@@ -52,7 +54,6 @@ function card_clicked() {
 function display_stats(){
     $(".gamesPlayed .value").text(games_played);
     $(".attempts .value").text(attempts);
-    accuracy = (Math.round((match_counter / attempts) * 100) + "%");
     $(".accuracy .value").text(accuracy);
     console.log(accuracy);
     console.log(match_counter);
