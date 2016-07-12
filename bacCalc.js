@@ -90,6 +90,9 @@ function calculateBAC(){
     alcoholConsumed = alcoholConsumed / 100;
 
     var bac = (alcoholConsumed * 5.14 / weight * genderMultiplier) - 0.015 * timeDiff;
+    if (bac < 0){
+        bac = 0;
+    }
 
     $('#abv-text').html('Your Blood Alcohol Content is ' + bac.toFixed(2)  + '%');
     $('#myModal').show();
