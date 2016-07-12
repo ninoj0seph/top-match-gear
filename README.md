@@ -36,13 +36,20 @@ target="_blank">Slides</a>
 > - <a href="https://github.com/Learning-Fuze/prototypes/tree/master/css_selectors#prototype---css-selectors" target="_blank">CSS Selectors</a>
 > - <a href="https://github.com/Learning-Fuze/prototypes/tree/master/css_bootstrap_redux#bootstrap-redux" target="_blank">CSS Bootstrap Redux</a>
 
+> - <a href="https://github.com/Learning-Fuze/prototypes/tree/master/js_dom_events#javascript---dom-event-handeling" target="_blank">Proto - JS Event Handling</a> 
+- <a href="https://github.com/Learning-Fuze/prototypes/tree/master/js_functions#javascript---functions" target="_blank">Proto - JS Functions</a>
 
 #### Getting Started
 
-> - Fork this repo by clicking on the **Fork** button located at the top right of this page
-> - Clone the newly created repo to your local machine
-    - `git clone https://github.com/[your_user_name]/memory_match.git`
-    - **Change [your_user_name] to your user name**
+> - If you haven't already started the v0.1 start there - <a href="https://github.com/Learning-Fuze/memory_match/tree/v0.1#getting-started">View Details Here</a>
+> - Are you on your master branch?
+    - **Yes** - continue to "Pull Latest Changes"
+    - **I dont know** Run the command below
+        - `git branch` - this will highlight the branch you are currently on
+    - **No** - Make sure you `git add .` and `git commit` to your current branch before you switch to your master branch
+> - Pull Latest Changes    
+        - `git checkout master`
+        - `git pull origin master` - **Now continue with the next steps**
 > - Create a feature branch
     - `git checkout -b v0.1`
 > - Work on the scope defined <a href="https://github.com/Learning-Fuze/memory_match/tree/assets#v0.1">Below</a>
