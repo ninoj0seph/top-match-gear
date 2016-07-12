@@ -89,19 +89,19 @@ function card_clicked(clicked_card) {
     }
 }
 
-function display_stats(stats_div){
+function display_stats(stats_div) {
     var games_played_value = stats_div.find(".games-played .value");
     var attempts_value = stats_div.find(".attempts .value");
     var accuracy_value = stats_div.find(".accuracy .value");
-    if (games_played_value != null){
+    if (games_played_value != null) {
         games_played_value.empty();
         games_played_value.append(games_played);
     }
-    if (attempts_value != null){
+    if (attempts_value != null) {
         attempts_value.empty();
         attempts_value.append(attempts);
     }
-    if ((matches != 0) && (attempts != 0)){
+    if ((matches != 0) && (attempts != 0)) {
         accuracy = (Math.round((matches / attempts) * 100));
         accuracy_value.empty();
         accuracy_value.append(accuracy + "%");
@@ -112,8 +112,7 @@ function display_stats(stats_div){
     }
 }
 
-
-function reset_stats(){
+function reset_stats() {
     match_counter = 0;
     accuracy = 0;
     matches = 0;
