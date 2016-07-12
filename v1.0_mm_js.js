@@ -37,7 +37,7 @@ function card_clicked() {
             }
         } else { //if not match
             $(".cardBack").unbind(card_clicked);// removes function so a clicked third card does not interfere with the previous card clicked functions
-            $(first_card_clicked).delay(500).show(500);
+            $(first_card_clicked).delay(750).show(500);
             $(second_card_clicked).delay(250).show(500);
             first_card_clicked = null;
             second_card_clicked = null;
