@@ -1,9 +1,7 @@
 var cardCount = 0, matchCount = 0, played = 1;
 var firstFlip, secondFlip;
-
 $(document).ready(function(){
     assignCard();
-
     //code for modal
     $('#settings').click(function(){
         $('#my-modal').css('display', 'block');
@@ -12,7 +10,6 @@ $(document).ready(function(){
         $('#my-modal').css('display', 'none');
     })
 });
-
 function assignCard(){
     var randomNumber, splicedImage;
     //name and link of cards
@@ -29,7 +26,6 @@ function assignCard(){
         });
     });
 }
-
 //game logic
 function checkCard(cardClicked){
     var cardBack = "url('images/card-back.jpg')";
@@ -60,7 +56,6 @@ function checkCard(cardClicked){
     }
     $('#attempts').text(cardCount += 1);
     $('#accuracy').text((Math.floor(((matchCount * 2) / cardCount) * 100)) + '%');
-
     function reset(){ // uncomment to reset individual game stats, currently set for cumulative stats --- cardCount = 0; matchCount = 0;
         $('.back-card').removeAttr('style').addClass('back-card');
         $('#prog-bar-fill').attr('id','#prog-bar-fill');
