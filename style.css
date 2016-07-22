@@ -1,0 +1,123 @@
+html {
+    background: url("images/round-room2.jpg") no-repeat center center fixed;
+    background-size: cover;
+}
+
+body {
+    text-align: center;
+}
+
+.header {
+    height: 10vh;
+    background-color: #ff9900;
+    float:left;
+    padding: 0;
+}
+
+img#logo {
+    float: left;
+    height: 100%;
+}
+
+.stats {
+    height: 90vh;
+    #background-color: #e9e9e9;
+    float: left;
+    box-sizing: border-box;
+    padding: 20px 0 0 20px;
+}
+
+.statsLabel {
+    height: 30px;
+    background-color: #3299bb;
+    color: white;
+    font-size; 20px;
+    position:relative;
+}
+
+.value {
+    height: 50px;
+    margin: 0 0 8% 0;
+    background-color: linen;
+}
+
+button.reset {
+    margin-top: 30px;
+}
+
+.main_area{
+    height: 90vh;
+    width: 100vw;
+    float: left;
+}
+
+#game-area {
+    margin: 0 auto;
+    height: 100%;
+    color: #3299bb;
+    font-size: 160%;
+    padding: 20px;
+    float: left;
+    box-sizing: border-box;
+}
+
+.card {
+    height: 13vw;
+    box-sizing: border-box;
+    position: relative;
+    #margin: 10px;
+}
+
+.front, .back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.card img {
+    #top: 5%;
+    #left: 5%;
+    width: 90%;
+    #position: relative;
+}
+
+/*About Page*/
+body {
+    background-color: transparent;
+}
+
+.about {
+    font-family: arial, sans-serif;
+    text-align: left;
+    margin: 3%;
+    color: white;
+    float: left;
+}
+
+.about h1 {
+    margin: 0.67em 0 0.15em;
+}
+
+.about div#portfolio {
+    background-color: #00E3BB;
+    position:relative;
+    width: 20%;
+    padding: 5px;
+}
+
+#portfolio a {
+    color: white;
+    text-decoration: none;
+}
+
+#portfolio a:hover {
+    color: azure;
+}
+
+@media screen and (max-width: 767px) {
+    .card {
+        /*height: 30vw;*/
+    }
+}
