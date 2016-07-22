@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Blood Alcohol Content Calculator</title>
+    <link type="text/css" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="bacCalc.js"></script>
+</head>
+<body>
+
+<div class=".container-fluid">
+
+    <form class="form-horizontal">
+        <fieldset>
+
+            <legend>Blood Alcohol Content Calculator</legend>
+
+            <!-- Weight -->
+            <div class="form-group">
+                <label class="col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-1 control-label" for="weight">Weight</label>
+                <div class="col-md-4 col-md-offset-0 col-xs-5 col-xs-offset-1">
+                    <select id="weight" name="weight" class="form-control">
+                    </select>
+                </div>
+            </div>
+
+            <!-- Gender -->
+            <div class="form-group">
+                <label class="col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-1 control-label" for="gender">Gender</label>
+                <div class="col-md-4 col-md-offset-0 col-xs-5 col-xs-offset-1">
+                    <select id="gender" name="gender" class="form-control">
+                        <option value="0.73">Male</option>
+                        <option value="0.66">Female</option>
+                        <option value="0.695">Hermaphrodite</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Start Time -->
+            <div class="form-group">
+                <label class="col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-1 control-label" for="start-time">Start Time</label>
+                <div class="col-md-4 col-md-offset-0 col-xs-5 col-xs-offset-1">
+                    <input type="time" id="start-time" name="start-time" class="form-control">
+                    </input>
+                </div>
+            </div>
+
+            <!-- End Time -->
+            <div class="form-group">
+                <label class="col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-1 control-label" for="end-time">End Time</label>
+                <div class="col-md-4 col-md-offset-0 col-xs-5 col-xs-offset-1">
+                    <input type ="time" id="end-time" name="end-time" class="form-control">
+                    </input>
+                </div>
+            </div>
+
+            <div id="drink" class="form-group">
+                <label class="col-md-4 col-md-offset-0 col-xs-11 col-xs-offset-1 control-label" for="amount-drank"></label>
+                <div class="col-md-8">
+                    <div class="form-group row">
+                        <label for="abv" class="col-md-1 col-md-offset-0 col-xs-2 col-xs-offset-1 control-label">Abv%</label>
+                        <div class="col-md-2 col-xs-3 ">
+                            <input id="abv" type="number"class="form-control" step="0.01" min="0" max="100">
+                        </div>
+                        <label for="ounces" class="col-md-1 col-xs-2 control-label">ounces</label>
+                        <div class="col-md-2 col-xs-3">
+                            <input id="ounces" type="number"class="form-control" step="0.01" min="0">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Amount Drank -->
+            <div class="form-group">
+                <label class="col-md-4 col-md-offset-0 col-xs-4 col-xs-offset-1 control-label" for="amount-drank">Amount Drank</label>
+                <div class="col-md-4 col-md-offset-0 col-xs-5 col-xs-offset-1">
+                    <select id="amount-drank" name="amount-drank" class="form-control">
+                    </select>
+                </div>
+            </div>
+
+        </fieldset>
+    </form>
+
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 id="abv-text" class="modal-title"></h4>
+                </div>
+                <div class="modal-body">
+                    <p>The legal limit in all states is 0.08%.</p>
+                    <p>Any amount of alcohol is impaired driving.</p>
+                    <p>This calculation is a reference and should not be used to determine your ability to drive while drinking alcohol.</p>
+                    <p>Never drink and drive.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

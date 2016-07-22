@@ -1,0 +1,230 @@
+body{
+    margin: 0px;
+    padding: 0px;
+}
+#main{
+    margin: 0px;
+    padding: 0px;
+    background-image: url('images/wood-texture.jpg');
+    background-size: cover;
+}
+#stats-container{
+    background: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(20,20,20,1)); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, rgba(0,0,0,0), rgba(20,20,20,1)); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, rgba(0,0,0,0), rgba(20,20,20,1)); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to top, rgba(0,0,0,0), rgba(20,20,20,1)); /* Standard syntax (must be last) */
+    text-align: center;
+    width: 100vw;
+    height:10vh;
+}
+#drunk-meter-graph{
+    height:100%;
+    width: 80%;
+    display:inline-block;
+    text-align: center;
+}
+#prog-bar-full{
+    position: relative;
+    top: 30%;
+    display: inline-block;
+    border: 3px solid white;
+    height:40%;
+    width: 90%;
+    border-radius: 30px;
+    overflow: hidden;
+}
+#prog-bar-fill{
+    width: 0%;
+    height: 100%;
+    background-color: darkred;
+    position: absolute;
+    animation: pulse 2s infinite;
+    opacity: 0.7;
+}
+@-webkit-keyframes pulse {
+    0% {
+        -webkit-box-shadow: 0 0 0 0 rgba(255,0,0, 0.6);
+    }
+    70% {
+        -webkit-box-shadow: 0 0 0 25px rgba(255,0,0, 0);
+    }
+    100% {
+        -webkit-box-shadow: 0 0 0 0 rgba(255,0,0, 0);
+    }
+}
+@keyframes pulse {
+    0% {
+        -moz-box-shadow: 0 0 0 0 rgba(255,0,0, 0.6);
+        box-shadow: 0 0 0 0 rgba(255,0,0, 0.6);
+    }
+    70% {
+        -moz-box-shadow: 0 0 0 25px rgba(255,0,0, 0);
+        box-shadow: 0 0 0 25px rgba(255,0,0, 0);
+    }
+    100% {
+        -moz-box-shadow: 0 0 0 0 rgba(255,0,0, 0);
+        box-shadow: 0 0 0 0 rgba(255,0,0, 0);
+    }
+}
+#game-area-container{
+    height: 80vh;
+    width: 100vw;
+    text-align: center;
+}
+#game-area{
+    border-radius: 10px 10px 0px 0px;
+    width: 90%;
+    height: 100%;
+    margin: 0px 5%;
+}
+#footer{
+    color: white;
+    font-family: 'Patrick Hand', cursive, Arial;
+    letter-spacing: 4px;
+    font-size: 1.5em;
+    height: 10vh;
+    width: 100vw;
+}
+#game-info{
+    border-radius: 20px 20px 0px 0px;
+    text-align: center;
+    height: 100%;
+    width: 90%;
+    background-color: rgb(20,20,20);
+    opacity: .6;
+    margin: 0px 5%;
+}
+#game-info .stats{
+    display: inline-block;
+    margin: 1% 6%;
+    padding: 0px;
+}
+.play-stats{
+    font-weight: bolder;
+    color: red;
+}
+#card-grid{
+    border-spacing: 10px;
+    width: 100%;
+    height: 100%;
+}
+.back-card{
+    background: rgb(20,20,20) url("images/card-back.jpg") no-repeat center;
+    background-size: contain;
+    border-radius: 10px;
+    width: 15%;
+    height: 18%;
+}
+#settings{
+    margin: 0px;
+    position: absolute;
+    display: inline-block;
+    top: 5px;
+    right: 5px;
+    width: 50px;
+    height: 50px;
+    background-image: url('images/settings.png');
+    background-size: cover;
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 15%;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+.modal-content {
+    letter-spacing: 2px;
+    font-family: 'Patrick Hand', cursive, Arial;
+    font-size: 1.5em;
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 40%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close:hover, .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+.modal-header {
+    padding: 2px 16px;
+    background-color: darkslategray;
+    color: white;
+}
+.modal-body {
+    padding: 2px 16px;
+}
+.modal-footer {
+    padding: 2px 16px;
+    background-color: darkslategray;
+    color: white;
+}
+@media only screen and (max-width: 1045px){
+    #game-area{
+        width: 100%;
+        margin: 0%;
+        border-radius: 10px 10px 10px 10px;
+    }
+    #game-info .stats{
+        margin: 0px;
+        width: 100%;
+        float: left;
+    }
+    .stats>p{
+        margin: 1px 0px 0px 20px;
+        text-align: left;
+    }
+    #footer{
+        font-size: 90%;
+        text-align: center;
+    }
+    #card-grid{
+        border-spacing: 2px;
+        width: 100%;
+        height: 100%;
+    }
+    #settings{
+        width: 30px;
+        height: 30px;
+    }
+    .modal-content {
+        width: 80%;
+        font-size: 1em;
+    }
+}
+@media only screen and (max-height: 600px){
+    #game-info .stats {
+        margin: 1% 2%;
+        padding: 0px;
+        width: 29%;
+        display: inline-block;
+    }
+}
