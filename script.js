@@ -15,7 +15,7 @@ var first_card_clicked = null;
 var second_card_clicked = null;
 var card_back1 = null;
 var card_back2 = null;
-var total_possible_matches = 2;
+var total_possible_matches = 9;
 var match_counter = 0;
 var matches = 0;
 var attempts = 0;
@@ -78,7 +78,7 @@ function card_clicked(clicked_card) {
                 card_back2.show();
             };
             //Wait for 2 seconds then run the reset_card function
-            setTimeout(show_card_back, 2000);
+            setTimeout(show_card_back, 1000);
 
             //Reset the values of first_card_clicked and second_card_clicked
             first_card_clicked = null;
