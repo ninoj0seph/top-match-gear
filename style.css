@@ -1,0 +1,120 @@
+* {
+    font-family: "Rancho", "Comic Sans MS", sans-serif;
+    font-size: 105%;
+}
+
+body {
+    background-color: #99CCCC;
+}
+
+header {
+    height: 100px;
+}
+
+h1 {
+    font-size: 225%;
+    color: #330066;
+    margin-left: 10px;
+    display: inline;
+}
+
+ul {
+    list-style: none;
+    display: inline;
+}
+
+li {
+    float: right;
+    margin: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: azure;
+}
+
+a:hover {
+    color: #330066;
+}
+
+#stats {
+    float: left;
+    width: 150px;
+    margin-left: 5px;
+}
+
+.games-played {
+    height: 75px;
+}
+
+.attempts {
+    height: 75px;
+}
+
+.accuracy {
+    height: 75px;
+}
+
+.label {
+    height: 25px;
+    margin-top: 5px;
+    width: 100px;
+}
+
+.value {
+    background-color: #CCFFCC;
+    height: 25px;
+    width: 100px;
+    border-radius: 5px;
+    margin-top: 5px;
+    text-align: center;
+}
+
+.reset {
+    background-color: #FFCC66;
+    border-radius: 10px;
+    width: 100px;
+    margin-top: 15px;
+}
+
+#winner {
+    display: block;
+    text-align: center;
+}
+
+#game-area {
+    margin-left: 150px;
+}
+
+.card {
+    display: inline-block;
+    width: 156px;
+    height: 156px;
+    position: relative;
+    margin: 5px;
+    overflow: hidden;
+}
+
+.front {
+    /*    width: 150px;
+        height: 150px;*/
+}
+
+.back {
+    /*    background-image: url("images/cardback.jpg");
+        width: 150px;
+        height: 150px;*/
+}
+
+img {
+    width: 150px;
+    height: 150px;
+    border: solid azure;
+    border-radius: 5px;
+}
+
+.about {
+    margin: 10px;
+    font-family: "Dosis", sans-serif;
+    font-size: 90%;
+}
