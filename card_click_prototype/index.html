@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+        <script>
+            //jquery script
+            $(document).ready(function () {
+                console.log("doc loaded");
+
+                $(".top").click(function () {
+                    console.log("it clicked");
+                });
+            });
+
+
+        </script>
+        <style>
+            .card{
+                height: 200px;
+                width: 154px;
+                border: 1px solid black;
+                position: relative;
+            }
+            .front{
+                height: inherit;
+                width: inherit;
+                background-color: lightblue;
+                position: absolute;
+            }
+            .back{
+                height: inherit;
+                width: inherit;
+                background-color: saddlebrown;
+                position: absolute;
+            }
+            /*.card:hover .back{*/
+                /*display: none;*/
+            /*}*/
+        </style>
+    </head>
+    <body>
+        <!--  -->
+        <!-- create a card composed of front(on bottom) and back(layered on top)-->
+        <div class="card">
+            <div class="front"></div>
+            <div class="back">
+                <img src="../resources/nps_arrowhead.jpg">
+            </div>
+        </div>
+    </body>
+</html>
