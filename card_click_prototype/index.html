@@ -1,51 +1,93 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
-        <script>
-            //jquery script
-            $(document).ready(function () {
-                console.log("doc loaded");
+<head>
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+    <script>
+        //jquery script
+        $(document).ready(apply_event_handlers);
 
-                $(".top").click(function () {
-                    console.log("it clicked");
-                });
+        function apply_event_handlers(){
+            $(".back").click(function () {
+                $(this).css('display',"none");  //do i want to rework this.
             });
+        }
 
+    </script>
+    <style>
+        .card {
+            height: 200px;
+            width: 154px;
+            border: 1px solid black;
+            position: relative;
+            display:inline-block;
+        }
 
-        </script>
-        <style>
-            .card{
-                height: 200px;
-                width: 154px;
-                border: 1px solid black;
-                position: relative;
-            }
-            .front{
-                height: inherit;
-                width: inherit;
-                background-color: lightblue;
-                position: absolute;
-            }
-            .back{
-                height: inherit;
-                width: inherit;
-                background-color: saddlebrown;
-                position: absolute;
-            }
-            /*.card:hover .back{*/
-                /*display: none;*/
-            /*}*/
-        </style>
-    </head>
-    <body>
-        <!--  -->
-        <!-- create a card composed of front(on bottom) and back(layered on top)-->
-        <div class="card">
-            <div class="front"></div>
-            <div class="back">
-                <img src="../resources/nps_arrowhead.jpg">
-            </div>
-        </div>
-    </body>
+        .front {
+            height: inherit;
+            width: inherit;
+            background-color: lightblue;
+            position: absolute;
+        }
+
+        .back {
+            height: inherit;
+            width: inherit;
+            background-color: saddlebrown;
+            position: absolute;
+        }
+
+    </style>
+</head>
+<body>
+<!--  -->
+<!-- create a card composed of front(on bottom) and back(layered on top)-->
+<div class="card">
+    <div class="front"></div>
+    <div class="back">
+        <img src="../resources/nps_arrowhead.jpg">
+    </div>
+</div>
+<div class="card">
+    <div class="front"></div>
+    <div class="back">
+        <img src="../resources/nps_arrowhead.jpg">
+    </div>
+</div>
+<div class="card">
+    <div class="front"></div>
+    <div class="back">
+        <img src="../resources/nps_arrowhead.jpg">
+    </div>
+</div>
+<div class="card">
+    <div class="front"></div>
+    <div class="back">
+        <img src="../resources/nps_arrowhead.jpg">
+    </div>
+</div>
+<div class="card">
+    <div class="front"></div>
+    <div class="back">
+        <img src="../resources/nps_arrowhead.jpg">
+    </div>
+</div>
+<div class="card">
+    <div class="front"></div>
+    <div class="back">
+        <img src="../resources/nps_arrowhead.jpg">
+    </div>
+</div>
+<div class="card">
+    <div class="front"></div>
+    <div class="back">
+        <img src="../resources/nps_arrowhead.jpg">
+    </div>
+</div>
+<div class="card">
+    <div class="front"></div>
+    <div class="back">
+        <img src="../resources/nps_arrowhead.jpg">
+    </div>
+</div>
+</body>
 </html>
