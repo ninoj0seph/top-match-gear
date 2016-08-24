@@ -1,0 +1,16 @@
+/* */
+.header{
+
+}
+
+.label{
+    height: 30px;
+    width: 50px;
+    background-color: blue;
+    clear: left;
+}
+.value{
+    height: 60px;
+    width: 100px;
+    background-color: green;
+}
