@@ -1,0 +1,21 @@
+.card{
+    background-color: #6a6969;
+    position: relative;
+    height: 300px;
+    width: 250px;
+}
+.front{
+    background-color: red;
+    height: 50%;
+    width: 100%;
+    position: absolute;
+}
+.back{
+    background-color: green;
+    height: 80%;
+    width: 100%;
+    position: absolute;
+}
+.card:hover .front{
+    display: none;
+}
