@@ -6,7 +6,13 @@
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="http://learning-fuze.github.io/memory_match/v0.1/script.js"></script>
     <script>
-
+        $(document).ready(function () {
+            $(".back").click(function(){
+                console.log("Clicked card");
+                var cardBack1 = $(this);
+                cardBack1.toggleClass("hidden");
+            });
+        });
     </script>
 </head>
 <body>
@@ -18,7 +24,7 @@
             <p>METAL GEAR SOLID VI: MATCHING GAME</p>
             <nav>
                 <ul>
-                    <li><a href="#settings">Settings</a></li>
+                    <li>Settings</li>
                     <li><a href="about.html">About</a></li>
                 </ul>
             </nav>
@@ -41,12 +47,21 @@
             <button type="button" class="reset">Reset Game</button>
         </aside>
         <section id="game-area">
-            <div class="card">Position relative
-                <section class="back">
-                    <!-- car back -->
-                </section>
+            <!-- First card set -->
+            <div class="card">
                 <section class="front">
-                    <!-- front image absolute-->
+                    <img src="assets/snake.jpg">
+                </section>
+                <section class="back">
+                    <img src="assets/card_back.png">
+                </section>
+            </div>
+            <div class="card">
+                <section class="front">
+                    <img src="assets/snake.jpg">
+                </section>
+                <section class="back">
+                    <img src="assets/card_back.png">
                 </section>
             </div>
         </section>

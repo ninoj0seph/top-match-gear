@@ -1,21 +1,28 @@
 .card{
     background-color: #6a6969;
     position: relative;
-    height: 300px;
-    width: 250px;
-}
-.front{
-    background-color: red;
-    height: 50%;
-    width: 100%;
-    position: absolute;
+    height: 393px;
+    width: 150px;
+    display: inline-block;
 }
 .back{
-    background-color: green;
-    height: 80%;
+    background-color: #283733;
+    height: 100%;
     width: 100%;
     position: absolute;
 }
-.card:hover .front{
-    display: none;
+.front{
+    background-color: green;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+.hidden{
+    background-color: lavender;
+}
+.front img{
+    width: inherit;
+}
+.back img{
+    width: inherit;
 }
