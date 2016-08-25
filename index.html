@@ -1,45 +1,166 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <!-- link to external stylesheet -->
-        <link rel="stylesheet" type="text/css" href="style.css"/>
-        <!-- Bootstrap link -->
-        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    </head>
-    <body>
-        <!-- header container -->
-        <!-- container holding general game info -->
-        <!-- features to include: game logo, game title, settings link (nothing here yet), about link (link to about.html) -->
-        <header>
-            <h1>National Parks Match Game</h1>
-            <h3>Settings</h3>
-            <h3><a href="about.html">About the author</a></h3>
-        </header>
+<head>
+    <!-- link to external stylesheet -->
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <!-- Bootstrap link -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"
+          type="text/css"/>
+    <!-- link to jquery library -->
+    <link href="https://code.jquery.com/jquery-2.1.4.min.js">
+    <!-- link to Learning Fuze stylesheet -->
+    <link href="http://learning-fuze.github.io/memory_match/v0.1/script.js">
 
-        <!-- stats container -->
-        <!-- container to hold statistics and options for resetting these -->
-        <!-- features to have: games played, attempts (times clicked on cards), accuracy (ratio of correct clicks to total clicks for current game), reset button -->
-        <div id="stats">
-            <div class="games-played">
-                <div class="label">Games Played</div>
-                <div class="value"></div>
+
+</head>
+<body>
+<!-- header container -->
+<!-- container holding general game info -->
+<!-- features to include: game logo, game title, settings link (nothing here yet), about link (link to about.html) -->
+<header>
+    <img src="resources/nps_arrowhead.jpg">
+    <h1>National Parks Match Game</h1>
+    <h5>Settings</h5>
+    <h5><a href="about.html">About the author</a></h5>
+</header>
+
+<!-- stats container -->
+<!-- container to hold statistics and options for resetting these -->
+<!-- features to have: games played, attempts (times clicked on cards), accuracy (ratio of correct clicks to total clicks for current game), reset button -->
+<div id="stats">
+    <div class="games-played">
+        <div class="label">Games Played</div>
+        <div class="value"></div>
+    </div>
+    <div class="attempts">
+        <div class="label">Attempts</div>
+        <div class="value"></div>
+    </div>
+    <div class="accuracy">
+        <div class="label">Accuracy</div>
+        <div class="value"></div>
+    </div>
+    <input type="button" class="reset" value="Reset Game">
+</div>
+<!-- game area container -->
+<!-- the area where the game takes place -->
+<!-- features to include: 18 cards fronts and 18 card backs -->
+<div id="game-area">
+    <!-- create a card composed of front(on bottom) and back(layered on top)-->
+    <div class="row1">
+        <div class="card">
+            <div class="front"></div>
+            <div class="back">
+                <img src="resources/nps_arrowhead.jpg">
             </div>
-            <div class="attempts">
-                <div class="label">Attempts</div>
-                <div class="value"></div>
-            </div>
-            <div class="accuracy">
-                <div class="label">Accuracy</div>
-                <div class="value"></div>
-            </div>
-            <input type="button" class="reset" value="Reset Game">
         </div>
-        <!-- game area container -->
-        <!-- the area where the game takes place -->
-        <!-- features to include: 18 cards fronts and 18 card backs -->
-        <div id="game-area">
-
+        <div class="card">
+            <div class="front"></div>
+            <div class="back">
+                <img src="resources/nps_arrowhead.jpg">
+            </div>
         </div>
-
-    </body>
+        <div class="card">
+            <div class="front"></div>
+            <div class="back">
+                <img src="resources/nps_arrowhead.jpg">
+            </div>
+        </div>
+        <div class="card">
+            <div class="front"></div>
+            <div class="back">
+                <img src="resources/nps_arrowhead.jpg">
+            </div>
+        </div>
+        <div class="card">
+            <div class="front"></div>
+            <div class="back">
+                <img src="resources/nps_arrowhead.jpg">
+            </div>
+        </div>
+        <div class="card">
+            <div class="front"></div>
+            <div class="back">
+                <img src="resources/nps_arrowhead.jpg">
+            </div>
+        </div>
+    </div>
+    <div class="row2">
+        <div class="card">
+            <div class="front"></div>
+            <div class="back">
+                <img src="resources/nps_arrowhead.jpg">
+            </div>
+        </div>
+        <div class="card">
+            <div class="front"></div>
+            <div class="back">
+                <img src="resources/nps_arrowhead.jpg">
+            </div>
+        </div>
+        <div class="card">
+            <div class="front"></div>
+            <div class="back">
+                <img src="resources/nps_arrowhead.jpg">
+            </div>
+        </div>
+        <div class="card">
+            <div class="front"></div>
+            <div class="back">
+                <img src="resources/nps_arrowhead.jpg">
+            </div>
+        </div>
+        <div class="card">
+            <div class="front"></div>
+            <div class="back">
+                <img src="resources/nps_arrowhead.jpg">
+            </div>
+        </div>
+        <div class="card">
+            <div class="front"></div>
+            <div class="back">
+                <img src="resources/nps_arrowhead.jpg">
+            </div>
+        </div>
+    </div>
+    <div class="row3">
+        <div class="card">
+            <div class="front"></div>
+            <div class="back">
+                <img src="resources/nps_arrowhead.jpg">
+            </div>
+        </div>
+        <div class="card">
+            <div class="front"></div>
+            <div class="back">
+                <img src="resources/nps_arrowhead.jpg">
+            </div>
+        </div>
+        <div class="card">
+            <div class="front"></div>
+            <div class="back">
+                <img src="resources/nps_arrowhead.jpg">
+            </div>
+        </div>
+        <div class="card">
+            <div class="front"></div>
+            <div class="back">
+                <img src="resources/nps_arrowhead.jpg">
+            </div>
+        </div>
+        <div class="card">
+            <div class="front"></div>
+            <div class="back">
+                <img src="resources/nps_arrowhead.jpg">
+            </div>
+        </div>
+        <div class="card">
+            <div class="front"></div>
+            <div class="back">
+                <img src="resources/nps_arrowhead.jpg">
+            </div>
+        </div>
+    </div>
+</div>
+</body>
 </html>
