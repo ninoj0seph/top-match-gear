@@ -26,7 +26,17 @@ ul{
 /*/////// MENU STYLING ///////*/
 aside{
     background-color: #89a9a1;
+    width: 10%;
+    float: left;
+}
+#game-area {
+    width: 80%;
     display: inline-block;
+    margin: 5% 0 0 5%;
+}
+main {
+    margin: inherit;
+    padding-left: 2%;
 }
 /*/////// CARD STYLING? ///////*/
 .card{
