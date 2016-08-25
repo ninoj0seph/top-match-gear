@@ -1,6 +1,55 @@
+/* ***********
+Project Name: Memory Match
+File Name: style.html
+Author: Lance Takiguchi
+Date: 08/24/2016 Time: 16:31
+Objective: Provide the CSS style of the game
+ *********** */
+
+/* ****** Nav Bar | All Pages ****** */
 .nav{
     list-style-type: none;
 }
 .nav li{
     display: inline-block;
+}
+
+
+/* ****** Home/Game Page ****** */
+/* **** Card **** */
+.card{
+    height: 175px;
+    width: 125px;
+    position: relative;
+
+    display: inline-block;
+
+    border: black solid 4px;
+    margin: 10px;
+}
+.front{
+    height: 100%;
+    width: 100%;
+    background-color: lightblue;
+
+    position: absolute;
+}
+
+.back{
+    height: 100%;
+    width: 100%;
+    background-color: lightcoral;
+
+    position: absolute;
+}
+.card img{
+    height: 100%;
+    width: 100%;
+
+    position: absolute;
+}
+
+/* ****** About Page ****** */
+#profile_picture{
+    max-height: 400px;
 }

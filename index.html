@@ -9,11 +9,18 @@ Objective: v0.1 Create the basic card flipping of the game
 <!doctype html>
 <html>
 <head>
-    <title>RPG Memory Match</title>
+    <title>Home | RPG Memory Match</title>
 
     <link rel="stylesheet" type="text/css" href="style.css">
-    <script src="memory_script.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $(".back").click(function () {
+                $(this).css("display", "none");
+            });
+        });
+    </script>
 
 </head>
 
@@ -47,11 +54,179 @@ Objective: v0.1 Create the basic card flipping of the game
             <div>  </div>
         </div>
 
-        <button class="reset">
+        <button class="reset"> <!-- TODO: Make the button do something -->
             Reset Game
         </button>
     </div>
 
+    <div> <!-- **** Game Area **** -->
+        <div class="game-area">
+
+            <div class="card">
+                <div class="front">
+                    <img src="images/king_of_hearts.jpeg" alt="king_of_hearts.jpeg">
+                </div>
+                <div class="back">
+                    <img src="images/card_design.png" alt="card_design.png">
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="front">
+                    <img src="images/king_of_hearts.jpeg" alt="king_of_hearts.jpeg">
+                </div>
+                <div class="back">
+                    <img src="images/card_design.png" alt="card_design.png">
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="front">
+                    <img src="images/king_of_hearts.jpeg" alt="king_of_hearts.jpeg">
+                </div>
+                <div class="back">
+                    <img src="images/card_design.png" alt="card_design.png">
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="front">
+                    <img src="images/king_of_hearts.jpeg" alt="king_of_hearts.jpeg">
+                </div>
+                <div class="back">
+                    <img src="images/card_design.png" alt="card_design.png">
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="front">
+                    <img src="images/king_of_hearts.jpeg" alt="king_of_hearts.jpeg">
+                </div>
+                <div class="back">
+                    <img src="images/card_design.png" alt="card_design.png">
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="front">
+                    <img src="images/king_of_hearts.jpeg" alt="king_of_hearts.jpeg">
+                </div>
+                <div class="back">
+                    <img src="images/card_design.png" alt="card_design.png">
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="front">
+                    <img src="images/king_of_hearts.jpeg" alt="king_of_hearts.jpeg">
+                </div>
+                <div class="back">
+                    <img src="images/card_design.png" alt="card_design.png">
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="front">
+                    <img src="images/king_of_hearts.jpeg" alt="king_of_hearts.jpeg">
+                </div>
+                <div class="back">
+                    <img src="images/card_design.png" alt="card_design.png">
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="front">
+                    <img src="images/king_of_hearts.jpeg" alt="king_of_hearts.jpeg">
+                </div>
+                <div class="back">
+                    <img src="images/card_design.png" alt="card_design.png">
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="front">
+                    <img src="images/king_of_hearts.jpeg" alt="king_of_hearts.jpeg">
+                </div>
+                <div class="back">
+                    <img src="images/card_design.png" alt="card_design.png">
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="front">
+                    <img src="images/king_of_hearts.jpeg" alt="king_of_hearts.jpeg">
+                </div>
+                <div class="back">
+                    <img src="images/card_design.png" alt="card_design.png">
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="front">
+                    <img src="images/king_of_hearts.jpeg" alt="king_of_hearts.jpeg">
+                </div>
+                <div class="back">
+                    <img src="images/card_design.png" alt="card_design.png">
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="front">
+                    <img src="images/king_of_hearts.jpeg" alt="king_of_hearts.jpeg">
+                </div>
+                <div class="back">
+                    <img src="images/card_design.png" alt="card_design.png">
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="front">
+                    <img src="images/king_of_hearts.jpeg" alt="king_of_hearts.jpeg">
+                </div>
+                <div class="back">
+                    <img src="images/card_design.png" alt="card_design.png">
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="front">
+                    <img src="images/king_of_hearts.jpeg" alt="king_of_hearts.jpeg">
+                </div>
+                <div class="back">
+                    <img src="images/card_design.png" alt="card_design.png">
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="front">
+                    <img src="images/king_of_hearts.jpeg" alt="king_of_hearts.jpeg">
+                </div>
+                <div class="back">
+                    <img src="images/card_design.png" alt="card_design.png">
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="front">
+                    <img src="images/king_of_hearts.jpeg" alt="king_of_hearts.jpeg">
+                </div>
+                <div class="back">
+                    <img src="images/card_design.png" alt="card_design.png">
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="front">
+                    <img src="images/king_of_hearts.jpeg" alt="king_of_hearts.jpeg">
+                </div>
+                <div class="back">
+                    <img src="images/card_design.png" alt="card_design.png">
+                </div>
+            </div>
+
+
+        </div>
+    </div>
 </body>
 
 </html>
