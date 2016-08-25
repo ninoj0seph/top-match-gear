@@ -28,12 +28,13 @@ header img{
 }
 
 /* styling for the side stats bar*/
+/*do a calc to recalculate the width*/
 #stats {
     position: absolute;
     bottom: 0;
     left: 0;
     height: 85%;
-    width: 20%;
+    width: 200px;
     background-color: #496647;
 }
 
@@ -56,26 +57,34 @@ header img{
 }
 
 /*styling for game area*/
+/*do a calc to recalculate the width*/
 #game-area{
     position: absolute;
     bottom: 0;
     right: 0;
-    height: 80%;
-    width: 90%;
+    height: 85%;
+    width: calc(100% - 200px);
 }
 
 .row{
     position: absolute;
-    /*display: inline-block;*/
-
+    height: 20%;
+    width: 100%;
+    right: 0;
+    top: 0;
+    margin: 10px 0;
+    padding: 0;
+    display: inline-block;
 }
 
 /*styling for cards*/
+/*picture ratio for card is 108 to 140 (w:h)*/
 .card {
-    height: 20%;
-    width: 15%;
-    border: 1px solid black;
     position: relative;
+    height: 100%;
+    /*want width to be set based on the ratios of image*/
+    width: 120px;
+    /*border: 1px solid black;*/
     display:inline-block;
 }
 
@@ -96,6 +105,6 @@ header img{
 
 .back img{
     position: absolute;
-    height: auto;
-    width: auto;
+    height: 100%;
+    width: 100%;
 }
