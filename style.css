@@ -16,7 +16,7 @@ p {
     font-size: 2vw;
     text-align: center;
 }
-ul, a{
+ul, a, span{
     font-family: codecFont;
     text-align: center;
 }
@@ -25,7 +25,7 @@ header{
     background-color: #e0ebe9;
     height: 15vh;
 }
-header > img{
+header img{
     height: 100%;
     width: auto;
 }
