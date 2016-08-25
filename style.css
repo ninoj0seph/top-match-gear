@@ -1,6 +1,25 @@
 body{
     background-image: url("assets/background.jpg");
 }
+@font-face {
+    font-family: metalGear;
+    src: url(assets/custom_fonts/title.TTF);
+}
+@font-face {
+    font-family: codecFont;
+    src: url(assets/custom_fonts/MGS2.ttf);
+}
+p {
+    font-family: metalGear;
+    color: #72c5b0;
+    text-shadow: 2px 2px black;
+    font-size: 2vw;
+    text-align: center;
+}
+ul, a{
+    font-family: codecFont;
+    text-align: center;
+}
 /*/////// HEADER STYLING ///////*/
 header{
     background-color: #e0ebe9;
@@ -11,7 +30,6 @@ header > img{
     width: auto;
 }
 header > div{
-    text-align: center;
     display: inline-block;
     width: 90%;
     position: absolute;
@@ -28,6 +46,9 @@ aside{
     background-color: #89a9a1;
     width: 10%;
     float: left;
+}
+p.label{
+    font-size: 1rem;
 }
 #game-area {
     width: 80%;
