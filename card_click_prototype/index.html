@@ -1,18 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
-    <script>
-        //jquery script
-        $(document).ready(apply_event_handlers);
-
-        function apply_event_handlers(){
-            $(".back").click(function () {
-                $(this).css('display',"none");  //do i want to rework this.
-            });
-        }
-
-    </script>
     <style>
         .card {
             height: 200px;
@@ -36,58 +24,74 @@
             position: absolute;
         }
 
+        .main-content{
+            display: inline-block;
+            position: relative;
+            background-color: aquamarine;
+            height: 606px;
+            width: 936px;
+        }
+
     </style>
+
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+    <script>
+        //jquery script
+
+        $(document).ready(apply_event_handlers);
+
+        function createDynamicDivs(){
+            //dynamically create 18 card divs with front and back
+            var cards_to_create = 18;
+
+//            var newDiv = $("<div>").addClass("card");
+//            $("body").append(newDiv);
+
+
+            for(var i=0; i < cards_to_create; i++){
+                var card_div = $("<div>").addClass("card");
+                var cardFront_div = $("<div>").addClass("front");
+                var cardBack_div = $("<div>").addClass("back");
+                var logo = $("<img>").attr('src', "../resources/nps_arrowhead.jpg"); //creates
+                cardBack_div.append(logo);                          //adds logo to the cardBack
+                card_div.append(cardFront_div, cardBack_div);
+                $("div.main-content").append(card_div);
+
+                console.log("something's happening here");
+            }
+        }
+
+
+
+
+        function apply_event_handlers(){
+            $(".back").click(function () {
+                $(this).css('display',"none");  //do i want to rework this.
+            });
+
+            createDynamicDivs();
+        }
+
+
+
+    </script>
+
 </head>
 <body>
 <!--  -->
 <!-- create a card composed of front(on bottom) and back(layered on top)-->
-<div class="card">
-    <div class="front"></div>
-    <div class="back">
-        <img src="../resources/nps_arrowhead.jpg">
-    </div>
-</div>
-<div class="card">
-    <div class="front"></div>
-    <div class="back">
-        <img src="../resources/nps_arrowhead.jpg">
-    </div>
-</div>
-<div class="card">
-    <div class="front"></div>
-    <div class="back">
-        <img src="../resources/nps_arrowhead.jpg">
-    </div>
-</div>
-<div class="card">
-    <div class="front"></div>
-    <div class="back">
-        <img src="../resources/nps_arrowhead.jpg">
-    </div>
-</div>
-<div class="card">
-    <div class="front"></div>
-    <div class="back">
-        <img src="../resources/nps_arrowhead.jpg">
-    </div>
-</div>
-<div class="card">
-    <div class="front"></div>
-    <div class="back">
-        <img src="../resources/nps_arrowhead.jpg">
-    </div>
-</div>
-<div class="card">
-    <div class="front"></div>
-    <div class="back">
-        <img src="../resources/nps_arrowhead.jpg">
-    </div>
-</div>
-<div class="card">
-    <div class="front"></div>
-    <div class="back">
-        <img src="../resources/nps_arrowhead.jpg">
-    </div>
-</div>
+<!--<div class="card">-->
+    <!--<div class="front"></div>-->
+    <!--<div class="back">-->
+        <!--<img src="../resources/nps_arrowhead.jpg">-->
+    <!--</div>-->
+<!--</div>-->
+<!--<div class="card">-->
+    <!--<div class="front"></div>-->
+    <!--<div class="back">-->
+        <!--<img src="../resources/nps_arrowhead.jpg">-->
+    <!--</div>-->
+<!--</div>-->
+<div class="main-content"></div>
 </body>
 </html>
