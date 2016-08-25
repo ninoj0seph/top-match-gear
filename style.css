@@ -53,3 +53,6 @@ Objective: Provide the CSS style of the game
 #profile_picture{
     max-height: 400px;
 }
+.about_p{
+    text-indent: 50px;
+}
