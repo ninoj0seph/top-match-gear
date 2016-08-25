@@ -1,86 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Match Kombat</title>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <meta charset="utf-8">
+    <title>Mortal Kombat - memory matching game</title>
+    <meta name="description" content="Memory card matching game based on the Mortal Kombat series">
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css">
     <script>
+        $(document).ready(function () {
 
+            $(".cardBack").click(function () {
+                $(this).fadeOut(1000, function () {
+                    $(this).fadeIn(1000);
+                });
+            });
+        });
     </script>
-    <style>
-        body {
-            font-size: 0;
-            background-color: black;
-        }
-        #header_container {
-            width: 100%;
-            height: 200px;
-            background-color: black;
-            overflow: auto;
-            display: inline-block;
-        }
-
-        #header_container p {
-            text-align: justify;
-            color: orangered;
-            font-size: 150px;
-            margin: 0;
-            display: inline-block;
-            vertical-align: top;
-        }
-
-        #stats_container {
-            width: 17%;
-            height: 80vh;
-            background-color: black;
-            position: relative;
-            display: inline-block;
-            font-size: 0;
-        }
-
-        #game_area {
-            background-color: gray;
-            position: relative;
-            height: 80vh;
-            display: inline-block;
-            width: 83%;
-            font-size: 0;
-            background: url("images/backgrounds/bridge.jpg") no-repeat;
-            background-size: 80%;
-        }
-
-        .card {
-            width: 220px;
-            height: 300px;
-            display: inline-block;
-            position: relative;
-        }
-
-        .cardBack {
-            background: url("images/cards/cardback.png");
-            position: absolute;
-
-        }
-
-        .cardFace {
-            background: url("images/cards/cyberreptile.jpg");
-            position: absolute;
-
-        }
-    </style>
 </head>
 <body>
-    <div id="header_container">
-        <img src="images/logo.jpg" height="195px"><p>Kard Kombat</p>
-    </div>
-<div id="stats_container">
-
+<div id="banner">
+    <img src="images/logo.png" alt="Mortal Kombat" width="200" height="200">
+    <h1>Mortal Kombat</h1>
 </div>
-<div id="game_area">
-    <div class="card">
-        <div class="cardBack"></div>
-        <div class="cardFace"></div>
+
+<div id="spacer">
+    <img src="images/logo.png" alt="Mortal Kombat" width="200" height="200">
+    <h1>Mortal Kombat</h1>
+</div>
+
+<div id="main">
+
+    <div id="navbar">
+        <ul>
+            <li class="changeBackground"><a href="index.html">Home</a></li>
+            <li class="changeBackground"><a href="info.html">Info</a></li>
+            <li class="changeBackground"><a href="about.html">About</a></li>
+        </ul>
     </div>
+
+    <div id="content">
+
+        <div class="card">
+            <div class="cardFace2"></div>
+            <div class="cardBack"></div>
+        </div>
+        <div class="card">
+            <div class="cardFace"></div>
+            <div class="cardBack"></div>
+        </div>
+        <div class="card">
+            <div class="cardFace"></div>
+            <div class="cardBack"></div>
+        </div>
+        <div class="card">
+            <div class="cardFace2"></div>
+            <div class="cardBack"></div>
+        </div>
+        <div class="card">
+            <div class="cardFace3"></div>
+            <div class="cardBack"></div>
+        </div>
+        <div class="card">
+            <div class="cardFace5"></div>
+            <div class="cardBack"></div>
+        </div>
+        <div class="card">
+            <div class="cardFace6"></div>
+            <div class="cardBack"></div>
+        </div>
+        <div class="card">
+            <div class="cardFace3"></div>
+            <div class="cardBack"></div>
+        </div>
+        <div class="card">
+            <div class="cardFace4"></div>
+            <div class="cardBack"></div>
+        </div>
+        <div class="card">
+            <div class="cardFace5"></div>
+            <div class="cardBack"></div>
+        </div>
+        <div class="card">
+            <div class="cardFace9"></div>
+            <div class="cardBack"></div>
+        </div>
+        <div class="card">
+            <div class="cardFace6"></div>
+            <div class="cardBack"></div>
+        </div>
+        <div class="card">
+            <div class="cardFace8"></div>
+            <div class="cardBack"></div>
+        </div>
+        <div class="card">
+            <div class="cardFace9"></div>
+            <div class="cardBack"></div>
+        </div>
+        <div class="card">
+            <div class="cardFace8"></div>
+            <div class="cardBack"></div>
+        </div>
+        <div class="card">
+            <div class="cardFace7"></div>
+            <div class="cardBack"></div>
+        </div>
+        <div class="card">
+            <div class="cardFace7"></div>
+            <div class="cardBack"></div>
+        </div>
+        <div class="card">
+            <div class="cardFace4"></div>
+            <div class="cardBack"></div>
+        </div>
+
+
+    </div>
+
+    <div id="sidebar">
+        <h2>Stats</h2>
+
+        <h3>Times Played</h3>
+
+        <p>
+            <br>
+
+            Code here <br> to calculate times played</p>
+        <h3>Number of tries</h3>
+        <p>
+            <br>
+            Code here <br> to calculate number of tries</p>
+        <h3>Accuracy</h3>
+        <p>
+            <br>
+            Code here <br> to calculate accuracy</p>
+        <h3>Start / Reset</h3>
+        <p>
+            <br>
+            Code here <br> for start and reset buttons</p>
+        <h3>Razzle Dazzle</h3>
+        <p>
+            <br>
+            <iframe width="267" height="150" src="https://www.youtube.com/embed/jtiRuYoJic0?rel=0&amp;controls=0&amp;showinfo=0?rel=0&autoplay=1" frameborder="0" allowfullscreen></iframe>
+        </p>
+    </div>
+</div>
+
+<div id="footer">
+    <p>Some type of text here to respond to the user actions</p>
 </div>
 </body>
 </html>
