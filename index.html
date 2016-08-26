@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Match Game - v0.1</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+    <script src="lf_script_mem_match.js"></script>
+    <script>
+
+        $(document).ready(function () {
+
+            $(".card").addClass("card-back").click(function () {
+                $(this).toggleClass("card-back")
+            });
+        });
+
+    </script>
+</head>
+<body>
+<header>
+    <div class="header_links">
+        <p><a href="#">Setting1</a></p>
+        <p><a href="#">Setting2</a></p>
+        <p><a href="#">Setting3</a></p>
+        <p><a href="about.html">About me</a></p>
+    </div>
+    <div class="game_title">
+        <h2>Game title Placeholder text</h2>
+    </div>
+</header>
+<section class="sidebar">
+    <div class="games-played">
+        <p class="label">Games Played </p>
+        <div class="value"></div>
+    </div>
+    <div class="attempts">
+        <p class="label">Attempts</p>
+        <div class="value"></div>
+    </div>
+    <div class="accuracy">
+        <p class="label">Accuracy</p>
+        <div class="value"></div>
+    </div>
+<button class="reset" type="button">Reset Game</button>
+</section>
+
+<div class="game-area">
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+</div>
+
+<div class="game-area">
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+</div>
+
+<div class="game-area">
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+</div>
+
+</body>
+</html>
