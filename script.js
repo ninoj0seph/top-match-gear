@@ -11,10 +11,11 @@ var first_card_clicked = null,
 
 function card_clicked() {
 	var $this = $(this);
-	if ($this.hasClass('disabled') || $this.hasClass('matched')) return;
+	if ($this.hasClass('clicked') || $this.hasClass('disabled') || $this.hasClass('matched')) return;
 
-	$this.find('.back').hide();
-	$this.addClass('disabled');
+	// $this.find('.back').hide();
+	$this.addClass('clicked');
+	// $this.addClass('disabled');
 	if (first_card_clicked === null) {
 		first_card_clicked = $this.find('img');
 		return;
@@ -36,8 +37,10 @@ function card_clicked() {
 			$('.card').addClass('disabled');
 			setTimeout(function() {
 				$('.card').removeClass('disabled');
-				first_card_clicked.closest('.card').find('.back').show();
-				second_card_clicked.closest('.card').find('.back').show();
+				// first_card_clicked.closest('.card').find('.back').show();
+				// second_card_clicked.closest('.card').find('.back').show();
+				first_card_clicked.closest('.card').removeClass('clicked');
+				second_card_clicked.closest('.card').removeClass('clicked');
 				first_card_clicked = null;
 				second_card_clicked = null;
 			}, 1000);
@@ -63,7 +66,7 @@ function reset_stats() {
 function game_reset() {
 	reset_stats();
 	display_stats();
-	$('.card').removeClass('matched').removeClass('disabled');
+	$('.card').removeClass('matched').removeClass('disabled').removeClass('clicked');
 	$('.back').show();
 	$('.win-text').remove();
 	first_card_clicked = null;

@@ -24,6 +24,7 @@ header {
 .logo img {
 	width: 149px;
 	height: 84px;
+	border-radius: 20px;
 }
 
 .title:before,
@@ -36,12 +37,15 @@ header {
 
 .title, .links {
 	margin: 0;
-	/*line-height: 84px;*/
 	vertical-align: middle;
 	height: 100%;
 	position: relative;
 	bottom: 50%;
 	text-align: center;
+}
+
+.title {
+	font-family: 'Helvetica', sans-serif;
 }
 
 .links {
@@ -78,27 +82,45 @@ section {
   width: 100%;
   height: 100%;
   overflow: hidden;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-transition: -webkit-transform 0.3s;
+          transition: transform 0.3s;
 }
 
 .back {
-  background-color: dodgerblue;
+  background-color: #0253a4;
 }
 
 .front {
   background-color: black;
   text-align: center;
+	-webkit-transform: rotateY(-180deg);
+        transform: rotateY(-180deg);
 }
+
+.card.clicked .front {
+	-webkit-transform: rotateY(0);
+          transform: rotateY(0);
+}
+
+.card.clicked .back {
+	  -webkit-transform: rotateY(-180deg);
+          transform: rotateY(-180deg);
+}
+
 
 /* Centering image in card div */
 .front:before,
-.front_before {
+.back:before {
+	display: inline-block;
   content: "";
-  display: inline-block;
   height: 100%;
   vertical-align: middle;
 }
 
-.front img {
+.front img,
+.back img {
 	vertical-align: middle;
 }
 /* End of centering image */
