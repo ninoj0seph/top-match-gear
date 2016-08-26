@@ -11,7 +11,7 @@ Prompt: https://github.com/Learning-Fuze/memory_match/tree/v0.5
 <!doctype html>
 <html>
 <head>
-    <title>Home | RPG Memory Match</title>
+    <title>Home | MapleStory Memory Match</title>
 
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
@@ -42,7 +42,15 @@ Prompt: https://github.com/Learning-Fuze/memory_match/tree/v0.5
                     if($(first_card_clicked).parent().find(".front img").attr("src") == $(second_card_clicked).parent().find(".front img").attr("src")){
                         console.log("The 2nd card, my life is complete");
 
+                        //** Variable Setting
                         match_counter++;
+                        first_card_clicked = null;
+                        second_card_clicked = null;
+
+                        //**Check if the GAME is OVER
+                        if(match_counter == total_possible_matches){
+                            $("#communication_display").text("YOU WIN!");
+                        }
 
                     }else{
                         console.log("1st & 2nd just aren't the same");
@@ -64,7 +72,7 @@ Prompt: https://github.com/Learning-Fuze/memory_match/tree/v0.5
 
 <body>
     <header>
-        <h1>RPG Memory Match</h1>
+        <h1>MapleStory Memory Match</h1>
 
         <!-- **** Nav Bar **** -->
         <ul class="nav">
@@ -97,46 +105,47 @@ Prompt: https://github.com/Learning-Fuze/memory_match/tree/v0.5
         </button>
     </div>
 
-    <div> <!-- **** Game Area **** -->
-        <div class="game-area">
+     <!-- **** Game Area **** -->
+    <div class="game-area">
 
-            <div class="card">
-                <div class="front">
-                    <img src="images/king_of_hearts.jpeg" alt="king_of_hearts.jpeg">
-                </div>
-                <div class="back">
-                    <img src="images/card_design.png" alt="card_design.png">
-                </div>
+        <div id="communication_display">  </div>
+
+        <div class="card">
+            <div class="front">
+                <img src="images/ms_sword.png" alt="ms_sword.png">
             </div>
-
-            <div class="card">
-                <div class="front">
-                    <img src="images/king_of_hearts.jpeg" alt="king_of_hearts.jpeg">
-                </div>
-                <div class="back">
-                    <img src="images/card_design.png" alt="card_design.png">
-                </div>
+            <div class="back">
+                <img src="images/ms_leaf" alt="ms_leaf">
             </div>
-
-            <div class="card">
-                <div class="front">
-                    <img src="images/king_of_hearts.jpeg" alt="king_of_hearts.jpeg">
-                </div>
-                <div class="back">
-                    <img src="images/card_design.png" alt="card_design.png">
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="front">
-                    <img src="images/king_of_hearts.jpeg" alt="king_of_hearts.jpeg">
-                </div>
-                <div class="back">
-                    <img src="images/card_design.png" alt="card_design.png">
-                </div>
-            </div>
-
         </div>
+
+        <div class="card">
+            <div class="front">
+                <img src="images/ms_sword.png" alt="ms_sword.png">
+            </div>
+            <div class="back">
+                <img src="images/ms_leaf" alt="ms_leaf">
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="front">
+                <img src="images/ms_shield.png" alt="ms_shield.png">
+            </div>
+            <div class="back">
+                <img src="images/ms_leaf" alt="ms_leaf">
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="front">
+                <img src="images/ms_shield.png" alt="ms_shield.png">
+            </div>
+            <div class="back">
+                <img src="images/ms_leaf" alt="ms_leaf">
+            </div>
+        </div>
+
     </div>
 </body>
 
