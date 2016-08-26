@@ -14,14 +14,14 @@ body{
     src: url(assets/custom_fonts/MGS2.ttf);
 }
 p {
-    font-family: metalGear;
+    font-family: metalGear, sans-serif;
     color: #72c5b0;
     text-shadow: 2px 2px black;
     font-size: 3vw;
     text-align: center;
 }
 ul, a, span{
-    font-family: codecFont;
+    font-family: codecFont, sans-serif;
     text-align: center;
 }
 /*/////// HEADER STYLING ///////*/
