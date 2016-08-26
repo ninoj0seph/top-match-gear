@@ -2,10 +2,9 @@
 Project Name: Memory Match
 File Name: index.html
 Author: Lance Takiguchi
-Date: 08/24/2016 Time: 14:57
+Date: 08/24/2016 Time: 14:57 - 8/26/16 09:48
 Objective: v0.1 Create the basic card flipping of the game
 Prompt: https://github.com/Learning-Fuze/memory_match/tree/v0.5
-TODO: Work on v0.5 logic one at a time
  *********** -->
 
 
@@ -18,25 +17,42 @@ TODO: Work on v0.5 logic one at a time
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 
     <script>
-        var fist_card_clicked = null;
-        var second_card_slicked = null;
+        var first_card_clicked = null;
+        var second_card_clicked = null;
         var total_possible_matches = 2;
-
-        //TODO: Delete
-//        var card_clicked = function(){
-//            $(".card").click(display_front
-//            );
-//        };
-//
-//        var display_front = function(){
-//            $(".back").toggle(
-//                    $(this).css("display", "none"));
-//        };
+        var match_counter = 0;
 
         var card_clicked = function() {
+            //** Display card front
             $(".back").click(function () {
                 $(this).css("display", "none");
+
+                //** Checking if first_card_clicked already
+                if(first_card_clicked == null) {
+                    // TODO: Delete console.log("Aww, your first click :D");
+                    first_card_clicked = this;
+                    //TODO: Test & see if this code is needed $(this).addClass(".first_flag");
+                    //TODO: DELETE console.log("As the first, I have got this: ", first_card_clicked)
+
+                }else{ //**AKA: Handling the 2nd click
+                    //TODO:DELETE console.log("I'm not first...")
+                    second_card_clicked = this; //TODO: This variable is not necessary
+                    //TODO: DELETE console.log("2nd card looks like this: ", second_card_clicked);
+                    //** Checking if the cards are the same
+                    if($(first_card_clicked).parent().find(".front img").attr("src") == $(second_card_clicked).parent().find(".front img").attr("src")){
+                        console.log("The 2nd card, my life is complete");
+
+                        match_counter++;
+
+                    }else{
+                        console.log("1st & 2nd just aren't the same");
+                    }
+                }
+
+
             });
+
+
         };
 
         // ** Run the JS **

@@ -48,6 +48,10 @@ Objective: Provide the CSS style of the game
 
     position: absolute;
 }
+/* ** Gameplay ** */
+.first_flag{
+    border-color: gold;
+}
 
 /* ****** About Page ****** */
 #profile_picture{
