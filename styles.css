@@ -136,8 +136,8 @@ div#footer p {
   margin: 5px;
 }
 
-.cardFace {
-  background: url("images/cards/freddykrueger.jpg");
+.front {
+  background: url("images/cards/cardback.png");
   background-size: 150px 200px;
   width: 150px;
   height: 200px;
@@ -145,80 +145,8 @@ div#footer p {
 
 }
 
-.cardFace2 {
-  background: url("images/cards/reptile.jpg");
-  background-size: 150px 200px;
-  width: 150px;
-  height: 200px;
-  position: absolute;
-
-}
-
-.cardFace3 {
-  background: url("images/cards/kitana.jpg");
-  background-size: 150px 200px;
-  width: 150px;
-  height: 200px;
-  position: absolute;
-
-}
-
-.cardFace4 {
-  background: url("images/cards/mileena.jpg");
-  background-size: 150px 200px;
-  width: 150px;
-  height: 200px;
-  position: absolute;
-
-}
-
-.cardFace5 {
-  background: url("images/cards/scorpion.jpg");
-  background-size: 150px 200px;
-  width: 150px;
-  height: 200px;
-  position: absolute;
-
-}
-
-.cardFace6 {
-  background: url("images/cards/subzero.jpg");
-  background-size: 150px 200px;
-  width: 150px;
-  height: 200px;
-  position: absolute;
-
-}
-
-.cardFace7 {
-  background: url("images/cards/sheeva.jpg");
-  background-size: 150px 200px;
-  width: 150px;
-  height: 200px;
-  position: absolute;
-
-}
-
-.cardFace8 {
-  background: url("images/cards/kratos.jpg");
-  background-size: 150px 200px;
-  width: 150px;
-  height: 200px;
-  position: absolute;
-
-}
-
-.cardFace9 {
-  background: url("images/cards/nightwolf.jpg");
-  background-size: 150px 200px;
-  width: 150px;
-  height: 200px;
-  position: absolute;
-
-}
-
-.cardBack {
-  background: url("images/cards/cardback1.png");
+.back {
+  #background: url("images/cards/kratos.jpg");
   background-size: 150px 200px;
   width: 150px;
   height: 200px;

@@ -5,14 +5,42 @@
     <title>Mortal Kombat - memory matching game</title>
     <meta name="description" content="Memory card matching game based on the Mortal Kombat series">
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <script>
-        $(document).ready(function () {
+        var cardArray = [1, 2]; //, 3, 4, 5, 6, 7, 8, 9];
+        cardArray = cardArray.concat(cardArray);
+        console.log(cardArray);
 
-            $(".cardBack").click(function () {
-                $(this).fadeOut(1000, function () {
-                    $(this).fadeIn(1000);
-                });
+        var first_card_clicked = null;
+        var second_card_clicked = null;
+        var total_possible_matches = 2;
+        var match_counter = 0;
+
+        function randomImg(){
+
+            $('.back').each(function(){
+                var randomNumber = Math.ceil(Math.random() * cardArray.length);
+                $(this).css('background', 'url(' + 'images/cards/' + randomNumber + '.jpg' + ')');
+                $(this).css('background-size', '150px 200px');
+                //cardArray.splice(randomNumber, 1);
+                console.log("RandomNumber is: ", randomNumber);
+            });
+        }
+
+        $(document).ready(function (){
+
+
+                randomImg();
+
+            $(".card").flip();
+            $(".front").click(function () {
+                console.log("card flipped");
+                if(first_card_clicked == null){
+                    first_card_clicked = 1;
+                    console.log(first_card_clicked);
+                }else
+                    console.log("second card");
             });
         });
     </script>
@@ -41,76 +69,20 @@
     <div id="content">
 
         <div class="card">
-            <div class="cardFace2"></div>
-            <div class="cardBack"></div>
+            <div class="back"></div>
+            <div class="front"></div>
         </div>
         <div class="card">
-            <div class="cardFace"></div>
-            <div class="cardBack"></div>
+            <div class="back"></div>
+            <div class="front"></div>
         </div>
         <div class="card">
-            <div class="cardFace"></div>
-            <div class="cardBack"></div>
+            <div class="back"></div>
+            <div class="front"></div>
         </div>
         <div class="card">
-            <div class="cardFace2"></div>
-            <div class="cardBack"></div>
-        </div>
-        <div class="card">
-            <div class="cardFace3"></div>
-            <div class="cardBack"></div>
-        </div>
-        <div class="card">
-            <div class="cardFace5"></div>
-            <div class="cardBack"></div>
-        </div>
-        <div class="card">
-            <div class="cardFace6"></div>
-            <div class="cardBack"></div>
-        </div>
-        <div class="card">
-            <div class="cardFace3"></div>
-            <div class="cardBack"></div>
-        </div>
-        <div class="card">
-            <div class="cardFace4"></div>
-            <div class="cardBack"></div>
-        </div>
-        <div class="card">
-            <div class="cardFace5"></div>
-            <div class="cardBack"></div>
-        </div>
-        <div class="card">
-            <div class="cardFace9"></div>
-            <div class="cardBack"></div>
-        </div>
-        <div class="card">
-            <div class="cardFace6"></div>
-            <div class="cardBack"></div>
-        </div>
-        <div class="card">
-            <div class="cardFace8"></div>
-            <div class="cardBack"></div>
-        </div>
-        <div class="card">
-            <div class="cardFace9"></div>
-            <div class="cardBack"></div>
-        </div>
-        <div class="card">
-            <div class="cardFace8"></div>
-            <div class="cardBack"></div>
-        </div>
-        <div class="card">
-            <div class="cardFace7"></div>
-            <div class="cardBack"></div>
-        </div>
-        <div class="card">
-            <div class="cardFace7"></div>
-            <div class="cardBack"></div>
-        </div>
-        <div class="card">
-            <div class="cardFace4"></div>
-            <div class="cardBack"></div>
+            <div class="back"></div>
+            <div class="front"></div>
         </div>
 
 
@@ -140,7 +112,9 @@
         <h3>Razzle Dazzle</h3>
         <p>
             <br>
-            <iframe width="267" height="150" src="https://www.youtube.com/embed/jtiRuYoJic0?rel=0&amp;controls=0&amp;showinfo=0?rel=0&autoplay=1" frameborder="0" allowfullscreen></iframe>
+            <iframe width="267" height="150"
+                    src="https://www.youtube.com/embed/jtiRuYoJic0?rel=0&amp;controls=0&amp;showinfo=0?rel=0&autoplay=1"
+                    frameborder="0" allowfullscreen></iframe>
         </p>
     </div>
 </div>
