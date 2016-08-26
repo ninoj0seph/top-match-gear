@@ -53,6 +53,7 @@ header img{
 }
 
 #stats input{
+    display: block;
     margin: 10px auto;
 }
 
@@ -64,6 +65,7 @@ header img{
     right: 0;
     height: 85%;
     width: calc(100% - 200px);
+    padding: 10px;
     background-color: #99542c;
 }
 
@@ -73,7 +75,7 @@ header img{
     width: 100%;
     right: 0;
     top: 0;
-    margin: 10px 0;
+    margin: 0;
     padding: 0;
     display: inline-block;
 }
