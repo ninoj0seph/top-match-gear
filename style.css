@@ -9,9 +9,7 @@ header {
     border: 1px dashed red;
     width: 100%;
     text-align: center;
-
     color: black;
-
 }
 
 .header_links {
@@ -20,7 +18,6 @@ header {
 
 .header_links p {
     display: inline-block;
-
     width: 20vw;
 
 }
@@ -41,42 +38,84 @@ body {
 }
 /*------------------------------ CARD SPECS BELOW --------------------------*/
 
-.card {
+div .card {
     border: 1px solid black;
     display: inline-block;
-    /*margin: 15px;*/
-    /*padding-top: 10px;*/
     width: 15%;
     height: 100%;
     position: relative;
     border-radius: 5%;
-
-}
-
-.card-front{
-    background-color: lightsteelblue;
-}
-
-.card-back{
-   background-image: url("images/cardBack.png");
     background-color: black;
+    background-image: url("images/cardBack.png");
 }
 
-.card-back {
+
+.card,
+.back {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain;
 }
 
-.card img {
-    position: absolute;
+.card#row1_1.front,
+.card#row3_1.front {
+    background-image: url("images/cal_no_face.jpg");
+    background-color: rgb(235, 224, 196);
+}
+
+.card#row2_1.front,
+.card#row1_3.front {
+    background-image: url("images/hob_stuffed.PNG");
+    background-color: white;
+}
+
+.card#row3_4.front,
+.card#row1_2.front {
+    background-image: url("images/cal_hob_face.PNG");
+    background-color: white;
+}
+
+.card#row1_4.front,
+.card#row2_5.front {
+    background-image: url("images/cal_darts.png");
+    background-color: white;
+}
+
+.card#row1_5.front,
+.card#row3_2.front {
+    background-image: url("images/hob_party.PNG");
+    background-color: white;
+}
+
+.card#row1_6.front,
+.card#row2_3.front {
+    background-image: url("images/cal_hob_hug.PNG");
+    background-color: white;
+}
+
+.card#row2_4.front,
+.card#row2_2.front {
+    background-image: url("images/cal_face.PNG");
+    background-color: white;
+}
+
+.card#row2_6.front,
+.card#row3_6.front {
+    background-image: url("images/hob_no_face.jpg");
+    background-color: rgb(235, 224, 196);
+}
+
+.card#row3_3.front,
+.card#row3_5.front {
+    background-image: url("images/hob_darts.jpg");
+    background-color: white;
 }
 
 
 /*------------------------------ END  CARD SPECS --------------------------*/
 
 .game-area {
-   border: 1px dashed black;
+    /*border: 1px dashed black;*/
     height: 20vh;
     width: 50%;
     text-align: center;

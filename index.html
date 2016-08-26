@@ -10,10 +10,20 @@
 
         $(document).ready(function () {
 
-            $(".card").addClass("card-back").click(function () {
-                $(this).toggleClass("card-back")
-            });
+           $(".card").addClass(".front").click(function () {
+              $(this).toggleClass("front");
+               console.log("front clicked");
+
+           });
+
         });
+
+        $(document).ready(function () {
+        $("#reset").click(function() {
+            location.reload(true);
+        });
+        });
+
 
     </script>
 </head>
@@ -42,7 +52,7 @@
         <p class="label">Accuracy</p>
         <div class="value"></div>
     </div>
-<button class="reset" type="button">Reset Game</button>
+<button id ="reset" type="button">Reset Game</button>
 </section>
 
 <div class="game-area">
@@ -63,6 +73,10 @@
         <img class="back">
     </div>
     <div class="card" id="row1_5">
+        <img class="front">
+        <img class="back">
+    </div>
+    <div class="card" id="row1_6">
         <img class="front">
         <img class="back">
     </div>
@@ -89,6 +103,10 @@
         <img class="front">
         <img class="back">
     </div>
+    <div class="card" id="row2_6">
+        <img class="front">
+        <img class="back">
+    </div>
 </div>
 
 <div class="game-area">
@@ -109,6 +127,10 @@
         <img class="back">
     </div>
     <div class="card" id="row3_5">
+        <img class="front">
+        <img class="back">
+    </div>
+    <div class="card" id="row3_6">
         <img class="front">
         <img class="back">
     </div>
