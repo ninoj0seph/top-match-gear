@@ -32,15 +32,12 @@ Prompt: https://github.com/Learning-Fuze/memory_match/tree/v0.5
 
                 //** Checking if first_card_clicked already
                 if(first_card_clicked == null) {
-                    // TODO: Delete console.log("Aww, your first click :D");
                     first_card_clicked = this;
-                    //TODO: Test & see if this code is needed $(this).addClass(".first_flag");
-                    //TODO: DELETE console.log("As the first, I have got this: ", first_card_clicked)
 
                 }else{ //**AKA: Handling the 2nd click
-                    //TODO:DELETE console.log("I'm not first...")
-                    second_card_clicked = this; //TODO: This variable is not necessary
-                    //TODO: DELETE console.log("2nd card looks like this: ", second_card_clicked);
+
+                    second_card_clicked = this;
+
                     //** Checking if the cards are the same
                     if($(first_card_clicked).parent().find(".front img").attr("src") == $(second_card_clicked).parent().find(".front img").attr("src")){
                         console.log("The 2nd card, my life is complete");
@@ -71,16 +68,11 @@ Prompt: https://github.com/Learning-Fuze/memory_match/tree/v0.5
                         setTimeout(turn_onto_back,TIME_DELAY_AMOUNT);
                     }
                 }
-
-
             });
-
-
         };
 
         // ** Run the JS **
-        $(document).ready( card_clicked
-        );
+        $(document).ready(card_clicked);
     </script>
 
 </head>
