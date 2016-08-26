@@ -148,3 +148,11 @@ header img{
 .side_nav ul{
     color: white;
 }
+
+.main-content img{
+    height: 150px;
+    width: auto;
+    float: right;
+    display: block;
+}
+
