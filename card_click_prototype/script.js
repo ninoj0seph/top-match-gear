@@ -80,6 +80,8 @@ function makeCardsMatch() {
     second_card_clicked.removeClass('cardClicked');
     first_card_clicked = null;
     second_card_clicked = null;
+    match_counter++;
+    gameIsWon();
 }
 
 function makeCardsReappear() {
@@ -92,6 +94,13 @@ function makeCardsReappear() {
     first_card_clicked = null;
     second_card_clicked = null;
     console.log('cards reset');
+}
+
+function gameIsWon() {
+    if(match_counter === total_possible_matches){
+        console.log('You won the game');
+        $("#gameWon").html("<h3>You won the game</h3>")
+    }
 }
 
 // function newFnWithFlags(cardElement){
