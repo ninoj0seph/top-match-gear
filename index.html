@@ -17,14 +17,49 @@ Prompt: https://github.com/Learning-Fuze/memory_match/tree/v0.5
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 
     <script>
+        //** Stats Global Variables
+        var matches = 0; //** When there is a card match, increment
+        var attempts = 0; //** When a match is attempted, successful or not, increment
+        var accuracy = 0; //** matches/attempts
+        var games_played = 0; //**Increments at initial page load and at game resets
+
+        //** Game Variables
         var first_card_clicked = null;
         var second_card_clicked = null;
         var total_possible_matches = 2;
         var match_counter = 0;
-
         var TIME_DELAY_AMOUNT = 2000; //** In milliseconds. How much time to pause between accepting clicks
 
+       //*** Stats JS ****
+        var display_stats = function () {
+            $(".games-played .value").html(games_played);
+            $(".attempts .value").html(attempts);
+            accuracy = (matches/attempts)*100;
+            if(isNaN(accuracy)){ //** AKA if accuracy is NaN
+                accuracy = 0;
+            }
+            $(".accuracy .value").html(Math.round(accuracy) + "%");
+        };
+
+        var reset_stats = function(){
+            accuracy = 0;
+            matches = 0;
+            attempts = 0;
+            display_stats();
+        };
+
         var card_clicked = function() {
+//            //** Put up display
+//            display_stats();
+            $(".reset").click(function () {
+                games_played++;
+                reset_stats();
+                display_stats();
+                $(".back").show();
+                $("#communication_display").text("");
+                match_counter = 0; //** So that making a match, resetting, making another match does not count as 2
+            });
+
             //** Display card front
             $(".back").click(function () {
                 //$(this).css("display", "none");
@@ -38,22 +73,27 @@ Prompt: https://github.com/Learning-Fuze/memory_match/tree/v0.5
 
                     second_card_clicked = this;
 
+                    attempts++;
+
                     //** Checking if the cards are the same
                     if($(first_card_clicked).parent().find(".front img").attr("src") == $(second_card_clicked).parent().find(".front img").attr("src")){
-                        console.log("The 2nd card, my life is complete");
 
                         //** Variable Setting
                         match_counter++;
+                        matches++;
+                        display_stats();
+
                         first_card_clicked = null;
                         second_card_clicked = null;
 
                         //**Check if the GAME is OVER
                         if(match_counter == total_possible_matches){
                             $("#communication_display").text("YOU WIN!");
+                            match_counter = 0;
                         }
 
                     }else{
-                        console.log("1st & 2nd just aren't the same");
+                        display_stats();
 
                         var turn_onto_back = function (){
                             console.log("2 Seconds later...");
@@ -65,7 +105,7 @@ Prompt: https://github.com/Learning-Fuze/memory_match/tree/v0.5
                             second_card_clicked = null;
                         };
 
-                        setTimeout(turn_onto_back,TIME_DELAY_AMOUNT);
+                        setTimeout(turn_onto_back, TIME_DELAY_AMOUNT); //**TODO: Not delaying the clicking of other cards
                     }
                 }
             });
@@ -89,22 +129,20 @@ Prompt: https://github.com/Learning-Fuze/memory_match/tree/v0.5
     </header>
 
 
-    <div> <!-- **** Stats Container **** -->
+    <div id="stats"> <!-- **** Stats Container **** -->
         <div class="games-played">
             <div class="label">Games Played</div>
+            <div class="value"> 0 </div>
         </div>
-
-        <div class="value"></div>
 
         <div class="attempts">
             <div class="label">Attempts</div>
-            <div>  </div>
+            <div class="value"> 0 </div>
         </div>
 
         <div class="accuracy">
             <div class="label">Accuracy</div>
-
-            <div>  </div>
+            <div class="value"> 0% </div>
         </div>
 
         <button class="reset"> <!-- TODO: Make the button do something -->
