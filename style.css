@@ -50,7 +50,7 @@ body {
     height: 100%;
     position: relative;
     border-radius: 5%;
-    background-color: #a23043;
+
 }
 
 .card-front{
@@ -68,6 +68,9 @@ body {
     background-size: contain;
 }
 
+.card img {
+    position: absolute;
+}
 
 
 /*------------------------------ END  CARD SPECS --------------------------*/
