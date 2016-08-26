@@ -1,24 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <!-- link to external stylesheet -->
-    <link rel="stylesheet" type="text/css" href="style.css"/>
     <!-- Bootstrap link -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"
           type="text/css"/>
     <!-- link to jquery library -->
-    <link href="https://code.jquery.com/jquery-2.1.4.min.js">
+    <link href="https://code.jquery.com/jquery-2.1.4.min.js"/>
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
     <!-- link to Learning Fuze stylesheet -->
-    <link href="http://learning-fuze.github.io/memory_match/v0.1/script.js">
-<script>
-    $(document).ready(apply_event_handlers);
+    <link href="http://learning-fuze.github.io/memory_match/v0.1/script.js"/>
+    <!-- link to external stylesheet -->
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <script>
+            /*old/*
+//        $(document).ready(apply_event_handlers);
+//
+//        function apply_event_handlers(){
+//            $(".card").click(function(){
+//                var thisCard = $(this);
+//
+//                this.childen('.top').css('display', "none");
+//            })
+//        }
+//
+//
+        /* new */
+        $(document).ready(card_clicked);
 
-    function apply_event_handlers(){
-        $(".back").click(function () {
-            $(this).css('display',"none");  //do i want to rework this.
-        });
-    }
-</script>
+        function card_clicked(){
+            $(".card").click(function () {
+                var thisCard = $(this);
+
+                thisCard.children('.back').css('display',"none");  //do i want to rework this.
+
+
+            });
+        }
+    </script>
 
 </head>
 <body>
@@ -28,7 +46,7 @@
 <header>
     <img src="resources/nps_logo_transparent.png">
     <h1>National Parks Match Game</h1>
-    <h5>Settings</h5>
+    <h5><a target="_blank">Settings</a></h5>
     <h5><a href="about.html">About the author</a></h5>
 </header>
 
@@ -61,39 +79,49 @@
 
     <div class="row row1">
         <div class="card">
-            <div class="front"></div>
+            <div class="front">
+                <img src="resources/Arches-National-Park-Quarter.jpg">
+            </div>
             <div class="back">
                 <img src="resources/nps_logo_transparent.png">
             </div>
         </div>
         <div class="card">
             <div class="front">
-                <!--<img src="resources/"-->
+                <img src="resources/Arches-National-Park-Quarter.jpg">
             </div>
             <div class="back">
                 <img src="resources/nps_logo_transparent.png">
             </div>
         </div>
         <div class="card">
-            <div class="front"></div>
+            <div class="front">
+                <img src="resources/Gettysburg-National-Military-Park-Quarter.jpg">
+            </div>
             <div class="back">
                 <img src="resources/nps_logo_transparent.png">
             </div>
         </div>
         <div class="card">
-            <div class="front"></div>
+            <div class="front">
+                <img src="resources/Gettysburg-National-Military-Park-Quarter.jpg">
+            </div>
             <div class="back">
                 <img src="resources/nps_logo_transparent.png">
             </div>
         </div>
         <div class="card">
-            <div class="front"></div>
+            <div class="front">
+                <img src="resources/Grand-Canyon-National-Park-Quarter.jpg">
+            </div>
             <div class="back">
                 <img src="resources/nps_logo_transparent.png">
             </div>
         </div>
         <div class="card">
-            <div class="front"></div>
+            <div class="front">
+                <img src="resources/Grand-Canyon-National-Park-Quarter.jpg">
+            </div>
             <div class="back">
                 <img src="resources/nps_logo_transparent.png">
             </div>
@@ -101,37 +129,49 @@
     </div>
     <div class="row row2">
         <div class="card">
-            <div class="front"></div>
+            <div class="front">
+                <img src="resources/Hawaii-Volcanoes-National-Park-Quarter.jpg">
+            </div>
             <div class="back">
                 <img src="resources/nps_logo_transparent.png">
             </div>
         </div>
         <div class="card">
-            <div class="front"></div>
+            <div class="front">
+                <img src="resources/Hawaii-Volcanoes-National-Park-Quarter.jpg">
+            </div>
             <div class="back">
                 <img src="resources/nps_logo_transparent.png">
             </div>
         </div>
         <div class="card">
-            <div class="front"></div>
+            <div class="front">
+                <img src="resources/Mount-Hood-National-Forest-Quarter.jpg">
+            </div>
             <div class="back">
                 <img src="resources/nps_logo_transparent.png">
             </div>
         </div>
         <div class="card">
-            <div class="front"></div>
+            <div class="front">
+                <img src="resources/Mount-Hood-National-Forest-Quarter.jpg">
+            </div>
             <div class="back">
                 <img src="resources/nps_logo_transparent.png">
             </div>
         </div>
         <div class="card">
-            <div class="front"></div>
+            <div class="front">
+                <img src="resources/Mount-Rushmore-National-Memorial-Quarter.jpg">
+            </div>
             <div class="back">
                 <img src="resources/nps_logo_transparent.png">
             </div>
         </div>
         <div class="card">
-            <div class="front"></div>
+            <div class="front">
+                <img src="resources/Mount-Rushmore-National-Memorial-Quarter.jpg">
+            </div>
             <div class="back">
                 <img src="resources/nps_logo_transparent.png">
             </div>
@@ -139,42 +179,56 @@
     </div>
     <div class="row row3">
         <div class="card">
-            <div class="front"></div>
+            <div class="front">
+                <img src="resources/Shenandoah-National-Park-Quarter.jpg">
+            </div>
             <div class="back">
                 <img src="resources/nps_logo_transparent.png">
             </div>
         </div>
         <div class="card">
-            <div class="front"></div>
+            <div class="front">
+                <img src="resources/Shenandoah-National-Park-Quarter.jpg">
+            </div>
             <div class="back">
                 <img src="resources/nps_logo_transparent.png">
             </div>
         </div>
         <div class="card">
-            <div class="front"></div>
+            <div class="front">
+                <img src="resources/Yellowstone-National-Park-Quarter.jpg">
+            </div>
             <div class="back">
                 <img src="resources/nps_logo_transparent.png">
             </div>
         </div>
         <div class="card">
-            <div class="front"></div>
+            <div class="front">
+                <img src="resources/Yellowstone-National-Park-Quarter.jpg">
+            </div>
             <div class="back">
                 <img src="resources/nps_logo_transparent.png">
             </div>
         </div>
         <div class="card">
-            <div class="front"></div>
+            <div class="front">
+                <img src="resources/Yosemite-National-Park-Quarter.jpg">
+            </div>
             <div class="back">
                 <img src="resources/nps_logo_transparent.png">
             </div>
         </div>
         <div class="card">
-            <div class="front"></div>
+            <div class="front">
+                <img src="resources/Yosemite-National-Park-Quarter.jpg">
+            </div>
             <div class="back">
                 <img src="resources/nps_logo_transparent.png">
             </div>
         </div>
     </div>
 </div>
+
+
 </body>
 </html>

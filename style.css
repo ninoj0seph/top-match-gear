@@ -64,6 +64,7 @@ header img{
     right: 0;
     height: 85%;
     width: calc(100% - 200px);
+    background-color: #99542c;
 }
 
 .row{
@@ -97,14 +98,51 @@ header img{
 }
 
 .back {
+    /*display: none;      !*temp change back later*!*/
     position: absolute;
     height: 100%;
     width: 100%;
     background-color: saddlebrown;
 }
 
-.back img{
+.front img{
     position: absolute;
     height: 100%;
     width: 100%;
+}
+
+.back img{
+    /*display: none;      !*temp change back later*!*/
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+/*styling for about page*/
+.side_nav {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 85%;
+    width: 200px;
+    background-color: #496647;
+}
+
+.side_nav a{
+    color: white;
+}
+
+.main-content{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: calc(85% - 20px);
+    width: calc(100% - 220px);
+    padding: 10px;
+    background-color: #99542c;
+    color: white;
+}
+
+.side_nav ul{
+    color: white;
 }
