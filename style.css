@@ -12,7 +12,7 @@ html {
 }
 
 header {
-	height: 100px;
+	height: 84px;
 	border-bottom: 1px solid black;
 }
 
@@ -22,13 +22,21 @@ header {
 }
 
 .logo img {
-	width: 250px;
-	height: 100px;
+	width: 149px;
+	height: 84px;
+}
+
+.title:before,
+.links:before {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
 }
 
 .title, .links {
 	margin: 0;
-	line-height: 100px;
+	/*line-height: 84px;*/
 	vertical-align: middle;
 	height: 100%;
 	position: relative;
