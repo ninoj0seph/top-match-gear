@@ -18,19 +18,34 @@ function card_clicked(){
 
         thisCard.children('.top').css('display',"none");  //do i want to rework this.
 
-        myNewFn(thisCard);
+        newFnWithFlags(thisCard);
     });
 }
 
 
-//addd a flag
-function myNewFn(cardElement){
+//add a flag
+// function myNewFn(cardElement){
+//     if(first_card_clicked === null){
+//         //cardElement.addClass('cardClicked');
+//         first_card_clicked = $(cardElement);
+//         console.log('first card bro');
+//     }
+//     else if(first_card_clicked === cardElement) {
+//         console.log('do nothing . they are the same')
+//     }else{
+//         console.log('second card dude');
+//         first_card_clicked = null;
+//     }
+// }
+
+function newFnWithFlags(cardElement){
     if(first_card_clicked === null){
+        cardElement.addClass('cardClicked');
         first_card_clicked = $(cardElement);
         console.log('first card bro');
     }
-    else if(first_card_clicked === cardElement) {
-        console.log('do nothing . they are the same')
+    else if(cardElement.hasClass('cardClicked')) {
+        console.log('do nothing . the same card was picked')
     }else{
         console.log('second card dude');
         first_card_clicked = null;
