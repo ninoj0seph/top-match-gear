@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+    <link rel="icon" href="images/favicon1.png">
+    <title>Inbox - Memory_Match@gmail.com</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="http://learning-fuze.github.io/memory_match/v0.1/script.js"></script>
+
+    <script>
+        var number_of_cards = 18;
+        function flip(element) {
+            console.log("flip!");
+            $(element).css('opacity', '0');
+        }
+        function genCards() {
+            console.log("generating cards");
+            for (i = 1; i <= number_of_cards; i++) {
+                var new_card = $("<div class='card' id='"+i+"'>");
+                $("#game-area").append(new_card);
+            }
+        }
+        function genfrontback() {
+            console.log("generating front and back");
+            for (i = 1; i <= number_of_cards; i++) {
+                var new_face = $("<div class='front'>");
+                var new_back = $("<div class='back' onclick='flip(this)'>");
+                $('#'+i).append(new_face, new_back);
+            }
+        }
+    </script>
+</head>
+<body onload="genCards();genfrontback()">
+
+<header>
+    <div id="header1">
+        <div id="logo"></div>
+        <div id="aboutme"style="cursor: pointer;" onclick="window.location='about.html';"><h4>About</h4></div>
+    </div>
+    <div id="header2">
+        <div id="logo2" ></div>
+        <div id="settings" style="cursor: pointer;" onclick="window.location='#';"><h4>Settings</h4></div>
+    </div>
+</header>
+
+<!--emtpy space for my header -->
+<div class="headerspace">
+</div>
+
+<div class = "sidebar">
+    <div id="stats">
+        <div class="reset">
+            <p>RESET GAME</p>
+        </div>
+        <div id="inbox">Inbox (18)</div>
+        <div class="games-played">
+            <div class="label">Games Played</div>
+            <div class="value"></div>
+        </div>
+        <div class="attemps">
+            <div class="label">Attemps</div>
+            <div class="value"></div>
+        </div>
+        <div class="accuracy">
+            <div class="label">Accuracy</div>
+            <div class="value"></div>
+        </div>
+        <div class="draft">Drafts (2)
+        </div>
+    </div>
+    <img src="images/siderbar.JPG">
+</div>
+
+<!--card landing zone -->
+<div id="game-area">
+    <img src="images/header3.JPG">
+</div>
+
+</body>
+</html>

@@ -1,0 +1,238 @@
+body{
+    font-size:0;
+    margin: 0;
+    padding:0;
+    height: 95vh;
+    width: 100vw;
+}
+.card{
+    display: inline-block;
+    height:40px;
+    width:97%;
+    position: relative;
+    margin:0;
+}
+
+.front{
+    position: absolute;
+    background-color:#FFFFCC;
+    height: 100%;
+    width: 100%;
+    border-width: 1px;
+    border-style: solid;
+    border-color:#d6d6d6;
+    border-left: none;
+    border-right:none;
+    background-image: url("images/emailpixdark.JPG");
+    background-position:left;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.back{
+    position: absolute;
+    background-color: #FFFFFF;
+    height: 100%;
+    width: 100%;
+    border-width: 1px;
+    border-style: solid;
+    border-color:#d6d6d6;
+    border-left: none;
+    border-right:none;
+    background-image: url("images/emailpixlight.JPG");
+    background-size: contain;
+    background-position:left;
+    background-repeat: no-repeat;
+}
+
+.headerspace{
+    height: 22%;
+    width: 100%;
+    background-repeat:no-repeat;
+    background-position: left;
+    background-size:contain;
+}
+header{
+    position:fixed;
+    border-bottom:1px solid #d6d6d6;
+    height: 22%;
+    width: 100%;
+    background-color: white;
+    z-index: 1;
+}
+header h4{
+    margin:5px;
+}
+
+#header1{
+    background-color:#F1F1F1;
+    height: 50%;
+    width: 100%;
+    background-image: url("images/header1.png");
+    background-repeat:no-repeat;
+    background-position: left;
+    background-size:contain;
+    border-bottom:1px solid #d6d6d6;
+}
+#header2{
+    height: 50%;
+    width: 100%;
+    background-image: url("images/header2.jpg");
+    background-repeat:no-repeat;
+    background-position: left;
+    background-size:contain;
+}
+#logo{
+    display: inline-block;
+    margin-left: 2%;
+    width:10%;
+    height: 110%;
+    background-image: url("images/googlogo.png");
+    background-repeat:no-repeat;
+    background-position: left;
+    background-size:contain;
+}
+#logo2{
+    display:inline-block;
+    margin-top: 10px;
+    margin-left: 2.3%;
+    width: 10%;
+    height: 70%;
+    background-image: url("images/logo2.jpg");
+    background-repeat:no-repeat;
+    background-position: left;
+    background-size:contain;
+}
+
+#settings{
+    margin-top: .5%;
+    margin-right: 1%;
+    box-sizing: border-box;
+    background-color:#F1F1F1;
+    float: right;
+    height: 70%;
+    width: 6%;
+    background-image: url("images/settings2.jpg");
+    background-repeat:no-repeat;
+    background-position: center;
+    border: 1px solid #d6d6d6;
+    background-size:contain;
+    border-radius: 3px;
+    transition-duration: .3s;
+}
+
+#aboutme {
+    margin-top: .5%;
+    margin-right: 1.8%;
+    box-sizing: border-box;
+    background-color: #F1F1F1;
+    float: right;
+    height: 70%;
+    width: 12%;
+    background-image: url("images/about.JPG");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    border-radius: 3px;
+    transition-duration: .3s;
+}
+#aboutme:hover{
+    border-width: 5px;
+    font-size: medium;
+    background-color:#F1F1F1;
+    opacity:.7;
+    border:3px solid indianred;
+}
+
+#settings:hover{
+    border-width: 5px;
+    font-size: medium;
+    background-color:#F1F1F1;
+    border: 3px solid indianred;
+    opacity:.7;
+}
+
+.reset{
+    border-color: #D34332;
+    background-color: #D34332;
+    width: 65%;
+    height:10%;
+    margin-left: 12%;
+    border-radius: 2px;
+    margin-bottom: 5%;
+}
+.reset:hover{
+    background-color:#C62917;
+}
+
+.reset p{
+    text-align: center;
+    font-size: 38%;
+    color:white;
+    font-weight: bold;
+    padding-top: 6%;
+}
+.sidebar{
+    position: fixed;
+    font-family: Arial;
+    display: inline-block;
+    height:80%;
+    width:17%
+}
+.sidebar img{
+    max-width: 100%;
+}
+
+#inbox{
+    color: #D34332;
+    font-size: medium;
+    font-weight: bold;
+    padding: 6%;
+    margin-left: 10%;
+}
+.draft{
+    font-size: medium;
+    font-weight: bold;
+    padding: 6%;
+    margin-left: 10%;
+}
+
+.draft:hover,#inbox:hover ,.games-played:hover ,.attemps:hover ,.accuracy:hover{
+    background-color:#EFEFEF;
+}
+
+.games-played{
+    font-size: medium;
+    padding: 6%;
+    margin-left: 10%;
+}
+.attemps{
+    font-size: medium;
+    padding: 6%;
+    margin-left: 10%;
+}
+.accuracy{
+    font-size: large;
+    padding: 6%;
+    margin-left: 10%;
+}
+
+#game-area img{
+    max-width: 100%;
+    margin-bottom:1px;
+    margin-left:-5px;
+}
+#stats{
+    margin-top: 15px;
+    font-size: 30px;
+    height:65%;
+    width:100%;
+}
+
+#game-area{
+    margin-top: 10px;
+    vertical-align: top;
+    display: inline-block;
+    width: 80%;
+    float: right;
+}
