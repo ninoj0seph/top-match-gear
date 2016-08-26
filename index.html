@@ -5,32 +5,99 @@
     <title>Inbox - Memory_Match@gmail.com</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="http://learning-fuze.github.io/memory_match/v0.1/script.js"></script>
 
     <script>
         var number_of_cards = 18;
-        function flip(element) {
-            console.log("flip!");
-            $(element).css('opacity', '0');
+        var cardtracker=1;
+        var first_card_clicked=null;
+        var second_card_clicked=null;
+        var total_possible_matches=number_of_cards/2;
+        var match_counter=0;
+        var first_card_element=null;
+        var second_card_element=null;
+        var clickable=true;
+
+        function flip_back(){
+            console.log("flipping back, i guessed wrong")
+            $(second_card_element).css('display','initial');
+            $(first_card_element).css('display','initial');
+            first_card_element=null;
+            second_card_element=null;
+            clickable =true;
+        };
+        function inbox_counter(){
+            var total=number_of_cards-match_counter*2;
+            var counter = $('<p>').text("Inbox ("+total+")");
+            $("#inbox p").replaceWith(counter);
         }
+
+        function flip(element) {
+            if (clickable == true) {
+                console.log("flip!");
+                $(element).css('display', 'none');
+
+                if (cardtracker == 1) {
+                    cardtracker++;
+                    console.log("next card clicked will be " + cardtracker);
+                    first_card_clicked = $(element).text();
+                    first_card_element = element;
+                }
+                else if (cardtracker == 2) {
+                    cardtracker--;
+                    console.log("next card clicked will be " + cardtracker);
+                    second_card_clicked = $(element).text();
+                    second_card_element = element;
+                    if (first_card_clicked == second_card_clicked) {
+                        match_counter++;
+                        inbox_counter();
+                        first_card_clicked = null;
+                        second_card_clicked = null;
+                    } else if (first_card_clicked != second_card_clicked) {
+                        clickable = false;
+                        var back = $('back').css('cursor', 'wait');
+                        var front = $('front').css('cursor', 'wait');
+                        $('back').replaceWith(back);
+                        $('front').replaceWith(front);
+                        console.log("clickable is now: "+clickable);
+                        setTimeout(flip_back, 2000);
+                        first_card_clicked = null;
+                        second_card_clicked = null;
+                    }
+                }
+                if (total_possible_matches == match_counter) {
+                    console.log("winner!")
+                }
+            }
+            else{
+                return;
+            }
+        }
+
         function genCards() {
             console.log("generating cards");
             for (i = 1; i <= number_of_cards; i++) {
                 var new_card = $("<div class='card' id='"+i+"'>");
                 $("#game-area").append(new_card);
+
             }
         }
         function genfrontback() {
             console.log("generating front and back");
-            for (i = 1; i <= number_of_cards; i++) {
-                var new_face = $("<div class='front'>");
-                var new_back = $("<div class='back' onclick='flip(this)'>");
+            for (i = 1,x=1; i <= number_of_cards; i++,x++) {
+                if(x%2==true){
+                    var new_face = $("<div class='front'>").text(x);
+                    var new_back = $("<div class='back' onclick='flip(this)'>").text(x);
+                }
+                else if(x%2==0) {
+                    var new_face = $("<div class='front'>").text(x-1);
+                    var new_back = $("<div class='back' onclick='flip(this)'>").text(x-1);
+                }
                 $('#'+i).append(new_face, new_back);
             }
         }
     </script>
 </head>
-<body onload="genCards();genfrontback()">
+<body onload="genCards();genfrontback();inbox_counter()">
 
 <header>
     <div id="header1">
@@ -52,7 +119,7 @@
         <div class="reset"style="cursor: pointer;">
             <p>RESET GAME</p>
         </div>
-        <div id="inbox">Inbox (18)</div>
+        <div id="inbox"><p>Inbox</p></div>
         <div class="games-played">
             <div class="label">Games Played</div>
             <div class="value"></div>

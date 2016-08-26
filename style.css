@@ -8,12 +8,14 @@ body{
 .card{
     display: inline-block;
     height:40px;
-    width:97%;
+    width:100%;
     position: relative;
     margin:0;
 }
 
 .front{
+    font-size: small;
+    text-align: center;
     position: absolute;
     background-color:#FFFFCC;
     height: 100%;
@@ -30,6 +32,7 @@ body{
 }
 
 .back{
+    cursor: pointer;
     position: absolute;
     background-color: #FFFFFF;
     height: 100%;
@@ -160,6 +163,7 @@ header h4{
     margin-left: 12%;
     border-radius: 2px;
     margin-bottom: 5%;
+    margin-top: 7%;
 }
 .reset:hover{
     background-color:#C62917;
@@ -167,7 +171,7 @@ header h4{
 
 .reset p{
     text-align: center;
-    font-size: 38%;
+    font-size: 1vw;
     color:white;
     font-weight: bold;
     padding-top: 6%;
@@ -182,7 +186,9 @@ header h4{
 .sidebar img{
     max-width: 100%;
 }
-
+#inbox p{
+    margin: 0;
+}
 #inbox{
     color: #D34332;
     font-size: medium;
@@ -219,8 +225,8 @@ header h4{
 
 #game-area img{
     max-width: 100%;
-    margin-bottom:1px;
-    margin-left:-5px;
+    margin-bottom:5px;
+    margin-left: -5px;
 }
 #stats{
     margin-top: 15px;
@@ -231,6 +237,7 @@ header h4{
 
 #game-area{
     margin-top: 10px;
+    margin-right:3%;
     vertical-align: top;
     display: inline-block;
     width: 80%;
