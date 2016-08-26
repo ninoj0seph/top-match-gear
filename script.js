@@ -1,13 +1,5 @@
 $('.card').click(card_clicked);
-$('.reset').click(function() {
-	reset_stats();
-	display_stats();
-	$('.card').removeClass('matched').removeClass('disabled');
-	$('.back').show();
-	$('.win-text').remove();
-	first_card_clicked = null;
-	second_card_clicked = null;
-});
+$('.reset').click(game_reset);
 
 var first_card_clicked = null,
 		second_card_clicked = null,
@@ -48,7 +40,7 @@ function card_clicked() {
 				second_card_clicked.closest('.card').find('.back').show();
 				first_card_clicked = null;
 				second_card_clicked = null;
-			}, 2000);
+			}, 1000);
 		}
 	}
 	accuracy = Math.round(match_counter / attempts * 100); //percentage
@@ -66,4 +58,14 @@ function reset_stats() {
 	match_counter = 0;
 	attempts = 0;
 	games_played++;
+}
+
+function game_reset() {
+	reset_stats();
+	display_stats();
+	$('.card').removeClass('matched').removeClass('disabled');
+	$('.back').show();
+	$('.win-text').remove();
+	first_card_clicked = null;
+	second_card_clicked = null;
 }
