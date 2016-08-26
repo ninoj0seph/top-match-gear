@@ -49,18 +49,15 @@ function cardIsMatchedAlready(cardElement) {
 }
 
 function checkForTwoCards(){
-    if(first_card_clicked && second_card_clicked){
+    if(first_card_clicked && second_card_clicked) {
         console.log('two cards clicked');
         //i want to add the true check for matches method here
-            //based on the matchingness of the backgrounds/images
+        //based on the matchingness of the backgrounds/images
+        console.log('before check');
         checkForMatches();
-        first_card_clicked = null;
-        second_card_clicked = null;
-        console.log('cards reset');
-    }else if(first_card_clicked){
+        console.log('after check');
+    }else {
         console.log('one card clicked');
-    }else{
-        console.log("don't know what this case would be");
     }
 }
 
@@ -68,11 +65,33 @@ function checkForMatches() {
     console.log("check for matches");
     if(first_card_clicked.find('.bottom').attr('class') === second_card_clicked.find('.bottom').attr('class')){
         console.log('cards match');
-        first_card_clicked.addClass('matched');
-        second_card_clicked.addClass('matched');
+        makeCardsMatch();
     }else{
         console.log("cards don't match");
+        setTimeout(makeCardsReappear, 2000);
     }
+}
+
+function makeCardsMatch() {
+    console.log('cards match');
+    first_card_clicked.addClass('matched');
+    second_card_clicked.addClass('matched');
+    first_card_clicked.removeClass('cardClicked');
+    second_card_clicked.removeClass('cardClicked');
+    first_card_clicked = null;
+    second_card_clicked = null;
+}
+
+function makeCardsReappear() {
+    console.log("cards don't match");
+    console.log('making cards reappear');
+    first_card_clicked.find('.top').css('display','initial');
+    second_card_clicked.find('.top').css('display','initial');
+    first_card_clicked.removeClass('cardClicked');
+    second_card_clicked.removeClass('cardClicked');
+    first_card_clicked = null;
+    second_card_clicked = null;
+    console.log('cards reset');
 }
 
 // function newFnWithFlags(cardElement){
