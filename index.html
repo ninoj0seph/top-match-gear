@@ -10,7 +10,15 @@
     <link href="https://code.jquery.com/jquery-2.1.4.min.js">
     <!-- link to Learning Fuze stylesheet -->
     <link href="http://learning-fuze.github.io/memory_match/v0.1/script.js">
+<script>
+    $(document).ready(apply_event_handlers);
 
+    function apply_event_handlers(){
+        $(".back").click(function () {
+            $(this).css('display',"none");  //do i want to rework this.
+        });
+    }
+</script>
 
 </head>
 <body>
@@ -47,6 +55,10 @@
 <!-- features to include: 18 cards fronts and 18 card backs -->
 <div id="game-area">
     <!-- create a card composed of front(on bottom) and back(layered on top)-->
+    <!--<div class="row row1"></div>-->
+    <!--<div class="row row2"></div>-->
+    <!--<div class="row row3"></div>-->
+
     <div class="row row1">
         <div class="card">
             <div class="front"></div>
