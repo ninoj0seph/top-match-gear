@@ -22,10 +22,13 @@ Prompt: https://github.com/Learning-Fuze/memory_match/tree/v0.5
         var total_possible_matches = 2;
         var match_counter = 0;
 
+        var TIME_DELAY_AMOUNT = 2000; //** In milliseconds. How much time to pause between accepting clicks
+
         var card_clicked = function() {
             //** Display card front
             $(".back").click(function () {
-                $(this).css("display", "none");
+                //$(this).css("display", "none");
+                $(this).hide();
 
                 //** Checking if first_card_clicked already
                 if(first_card_clicked == null) {
@@ -54,6 +57,18 @@ Prompt: https://github.com/Learning-Fuze/memory_match/tree/v0.5
 
                     }else{
                         console.log("1st & 2nd just aren't the same");
+
+                        var turn_onto_back = function (){
+                            console.log("2 Seconds later...");
+                            $(this).show(); //** resets card onto back
+                            $(first_card_clicked).show();
+                            $(second_card_clicked).show();
+
+                            first_card_clicked = null;
+                            second_card_clicked = null;
+                        };
+
+                        setTimeout(turn_onto_back,TIME_DELAY_AMOUNT);
                     }
                 }
 
