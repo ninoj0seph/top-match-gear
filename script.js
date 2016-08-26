@@ -1,34 +1,41 @@
 $('.card').click(card_clicked);
+$('.reset').click(function() {
+	reset_stats();
+	display_stats();
+	$('.card').removeClass('matched').removeClass('disabled');
+	$('.back').show();
+	$('.win-text').remove();
+	first_card_clicked = null;
+	second_card_clicked = null;
+});
 
 var first_card_clicked = null,
 		second_card_clicked = null,
-		total_possible_matches = 2,
-		match_counter = 0;
+		total_possible_matches = 9,
+		match_counter = 0,
+		attempts = 0,
+		accuracy = 0,
+		games_played = 0;
 
 function card_clicked() {
 	var $this = $(this);
-
-	if ($this.hasClass('disabled')) return;
+	if ($this.hasClass('disabled') || $this.hasClass('matched')) return;
 
 	$this.find('.back').hide();
 	$this.addClass('disabled');
 	if (first_card_clicked === null) {
 		first_card_clicked = $this.find('img');
+		return;
 	} else {
+		attempts++;
 		second_card_clicked = $this.find('img');
 		if (first_card_clicked.attr('src') == second_card_clicked.attr('src')) {
 			match_counter++;
+			first_card_clicked.closest('.card').addClass('matched');
+			second_card_clicked.closest('.card').addClass('matched');
 			if (match_counter == total_possible_matches) {
-				var winText = $('<p>').text("You WIN!");
+				var winText = $('<p>').addClass('win-text').text("You WIN!");
 				$('.stats').append(winText);
-				setTimeout(function() {
-					$('.card').removeClass('disabled');
-					$('.back').show();
-					first_card_clicked = null;
-					second_card_clicked = null;
-					match_counter = 0;
-					winText.remove();
-				}, 2000);
 			} else {
 				first_card_clicked = null;
 				second_card_clicked = null;
@@ -44,4 +51,19 @@ function card_clicked() {
 			}, 2000);
 		}
 	}
+	accuracy = Math.round(match_counter / attempts * 100); //percentage
+	display_stats();
+}
+
+function display_stats() {
+	$('.attempts .value').text(attempts);
+	$('.accuracy .value').text(accuracy + '%');
+	$('.games-played .value').text(games_played);
+}
+
+function reset_stats() {
+	accuracy = 0;
+	match_counter = 0;
+	attempts = 0;
+	games_played++;
 }
