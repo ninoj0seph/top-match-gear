@@ -73,13 +73,13 @@ li.changeBackground:hover {
 }
 
 div#content {
-  width: 980px;
-  height: 640px;
+  width: 75%;
+  height: 40%;
   float: left;
 }
 
 div#sidebar {
-  width: 29%;
+  width: 25%;
   float: right;
 }
 
@@ -128,6 +128,11 @@ div#footer p {
   display: block;
   padding: 1.2em .3em .3em .3em;
 }
+
+#footer_text {
+
+}
+
 .card {
   width: 150px;
   height: 200px;
