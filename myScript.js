@@ -13,12 +13,12 @@ $(document).ready(function () {
 });
 
 // Declare all of the global variables
-var cardArray = [1, 2]; //, 3, 4, 5, 6, 7, 8, 9];
+var cardArray = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 cardArray = cardArray.concat(cardArray);
 var clickable = true;
 var first_card_clicked = null;
 var second_card_clicked = null;
-var total_possible_matches = 2;
+var total_possible_matches = 9;
 var match_counter = 0;
 
 // Create random images based on the available number of cards
@@ -54,7 +54,6 @@ function gamePlay() {
         }
         if (clickable == false) {
             $(this).flip(false);
-            console.log("what is clickable???", clickable);
             return;
         }
         $(this).flip(true);
@@ -74,7 +73,6 @@ function gamePlay() {
 
             } else {
                 clickable = false;
-                console.log("Just before not_matched function, is it clickable: ", clickable);
                 setTimeout(not_matched, 1500);
             }
         }
@@ -84,14 +82,17 @@ function gamePlay() {
 }
 
 function matched() {
-    match_counter = match_counter + 1;
+    match_counter += 1;
 
-    console.log("In matched function, is it clickable: ", clickable);
     if (match_counter == total_possible_matches) {
         $("#footer p").text("YOU WIN!!!");
     } else {
 
         $("#footer p").text("GOOD JOB, KEEP GOING!");
+        console.log(this);
+        if($(this).hasClass("revealed")){
+            $(this).addClass("matched");
+        }
     }
     setTimeout(stopFlip, 1000);
 
@@ -102,9 +103,11 @@ function not_matched() {
     second_card_clicked.removeClass('revealed').flip(false);
     first_card_clicked = null;
     second_card_clicked = null;
-    clickable = true;
-    $(".card").flip(false);
-    console.log("In not_matched function, is it clickable: ", clickable);
+    if(clickable == false) {
+        clickable = true;
+        $('.card:not(.matched)').flip(false);
+
+    }
     $("#footer p").text("WHOOPS, WRONG!!");
 }
 
