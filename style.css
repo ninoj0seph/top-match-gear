@@ -1,9 +1,8 @@
 .hidden{
     display: none;
 }
-
 body{
-    background-image: url("assets/background.jpg");
+    background-image: url("assets/images/background.jpg");
 }
 @font-face {
     font-family: metalGear;
