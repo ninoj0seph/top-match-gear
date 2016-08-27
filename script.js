@@ -20,7 +20,7 @@
      });
  }
 
- //purpose: handles what to do when a card is clicked. This is the main handler. It will appropriately assign the first card or second card depending on what it is
+ //purpose: handles what to do when a card is clicked. This is the main handler. It will appropriately assign the first card or second card depending on what it is. Disables the click event while we figure out what to do with cards.
  //param: cardElement - div with class 'card' that was clicked in  card_clicked
  //local: none
  //global: first_card_clicked, second_card_clicked
@@ -36,6 +36,7 @@
          }
          else if (!cardElement.hasClass('cardClicked')) {       //has the card already been clicked/revealed
              second_card_clicked = $(cardElement);              //assign the currently clicked card to the second card
+             $('.card').off('click');                           //disables click while we check the two cards
          }
          checkForTwoCards();
      }
@@ -84,11 +85,11 @@
      }
  }
 
- //purpose: Adds and removes classes to notify other functions that the two cards are part of a matching pair, then it resets the first and second card. Function will also invoke a function to check if the game has been won.
+ //purpose: Adds and removes classes to notify other functions that the two cards are part of a matching pair, then it resets the first and second card. Function will also invoke a function to check if the game has been won. Readies the click handler, as well
  //param: none
  //local: none
  //global: first_card_clicked, second_card_clicked, match_counter
- //functions called: gameIsWon
+ //functions called: gameIsWon, card_clicked
  //returns: none
  function makeCardsMatch() {
      console.log('cards match');
@@ -99,14 +100,15 @@
      first_card_clicked = null;
      second_card_clicked = null;
      match_counter++;
+     card_clicked();                                //readies click handler again
      gameIsWon();
  }
 
- //purpose: Makes cards clickable and card backs visible after it has been determined that the cards do not match, then it resets the first and second card.
+ //purpose: Makes cards clickable and card backs visible after it has been determined that the cards do not match, then it resets the first and second card. Readies the click handlier again.
  //param: none
  //local: none
  //global: first_card_clicked, second_card_clicked
- //functions called:
+ //functions called: card_clicked
  //returns: none
  function makeCardsReappear() {
      first_card_clicked.find('.back').css('display','initial');
@@ -115,6 +117,7 @@
      second_card_clicked.removeClass('cardClicked');
      first_card_clicked = null;
      second_card_clicked = null;
+     card_clicked();                                //readies click handler again
  }
 
  //purpose: checks with the game is won
