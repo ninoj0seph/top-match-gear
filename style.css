@@ -12,6 +12,13 @@ body{
     font-family: codecFont;
     src: url(assets/custom_fonts/MGS2.ttf);
 }
+@font-face {
+    font-family: numbers;
+    src: url(assets/custom_fonts/menu.ttf);
+}
+.value {
+    font-family: numbers, sans-serif;
+}
 p {
     font-family: metalGear, sans-serif;
     color: #72c5b0;

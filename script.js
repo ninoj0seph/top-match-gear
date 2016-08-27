@@ -8,6 +8,7 @@ var canClick = true;
 var matches = 0;
 var attempts = 0;
 var accuracy = 0;
+var games_played = 0;
 
 ////function to execute when clicked
 function card_clicked(event) {
@@ -23,6 +24,8 @@ function card_clicked(event) {
     } else {
         second_card_clicked = $(event).addClass("revealed");
         attempts++;
+        accuracy = Math.round((matches/attempts) * 100);
+        display_stats();
         ///console.log("SECOND CARD");
         if (first_card_clicked.find(".front > img").attr('src') === second_card_clicked.find(".front > img").attr('src') && matches < total_possible_matches) {
             ///console.log("THESE CARDS MATCH");
@@ -67,7 +70,6 @@ function resetState(){
 $(document).ready(function () {
     ///console.log("DOC LOADED");
     ///console.log("you can click");
-    var games_played = 0; ///add to reset button!!!
     $(".card").click(function () {
         if (canClick){
            card_clicked(this);
@@ -77,12 +79,16 @@ $(document).ready(function () {
     });
 });
 ////STATS FUNCTION
+$(document).ready(display_stats);
 function display_stats() {
     ///gamesplayes -> .games-played .value
+    $(".games-played > .value").text(games_played);
     ///attempts ->attempts .value
+    $(".attempts > .value").text(attempts);
     ///format accuracy = (matches/attempts)% HOW MATH WORKS?
-    ///accuracy ->.accuracy .value
+    $(".accuracy > .value").text(accuracy + '%');
 }
+///rest stats
 function reset_stats() {
     accuracy = 0;
     matches = 0;
@@ -90,9 +96,11 @@ function reset_stats() {
     display_stats();
 }
 ///REST CLICK HANDLER
-$("<button>").click(function () {
-    games_played++;
-    reset_stats();
-    display_stats();
-    ///reset game area
+$(document).ready(function () {
+    $(".reset").click(function () {
+        games_played++;
+        reset_stats();
+        display_stats();
+        ///reset game area
+    });
 });
