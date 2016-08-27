@@ -12,20 +12,17 @@ var first_card_clicked = null,
 function card_clicked() {
 	var $this = $(this);
 	if ($this.hasClass('clicked') || $this.hasClass('disabled') || $this.hasClass('matched')) return;
-
-	// $this.find('.back').hide();
 	$this.addClass('clicked');
-	// $this.addClass('disabled');
 	if (first_card_clicked === null) {
-		first_card_clicked = $this.find('img');
+		first_card_clicked = $this;
 		return;
 	} else {
 		attempts++;
-		second_card_clicked = $this.find('img');
-		if (first_card_clicked.attr('src') == second_card_clicked.attr('src')) {
+		second_card_clicked = $this;
+		if (first_card_clicked.find('img').attr('src') == second_card_clicked.find('img').attr('src')) {
 			match_counter++;
-			first_card_clicked.closest('.card').addClass('matched');
-			second_card_clicked.closest('.card').addClass('matched');
+			first_card_clicked.addClass('matched');
+			second_card_clicked.addClass('matched');
 			if (match_counter == total_possible_matches) {
 				var winText = $('<p>').addClass('win-text').text("You WIN!");
 				$('.stats').append(winText);
@@ -37,10 +34,8 @@ function card_clicked() {
 			$('.card').addClass('disabled');
 			setTimeout(function() {
 				$('.card').removeClass('disabled');
-				// first_card_clicked.closest('.card').find('.back').show();
-				// second_card_clicked.closest('.card').find('.back').show();
-				first_card_clicked.closest('.card').removeClass('clicked');
-				second_card_clicked.closest('.card').removeClass('clicked');
+				first_card_clicked.removeClass('clicked');
+				second_card_clicked.removeClass('clicked');
 				first_card_clicked = null;
 				second_card_clicked = null;
 			}, 1000);
