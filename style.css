@@ -10,10 +10,19 @@ Objective: Provide the CSS style of the game
 body{
     font-family: Arial, Helvetica, serif;
     height: 100vh;
+    width: 74.7%; /* Trimmed to the edge of the background img */
 }
-.game-area{
-    background-image: url(images/ms_art_background.jpg);
-    height: 100%;
+
+.game-area::after { /* main background */
+    content: "";
+    background: url(images/ms_art_background.jpg) no-repeat;
+    opacity: 0.5;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
 }
 
 /* ****** Nav Bar | All Pages ****** */
@@ -70,7 +79,6 @@ body{
     display: block;
     width: 100%;
     height: 60px;
-    background-color: bisque;
 
     font-size: 60px;
 
