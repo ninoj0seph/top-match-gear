@@ -11,14 +11,12 @@ header{
     color: white;
     text-align: center;
 }
-
 header h5{
     text-align: right;
 }
 header a{
     color: white;
 }
-
 header img{
     position: absolute;
     top:0;
@@ -26,7 +24,6 @@ header img{
     height: 100%;
     width: auto;
 }
-
 /* styling for the side stats bar*/
 /*do a calc to recalculate the width*/
 #stats {
@@ -37,7 +34,6 @@ header img{
     width: 200px;
     background-color: #496647;
 }
-
 .label{
     height: 30px;
     width: 100%;
@@ -51,12 +47,10 @@ header img{
     width: 100%;
     background-color: green;
 }
-
 #stats input{
     display: block;
     margin: 10px auto;
 }
-
 /*styling for game area*/
 /*do a calc to recalculate the width*/
 #game-area{
@@ -68,7 +62,6 @@ header img{
     padding: 10px;
     background-color: #99542c;
 }
-
 .row{
     position: relative;
     height: 20%;
@@ -79,7 +72,6 @@ header img{
     padding: 0;
     display: inline-block;
 }
-
 /*styling for cards*/
 /*picture ratio for card is 108 to 140 (w:h)*/
 .card {
@@ -90,36 +82,49 @@ header img{
     /*border: 1px solid black;*/
     display:inline-block;
 }
-
 .front {
     position: absolute;
     height: 100%;
     width: 100%;
-    background-color: lightblue;
+    display: inline-block;
+    vertical-align: middle;
+    background-color: white;
 
 }
-
+.front img{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: auto;
+    width: 100%;
+    margin: auto 0;
+    display: inline-block;
+    vertical-align: middle;
+}
 .back {
-    /*display: none;      !*temp change back later*!*/
     position: absolute;
     height: 100%;
     width: 100%;
     background-color: saddlebrown;
 }
-
-.front img{
-    position: absolute;
-    height: 100%;
-    width: 100%;
-}
-
 .back img{
-    /*display: none;      !*temp change back later*!*/
     position: absolute;
     height: 100%;
     width: 100%;
+    display: inline-block;
+    vertical-align: middle;
 }
-
+#gameWon{
+    display: none;
+    color: white;
+    text-align: center;
+}
+#gameWon img{
+    height: 200px;
+    width: auto;
+    display: block;
+    margin: 0 auto;
+}
 /*styling for about page*/
 .side_nav {
     position: absolute;
@@ -129,11 +134,12 @@ header img{
     width: 200px;
     background-color: #496647;
 }
-
+.side_nav ul{
+    color: white;
+}
 .side_nav a{
     color: white;
 }
-
 .main-content{
     position: absolute;
     bottom: 0;
@@ -144,15 +150,9 @@ header img{
     background-color: #99542c;
     color: white;
 }
-
-.side_nav ul{
-    color: white;
-}
-
 .main-content img{
     height: 150px;
     width: auto;
     float: right;
     display: block;
 }
-

@@ -1,6 +1,5 @@
 //add a class dynamically called has been clicked so that i can ignore clicks of cards that have already have been revealed
 
-
 var first_card_clicked = null;
 var second_card_clicked = null;
 var total_possible_matches = 2;
