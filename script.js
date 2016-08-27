@@ -24,8 +24,7 @@ function card_clicked() {
 			first_card_clicked.addClass('matched');
 			second_card_clicked.addClass('matched');
 			if (match_counter == total_possible_matches) {
-				var winText = $('<p>').addClass('win-text').text("You WIN!");
-				$('.stats').append(winText);
+				$('.win-text').show();
 			} else {
 				first_card_clicked = null;
 				second_card_clicked = null;
@@ -63,7 +62,7 @@ function game_reset() {
 	display_stats();
 	$('.card').removeClass('matched').removeClass('disabled').removeClass('clicked');
 	$('.back').show();
-	$('.win-text').remove();
+	$('.win-text').hide();
 	first_card_clicked = null;
 	second_card_clicked = null;
 }

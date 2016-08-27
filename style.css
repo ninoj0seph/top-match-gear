@@ -64,6 +64,10 @@ section {
 	vertical-align: top;
 }
 
+.win-text {
+	display: none;
+}
+
 .game-area {
 	width: 900px;
 	margin-left: 60px;
