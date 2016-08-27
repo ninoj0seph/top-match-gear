@@ -29,6 +29,7 @@ Prompt: https://github.com/Learning-Fuze/memory_match/tree/v0.5
         var total_possible_matches = 2;
         var match_counter = 0;
         var TIME_DELAY_AMOUNT = 2000; //** In milliseconds. How much time to pause between accepting clicks
+        var let_game_play = true;
 
        //*** Stats JS ****
         var display_stats = function () {
@@ -61,54 +62,59 @@ Prompt: https://github.com/Learning-Fuze/memory_match/tree/v0.5
             });
 
             //** Display card front
-            $(".back").click(function () {
+            //**Time delay is still waiting 2 seconds to reset, so hold for a moment.
+            $(".back").click(function () { //**flip the card
                 //$(this).css("display", "none");
-                $(this).hide();
+                if(let_game_play){
+                    $(this).hide();
 
-                //** Checking if first_card_clicked already
-                if(first_card_clicked == null) {
-                    first_card_clicked = this;
+                    //** Checking if first_card_clicked already
+                    if(first_card_clicked == null) {
+                        first_card_clicked = this;
 
-                }else{ //**AKA: Handling the 2nd click
+                    }else{ //**AKA: Handling the 2nd click
+                        second_card_clicked = this;
 
-                    second_card_clicked = this;
+                        attempts++;
 
-                    attempts++;
+                        //** Checking if the 1st & 2nd card are the same
+                        if($(first_card_clicked).parent().find(".front img").attr("src") == $(second_card_clicked).parent().find(".front img").attr("src")){
 
-                    //** Checking if the cards are the same
-                    if($(first_card_clicked).parent().find(".front img").attr("src") == $(second_card_clicked).parent().find(".front img").attr("src")){
-
-                        //** Variable Setting
-                        match_counter++;
-                        matches++;
-                        display_stats();
-
-                        first_card_clicked = null;
-                        second_card_clicked = null;
-
-                        //**Check if the GAME is OVER
-                        if(match_counter == total_possible_matches){
-                            $("#communication_display").text("YOU WIN!");
-                            match_counter = 0;
-                        }
-
-                    }else{
-                        display_stats();
-
-                        var turn_onto_back = function (){
-                            console.log("2 Seconds later...");
-                            $(this).show(); //** resets card onto back
-                            $(first_card_clicked).show();
-                            $(second_card_clicked).show();
+                            //** Variable Setting
+                            match_counter++;
+                            matches++;
+                            display_stats();
 
                             first_card_clicked = null;
                             second_card_clicked = null;
-                        };
 
-                        setTimeout(turn_onto_back, TIME_DELAY_AMOUNT); //**TODO: Not delaying the clicking of other cards
+                            //**Check if the GAME is OVER
+                            if(match_counter == total_possible_matches){
+                                $("#communication_display").text("YOU WIN!");
+                                match_counter = 0;
+                            }
+
+                        }else{ //** The two cards are not the same
+                            display_stats();
+
+                            var turn_onto_back = function (){
+                                console.log("2 Seconds later...");
+                                $(this).show(); //** resets card onto back
+                                $(first_card_clicked).show();
+                                $(second_card_clicked).show();
+
+                                first_card_clicked = null;
+                                second_card_clicked = null;
+                                let_game_play = true; //**resume game
+                            };
+                            let_game_play = false; //** pause the game because the card's haven't turned back onto their fronts yet
+
+                            setTimeout(turn_onto_back, TIME_DELAY_AMOUNT); //**TODO: Not delaying the clicking of other cards
+                        }
                     }
                 }
             });
+
         };
 
         // ** Run the JS **

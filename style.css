@@ -9,6 +9,11 @@ Objective: Provide the CSS style of the game
 /* ****** ALL ******* */
 body{
     font-family: Arial, Helvetica, serif;
+    height: 100vh;
+}
+.game-area{
+    background-image: url(images/ms_art_background.jpg);
+    height: 100%;
 }
 
 /* ****** Nav Bar | All Pages ****** */
@@ -21,7 +26,7 @@ body{
 
 
 /* ****** Home/Game Page ****** */
-/* **** Display **** */
+/* **** Display Communications **** */
 #stats{
     display: inline-block;
 }
