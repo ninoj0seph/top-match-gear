@@ -2,8 +2,10 @@
  var second_card_clicked = null;
  var total_possible_matches = 2;
 
- //meant to be a local variable somewhere
- var match_counter = 0;
+ var match_counter = 0;     //incrementer for the number of matches found
+ var attempts = 0;          //incrementer for the number of attempted matches
+ var accuracy = null;
+ var games_played = 0;
 
  $(document).ready(card_clicked);
 
@@ -14,6 +16,7 @@
  //functions called: handleCardsWithFlags
  //returns: none
  function card_clicked(){
+     display_stats();   //need to add to functions called???? is this correct placement?????
      $(".card").click(function () {
          var thisCard = $(this);
          handleCardsWithFlags(thisCard);
@@ -49,7 +52,6 @@
  //functions called: none
  //returns: the truth of whether or not the currently clicked card is in a matched pair
  function cardIsMatchedAlready(cardElement) {
-     console.log('checking if it is already matched');
      if(cardElement.hasClass('matched')){
          return true;
      } else{
@@ -77,7 +79,6 @@
  //                 makeCardsReappear
  //returns: none
  function checkForMatches() {
-     console.log("check for matches");
      if(first_card_clicked.find('.front img').attr('src') === second_card_clicked.find('.front img').attr('src')){
          makeCardsMatch();
      }else{
@@ -92,7 +93,7 @@
  //functions called: gameIsWon, card_clicked
  //returns: none
  function makeCardsMatch() {
-     console.log('cards match');
+     console.log('cards match');        //leave for now
      first_card_clicked.addClass('matched');
      second_card_clicked.addClass('matched');
      first_card_clicked.removeClass('cardClicked');
@@ -130,4 +131,25 @@
      if(match_counter === total_possible_matches){
          $("#gameWon").css('display','initial');
      }
+ }
+
+ //purpose: displays the user's statistics of the game including games played, attempts, and accuracy
+ //param: none
+ //local: none
+ //global: games_played, attempts, match_counter, accuracy
+ //functions called: none
+ //returns: none
+
+ //notes: need to figure out good place to call this???? onready???????
+ //notes: the values are never updated///yet/// i need to figure out where to update them// so that i can have a value for the accuracy
+ function display_stats() {
+     $('.games-played .value').text(games_played);
+     $('.attempts .value').text(attempts);
+     $('.accuracy .value').text(accuracy);
+ }
+
+
+
+ function reset_stats() {
+
  }
