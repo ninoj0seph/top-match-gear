@@ -43,3 +43,8 @@ button{
 .cardHide{
     display: none;
 }
+
+.notification-area{
+    font-size: 3em;
+    padding-left: 5%;
+}
