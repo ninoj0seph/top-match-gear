@@ -5,7 +5,7 @@
 
 $(document).ready(function () {
 
-    randomImg();
+    shuffleCards();
     gamePlay();
     $(".card").flip({
         trigger: 'manual'
@@ -22,7 +22,7 @@ var total_possible_matches = 9;
 var match_counter = 0;
 
 // Create random images based on the available number of cards
-function randomImg() {
+function shuffleCards() {
 
     var ranArray = [];
     var newCardArray = cardArray.slice();
@@ -34,7 +34,6 @@ function randomImg() {
 
     $('.back').each(function (val) {
 
-        console.log("current image number: ", ranArray[val]);
         $(this).css('background', 'url(' + 'images/cards/' + ranArray[val] + '.jpg' + ')');
         $(this).css('background-size', '150px 200px');
 
@@ -89,7 +88,6 @@ function matched() {
     } else {
 
         $("#footer p").text("GOOD JOB, KEEP GOING!");
-        console.log(this);
         if($(this).hasClass("revealed")){
             $(this).addClass("matched");
         }
@@ -105,8 +103,10 @@ function not_matched() {
     second_card_clicked = null;
     if(clickable == false) {
         clickable = true;
-        $('.card:not(.matched)').flip(false);
-
+        //$('.card:not(.matched)').flip(false);
+        if(($('.card').hasClass('matched')) == false){
+    $('card').flip(false);
+        }
     }
     $("#footer p").text("WHOOPS, WRONG!!");
 }
@@ -121,7 +121,7 @@ function stopFlip() {
 
 function reset() {
     $(".card").flip(false);
-    randomImg();
+    shuffleCards();
     gamePlay();
     $(".card").flip();
 
