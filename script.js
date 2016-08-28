@@ -37,13 +37,9 @@ function card_clicked(event) {
                 $(".card").css({
                     display: "none"
                 });
-                $("#game-area").append("<p>YOU WON</p>");
-                $("<img>").attr({
-                    src: "assets/images/mgsvr1.jpg"
-                }).css({
-                    margin: "auto",
+                $(".victory").css({
                     display: "table"
-                }).appendTo("#game-area");
+                }).appendTo("#gmae-area");
             }
         } else {
             ////how negate other clicks
@@ -101,6 +97,65 @@ $(document).ready(function () {
         games_played++;
         reset_stats();
         display_stats();
-        ///reset game area
+        $(".victory").css({
+            display: "none"
+        });
+        $(".card").shuffle().removeClass("revealed").css({
+            display: "inline-block"
+        }).find(".back").removeClass("hidden");
+        ///shuffle( document.getElementsByClassName("card") );
     });
 });
+////shuffle elements
+/*
+function shuffle(elems) {
+
+    allElems = (function(){
+        var ret = [], l = elems.length;
+        while (l--) { ret[ret.length] = elems[l]; }
+        return ret;
+    })();
+
+    var shuffled = (function(){
+        var l = allElems.length, ret = [];
+        while (l--) {
+            var random = Math.floor(Math.random() * allElems.length),
+                randEl = allElems[random].cloneNode(true);
+            allElems.splice(random, 1);
+            ret[ret.length] = randEl;
+        }
+        return ret;
+    })(), l = elems.length;
+
+    while (l--) {
+        elems[l].parentNode.insertBefore(shuffled[l], elems[l].nextSibling);
+        elems[l].parentNode.removeChild(elems[l]);
+    }
+
+}
+*/
+
+ (function($){
+
+ $.fn.shuffle = function() {
+
+ var allElems = this.get(),
+ getRandom = function(max) {
+ return Math.floor(Math.random() * max);
+ },
+ shuffled = $.map(allElems, function(){
+ var random = getRandom(allElems.length),
+ randEl = $(allElems[random]).clone(true)[0];
+ allElems.splice(random, 1);
+ return randEl;
+ });
+
+ this.each(function(i){
+ $(this).replaceWith($(shuffled[i]));
+ });
+
+ return $(shuffled);
+
+ };
+
+ })(jQuery);

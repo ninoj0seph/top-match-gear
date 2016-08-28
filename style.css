@@ -30,6 +30,10 @@ ul, a, span{
     font-family: codecFont, sans-serif;
     text-align: center;
 }
+.victory{
+    margin: auto;
+    display: none;
+}
 /*/////// HEADER STYLING ///////*/
 header{
     background-color: #e0ebe9;
@@ -55,9 +59,8 @@ ul{
 /*/////// MENU STYLING ///////*/
 aside{
     background-color: #89a9a1;
-    width: 15%;
+    width: 15vw;
     float: left;
-    height: 50vh;
 }
 p.label{
     font-size: 1rem;
