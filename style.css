@@ -66,9 +66,9 @@ p.label{
     font-size: 1rem;
 }
 #game-area {
-    width: 81%;
+    width: 75vw;
     display: inline-block;
-    padding: inherit;
+    padding-left: 1vw;
 }
 main {
     margin: 5% 2%;
