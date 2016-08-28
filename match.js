@@ -8,20 +8,23 @@ var match_counter = 0;
 
 //Initiate card clicked function
 $(document).ready(function() {
-    $('.card').on('click',card_clicked);
+    $('.card').click(card_clicked);
 });
 
 function card_clicked() {
 
     //if this is the first card clicked reveal it
     if (first_card_clicked === null){
-        first_card_clicked = $(this).find('.front').find('img').attr('src');
+        first_card_clicked = $(this).find('.front').find('img');
         $(this).find('.back').hide();
-        return first_card_clicked;
+        $(this).addClass('.processing');
+    }else if ((second_card_clicked === null) && ($(this).hasClass('.processing'))){
+        return false;
     }else if (second_card_clicked === null){
-        second_card_clicked = $(this).find('.front').find('img').attr('src');
+        second_card_clicked = $(this).find('.front').find('img');
         $(this).find('.back').hide();
-            if (first_card_clicked === second_card_clicked) {
+        $(this).addClass('.processing');
+            if (first_card_clicked.attr('src') === second_card_clicked.attr('src')) {
                 match_counter++;
                 checkScore();
             } else {
@@ -34,13 +37,14 @@ function card_clicked() {
 //  Covers the cards that did not match
 function flipCardBack(){
     $('.back').show();
-    setTimeout(resetCards, 100)
+    setTimeout(resetCards, 100);
 }
 
 //  Resets the values of the cards to null
 function resetCards() {
-    first_card_clicked = null;
     second_card_clicked = null;
+    first_card_clicked = null;
+    $('.card').removeClass('.processing');
 }
 
 // Checks the score and notifies user they if won
