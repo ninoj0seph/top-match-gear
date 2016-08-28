@@ -5,9 +5,72 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="https://learning-fuze.github.io/memory_match/v0.1/script.js"></script>
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script>
 
+    // You need to declare variables and functions in the global environment
+    //Global Variables
+    var first_card_clicked = null;
+    var second_card_clicked = null;
+    var total_possible_matches = 2;
+    var match_counter = 0;
+
+    //Card Click Functions shows card face and assigns card clicked variable
+    function card_clicked() {
+
+        //remove the back card to reveal the card face of the card clicked
+        $(this).find('.back').fadeOut();
+
+        //if the card is the first card clicked make it so
+        if (first_card_clicked === null) {
+            first_card_clicked = $(this).find('.front').find('img').attr('src');
+        } else {
+            second_card_clicked = $(this).find('.front').find('img').attr('src');
+        }
+
+        //check if cards match
+        if (second_card_clicked !== null){
+            match_check();
+        }
+        //check if cards match
+        if (match_counter >= total_possible_matches){
+            alert("winner");
+        }
+    }
+
+    //Checks if first card clicked and second card click are equal
+    function match_check() {
+        if (first_card_clicked == second_card_clicked) {
+            ++match_counter;
+        }else{
+            setTimeout(flipCardBack,2000);
+        }
+    }
+
+    //Identifies the card clicked and covers them - run this in the event cards do not match
+    function flipCardBack(){
+        $('.back').fadeIn();
+    }
+
+    //Prevents clicks
+    function clickOff() {
+        if (second_card_clicked !== null) {
+            $('.card').unbind('click');
+        }
+    }
+
+    function clickOn() {
+        if (second_card_clicked === null) {
+            $('.card').bind('click');
+        }
+    }
+    //Ensure the document is ready - Then executes card click function
+    $(document).ready(function(){
+        //Click Method that calls card_clicked function
+        $('.card').click(card_clicked);
+    })
+
+</script>
 </head>
 <body>
     <div class="game-wrapper">
