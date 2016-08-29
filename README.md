@@ -77,7 +77,7 @@
 >                       - true
 >                           - Display a message to the user they have won
 >                       - false
->                           - click handler functionality is complete, return
+>                           - click handler functionality is complete, returngit
 >               - false
 >                   - Wait 2 seconds then
 >                       - Be wary of waiting programmatically but not being able to control the user from clicking on cards while the program waits execute the reset of the code

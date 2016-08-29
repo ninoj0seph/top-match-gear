@@ -12,7 +12,6 @@ body{
     position: relative;
     margin:0;
 }
-
 .front{
     font-size: small;
     text-align: center;
@@ -29,7 +28,6 @@ body{
     background-position:left;
     background-repeat: no-repeat;
     background-size: contain;
-
 }
 .frontwait{
     cursor: wait;
@@ -80,9 +78,7 @@ body{
     background-size: contain;
     background-position:left;
     background-repeat: no-repeat;
-
 }
-
 .headerspace{
     height: 22%;
     width: 100%;
@@ -101,7 +97,6 @@ header{
 header h4{
     margin:5px;
 }
-
 #header1{
     background-color:#F1F1F1;
     height: 50%;
@@ -141,7 +136,6 @@ header h4{
     background-position: left;
     background-size:contain;
 }
-
 #settings{
     margin-top: .5%;
     margin-right: 1%;
@@ -158,7 +152,6 @@ header h4{
     border-radius: 3px;
     transition-duration: .3s;
 }
-
 #aboutme {
     margin-top: .5%;
     margin-right: 1.8%;
@@ -181,7 +174,6 @@ header h4{
     opacity:.7;
     border:3px solid indianred;
 }
-
 #settings:hover{
     border-width: 5px;
     font-size: medium;
@@ -189,8 +181,8 @@ header h4{
     border: 3px solid indianred;
     opacity:.7;
 }
-
 .reset{
+   cursor: pointer;
     border-color: #D34332;
     background-color: #D34332;
     width: 65%;
@@ -203,7 +195,6 @@ header h4{
 .reset:hover{
     background-color:#C62917;
 }
-
 .reset p{
     text-align: center;
     font-size: 1vw;
@@ -237,11 +228,9 @@ header h4{
     padding: 6%;
     margin-left: 10%;
 }
-
 .draft:hover,#inbox:hover ,.games-played:hover ,.attemps:hover ,.accuracy:hover{
     background-color:#EFEFEF;
 }
-
 .games-played{
     font-size: medium;
     padding: 6%;
@@ -253,11 +242,10 @@ header h4{
     margin-left: 10%;
 }
 .accuracy{
-    font-size: large;
+    font-size: medium;
     padding: 6%;
     margin-left: 10%;
 }
-
 #game-area img{
     max-width: 100%;
     margin-bottom:5px;
@@ -269,7 +257,6 @@ header h4{
     height:65%;
     width:100%;
 }
-
 #game-area{
     margin-top: 10px;
     margin-right:3%;
@@ -278,7 +265,6 @@ header h4{
     width: 80%;
     float: right;
 }
-
 #messagewindow{
     background-color: white;
     border:2px solid #d6d6d6;
@@ -291,6 +277,7 @@ header h4{
     background-position: top;
     background-repeat: no-repeat;
     min-height: 73%;
+    transition: height 2s;
 }
 #head{
     top:0;
@@ -330,7 +317,6 @@ header h4{
     background-size:contain;
     transition-duration: .3s;
 }
-
 #messagewindow{
     font-family: Arial;
     font-size: small;
@@ -342,10 +328,8 @@ header h4{
     top: 15%;
     left:2%;
 }
-
 #message img{
-    float:right;
-    max-height: 50%;
+  float:right;
     max-width: 70%;
 }
 
@@ -360,13 +344,12 @@ header h4{
     margin-left: 1%;
     border-radius: 2px;
     margin-top: 1.5%;
+    cursor: pointer;
 }
-
 #easy:hover,#medium:hover,#hard:hover {
     background-color: #2976f2;
 }
 #foot p{
-
     text-align: center;
     font-size: .9vw;
     color:white;
