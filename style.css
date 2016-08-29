@@ -107,6 +107,20 @@ section {
 	font-size: 0.5em;
 }
 
+.reset {
+	border: none;
+	padding: 10px;
+	border-radius: 5px;
+	background: #430710;
+	margin-top: 5px;
+	color: white;
+}
+
+.reset:hover {
+	background: #DC0D29;
+	cursor: pointer;
+}
+
 .win-text {
 	display: none;
 }
