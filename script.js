@@ -2,24 +2,42 @@
  var second_card_clicked = null;
  var total_possible_matches = 2;
 
- var match_counter = 0;     //incrementer for the number of matches found
+ var matches = 0;           //incrementer for the number of matches found
  var attempts = 0;          //incrementer for the number of attempted matches
- var accuracy = null;
- var games_played = 0;
+ var accuracy = 0;          //ratio of the number of matches to attempts
+ var games_played = 0;      //the number of times the game has been played
 
- $(document).ready(card_clicked);
+ //purpose: apply the event handlers when the document is loaded
+ //param: none
+ //local: none
+ //global: none
+ //functions called: apply_event_handlers
+ //returns: none
+ $(document).ready(apply_event_handlers);
+
+ //purpose: handles the events that either a div with class card is clicked or the reset button is clicked
+ //param: none
+ //local: none
+ //global: none
+ //functions called: card_clicked, reset_game
+ //returns: none
+function apply_event_handlers(){
+    display_stats();
+    $(".card").click(card_clicked($(this)));
+    $('.reset').click(reset_game);
+}
 
  //purpose: handles click events on divs with class card
  //param: none
  //local: thisCard- passes the card clicked
  //global: none
- //functions called: handleCardsWithFlags
+ //functions called: handleCardClicks
  //returns: none
- function card_clicked(){
-     display_stats();   //need to add to functions called???? is this correct placement?????
+ function card_clicked(cardElement){
+     // display_stats();   //need to add to functions called???? is this correct placement?????
      $(".card").click(function () {
          var thisCard = $(this);
-         handleCardsWithFlags(thisCard);
+         handleCardClicks(thisCard);
      });
  }
 
@@ -29,7 +47,7 @@
  //global: first_card_clicked, second_card_clicked
  //functions called: cardIsMatchedAlready, checkForTwoCards
  //returns: none
- function handleCardsWithFlags(cardElement){
+ function handleCardClicks(cardElement){
      cardElement.children('.back').css('display',"none");
 
      if(!cardIsMatchedAlready(cardElement)) {   //is the card already part of a matched pair
@@ -67,6 +85,8 @@
  //returns: none
  function checkForTwoCards(){
      if(first_card_clicked && second_card_clicked) {
+         attempts++;                                //watch in debug
+         display_stats();
          checkForMatches();
      }
  }
@@ -89,7 +109,7 @@
  //purpose: Adds and removes classes to notify other functions that the two cards are part of a matching pair, then it resets the first and second card. Function will also invoke a function to check if the game has been won. Readies the click handler, as well
  //param: none
  //local: none
- //global: first_card_clicked, second_card_clicked, match_counter
+ //global: first_card_clicked, second_card_clicked, matches
  //functions called: gameIsWon, card_clicked
  //returns: none
  function makeCardsMatch() {
@@ -100,7 +120,8 @@
      second_card_clicked.removeClass('cardClicked');
      first_card_clicked = null;
      second_card_clicked = null;
-     match_counter++;
+     matches++;                                     //watch in debug
+     display_stats();
      card_clicked();                                //readies click handler again
      gameIsWon();
  }
@@ -124,11 +145,11 @@
  //purpose: checks with the game is won
  //param: none
  //local: none
- //global: match_counter, total_possible_matches
+ //global: matches, total_possible_matches
  //functions called: none
  //returns: none
  function gameIsWon() {
-     if(match_counter === total_possible_matches){
+     if(matches === total_possible_matches){
          $("#gameWon").css('display','initial');
      }
  }
@@ -136,20 +157,60 @@
  //purpose: displays the user's statistics of the game including games played, attempts, and accuracy
  //param: none
  //local: none
- //global: games_played, attempts, match_counter, accuracy
- //functions called: none
+ //global: games_played, attempts, matches, accuracy
+ //functions called: calculate_accuracy
  //returns: none
 
  //notes: need to figure out good place to call this???? onready???????
  //notes: the values are never updated///yet/// i need to figure out where to update them// so that i can have a value for the accuracy
  function display_stats() {
+     // console.log('stats are to be displayed');
+     calculate_accuracy();
      $('.games-played .value').text(games_played);
      $('.attempts .value').text(attempts);
      $('.accuracy .value').text(accuracy);
  }
 
+ //purpose: calculates the user's accuracy. If the attempts are zero, it sets the accuracy to zero to prevent dividing by zero
+ //param: none
+ //local: none
+ //global: attempts, matches, accuracy
+ //functions called: none
+ //returns: none
+ function calculate_accuracy(){
+     if(attempts === 0){
+         accuracy = 0 + "%";
+     }else{
+         accuracy = Math.floor((matches / attempts) *100) + "%";
+     }
+ }
 
+ //purpose: resets the games features to the original state, i.e. cards flipped over, stats reset, win state removed. Also increments the games_played by one
+ //param: none
+ //local: none
+ //global: none
+ //functions called: reset_stats, display_stats
+ //returns: none
+ function reset_game(){
+     games_played++;
+     reset_stats();
+     display_stats();
+     $('.back').css('display', 'initial');                  //makes all card back reappear
+     $('.card').removeClass('cardClicked matched');         //makes all cards clickable once more by removing 'cardClicked' and 'matched' classes
+     first_card_clicked = null;
+     second_card_clicked = null;
+     $('#gameWon').css('display', 'none');                  //reset win features
+ }
 
+ //purpose: calculates the user's statistics of the game, namely accuracy
+ //param: none
+ //local: none
+ //global: attempts, matches, accuracy
+ //functions called: calculate_accuracy, display_stats
+ //returns: none
  function reset_stats() {
-
+     matches = 0;
+     attempts = 0;
+     calculate_accuracy();
+     display_stats();
  }
