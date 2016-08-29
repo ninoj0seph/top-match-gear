@@ -1,6 +1,6 @@
  var first_card_clicked = null;
  var second_card_clicked = null;
- var total_possible_matches = 2;
+ var total_possible_matches = 9;
 
  var matches = 0;           //incrementer for the number of matches found
  var attempts = 0;          //incrementer for the number of attempted matches
@@ -197,6 +197,7 @@ function apply_event_handlers(){
      display_stats();
      $('.back').css('display', 'initial');                  //makes all card back reappear
      $('.card').removeClass('cardClicked matched');         //makes all cards clickable once more by removing 'cardClicked' and 'matched' classes
+     $(".card").click(card_clicked($(this)));               //adds the click handler for the 'card' class
      first_card_clicked = null;
      second_card_clicked = null;
      $('#gameWon').css('display', 'none');                  //reset win features
