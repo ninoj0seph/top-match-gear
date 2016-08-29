@@ -60,9 +60,37 @@ function reset_stats() {
 function game_reset() {
 	reset_stats();
 	display_stats();
-	$('.card').removeClass('matched').removeClass('disabled').removeClass('clicked');
-	$('.back').show();
+	$('.card').removeClass('matched').removeClass('clicked');
+	randomize();
+	$('.card').removeClass('disabled');
 	$('.win-text').hide();
 	first_card_clicked = null;
 	second_card_clicked = null;
 }
+
+var $front = $('.front');
+var $card = $('.card');
+
+function numSequence() {
+	var numbers = [];
+	var random = [];
+	var index;
+	for (var i=0; i<18; i++) {
+		numbers.push(i);
+	}
+	for (i; i>0; i--) {
+		index = Math.floor(Math.random()*i);
+		random.push(numbers.splice(index,1)[0]);
+	}
+	return random;
+}
+
+function randomize() {
+	var sequence = numSequence();
+	$front.remove();
+	$card.each(function(i) {
+		$(this).prepend($front[sequence[i]]);
+	});
+}
+
+randomize();
