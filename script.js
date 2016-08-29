@@ -1,5 +1,3 @@
-//TODO add flip effects?, and a sound effect or two, fix game aread width?
-
 ////global variables
 var first_card_clicked = null;
 var second_card_clicked = null;
@@ -28,7 +26,7 @@ footPrint.src = "assets/sounds/footprint.wav";
 ////function to execute when clicked
 function card_clicked(event) {
     var thisCard = $(event);
-    thisCard.find(".back").addClass("hidden");
+    thisCard.find(".back").hide("slide");
     if (first_card_clicked == null && !thisCard.hasClass("revealed")) {
         first_card_clicked = thisCard.addClass("revealed");
         if (first_card_clicked.find(".front > img").attr('src') == "assets/images/soldiers.jpg"){
@@ -44,22 +42,20 @@ function card_clicked(event) {
         if (first_card_clicked.find(".front > img").attr('src') === second_card_clicked.find(".front > img").attr('src') && matches < total_possible_matches) {
             snakeSound.play();
             matches++;
-            if (second_card_clicked.find(".front > img").attr('src') == "assets/images/mantis.jpg"){
-                $(".card").shuffle();
-            }
             first_card_clicked = null;
             second_card_clicked = null;
             if (matches === total_possible_matches) {
-                $(".card").css({
-                    display: "none"
-                });
-                $(".victory").css({
-                    display: "table"
-                });
                 gameOver.play();
+                $(".card").hide("explode", "slow", function () {
+                    $(".victory").css({
+                        display: "table"
+                    });
+                });
             }
         } else {
             canClick = false;
+            first_card_clicked.effect("shake");
+            second_card_clicked.effect("shake");
             wrongPair.play();
             setTimeout(resetState, 2000);
         }
@@ -67,8 +63,8 @@ function card_clicked(event) {
 }
 ///FUNCTION TO RESET MISMATCH
 function resetState(){
-    first_card_clicked.removeClass("revealed").find(".back").removeClass("hidden");
-    second_card_clicked.removeClass("revealed").find(".back").removeClass("hidden");
+    first_card_clicked.removeClass("revealed").find(".back").show("fold");
+    second_card_clicked.removeClass("revealed").find(".back").show("fold");
     first_card_clicked = null;
     second_card_clicked = null;
     canClick = true;
@@ -109,7 +105,7 @@ $(document).ready(function () {
         });
         $(".card").shuffle().removeClass("revealed").css({
             display: "inline-block"
-        }).find(".back").removeClass("hidden");
+        }).find(".back").show("fold");
         codecOver.play();
     });
 });

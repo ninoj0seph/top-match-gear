@@ -30,6 +30,10 @@ ul, a, span{
     font-family: codecFont, sans-serif;
     text-align: center;
 }
+.victory > img {
+    margin: auto;
+    display: block;
+}
 .victory{
     margin: auto;
     display: none;
@@ -87,13 +91,8 @@ button{
     width: 150px;
     display: inline-block;
 }
-.back{
+.back, .front{
     background-color: #283733;
-    height: 100%;
-    width: 100%;
-    position: absolute;
-}
-.front{
     height: 100%;
     width: 100%;
     position: absolute;
@@ -105,4 +104,4 @@ button{
 .back img{
     width: inherit;
 }
-
+/*/////////*/
