@@ -15,7 +15,7 @@ body{
 
 .game-area::after { /* main background */
     content: "";
-    background: url(images/ms_art_background.jpg) no-repeat;
+    background: url(images/ffta_background.jpg) no-repeat;
     opacity: 0.5;
     top: 0;
     left: 0;
@@ -69,6 +69,7 @@ body{
     width: 100%;
 
     position: absolute;
+    max-height: 100%;
 }
 .card .front img{
     bottom: 0;

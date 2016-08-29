@@ -11,7 +11,7 @@ Prompt: https://github.com/Learning-Fuze/memory_match/tree/v0.5
 <!doctype html>
 <html>
 <head>
-    <title>Home | MapleStory Memory Match</title>
+    <title>Home | Final Fantasy Memory Match</title>
 
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
@@ -26,7 +26,7 @@ Prompt: https://github.com/Learning-Fuze/memory_match/tree/v0.5
         //** Game Variables
         var first_card_clicked = null;
         var second_card_clicked = null;
-        var total_possible_matches = 2;
+        var total_possible_matches = ; //TODO: Change to current # of cards
         var match_counter = 0;
         var TIME_DELAY_AMOUNT = 2000; //** In milliseconds. How much time to pause between accepting clicks
         var let_game_play = true;
@@ -125,7 +125,7 @@ Prompt: https://github.com/Learning-Fuze/memory_match/tree/v0.5
 
 <body>
     <header>
-        <h1>MapleStory Memory Match</h1>
+        <h1>Final Fantasy Memory Match</h1>
 
         <!-- **** Nav Bar **** -->
         <ul class="nav">
@@ -163,39 +163,158 @@ Prompt: https://github.com/Learning-Fuze/memory_match/tree/v0.5
 
         <div class="card">
             <div class="front">
-                <img src="images/ms_sword.png" alt="ms_sword.png">
+                <img src="images/ffta_swordman.png" alt="ffta_swordman.png">
             </div>
             <div class="back">
-                <img src="images/ms_leaf" alt="ms_leaf">
+                <img src="images/ffta_card_back.png" alt="ffta_card_back.png">
+            </div>
+        </div>
+        <div class="card">
+            <div class="front">
+                <img src="images/ffta_swordman.png" alt="ffta_swordman.png">
+            </div>
+            <div class="back">
+                <img src="images/ffta_card_back.png" alt="ffta_card_back.png">
             </div>
         </div>
 
         <div class="card">
             <div class="front">
-                <img src="images/ms_sword.png" alt="ms_sword.png">
+                <img src="images/ffta_redmage.png" alt="ffta_redmage.png">
             </div>
             <div class="back">
-                <img src="images/ms_leaf" alt="ms_leaf">
+                <img src="images/ffta_card_back.png" alt="ffta_card_back.png">
+            </div>
+        </div>
+        <div class="card">
+            <div class="front">
+                <img src="images/ffta_redmage.png" alt="ffta_redmage.png">
+            </div>
+            <div class="back">
+                <img src="images/ffta_card_back.png" alt="ffta_card_back.png">
             </div>
         </div>
 
         <div class="card">
             <div class="front">
-                <img src="images/ms_shield.png" alt="ms_shield.png">
+                <img src="images/ffta_whitemage.png" alt="ffta_whitemage.png">
             </div>
             <div class="back">
-                <img src="images/ms_leaf" alt="ms_leaf">
+                <img src="images/ffta_card_back.png" alt="ffta_card_back.png">
+            </div>
+        </div>
+        <div class="card">
+            <div class="front">
+                <img src="images/ffta_whitemage.png" alt="ffta_whitemage.png">
+            </div>
+            <div class="back">
+                <img src="images/ffta_card_back.png" alt="ffta_card_back.png">
             </div>
         </div>
 
         <div class="card">
             <div class="front">
-                <img src="images/ms_shield.png" alt="ms_shield.png">
+                <img src="images/ffta_thief.png" alt="ffta_thief.png">
             </div>
             <div class="back">
-                <img src="images/ms_leaf" alt="ms_leaf">
+                <img src="images/ffta_card_back.png" alt="ffta_card_back.png">
             </div>
         </div>
+        <div class="card">
+            <div class="front">
+                <img src="images/ffta_thief.png" alt="ffta_thief.png">
+            </div>
+            <div class="back">
+                <img src="images/ffta_card_back.png" alt="ffta_card_back.png">
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="front">
+                <img src="images/ffta_archer.png" alt="ffta_archer.png">
+            </div>
+            <div class="back">
+                <img src="images/ffta_card_back.png" alt="ffta_card_back.png">
+            </div>
+        </div>
+        <div class="card">
+            <div class="front">
+                <img src="images/ffta_archer.png" alt="ffta_archer.png">
+            </div>
+            <div class="back">
+                <img src="images/ffta_card_back.png" alt="ffta_card_back.png">
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="front">
+                <img src="images/ffta_weirdmage.png" alt="ffta_weirdmage.png">
+            </div>
+            <div class="back">
+                <img src="images/ffta_card_back.png" alt="ffta_card_back.png">
+            </div>
+        </div>
+        <div class="card">
+            <div class="front">
+                <img src="images/ffta_weirdmage.png" alt="ffta_weirdmage.png">
+            </div>
+            <div class="back">
+                <img src="images/ffta_card_back.png" alt="ffta_card_back.png">
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="front">
+                <img src="images/ffta_judgemaster.png" alt="ffta_judgemaster.png">
+            </div>
+            <div class="back">
+                <img src="images/ffta_card_back.png" alt="ffta_card_back.png">
+            </div>
+        </div>
+        <div class="card">
+            <div class="front">
+                <img src="images/ffta_judgemaster.png" alt="ffta_judgemaster.png">
+            </div>
+            <div class="back">
+                <img src="images/ffta_card_back.png" alt="ffta_card_back.png">
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="front">
+                <img src="images/ffta_assassin.png" alt="ffta_assassin.png">
+            </div>
+            <div class="back">
+                <img src="images/ffta_card_back.png" alt="ffta_card_back.png">
+            </div>
+        </div>
+        <div class="card">
+            <div class="front">
+                <img src="images/ffta_assassin.png" alt="ffta_assassin.png">
+            </div>
+            <div class="back">
+                <img src="images/ffta_card_back.png" alt="ffta_card_back.png">
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="front">
+                <img src="images/ffta_monk.png" alt="ffta_monk.png">
+            </div>
+            <div class="back">
+                <img src="images/ffta_card_back.png" alt="ffta_card_back.png">
+            </div>
+        </div>
+        <div class="card">
+            <div class="front">
+                <img src="images/ffta_monk.png" alt="ffta_monk.png">
+            </div>
+            <div class="back">
+                <img src="images/ffta_card_back.png" alt="ffta_card_back.png">
+            </div>
+        </div>
+
+        <!-- TODO: center back img -->
 
     </div>
 </body>
