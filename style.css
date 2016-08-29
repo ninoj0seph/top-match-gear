@@ -67,11 +67,12 @@ section {
 .stats {
 	width: 900px;
 	text-align: center;
+	font-family : 'Oswald',Arial,sans;
 }
 
 /* led like counters */
 .display{
-  width : 80px;
+  width : 100px;
   position:relative;
   text-align:center;
   display: inline-block;
@@ -80,7 +81,7 @@ section {
 .label{
   color : #222;
   font-family : 'Oswald',Arial,sans;
-  font-size:0.7em;
+  font-size:0.8em;
   margin-top:5px;
   text-align:center;
 }
