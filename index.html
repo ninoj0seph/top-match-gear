@@ -26,7 +26,7 @@ Prompt: https://github.com/Learning-Fuze/memory_match/tree/v0.5
         //** Game Variables
         var first_card_clicked = null;
         var second_card_clicked = null;
-        var total_possible_matches = ; //TODO: Change to current # of cards
+        var total_possible_matches = 9 ;
         var match_counter = 0;
         var TIME_DELAY_AMOUNT = 2000; //** In milliseconds. How much time to pause between accepting clicks
         var let_game_play = true;
@@ -109,7 +109,7 @@ Prompt: https://github.com/Learning-Fuze/memory_match/tree/v0.5
                             };
                             let_game_play = false; //** pause the game because the card's haven't turned back onto their fronts yet
 
-                            setTimeout(turn_onto_back, TIME_DELAY_AMOUNT); //**TODO: Not delaying the clicking of other cards
+                            setTimeout(turn_onto_back, TIME_DELAY_AMOUNT);
                         }
                     }
                 }
@@ -151,7 +151,7 @@ Prompt: https://github.com/Learning-Fuze/memory_match/tree/v0.5
             <div class="value"> 0% </div>
         </div>
 
-        <button class="reset"> <!-- TODO: Make the button do something -->
+        <button class="reset">
             Reset Game
         </button>
     </div>
