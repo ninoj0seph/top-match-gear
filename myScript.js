@@ -12,6 +12,8 @@ function startup() {
     });
     shuffleCards();
     gamePlay();
+    var music = document.getElementById("music");
+    music.play();
 }
 
 // Declare all of the global variables
@@ -63,12 +65,19 @@ function gamePlay() {
         $(this).addClass("revealed");
         if (first_card_clicked == null) {
             first_card_clicked = $(this);
+            $('.back').click(false);
+
+
+            //if(($('.back').css('background-image')) == (('url("file:///C:/Users/Weizguy/Desktop/lfz/memory_match/images/cards/4.jpg")'))){
+
+
 
         } else {
             second_card_clicked = $(this);
 
             var first_card_background = first_card_clicked.children(".back").css('background');
             var second_card_background = second_card_clicked.children(".back").css('background');
+
 
             if (second_card_background == first_card_background) {
                 matched();
@@ -82,7 +91,6 @@ function gamePlay() {
 
 function matched() {
     match_counter += 1;
-    console.log(match_counter);
     first_card_clicked.addClass("matched");
     second_card_clicked.addClass("matched");
 
@@ -118,8 +126,8 @@ function not_matched() {
         }
     }
     $("#footer p").text("WHOOPS, WRONG!!").css('color', 'yellow');
-    var laugh = document.getElementById("laugh");
-    laugh.play();
+    //var laugh = document.getElementById("laugh");
+    //laugh.play();
 }
 
 function stopFlip() {
