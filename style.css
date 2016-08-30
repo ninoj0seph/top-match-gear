@@ -120,8 +120,8 @@ section {
 	padding: 10px;
 	border-radius: 5px;
 	background: #430710;
-	margin-top: 5px;
-	margin-bottom: 5px;
+	margin-top: 10px;
+	margin-bottom: 10px;
 	color: white;
 }
 
@@ -130,8 +130,9 @@ section {
 	cursor: pointer;
 }
 
-.win-text {
+.win-text {	
 	visibility: hidden;
+	margin: 5px 0;
 }
 
 .visible {
