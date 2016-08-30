@@ -2,15 +2,17 @@
  * Created by Weizguy on 8/25/2016.
  */
 
-
 $(document).ready(function () {
+    startup();
+});
 
-    shuffleCards();
-    gamePlay();
+function startup() {
     $(".card").flip({
         trigger: 'manual'
     });
-});
+    shuffleCards();
+    gamePlay();
+}
 
 // Declare all of the global variables
 var cardArray = [1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -20,6 +22,9 @@ var first_card_clicked = null;
 var second_card_clicked = null;
 var total_possible_matches = 9;
 var match_counter = 0;
+var tries = 1;
+var wins = 0.00;
+var accuracy = 0.00;
 
 // Create random images based on the available number of cards
 function shuffleCards() {
@@ -27,7 +32,7 @@ function shuffleCards() {
     var ranArray = [];
     var newCardArray = cardArray.slice();
     while (newCardArray.length != 0) {
-        var ran = Math.floor(Math.random() * (newCardArray.length - 1) - 1) + 1;
+        var ran = Math.floor(Math.random() * (newCardArray.length));
         ranArray.push(newCardArray[ran]);
         newCardArray.splice(ran, 1);
     }
@@ -48,7 +53,6 @@ function gamePlay() {
 
         if ($(this).hasClass("revealed")) {
             $(this).flip(false);
-
             return;
         }
         if (clickable == false) {
@@ -67,33 +71,39 @@ function gamePlay() {
             var second_card_background = second_card_clicked.children(".back").css('background');
 
             if (second_card_background == first_card_background) {
-
                 matched();
-
             } else {
                 clickable = false;
                 setTimeout(not_matched, 1500);
             }
         }
-
     });
-
 }
 
 function matched() {
     match_counter += 1;
+    console.log(match_counter);
+    first_card_clicked.addClass("matched");
+    second_card_clicked.addClass("matched");
 
     if (match_counter == total_possible_matches) {
         $("#footer p").text("YOU WIN!!!");
+        wins += 1;
+        $("#wins").text(wins);
+        accuracy = wins/tries;
+        $("#accuracy").text(accuracy.toFixed(2));
+        var fatality = document.getElementById("fatality");
+
+        fatality.play();
     } else {
 
-        $("#footer p").text("GOOD JOB, KEEP GOING!");
-        if($(this).hasClass("revealed")){
-            $(this).addClass("matched");
-        }
-    }
-    setTimeout(stopFlip, 1000);
+        $("#footer p").text("GOOD JOB, KEEP GOING!").css('color', 'white');
+        var welldone = document.getElementById("wellDone");
 
+            welldone.play();
+
+    }
+    setTimeout(stopFlip, 100);
 }
 
 function not_matched() {
@@ -101,28 +111,35 @@ function not_matched() {
     second_card_clicked.removeClass('revealed').flip(false);
     first_card_clicked = null;
     second_card_clicked = null;
-    if(clickable == false) {
+    if (clickable == false) {
         clickable = true;
-        //$('.card:not(.matched)').flip(false);
-        if(($('.card').hasClass('matched')) == false){
-    $('card').flip(false);
+        if (($('.card').hasClass('matched')) == false) {
+            $('.card').flip(false);
         }
     }
-    $("#footer p").text("WHOOPS, WRONG!!");
+    $("#footer p").text("WHOOPS, WRONG!!").css('color', 'yellow');
+    var laugh = document.getElementById("laugh");
+    laugh.play();
 }
 
 function stopFlip() {
-    first_card_clicked.unbind("click");
-    second_card_clicked.unbind("click");
+    first_card_clicked.off("click");
+    second_card_clicked.off("click");
     first_card_clicked = null;
     second_card_clicked = null;
-
 }
 
 function reset() {
+    $(".card").off("click");
     $(".card").flip(false);
-    shuffleCards();
-    gamePlay();
-    $(".card").flip();
-
+    $(".card").on("click").removeClass('revealed matched');
+    first_card_clicked = null;
+    second_card_clicked = null;
+    match_counter = 0;
+    tries += 1;
+    $("#tries").text(tries);
+    var fight = document.getElementById("fight");
+    fight.play();
+    $("#footer p").text("FIGHT!").css('color', 'red');
+    startup();
 }
