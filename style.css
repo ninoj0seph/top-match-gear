@@ -228,7 +228,7 @@ header h4{
     padding: 6%;
     margin-left: 10%;
 }
-.draft:hover,#inbox:hover ,.games-played:hover ,.attemps:hover ,.accuracy:hover{
+.draft:hover,#inbox:hover ,.games-played:hover ,.attempts:hover ,.accuracy:hover, .matches:hover{
     background-color:#EFEFEF;
 }
 .games-played{
@@ -236,12 +236,17 @@ header h4{
     padding: 6%;
     margin-left: 10%;
 }
-.attemps{
+.attempts{
     font-size: medium;
     padding: 6%;
     margin-left: 10%;
 }
 .accuracy{
+    font-size: medium;
+    padding: 6%;
+    margin-left: 10%;
+}
+.matches{
     font-size: medium;
     padding: 6%;
     margin-left: 10%;

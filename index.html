@@ -7,6 +7,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
     <script>
+        var attempts = 0;
+        var accuracy = 0;
+        var games_played = 0;
         var number_of_cards = null;
         var cardtracker = 1;
         var first_card_clicked = null;
@@ -19,11 +22,52 @@
         var othercard1 = null;
         var othercard2 = null;
 
+        function accuracy_display(){
+
+            var acc = (match_counter) / (attempts/2)*100;
+            accuracy = Math.round(acc);
+            console.log("displaying accuracy...");
+            $('.accuracy').text('Accuracy (' + accuracy + '%)');
+        }
+
+        function display_stats(){
+            console.log("stats...stats...");
+
+           if(cardtracker==2) {
+               $('.attempts').text('Attempts (' + attempts/2 + ')');
+
+           }
+        }
+
         function reset() {
             console.log("should be resetting");
-                console.log("winner!")
-                $('#message').text("Congratulations, you have cleared your inbox... here's an e-cookie...").append("<img src='images/Cookie.png'>");
-                hide_window();
+            attempts = 0;
+            accuracy = 0;
+            number_of_cards = null;
+            cardtracker = 1;
+            first_card_clicked = null;
+            second_card_clicked = null;
+            total_possible_matches = null
+            match_counter = 0;
+            first_card_element = null;
+            second_card_element = null;
+            clickable = true;
+            othercard1 = null;
+            othercard2 = null;
+
+            games_played++;
+            $('.games-played').text("Games Played ("+games_played+")");
+            $("#inbox p").replaceWith('Inbox (0)');
+            $('.attempts').text('Attempts');
+            $('.accuracy').text('Accuracy');
+
+            $("#game-area").empty();
+            $("#game-area").append('<img src="images/header3.JPG">');
+            $('#message').text("Skynet: restarting huh? Who's going to clear this inbox if you don't do it?! Try again by selecting by selecting a difficulty on the bottom left.");
+            $('#easy').show();
+            $('#medium').show();
+            $('#hard').show();
+            $('#messagewindow').show()
             }
 
 
@@ -56,7 +100,6 @@
             $('#easy').hide();
             $('#medium').hide();
             $('#hard').hide();
-
         }
         function hide_window() {
             $('#messagewindow').slideToggle()
@@ -85,8 +128,11 @@
 
         function flip(element) {
             if (clickable == true) {
+                attempts++;
+
                 console.log("flip!");
                 $(element).css('display', 'none');
+                display_stats();
 
                 if (cardtracker == 1) {
                     cardtracker++;
@@ -99,6 +145,7 @@
                     console.log("next card clicked will be " + cardtracker);
                     second_card_clicked = $(element).text();
                     second_card_element = element;
+                    cardtracker = true;
                     if (first_card_clicked == second_card_clicked) {
 
                         $('.back').addClass("backwait");
@@ -129,6 +176,7 @@
                         first_card_clicked = null;
                         second_card_clicked = null;
                     }
+                    accuracy_display();
                 }
             }
             else {
@@ -185,15 +233,16 @@
         <div id="inbox"><p>Inbox</p></div>
         <div class="games-played">
             <div class="label">Games Played</div>
-            <div class="value"></div>
         </div>
-        <div class="attemps">
-            <div class="label">Attemps</div>
-            <div class="value"></div>
+        <div class="matches">
+            <div class="label">Matches</div>
+        </div>
+
+        <div class="attempts">
+            <div class="label">Attempts</div>
         </div>
         <div class="accuracy">
             <div class="label">Accuracy</div>
-            <div class="value"></div>
         </div>
         <div class="draft">Drafts (2)
         </div>
