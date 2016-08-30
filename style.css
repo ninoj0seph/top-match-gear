@@ -48,6 +48,7 @@ body{
     background-size: contain;
 }
 .back{
+    font-size: medium;
     cursor: pointer;
     position: absolute;
     background-color: #FFFFFF;
@@ -64,6 +65,7 @@ body{
     background-repeat: no-repeat;
 }
 .backwait{
+    font-size: medium;
     cursor: wait;
     position: absolute;
     background-color: #FFFFFF;
@@ -281,8 +283,7 @@ header h4{
     background-position:left;
     background-position: top;
     background-repeat: no-repeat;
-    min-height: 73%;
-    transition: height 2s;
+    height: 73%;
 }
 #head{
     top:0;
@@ -327,7 +328,7 @@ header h4{
     font-size: small;
 }
 #message{
-    width:80%
+    width:90%;
     height:70%;
     position: absolute;
     top: 15%;

@@ -7,6 +7,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
     <script>
+        var names=['Amanda Hugginkiss', 'Ivana Tinkle', 'Huge Jass', 'Anita bath', 'Maya Buttreeks', 'I.P. Freely', 'Jacques Strap', 'Al Coholic', 'Oliver Closof', 'Seymoure Butz', 'Mike Rotch', 'Ollie Tabooger', 'Ahmed Adoudi', 'Maya Normousbutt', 'Drew P. Wiener', 'Yuri Nator', 'Moe Ron'];
+        var namesRandom=[];
+        var random = [];
+        var random2=[];
         var attempts = 0;
         var accuracy = 0;
         var games_played = 0;
@@ -57,26 +61,32 @@
 
             games_played++;
             $('.games-played').text("Games Played ("+games_played+")");
-            $("#inbox p").replaceWith('Inbox (0)');
+            inbox_counter();
             $('.attempts').text('Attempts');
             $('.accuracy').text('Accuracy');
 
             $("#game-area").empty();
             $("#game-area").append('<img src="images/header3.JPG">');
-            $('#message').text("Skynet: restarting huh? Who's going to clear this inbox if you don't do it?! Try again by selecting by selecting a difficulty on the bottom left.");
+            $('#message').text("Skynet: restarting huh?");
+            $('#message').append("<br><br>");
+            $('#message').append("Who's going to clear this inbox if you don't do it?!");
+            $('#message').append("<br><br>");
+            $('#message').append("Try again by selecting by selecting a difficulty on the bottom left.");
+            $('#message').append('<br><br><br><br><img src="images/GoogleSkynet3.jpg">');
             $('#easy').show();
             $('#medium').show();
             $('#hard').show();
-            $('#messagewindow').show()
+            $('#messagewindow').hide();
+            $('#messagewindow').slideToggle();
             }
 
 
         function remove_pair() {
             console.log("remove pair");
-            $('#' + othercard1).hide();
+            $('#' + othercard1).slideToggle(200);
             console.log(othercard1 + "is hidden");
 
-            $('#' + othercard2).hide();
+            $('#' + othercard2).slideToggle(200);
             console.log(othercard2 + "is hidden");
 
             $('.backwait').addClass("back");
@@ -90,20 +100,23 @@
 
             if (total_possible_matches == match_counter) {
                 console.log("winner!")
-                $('#message').text("Congratulations, you have cleared your inbox... here's an e-cookie...").append("<img src='images/Cookie.png'>");
+                $('#message').text("Congratulations, you have cleared your inbox... here's an e-cookie...").append("<br><br><br><br><br><br><br><img src='images/Cookie.png'>");
                 hide_window();
             }
         }
         function setcardnumber(elm) {
+            console.log("number of cards will be: " + elm);
             number_of_cards = elm;
             total_possible_matches = elm / 2;
             $('#easy').hide();
             $('#medium').hide();
             $('#hard').hide();
         }
+        function hide_window_bootup() {
+            $('#messagewindow').hide();
+        }
         function hide_window() {
-            $('#messagewindow').slideToggle()
-            //$('#messagewindow').hide();
+            $('#messagewindow').slideToggle(300);
         }
 
         function flip_back() {
@@ -147,6 +160,7 @@
                     second_card_element = element;
                     cardtracker = true;
                     if (first_card_clicked == second_card_clicked) {
+                        console.log("match!")
 
                         $('.back').addClass("backwait");
                         $('.front').addClass("frontwait");
@@ -159,11 +173,12 @@
                         othercard1 = second_card_clicked;
                         othercard2 = parseInt(second_card_clicked) + 1;
                         clickable = false;
-                        setTimeout(remove_pair, 2000);
+                        setTimeout(remove_pair, 1000);
                         first_card_clicked = null;
                         second_card_clicked = null;
 
                     } else if (first_card_clicked != second_card_clicked) {
+                        console.log("not match!")
                         clickable = false;
                         console.log("clickable is now: " + clickable);
 
@@ -172,7 +187,7 @@
                         $('.back').removeClass("back");
                         $('.front').removeClass("front");
 
-                        setTimeout(flip_back, 2000);
+                        setTimeout(flip_back, 1000);
                         first_card_clicked = null;
                         second_card_clicked = null;
                     }
@@ -184,16 +199,43 @@
             }
         }
 
+        function randomArray(array){
+            var currentIndex = array.length, temporaryValue, randomIndex;
+
+            // While there remain elements to shuffle...
+            while (0 !== currentIndex) {
+
+                // Pick a remaining element...
+                randomIndex = Math.floor(Math.random() * currentIndex);
+                currentIndex -= 1;
+
+                // And swap it with the current element.
+                temporaryValue = array[currentIndex];
+                array[currentIndex] = array[randomIndex];
+                array[randomIndex] = temporaryValue;
+            }
+            return array;
+        }
+
         function genCards() {
             console.log("generating cards");
             for (i = 1; i <= number_of_cards; i++) {
-                var new_card = $("<div class='card' id='" + i + "'>");
-                $("#game-area").append(new_card);
+                random.push(i);
+                random2 = randomArray(random).slice();
+                };
+            console.log(random2);
 
+            for(i=0;i<=number_of_cards-1; i++){
+                var new_card = $("<div class='card' id='" + random[i] + "'>");
+                $("#game-area").append(new_card)
             }
+             random=[];
+             random2=[];
         }
         function genfrontback() {
-            console.log("generating front and back");
+            namesRandom=randomArray(names);
+            console.log("generating front and back" + namesRandom);
+
             for (i = 1, x = 1; i <= number_of_cards; i++, x++) {
                 if (x % 2 == true) {
                     var new_face = $("<div class='front'>").text(x);
@@ -201,14 +243,15 @@
                 }
                 else if (x % 2 == 0) {
                     var new_face = $("<div class='front'>").text(x - 1);
-                    var new_back = $("<div class='back' onclick='flip(this)'>").text(x - 1);
+                    var new_back = $("<div class='back' onclick='flip(this)'>").text(x-1);
                 }
                 $('#' + i).append(new_face, new_back);
             }
+            namesRandom=[];
         }
     </script>
 </head>
-<body>
+<body onload="hide_window_bootup(); setTimeout(hide_window, 1000);">
 
 <header>
     <div id="header1">
