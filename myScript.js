@@ -6,15 +6,6 @@ $(document).ready(function () {
     startup();
 });
 
-function startup() {
-    $(".card").flip({
-        trigger: 'manual'
-    });
-    shuffleCards();
-    gamePlay();
-    var music = document.getElementById("music");
-    music.play();
-}
 
 // Declare all of the global variables
 var cardArray = [1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -27,6 +18,27 @@ var match_counter = 0;
 var tries = 1;
 var wins = 0.00;
 var accuracy = 0.00;
+var scorpion;
+
+function startup() {
+    $(".card").flip({
+        trigger: 'manual'
+    });
+    shuffleCards();
+    gamePlay();
+    backgroundMusicUp();
+}
+
+function backgroundMusicUp() {
+    var music = document.getElementById("music");
+    music.volume = 1.0;
+    music.play();
+}
+
+function backgroundMusicDown() {
+    var music = document.getElementById("music");
+    music.volume = .2;
+}
 
 // Create random images based on the available number of cards
 function shuffleCards() {
@@ -43,9 +55,11 @@ function shuffleCards() {
 
         $(this).css('background', 'url(' + 'images/cards/' + ranArray[val] + '.jpg' + ')');
         $(this).css('background-size', '150px 200px');
-
     });
 }
+    scorpion = $(".back").css('background', 'url(images/cards/4.jpg');
+    console.log(scorpion);
+
 
 // Gameplay code
 function gamePlay() {
@@ -68,8 +82,10 @@ function gamePlay() {
             $('.back').click(false);
 
 
-            //if(($('.back').css('background-image')) == (('url("file:///C:/Users/Weizguy/Desktop/lfz/memory_match/images/cards/4.jpg")'))){
-
+            if(($(this).children('.back').css('background-image')) == scorpion.children('.back').css('background-image')){
+                console.log("right");
+            }
+console.log($(this).children(".back").css('background-image'));
 
 
         } else {
@@ -100,15 +116,29 @@ function matched() {
         $("#wins").text(wins);
         accuracy = wins/tries;
         $("#accuracy").text(accuracy.toFixed(2));
+        backgroundMusicDown();
         var fatality = document.getElementById("fatality");
-
         fatality.play();
+        fatality.volume = 1.0;
+        setTimeout(backgroundMusicUp, 2000);
     } else {
 
-        $("#footer p").text("GOOD JOB, KEEP GOING!").css('color', 'white');
-        var welldone = document.getElementById("wellDone");
+        $("#footer p").text("Well Done!").css('color', 'white');
 
+        if(match_counter <8){
+            var welldone = document.getElementById("wellDone");
+            backgroundMusicDown();
             welldone.play();
+            welldone.volume = 1.0;
+            setTimeout(backgroundMusicUp, 2500);
+
+        }else if(match_counter == 8){
+            var finishhim = document.getElementById("finishhim");
+            backgroundMusicDown();
+            finishhim.play();
+            finishhim.volume = 1.0;
+            setTimeout(backgroundMusicUp, 1000);
+        }
 
     }
     setTimeout(stopFlip, 100);
@@ -126,8 +156,16 @@ function not_matched() {
         }
     }
     $("#footer p").text("WHOOPS, WRONG!!").css('color', 'yellow');
-    //var laugh = document.getElementById("laugh");
-    //laugh.play();
+    var laughRan = Math.random();
+    console.log(laughRan);
+    var laughTrack = .25;
+    if(laughRan < laughTrack) {
+        var laugh = document.getElementById("laugh");
+        backgroundMusicDown();
+        laugh.play();
+        laugh.volume = 1.0;
+        setTimeout(backgroundMusicUp, 3000);
+    }
 }
 
 function stopFlip() {
@@ -147,7 +185,8 @@ function reset() {
     tries += 1;
     $("#tries").text(tries);
     var fight = document.getElementById("fight");
-    fight.play();
+    backgroundMusicDown();
+    fight.play().currentTime=2;
     $("#footer p").text("FIGHT!").css('color', 'red');
     startup();
 }
