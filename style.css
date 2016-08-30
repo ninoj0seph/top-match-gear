@@ -13,6 +13,16 @@ body{
     width: 74.7%; /* Trimmed to the edge of the background img */
 }
 
+.game-area{
+    width: 1000px;
+    margin-left: 150px;
+    margin-right: 150px;
+    padding: 20px 0px 50px 50px; /* Even out the cards to the opacity colored background */
+
+    background: rgba(150,150,150,.3);
+    border-radius: 0 0 25px 25px;
+}
+
 .game-area::after { /* main background */
     content: "";
     background: url(images/ffta_background.jpg) no-repeat;
@@ -28,16 +38,65 @@ body{
 /* ****** Nav Bar | All Pages ****** */
 .nav{
     list-style-type: none;
+    margin-left: 150px;
 }
 .nav li{
     display: inline-block;
+    margin-left: 25px;
+    margin-right: 25px;
+    font-size: 20px;
+}
+.nav li a{
+    text-decoration: none;
 }
 
 
 /* ****** Home/Game Page ****** */
+h1{
+    margin-left: 150px;
+}
 /* **** Display Communications **** */
 #stats{
     display: inline-block;
+    margin-left: 150px;
+    width: 1050px; /* to match with the game area */
+    font-size: 25px;
+    background: rgba(150,150,150,.3);
+    border-radius: 25px 25px 0 0; /* to connect with the game area */
+}
+#stats div{
+    margin-left: 40px;
+}
+
+#stats .games-played{
+    margin-top: 40px;
+}
+
+#stats button{
+    margin-left: 80px;
+    margin-top: 10px;
+    /*padding: 5px;
+*/
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+
+    background-color: #b0d9ea;
+    border: none;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    /*margin: 4px 2px;*/
+    cursor: pointer;
+}
+
+#stats div div{
+    display: inline-block;
+}
+
+.reset{
+    font-size: 20px;
 }
 /* **** Card **** */
 .card{
