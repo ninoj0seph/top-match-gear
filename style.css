@@ -104,6 +104,10 @@ section {
 }
 /* led like counters end */
 
+.accuracy .count {
+	width: 75px;
+}
+
 .percent-sign {
 	font-size: 0.5em;
 }
