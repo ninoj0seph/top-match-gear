@@ -24,7 +24,7 @@ function card_clicked() {
 			first_card_clicked.addClass('matched');
 			second_card_clicked.addClass('matched');
 			if (match_counter == total_possible_matches) {
-				$('.win-text').show();
+				$('.win-text').addClass('visible');
 			} else {
 				first_card_clicked = null;
 				second_card_clicked = null;
@@ -63,7 +63,7 @@ function game_reset() {
 	$('.card').removeClass('matched').removeClass('clicked');
 	randomize();
 	$('.card').removeClass('disabled');
-	$('.win-text').hide();
+	$('.win-text').removeClass('visible');
 	first_card_clicked = null;
 	second_card_clicked = null;
 }

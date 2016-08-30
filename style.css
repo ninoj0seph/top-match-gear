@@ -65,9 +65,13 @@ section {
 }
 
 .stats {
-	width: 900px;
 	text-align: center;
 	font-family : 'Oswald',Arial,sans;
+	color: white;
+	width: 450px;
+	background: black;
+	padding: 10px;
+	border-radius: 10px;
 }
 
 /* led like counters */
@@ -79,7 +83,6 @@ section {
 }
 
 .label{
-  color : #222;
   font-family : 'Oswald',Arial,sans;
   font-size:0.8em;
   margin-top:5px;
@@ -118,6 +121,7 @@ section {
 	border-radius: 5px;
 	background: #430710;
 	margin-top: 5px;
+	margin-bottom: 5px;
 	color: white;
 }
 
@@ -127,7 +131,11 @@ section {
 }
 
 .win-text {
-	display: none;
+	visibility: hidden;
+}
+
+.visible {
+	visibility: visible;
 }
 
 .game-area {
