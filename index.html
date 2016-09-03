@@ -1,0 +1,323 @@
+<!-- ***********
+Project Name: Memory Match
+File Name: index.html
+Author: Lance Takiguchi
+Date: 08/24/2016 Time: 14:57 - 8/26/16 09:48
+Objective: v0.1 Create the basic card flipping of the game
+Prompt: https://github.com/Learning-Fuze/memory_match/tree/v0.5
+ *********** -->
+
+<!--TODO: Menu boxes, background music, flip animation, sound in flip-->
+
+<!doctype html>
+<html>
+<head>
+    <title>Home | Final Fantasy Memory Match</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+    <script>
+        //** Stats Global Variables
+        var matches = 0; //** When there is a card match, increment
+        var attempts = 0; //** When a match is attempted, successful or not, increment
+        var accuracy = 0; //** matches/attempts
+        var games_played = 0; //**Increments at initial page load and at game resets
+
+        //** Game Variables
+        var first_card_clicked = null;
+        var second_card_clicked = null;
+        var total_possible_matches = 9 ;
+        var match_counter = 0;
+        var TIME_DELAY_AMOUNT = 2000; //** In milliseconds. How much time to pause between accepting clicks
+        var let_game_play = true;
+
+       //*** Stats JS ****
+        var display_stats = function () {
+            $(".games-played .value").html(games_played);
+            $(".attempts .value").html(attempts);
+            accuracy = (matches/attempts)*100;
+            if(isNaN(accuracy)){ //** AKA if accuracy is NaN
+                accuracy = 0;
+            }
+            $(".accuracy .value").html(Math.round(accuracy) + "%");
+        };
+
+        var reset_stats = function(){
+            accuracy = 0;
+            matches = 0;
+            attempts = 0;
+            display_stats();
+        };
+
+        var card_clicked = function() {
+//            //** Put up display
+//            display_stats();
+            $(".reset").click(function () {
+                games_played++;
+                reset_stats();
+                display_stats();
+                $(".back").show();
+                $("#communication_display").text("");
+                match_counter = 0; //** So that making a match, resetting, making another match does not count as 2
+            });
+
+            //** Display card front
+            //**Time delay is still waiting 2 seconds to reset, so hold for a moment.
+            $(".back").click(function () { //**flip the card
+                //$(this).css("display", "none");
+                if(let_game_play){
+                    $(this).hide();
+
+                    //** Checking if first_card_clicked already
+                    if(first_card_clicked == null) {
+                        first_card_clicked = this;
+
+                    }else{ //**AKA: Handling the 2nd click
+                        second_card_clicked = this;
+
+                        attempts++;
+
+                        //** Checking if the 1st & 2nd card are the same
+                        if($(first_card_clicked).parent().find(".front img").attr("src") == $(second_card_clicked).parent().find(".front img").attr("src")){
+
+                            //** Variable Setting
+                            match_counter++;
+                            matches++;
+                            display_stats();
+
+                            first_card_clicked = null;
+                            second_card_clicked = null;
+
+                            //**Check if the GAME is OVER
+                            if(match_counter == total_possible_matches){
+                                $("#communication_display").text("YOU WIN!");
+                                match_counter = 0;
+                            }
+
+                        }else{ //** The two cards are not the same
+                            display_stats();
+
+                            var turn_onto_back = function (){
+                                console.log("2 Seconds later...");
+                                $(this).show(); //** resets card onto back
+                                $(first_card_clicked).show();
+                                $(second_card_clicked).show();
+
+                                first_card_clicked = null;
+                                second_card_clicked = null;
+                                let_game_play = true; //**resume game
+                            };
+                            let_game_play = false; //** pause the game because the card's haven't turned back onto their fronts yet
+
+                            setTimeout(turn_onto_back, TIME_DELAY_AMOUNT);
+                        }
+                    }
+                }
+            });
+
+        };
+
+        // ** Run the JS **
+        $(document).ready(card_clicked);
+    </script>
+
+</head>
+
+<body>
+    <header>
+        <h1>Final Fantasy Memory Match</h1>
+
+        <!-- **** Nav Bar **** -->
+        <ul class="nav">
+            <li><a href="settings.html">Settings</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </header>
+
+
+    <div id="stats"> <!-- **** Stats Container **** -->
+        <div class="games-played">
+            <div class="label">Games Played:</div>
+            <div class="value"> 0 </div>
+        </div>
+
+        <div class="attempts">
+            <div class="label">Attempts:</div>
+            <div class="value"> 0 </div>
+        </div>
+
+        <div class="accuracy">
+            <div class="label">Accuracy:</div>
+            <div class="value"> 0% </div>
+        </div>
+
+        <button class="reset">
+            Reset Game
+        </button>
+    </div>
+
+     <!-- **** Game Area **** -->
+    <div class="game-area">
+
+        <div id="communication_display">  </div>
+
+        <div class="card">
+            <div class="front">
+                <img src="images/ffta_swordman.png" alt="ffta_swordman.png">
+            </div>
+            <div class="back">
+                <img src="images/ffta_card_back.png" alt="ffta_card_back.png">
+            </div>
+        </div>
+        <div class="card">
+            <div class="front">
+                <img src="images/ffta_swordman.png" alt="ffta_swordman.png">
+            </div>
+            <div class="back">
+                <img src="images/ffta_card_back.png" alt="ffta_card_back.png">
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="front">
+                <img src="images/ffta_redmage.png" alt="ffta_redmage.png">
+            </div>
+            <div class="back">
+                <img src="images/ffta_card_back.png" alt="ffta_card_back.png">
+            </div>
+        </div>
+        <div class="card">
+            <div class="front">
+                <img src="images/ffta_redmage.png" alt="ffta_redmage.png">
+            </div>
+            <div class="back">
+                <img src="images/ffta_card_back.png" alt="ffta_card_back.png">
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="front">
+                <img src="images/ffta_whitemage.png" alt="ffta_whitemage.png">
+            </div>
+            <div class="back">
+                <img src="images/ffta_card_back.png" alt="ffta_card_back.png">
+            </div>
+        </div>
+        <div class="card">
+            <div class="front">
+                <img src="images/ffta_whitemage.png" alt="ffta_whitemage.png">
+            </div>
+            <div class="back">
+                <img src="images/ffta_card_back.png" alt="ffta_card_back.png">
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="front">
+                <img src="images/ffta_thief.png" alt="ffta_thief.png">
+            </div>
+            <div class="back">
+                <img src="images/ffta_card_back.png" alt="ffta_card_back.png">
+            </div>
+        </div>
+        <div class="card">
+            <div class="front">
+                <img src="images/ffta_thief.png" alt="ffta_thief.png">
+            </div>
+            <div class="back">
+                <img src="images/ffta_card_back.png" alt="ffta_card_back.png">
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="front">
+                <img src="images/ffta_archer.png" alt="ffta_archer.png">
+            </div>
+            <div class="back">
+                <img src="images/ffta_card_back.png" alt="ffta_card_back.png">
+            </div>
+        </div>
+        <div class="card">
+            <div class="front">
+                <img src="images/ffta_archer.png" alt="ffta_archer.png">
+            </div>
+            <div class="back">
+                <img src="images/ffta_card_back.png" alt="ffta_card_back.png">
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="front">
+                <img src="images/ffta_weirdmage.png" alt="ffta_weirdmage.png">
+            </div>
+            <div class="back">
+                <img src="images/ffta_card_back.png" alt="ffta_card_back.png">
+            </div>
+        </div>
+        <div class="card">
+            <div class="front">
+                <img src="images/ffta_weirdmage.png" alt="ffta_weirdmage.png">
+            </div>
+            <div class="back">
+                <img src="images/ffta_card_back.png" alt="ffta_card_back.png">
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="front">
+                <img src="images/ffta_judgemaster.png" alt="ffta_judgemaster.png">
+            </div>
+            <div class="back">
+                <img src="images/ffta_card_back.png" alt="ffta_card_back.png">
+            </div>
+        </div>
+        <div class="card">
+            <div class="front">
+                <img src="images/ffta_judgemaster.png" alt="ffta_judgemaster.png">
+            </div>
+            <div class="back">
+                <img src="images/ffta_card_back.png" alt="ffta_card_back.png">
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="front">
+                <img src="images/ffta_assassin.png" alt="ffta_assassin.png">
+            </div>
+            <div class="back">
+                <img src="images/ffta_card_back.png" alt="ffta_card_back.png">
+            </div>
+        </div>
+        <div class="card">
+            <div class="front">
+                <img src="images/ffta_assassin.png" alt="ffta_assassin.png">
+            </div>
+            <div class="back">
+                <img src="images/ffta_card_back.png" alt="ffta_card_back.png">
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="front">
+                <img src="images/ffta_monk.png" alt="ffta_monk.png">
+            </div>
+            <div class="back">
+                <img src="images/ffta_card_back.png" alt="ffta_card_back.png">
+            </div>
+        </div>
+        <div class="card">
+            <div class="front">
+                <img src="images/ffta_monk.png" alt="ffta_monk.png">
+            </div>
+            <div class="back">
+                <img src="images/ffta_card_back.png" alt="ffta_card_back.png">
+            </div>
+        </div>
+
+        <!-- TODO: center back img -->
+
+    </div>
+</body>
+
+</html>
