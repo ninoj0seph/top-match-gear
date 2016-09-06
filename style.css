@@ -1,0 +1,158 @@
+body{
+    margin: 0;
+}
+/* styling for the header*/
+header{
+    position: absolute;
+    top:0;
+    height: 15%;
+    width: 100%;
+    background-color: #c88453;
+    color: white;
+    text-align: center;
+}
+header h5{
+    text-align: right;
+}
+header a{
+    color: white;
+}
+header img{
+    position: absolute;
+    top:0;
+    left: 0;
+    height: 100%;
+    width: auto;
+}
+/* styling for the side stats bar*/
+/*do a calc to recalculate the width*/
+#stats {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 85%;
+    width: 200px;
+    background-color: #496647;
+}
+.label{
+    height: 30px;
+    width: 100%;
+    background-color: inherit;
+    clear: left;
+
+    text-align: center;
+}
+.value{
+    height: 60px;
+    width: 100%;
+    background-color: green;
+}
+#stats input{
+    display: block;
+    margin: 10px auto;
+}
+/*styling for game area*/
+/*do a calc to recalculate the width*/
+#game-area{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 85%;
+    width: calc(100% - 200px);
+    padding: 10px;
+    background-color: #99542c;
+}
+.row{
+    position: relative;
+    height: 20%;
+    width: 100%;
+    right: 0;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+}
+/*styling for cards*/
+/*picture ratio for card is 108 to 140 (w:h)*/
+.card {
+    position: relative;
+    height: 100%;
+    /*want width to be set based on the ratios of image*/
+    width: 120px;
+    /*border: 1px solid black;*/
+    display:inline-block;
+}
+.front {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+    vertical-align: middle;
+    background-color: white;
+
+}
+.front img{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: auto;
+    width: 100%;
+    margin: auto 0;
+    display: inline-block;
+    vertical-align: middle;
+}
+.back {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: saddlebrown;
+}
+.back img{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+    vertical-align: middle;
+}
+#gameWon{
+    display: none;
+    color: white;
+    text-align: center;
+}
+#gameWon img{
+    height: 200px;
+    width: auto;
+    display: block;
+    margin: 0 auto;
+}
+/*styling for about page*/
+.side_nav {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 85%;
+    width: 200px;
+    background-color: #496647;
+}
+.side_nav ul{
+    color: white;
+}
+.side_nav a{
+    color: white;
+}
+.main-content{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: calc(85% - 20px);
+    width: calc(100% - 220px);
+    padding: 10px;
+    background-color: #99542c;
+    color: white;
+}
+.main-content img{
+    height: 150px;
+    width: auto;
+    float: right;
+    display: block;
+}
