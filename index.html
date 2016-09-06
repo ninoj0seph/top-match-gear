@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Memory Match</title>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="script.js"></script>
+<body>
+<div class="container_fluid">
+    <div id="row1">
+        <div class="col-xs-2 logo"><img src="images/logo.jpeg" class="img-circle"></div>
+        <div class="header_name col-xs-8"><strong>Travel the world!</strong></div>
+        <div class="link_area col-xs-2">
+            <ul class="nav">
+                <li><a href="about.html">About</a></li>
+                <li><a href="settings.html">Settings</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="container_fluid">
+    <div id="row2">
+        <div class="stats col-xs-3">
+            <div class="games_played"><br>
+                <div class="label">Games Played:</div>
+                <div id="games_value" class="value"></div>
+            </div>
+            <div class="attempts"><br>
+                <div class="label">Attempts:</div>
+                <div class="value"></div>
+            </div>
+            <div class="accuracy"><br>
+                <div class="label">Accuracy:</div>
+                <div id="accuracy_value" class="value"></div>
+            </div>
+            <div><br>
+                <button class="reset" type="button">Reset Game</button>
+            </div>
+        </div>
+        <div class="game_area col-xs-9">
+            <div class="card">
+                <div class="front"><img src="images/1.png" alt="flag" class="1 img-circle"></div>
+                <div class="back"><img src="images/travelcard.png" alt="backcard" class="img-circle"></div>
+            </div>
+            <div class="card">
+                <div class="front"><img src="images/1'.png" alt="flag" class="1 img-circle"></div>
+                <div class="back"><img src="images/travelcard.png" alt="backcard" class="img-circle"></div>
+            </div>
+            <div class="card">
+                <div class="front"><img src="images/2.png" alt="flag" class="2 img-circle"></div>
+                <div class="back"><img src="images/travelcard.png" alt="backcard" class="img-circle"></div>
+            </div>
+            <div class="card">
+                <div class="front"><img src="images/2'.png" alt="flag" class="2 img-circle"></div>
+                <div class="back"><img src="images/travelcard.png" alt="backcard" class="img-circle"></div>
+            </div>
+            <div class="card">
+                <div class="front"><img src="images/3.png" alt="flag" class="3 img-circle"></div>
+                <div class="back"><img src="images/travelcard.png" alt="backcard" class="img-circle"></div>
+            </div>
+            <div class="card">
+                <div class="front"><img src="images/3'.png" alt="flag" class="3 img-circle"></div>
+                <div class="back"><img src="images/travelcard.png" alt="backcard" class="img-circle"></div>
+            </div>
+            <div class="card">
+                <div class="front"><img src="images/4.png" alt="flag" class="4 img-circle"></div>
+                <div class="back"><img src="images/travelcard.png" alt="backcard" class="img-circle"></div>
+            </div>
+            <div class="card">
+                <div class="front"><img src="images/4'.png" alt="flag" class="4 img-circle"></div>
+                <div class="back"><img src="images/travelcard.png" alt="backcard" class="img-circle"></div>
+            </div>
+            <div class="card">
+                <div class="front"><img src="images/5.png" alt="flag" class="5 img-circle"></div>
+                <div class="back"><img src="images/travelcard.png" alt="backcard" class="img-circle"></div>
+            </div>
+            <div class="card">
+                <div class="front"><img src="images/5'.png" alt="flag" class="5 img-circle"></div>
+                <div class="back"><img src="images/travelcard.png" alt="backcard" class="img-circle"></div>
+            </div>
+            <div class="card">
+                <div class="front"><img src="images/6.png" alt="flag" class="6 img-circle"></div>
+                <div class="back"><img src="images/travelcard.png" alt="backcard" class="img-circle"></div>
+            </div>
+            <div class="card">
+                <div class="front"><img src="images/6'.png" alt="flag" class="6 img-circle"></div>
+                <div class="back"><img src="images/travelcard.png" alt="backcard" class="img-circle"></div>
+            </div>
+            <div class="card">
+                <div class="front"><img src="images/7.png" alt="flag" class="7 img-circle"></div>
+                <div class="back"><img src="images/travelcard.png" alt="backcard" class="img-circle"></div>
+            </div>
+            <div class="card">
+                <div class="front"><img src="images/7'.png" alt="flag" class="7 img-circle"></div>
+                <div class="back"><img src="images/travelcard.png" alt="backcard" class="img-circle"></div>
+            </div>
+            <div class="card">
+                <div class="front"><img src="images/8.png" alt="flag" class="8 img-circle"></div>
+                <div class="back"><img src="images/travelcard.png" alt="backcard" class="img-circle"></div>
+            </div>
+            <div class="card">
+                <div class="front"><img src="images/8'.png" alt="flag" class="8 img-circle"></div>
+                <div class="back"><img src="images/travelcard.png" alt="backcard" class="img-circle"></div>
+            </div>
+            <div class="card">
+                <div class="front"><img src="images/9.png" alt="flag" class="9 img-circle"></div>
+                <div class="back"><img src="images/travelcard.png" alt="backcard" class="img-circle"></div>
+            </div>
+            <div class="card">
+                <div class="front"><img src="images/9'.png" alt="flag" class="9 img-circle"></div>
+                <div class="back"><img src="images/travelcard.png" alt="backcard" class="img-circle"></div>
+            </div>
+            <div class="card">
+                <div class="front"><img src="images/10.png" alt="flag" class="10 img-circle"></div>
+                <div class="back"><img src="images/travelcard.png" alt="backcard" class="img-circle"></div>
+            </div>
+            <div class="card">
+                <div class="front"><img src="images/10'.png" alt="flag" class="10 img-circle"></div>
+                <div class="back"><img src="images/travelcard.png" alt="backcard" class="img-circle"></div>
+            </div>
+            <div class="card">
+                <div class="front"><img src="images/11.png" alt="flag" class="11 img-circle"></div>
+                <div class="back"><img src="images/travelcard.png" alt="backcard" class="img-circle"></div>
+            </div>
+            <div class="card">
+                <div class="front"><img src="images/11.png" alt="flag" class="11 img-circle"></div>
+                <div class="back"><img src="images/travelcard.png" alt="backcard" class="img-circle"></div>
+            </div>
+            <div class="card">
+                <div class="front"><img src="images/12.png" alt="flag" class="12 img-circle"></div>
+                <div class="back"><img src="images/travelcard.png" alt="backcard" class="img-circle"></div>
+            </div>
+            <div class="card">
+                <div class="front"><img src="images/12'.png" alt="flag" class="12 img-circle"></div>
+                <div class="back"><img src="images/travelcard.png" alt="backcard" class="img-circle"></div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+
