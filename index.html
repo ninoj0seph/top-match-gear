@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Mortal Kombat - memory matching game</title>
+    <meta name="description" content="Memory card matching game based on the Mortal Kombat series">
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://cdn.rawgit.com/nnattawat/flip/master/dist/jquery.flip.min.js"></script>
+    <script src="myScript.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
+</head>
+<body>
+<div id="banner">
+    <img src="images/logo.png" alt="Mortal Kombat" width="200" height="200">
+    <h1>Mortal Kombat</h1>
+</div>
+
+<div id="spacer">
+    <img src="images/logo.png" alt="Mortal Kombat" width="200" height="200">
+    <h1>Mortal Kombat</h1>
+</div>
+
+<div id="main">
+
+    <div id="navbar">
+        <ul>
+            <li class="changeBackground"><a href="index.html">Home</a></li>
+            <li class="changeBackground"><a href="info.html">Info</a></li>
+            <li class="changeBackground"><a href="about.html">About</a></li>
+        </ul>
+    </div>
+
+    <div id="content">
+
+        <div class="card">
+            <div class="back"></div>
+            <div class="front"></div>
+        </div>
+        <div class="card">
+            <div class="back"></div>
+            <div class="front"></div>
+        </div>
+        <div class="card">
+            <div class="back"></div>
+            <div class="front"></div>
+        </div>
+        <div class="card">
+            <div class="back"></div>
+            <div class="front"></div>
+        </div>
+
+        <div class="card">
+            <div class="back"></div>
+            <div class="front"></div>
+        </div>
+        <div class="card">
+            <div class="back"></div>
+            <div class="front"></div>
+        </div>
+        <div class="card">
+            <div class="back"></div>
+            <div class="front"></div>
+        </div>
+        <div class="card">
+            <div class="back"></div>
+            <div class="front"></div>
+        </div>
+
+        <div class="card">
+            <div class="back"></div>
+            <div class="front"></div>
+        </div>
+        <div class="card">
+            <div class="back"></div>
+            <div class="front"></div>
+        </div>
+        <div class="card">
+            <div class="back"></div>
+            <div class="front"></div>
+        </div>
+        <div class="card">
+            <div class="back"></div>
+            <div class="front"></div>
+        </div>
+
+        <div class="card">
+            <div class="back"></div>
+            <div class="front"></div>
+        </div>
+        <div class="card">
+            <div class="back"></div>
+            <div class="front"></div>
+        </div>
+        <div class="card">
+            <div class="back"></div>
+            <div class="front"></div>
+        </div>
+        <div class="card">
+            <div class="back"></div>
+            <div class="front"></div>
+        </div>
+
+        <div class="card">
+            <div class="back"></div>
+            <div class="front"></div>
+        </div>
+        <div class="card">
+            <div class="back"></div>
+            <div class="front"></div>
+        </div>
+
+
+    </div>
+
+    <div id="sidebar">
+        <h2>Stats</h2>
+
+        <h3>Wins</h3>
+        <br>
+        <p id="wins">0</p>
+        <h3>Number of tries</h3>
+        <br>
+        <p id="tries">1</p>
+        <h3>Accuracy</h3>
+        <br>
+        <p id="accuracy">0.00</p>
+        <h3>Start / Reset</h3>
+        <p>
+            <br>
+            <button onClick="reset()">RESET</button></p>
+        <h3>Razzle Dazzle</h3>
+        <p>
+            <br>
+
+            <audio id="wellDone">
+                <source src="sounds/welldone.mp3" type="audio/mpeg">
+            </audio>
+            <audio id="fatality">
+            <source src="sounds/fatality.mp3" type="audio/mpeg">
+        </audio>
+            <audio id="fight">
+                <source src="sounds/fight.mp3" type="audio/mpeg">
+            </audio>
+            <audio id="outstanding">
+                <source src="sounds/outstanding.mp3" type="audio/mpeg">
+            </audio>
+            <audio id="laugh">
+                <source src="sounds/laugh.mp3" type="audio/mpeg">
+            </audio>
+            <audio id="finishhim">
+                <source src="sounds/finishhim.mp3" type="audio/mpeg">
+            </audio>
+            <audio id="music" controls preload="auto" loop>
+                <source src="sounds/music.mp3" type="audio/mpeg">
+            </audio>
+        </p>
+    </div>
+</div>
+
+<div id="footer">
+    <p id="footer_text">Click on a card and match them!</p>
+</div>
+</body>
+</html>

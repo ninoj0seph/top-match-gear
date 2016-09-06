@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <title>Flip</title>
+    <script>
+    </script>
+
+    <style>
+        /* entire container, keeps perspective */
+        .flip-container {
+            perspective: 1000px;
+        }
+
+        /* flip the pane when clicked */
+        .flip-container:hover .flipper, .flip-container.clicked .flipper, .flip-container.flip .flipper {
+            transform: rotateY(180deg);
+        }
+
+        .flip-container, .back, .front {
+            width: 150px;
+            height: 200px;
+        }
+
+        /* flip speed goes here */
+        .flipper {
+            transition: .6s;
+            transform-style: preserve-3d;
+
+            position: relative;
+        }
+
+        /* hide back of pane during swap */
+        .back, .front {
+            backface-visibility: hidden;
+
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        /* front pane, placed above back */
+        .back {
+            z-index: 2;
+            /* for firefox 31 */
+            transform: rotateY(0deg);
+            background: url("images/cards/cardback.png");
+            background-size: 150px 200px;
+        }
+
+        /* back, initially hidden pane */
+        .front {
+            transform: rotateY(180deg);
+            background: url("images/cards/kratos.jpg");
+            background-size: 150px 200px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="flip-container"
+">
+<div class="flipper">
+    <!-- front content -->
+    <div class="front">
+    </div>
+    <!-- back content -->
+    <div class="back">
+    </div>
+</div>
+</div>
+</body>
+</html>
