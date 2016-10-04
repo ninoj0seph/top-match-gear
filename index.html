@@ -1,0 +1,153 @@
+<!doctype html>
+<html>
+<head>
+    <title>Memory Game</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="http://learning-fuze.github.io/memory_match/v0.1/script.js"></script>
+</head>
+<body>
+<div class="container-fluid">
+    <header>
+        Memory Game
+    </header>
+    <div class="row">
+        <div class="col-md-2" id="statsArea">
+            <div class="games-played">
+                <h3 class="myLabel">Games Played:</h3>
+                <p class="myValue"></p>
+            </div>
+            <div class="attempts">
+                <h3 class="myLabel">Attempts:</h3>
+                <p class="myValue"></p>
+            </div>
+            <div class="accuracy">
+                <h3 class="myLabel">Accuracy:</h3>
+                <p class="myValue"></p>
+            </div>
+            <button class="reset">Reset Game</button>
+        </div>
+        <div class="col-md-9" id="game-area">
+            <!--<div class="container-fluid">-->
+            <div class="row"><!--row 1-->
+                <div class="col-md-2 col-sm-4"><!--card 1-->
+                    <div class="card">
+                        <img src="images/quen.jpg" alt="" class="front">
+                        <img src="images/the_witcher_3" alt="" class="back">
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-4"><!--card 2-->
+                    <div class="card">
+                        <img src="images/wraith.jpg" alt="" class="front">
+                        <img src="images/the_witcher_3" alt="" class="back">
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-4"><!--card 3-->
+                    <div class="card">
+                        <img src="images/igni.jpg" alt="" class="front">
+                        <img src="images/the_witcher_3" alt="" class="back">
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-4"><!--card 4-->
+                    <div class="card">
+                        <img src="images/thehunt.png" alt="" class="front">
+                        <img src="images/the_witcher_3" alt="" class="back">
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-4"><!--card 5-->
+                    <div class="card">
+                        <img src="images/foglet.jpg" alt="" class="front">
+                        <img src="images/the_witcher_3" alt="" class="back">
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-4"><!--card 6-->
+                    <div class="card">
+                        <img src="images/hound_of_the_wild_hunt.jpg" alt="" class="front">
+                        <img src="images/the_witcher_3" alt="" class="back">
+                    </div>
+                </div>
+            </div>
+            <div class="row"><!--row 2-->
+                <div class="col-md-2 col-sm-4"><!--card 1-->
+                    <div class="card">
+                        <img src="images/quen.jpg" alt="" class="front">
+                        <img src="images/the_witcher_3" alt="" class="back">
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-4"><!--card 2-->
+                    <div class="card">
+                        <img src="images/wraith.jpg" alt="" class="front">
+                        <img src="images/the_witcher_3" alt="" class="back">
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-4"><!--card 3-->
+                    <div class="card">
+                        <img src="images/igni.jpg" alt="" class="front">
+                        <img src="images/the_witcher_3" alt="" class="back">
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-4"><!--card 4-->
+                    <div class="card">
+                        <img src="images/thehunt.png" alt="" class="front">
+                        <img src="images/the_witcher_3" alt="" class="back">
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-4"><!--card 5-->
+                    <div class="card">
+                        <img src="images/howler.jpg" alt="" class="front">
+                        <img src="images/the_witcher_3" alt="" class="back">
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-4"><!--card 6-->
+                    <div class="card">
+                        <img src="images/arachas.jpg" alt="" class="front">
+                        <img src="images/the_witcher_3" alt="" class="back">
+                    </div>
+                </div>
+            </div>
+            <div class="row"><!--row 3-->
+                <div class="col-md-2 col-sm-4"><!--card 1-->
+                    <div class="card">
+                        <img src="images/rotfiend.jpg" alt="" class="front">
+                        <img src="images/the_witcher_3" alt="" class="back">
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-4"><!--card 2-->
+                    <div class="card">
+                        <img src="images/arachas.jpg" alt="" class="front">
+                        <img src="images/the_witcher_3" alt="" class="back">
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-4"><!--card 3-->
+                    <div class="card">
+                        <img src="images/rotfiend.jpg" alt="" class="front">
+                        <img src="images/the_witcher_3" alt="" class="back">
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-4"><!--card 4-->
+                    <div class="card">
+                        <img src="images/howler.jpg" alt="" class="front">
+                        <img src="images/the_witcher_3" alt="" class="back">
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-4"><!--card 5-->
+                    <div class="card">
+                        <img src="images/hound_of_the_wild_hunt.jpg" alt="" class="front">
+                        <img src="images/the_witcher_3" alt="" class="back">
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-4"><!--card 6-->
+                    <div class="card">
+                        <img src="images/foglet.jpg" alt="" class="front">
+                        <img src="images/the_witcher_3" alt="" class="back">
+                    </div>
+                </div>
+            </div>
+            <!--</div>-->
+        </div>
+    </div>
+</div>
+</body>
+</html>
