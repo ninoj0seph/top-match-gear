@@ -33,11 +33,12 @@ aside.stats-container {
     vertical-align: top;
 }
 .card-container {
-    width: 89%;
-    height: 100%;
+    width: 60%;
+    height: 80%;
     display: inline-block;
     position: relative;
     font-size: 0;
+    margin: auto;
 }
 
 .card-container .card {
@@ -51,7 +52,7 @@ aside.stats-container {
 .front, .back {
     position: absolute;
     width: 100%;
-    height: auto;
+    height: 100%;
 }
 .card-container .front img, .card-container .back img {
     width: 100%;
