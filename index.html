@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Memory Match</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+    <script src="http://learning-fuze.github.io/memory_match/v0.1/script.js"></script>
+</head>
+<body>
+<header>
+    <a href="index.html"><img src="http://chetart.com/blog/wp-content/uploads/2012/05/playing-card-back.jpg"></a>
+    <h1>Memory Match</h1>
+    <nav>
+        <li><a href="settings.html">Settings</a></li>
+        <li><a href="about.html">About This Game</a></li>
+    </nav>
+</header>
+<stats>
+    <div class="games-played">
+        <div class="label">Games Played</div>
+    </div>
+    <div class="value"></div>
+
+    <div class="attempts">
+        <div class="label">Attempts</div>
+    </div>
+    <div class="value"></div>
+    <div class="accuracy">
+        <div class="label">Accuracy</div>
+    </div>
+    <div class="value"></div>
+
+    <button class="reset">Reset Game</button>
+</stats>
+<div id="game-area">
+    <div class="card">
+        <div class="front">
+            <img src="https://s-media-cache-ak0.pinimg.com/736x/6a/d0/32/6ad032539b140bca319262afbf129792.jpg">
+        </div>
+        <div class="back">
+            <img src="http://chetart.com/blog/wp-content/uploads/2012/05/playing-card-back.jpg">
+        </div>
+    </div>
+    <div class="card">
+        <div class="front">
+            <img src="https://s-media-cache-ak0.pinimg.com/736x/6a/d0/32/6ad032539b140bca319262afbf129792.jpg">
+        </div>
+        <div class="back">
+            <img src="http://chetart.com/blog/wp-content/uploads/2012/05/playing-card-back.jpg">
+        </div>
+    </div>
+    <div class="card">
+        <div class="front">
+            <img src="https://s-media-cache-ak0.pinimg.com/236x/68/b2/51/68b2513611bfc5c7067afb1706204046.jpg">
+        </div>
+        <div class="back">
+            <img src="http://chetart.com/blog/wp-content/uploads/2012/05/playing-card-back.jpg">
+        </div>
+    </div>
+    <div class="card">
+        <div class="front">
+            <img src="https://s-media-cache-ak0.pinimg.com/236x/68/b2/51/68b2513611bfc5c7067afb1706204046.jpg">
+        </div>
+        <div class="back">
+            <img src="http://chetart.com/blog/wp-content/uploads/2012/05/playing-card-back.jpg">
+        </div>
+    </div>
+    <div class="card">
+        <div class="front">
+            <img src="https://s-media-cache-ak0.pinimg.com/564x/4e/bd/fa/4ebdfa8a4457d8a96d411c8ff5e0c383.jpg">
+        </div>
+        <div class="back">
+            <img src="http://chetart.com/blog/wp-content/uploads/2012/05/playing-card-back.jpg">
+        </div>
+    </div>
+    <div class="card">
+        <div class="front">
+            <img src="https://s-media-cache-ak0.pinimg.com/564x/4e/bd/fa/4ebdfa8a4457d8a96d411c8ff5e0c383.jpg">
+        </div>
+        <div class="back">
+            <img src="http://chetart.com/blog/wp-content/uploads/2012/05/playing-card-back.jpg">
+        </div>
+    </div>
+    <div class="card">
+        <div class="front">
+            <img src="http://cdn1.bigcommerce.com/n-ou1isn/ydriczk/products/87193/images/88279/Captain_America_Marvel_Avengers_Party_Face_Mask_buy_star_masks_at_starstills__58929.1412244951.500.659.jpg?c=2">
+        </div>
+        <div class="back">
+            <img src="http://chetart.com/blog/wp-content/uploads/2012/05/playing-card-back.jpg">
+        </div>
+    </div>
+    <div class="card">
+        <div class="front">
+            <img src="http://cdn1.bigcommerce.com/n-ou1isn/ydriczk/products/87193/images/88279/Captain_America_Marvel_Avengers_Party_Face_Mask_buy_star_masks_at_starstills__58929.1412244951.500.659.jpg?c=2">
+        </div>
+        <div class="back">
+            <img src="http://chetart.com/blog/wp-content/uploads/2012/05/playing-card-back.jpg">
+        </div>
+    </div>
+    <div class="card">
+        <div class="front">
+            <img src="https://s-media-cache-ak0.pinimg.com/564x/32/53/38/325338d19451b789bdaf9f9d0898172d.jpg">
+        </div>
+        <div class="back">
+            <img src="http://chetart.com/blog/wp-content/uploads/2012/05/playing-card-back.jpg">
+        </div>
+    </div>
+    <div class="card">
+        <div class="front">
+            <img src="https://s-media-cache-ak0.pinimg.com/564x/32/53/38/325338d19451b789bdaf9f9d0898172d.jpg">
+        </div>
+        <div class="back">
+            <img src="http://chetart.com/blog/wp-content/uploads/2012/05/playing-card-back.jpg">
+        </div>
+    </div>
+    <div class="card">
+        <div class="front">
+            <img src="http://i.ebayimg.com/images/g/QY8AAOSwAHZUMeE6/s-l300.jpg">
+        </div>
+        <div class="back">
+            <img src="http://chetart.com/blog/wp-content/uploads/2012/05/playing-card-back.jpg">
+        </div>
+    </div>
+    <div class="card">
+        <div class="front">
+            <img src="http://i.ebayimg.com/images/g/QY8AAOSwAHZUMeE6/s-l300.jpg">
+        </div>
+        <div class="back">
+            <img src="http://chetart.com/blog/wp-content/uploads/2012/05/playing-card-back.jpg">
+        </div>
+    </div>
+    <div class="card">
+        <div class="front">
+            <img src="http://www.bytemining.com/wp-content/uploads/2012/01/200px-Playing_card_club_2.svg_.png">
+        </div>
+        <div class="back">
+            <img src="http://chetart.com/blog/wp-content/uploads/2012/05/playing-card-back.jpg">
+        </div>
+    </div>
+    <div class="card">
+        <div class="front">
+            <img src="http://www.bytemining.com/wp-content/uploads/2012/01/200px-Playing_card_club_2.svg_.png">
+        </div>
+        <div class="back">
+            <img src="http://chetart.com/blog/wp-content/uploads/2012/05/playing-card-back.jpg">
+        </div>
+    </div>
+    <div class="card">
+        <div class="front">
+            <img src="http://thumbs1.ebaystatic.com/images/g/7tEAAOSwTZ1XndOA/s-l225.jpg">
+        </div>
+        <div class="back">
+            <img src="http://chetart.com/blog/wp-content/uploads/2012/05/playing-card-back.jpg">
+        </div>
+    </div>
+    <div class="card">
+        <div class="front">
+            <img src="http://thumbs1.ebaystatic.com/images/g/7tEAAOSwTZ1XndOA/s-l225.jpg">
+        </div>
+        <div class="back">
+            <img src="http://chetart.com/blog/wp-content/uploads/2012/05/playing-card-back.jpg">
+        </div>
+    </div>
+    <div class="card">
+        <div class="front">
+            <img src="https://s-media-cache-ak0.pinimg.com/564x/63/b1/a0/63b1a0f9e13a047bb012e6c93aaed902.jpg">
+        </div>
+        <div class="back">
+            <img src="http://chetart.com/blog/wp-content/uploads/2012/05/playing-card-back.jpg">
+        </div>
+    </div>
+    <div class="card">
+        <div class="front">
+            <img src="https://s-media-cache-ak0.pinimg.com/564x/63/b1/a0/63b1a0f9e13a047bb012e6c93aaed902.jpg">
+        </div>
+        <div class="back">
+            <img src="http://chetart.com/blog/wp-content/uploads/2012/05/playing-card-back.jpg">
+        </div>
+    </div>
+</div>
+</body>
+</html>
