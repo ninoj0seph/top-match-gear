@@ -16,23 +16,26 @@ header{
 .card-row{
     height: 33%;
 }
+.card-col{
+    height: 100%;
+}
 .card{
-    top: 50%;
-    transform: translateY(-50%);
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 85%;
+    width: 80%;
     position: relative;
     background-color: black;
     overflow: hidden;
     border-radius: 10%;
-    height: 90%;
-    width: 11%;
-    margin-left: 2.5%;
-    margin-right: 2.5%;
+
 }
 .front, .back{
-    position: relative;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
+    position: relative;
     height: 60%;
     width: auto;
 }
