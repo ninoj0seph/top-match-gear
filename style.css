@@ -1,0 +1,76 @@
+/****************
+BASE STYLES
+*****************/
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+#wrapper {
+    width: 95%;
+    margin: 0 auto;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+aside {
+
+    width: 15vw;
+
+}
+
+
+/*************************
+HEADER
+**************************/
+
+header {
+    height: 30vh;
+}
+
+/*******************
+GAME AREA
+*******************/
+
+
+
+/*******************
+Cards
+*******************/
+
+img {
+    max-width: 100%;
+    height: 100%;
+}
+
+.card {
+    display: inline-block;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.front,
+.back {
+    height: 250px;
+    width: 150px;
+}
+
+.back  {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.front {
+    position: relative;
+    right: 15px;
+}
