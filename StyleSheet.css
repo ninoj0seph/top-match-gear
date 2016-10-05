@@ -15,9 +15,11 @@
     top:0;
     left:0;
     height: 100%;
-
 }
 
+.label,.reset{
+    margin-top: 50px;
+}
 
 img{
     width: 100%;
