@@ -1,17 +1,17 @@
-header{
-    height: 20vh;
-    background-color: #2980b9;
+body{
+    background-image: url();
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #6c7a89;
 }
 #main-row{
     height: 75vh;
 }
 #game-area{
     height: 100%;
-    background-color: darkgray;
 }
 #statsArea{
     height: 100%;
-    background-color: #6c7a89;
 }
 .card-row{
     height: 33%;

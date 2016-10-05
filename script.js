@@ -65,7 +65,6 @@ function displayStats(){
     $(".accuracy .value").text(matchAccuracy+"%");
 }
 function resetStats(){
-    console.log("Resetting Stats");
     matchAccuracy = matchCounter = attemptNum = 0;
     displayStats();
     $(".back").show();
