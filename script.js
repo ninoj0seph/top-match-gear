@@ -21,7 +21,8 @@ $(document).ready(function(){
                 }
             }else{
                 setTimeout(function(){
-                    $()
+                    $("img[src$='"+firstCardClicked+"']").parent().find(".back").show();
+                    $("img[src$='"+secondCardClicked+"']").parent().find(".back").show();
                     firstCardClicked = secondCardClicked = null;
                 }, 2000);
             }
