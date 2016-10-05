@@ -1,4 +1,4 @@
-/*function flipCard() {
-    $('div.front').addClass('.flip');
-}
-*/
+
+$('.card').on('click', function() {
+    alert('Hey!');
+});

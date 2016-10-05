@@ -7,8 +7,14 @@
         <link rel="stylesheet" href="style.css">
         <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-        <script src="http://learning-fuze.github.io/memory_match/v0.1/script.js"></script>
-        <script src="javascript.js"></script>
+        <script src="script.js"></script>
+        <script>
+            $(document).on('ready', function(){
+               $('.card').on('click', function(){
+                    card_clicked(this);
+                });
+            });
+        </script>
     </head>
     <body>
       <main id="wrapper">
@@ -72,75 +78,14 @@
               </div>
               <div class="card col-md-2 col-sm-4 col-xs-6">
                   <div class="front">
-                      <img src="images/toughGuy.jpg" alt="dog">
-                  </div>
-                  <div class="back">
-                      <img src="images/doberman.jpg" alt="dog">
-                  </div>
-              </div>
-              <!---------------END OF FIRST THREE CARDS---------------->
-
-              <div class="card col-md-2 col-sm-4 col-xs-6">
-                  <div class="front">
-                      <img src="images/tongue.jpg" alt="dog">
-                  </div>
-                  <div class="back">
-                      <img src="images/doberman.jpg" alt="dog">
-                  </div>
-              </div>
-              <div class="card col-md-2 col-sm-4 col-xs-6">
-                  <div class="front">
-                      <img src="images/australian_cattle_dog.jpg" alt="dog">
-                  </div>
-                  <div class="back">
-                      <img src="images/doberman.jpg" alt="dog">
-                  </div>
-              </div>
-              <div class="card col-md-2 col-sm-4 col-xs-6">
-                  <div class="front">
-                      <img src="images/canaan-dog.jpg" alt="dog">
-                  </div>
-                  <div class="back">
-                      <img src="images/doberman.jpg" alt="dog">
-                  </div>
-              </div>
-
-              <!---------------END OF FIRST SIX CARDS---------------->
-              <div class="card col-md-2 col-sm-4 col-xs-6">
-                  <div class="front">
-                      <img src="images/german-shepherd-dog.jpg" alt="dog">
-                  </div>
-                  <div class="back">
-                      <img src="images/doberman.jpg" alt="dog">
-                  </div>
-              </div>
-              <div class="card col-md-2 col-sm-4 col-xs-6">
-                  <div class="front">
-                      <img src="images/mutt.jpg" alt="dog">
-                  </div>
-                  <div class="back">
-                      <img src="images/doberman.jpg" alt="dog">
-                  </div>
-              </div>
-              <div class="card col-md-2 col-sm-4 col-xs-6">
-                  <div class="front">
-                      <img src="images/Akita.jpg" alt="dog">
-                  </div>
-                  <div class="back">
-                      <img src="images/doberman.jpg" alt="dog">
-                  </div>
-              </div>
-              <!---------------END OF FIRST NINE CARDS---------------->
-
-              <!---------------DUPLICATE CARDS BEGIN---------------->
-              <div class="card col-md-2 col-sm-4 col-xs-6">
-                  <div class="front">
                       <img src="images/SiberianHusky.jpg" alt="dog">
                   </div>
                   <div class="back">
                       <img src="images/doberman.jpg" alt="dog">
                   </div>
               </div>
+
+
               <div class="card col-md-2 col-sm-4 col-xs-6">
                   <div class="front">
                       <img src="images/AmerEskimo.jpg" alt="dog">
@@ -149,73 +94,10 @@
                       <img src="images/doberman.jpg" alt="dog">
                   </div>
               </div>
-              <div class="card col-md-2 col-sm-4 col-xs-6">
-                  <div class="front">
-                      <img src="images/toughGuy.jpg" alt="dog">
-                  </div>
-                  <div class="back">
-                      <img src="images/doberman.jpg" alt="dog">
-                  </div>
-              </div>
-              <!---------------END OF FIRST THREE DUPLICATE CARDS
-              END OF FIRST 12 CARDS
-              -------------------------------------------------------->
 
-              <div class="card col-md-2 col-sm-4 col-xs-6">
-                  <div class="front">
-                      <img src="images/tongue.jpg" alt="dog">
-                  </div>
-                  <div class="back">
-                      <img src="images/doberman.jpg" alt="dog">
-                  </div>
-              </div>
-              <div class="card col-md-2 col-sm-4 col-xs-6">
-                  <div class="front">
-                      <img src="images/australian_cattle_dog.jpg" alt="dog">
-                  </div>
-                  <div class="back">
-                      <img src="images/doberman.jpg" alt="dog">
-                  </div>
-              </div>
-              <div class="card col-md-2 col-sm-4 col-xs-6">
-                  <div class="front">
-                      <img src="images/canaan-dog.jpg" alt="dog">
-                  </div>
-                  <div class="back">
-                      <img src="images/doberman.jpg" alt="dog">
-                  </div>
-              </div>
+              <!---------------END OF FIRST FOUR CARDS---------------->
 
-              <!---------------END OF FIRST SIX DUPLICATE CARDS
-              END OF FIRST 15 CARDS
-              -------------------------------------------------------->
-              <div class="card col-md-2 col-sm-4 col-xs-6">
-                  <div class="front">
-                      <img src="images/german-shepherd-dog.jpg" alt="dog">
-                  </div>
-                  <div class="back">
-                      <img src="images/doberman.jpg" alt="dog">
-                  </div>
-              </div>
-              <div class="card col-md-2 col-sm-4 col-xs-6">
-                  <div class="front">
-                      <img src="images/mutt.jpg" alt="dog">
-                  </div>
-                  <div class="back">
-                      <img src="images/doberman.jpg" alt="dog">
-                  </div>
-              </div>
-              <div class="card col-md-2 col-sm-4 col-xs-6">
-                  <div class="front">
-                      <img src="images/Akita.jpg" alt="dog">
-                  </div>
-                  <div class="back">
-                      <img src="images/doberman.jpg" alt="dog">
-                  </div>
-              </div>
-              <!---------------END OF FIRST NINE DUPLICATE CARDS
-              END OF FIRST 18 CARDS
-              -------------------------------------------------------->
+
           </div>
       </main>
 
