@@ -21,14 +21,6 @@
         var total_possible_matches = 2;
         //set the match_counter to 0, because when the game first starts, there are 0 matches made so far
         var match_counter = 0;
-        var matches = 0;
-        var attempts = 0;
-        var accuracy = 0;
-        var games_played = 0;
-
-        function display_stats(){
-
-        }
 
         //when card is clicked, it's going to hide the card, and see if it's the first card or second card / create a function of card_clicked, to hide that card that was clicked,
         function card_clicked() {
@@ -63,8 +55,8 @@
                     }
                 }
                 //if the sources of the first card and second card clicked are not the same, then they are NOT a match, so we want to make the cards flip back over, and show the 'backs of the cards' again / wait 2 seconds and then SHOW the cards because you don't want to have the mismatched cards flip over automatically.. we want to leave time for the user to be able to see the front sides of the cards
-                        //before showing teh first card clicked and the second card clicked and set them both equal
-                        //to null
+                //before showing teh first card clicked and the second card clicked and set them both equal
+                //to null
                 else
                 {
                     console.log("line40");
