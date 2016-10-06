@@ -24,7 +24,7 @@
                     match_counter++;
                     first_card_clicked = null;
                     second_card_clicked = null;
-                        if(match_counter == 9) {
+                        if(match_counter == total_possible_matches) {
                             $('.main-content').append($('<h1>').text("Victory!"));
                         }
                         return false;
