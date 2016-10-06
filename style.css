@@ -45,7 +45,7 @@ body{
     background-size: contain;
 }
 .back{
-    background-color: white;
+    background-color: gray;
 }
 p.value{
     color: white;

@@ -8,7 +8,7 @@ var gamePlayed = 0;
 var matchCounter = 0;
 var cardsFlipped = 0;
 var totalPossibleMatches = 9;
-var cardFrontImg = ["img/brook.png","img/chopper.jpg","img/franky.png","img/luffy.png","img/nami.png", "img/robin.png","img/sanji.png","img/usopp", "img/zoro.png"];
+var cardFrontImg = ["img/brook.png","img/chopper.jpg","img/franky.png","img/luffy.png","img/nami.png", "img/robin.png","img/sanji.png","img/usopp", "img/zoro.png","img/brook.png","img/chopper.jpg","img/franky.png","img/luffy.png","img/nami.png", "img/robin.png","img/sanji.png","img/usopp", "img/zoro.png"];
 
 $(document).ready(function(){
     $(".card").on("click",cardClicked);
@@ -71,8 +71,17 @@ function resetStats(){
     displayStats();
     $(".back").show();
 }
-//shuffles cards
+//shuffles array of img src
 function shuffle(){
-
-
+    console.log("Array before", cardFrontImg);
+    var temp = null;
+    var randomNum = 0;
+    for(var i = (cardFrontImg.length-1); i > 0; i--){
+        randomNum = Math.floor(Math.random()*(totalPossibleMatches*2));
+        temp = cardFrontImg[i];
+        cardFrontImg[i] = cardFrontImg[randomNum];
+        cardFrontImg[randomNum] = temp;
+    }
+    console.log("Array of img", cardFrontImg);
 }
+//TODO need to assign img src to card fronts.
