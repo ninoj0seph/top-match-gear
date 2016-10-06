@@ -1,8 +1,10 @@
 body{
-    background-image: url();
-    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    background-image: url(img/background1.png);
     background-repeat: no-repeat;
-    background-color: #6c7a89;
+    background-size: cover;
+    background-position: top right;
 }
 #main-row{
     height: 75vh;
@@ -23,13 +25,12 @@ body{
     top:50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    height: 85%;
-    width: 82%;
+    height: 95%;
+    width: 85%;
     position: relative;
-    background-color: black;
     overflow: hidden;
     border-radius: 10%;
-
+    border: 1px solid black;
 }
 .front, .back{
     top: 50%;
@@ -38,4 +39,14 @@ body{
     position: absolute;
     height: 100%;
     width: 100%;
+}
+.front{
+    background-image: url(img/wood.jpg);
+    background-size: contain;
+}
+.back{
+    background-color: white;
+}
+p.value{
+    color: white;
 }

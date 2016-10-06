@@ -8,11 +8,13 @@ var gamePlayed = 0;
 var matchCounter = 0;
 var cardsFlipped = 0;
 var totalPossibleMatches = 9;
+var cardFrontImg = ["img/brook.png","img/chopper.jpg","img/franky.png","img/luffy.png","img/nami.png", "img/robin.png","img/sanji.png","img/usopp", "img/zoro.png"];
 
 $(document).ready(function(){
     $(".card").on("click",cardClicked);
     displayStats();
     $(".reset").click(resetStats);
+    $(".shuffle").click(shuffle);
 });
 //calls function to reveal and hide front
 //check for matches, increase counter, check win condition
@@ -68,4 +70,9 @@ function resetStats(){
     matchAccuracy = matchCounter = attemptNum = 0;
     displayStats();
     $(".back").show();
+}
+//shuffles cards
+function shuffle(){
+
+
 }
