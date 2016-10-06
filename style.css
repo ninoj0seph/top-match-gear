@@ -2,21 +2,27 @@ header {
     postion:relative;
     width: 100%;
     height: 150px;
-    background-color: lightgrey;
+    background-color: rgba(255,255,255,.25);
     margin-bottom: 20px;
 }
+
+header a {
+    text-decoration: underline;
+    color: white;
+}
+
 header > a > img {
     float:left;
-    width: 90px;
-    height: 130px;
+    height: 90%;
     margin: 5px;
 }
 
 header > h1 {
     position: absolute;
-    top: 10%;
+    top: 6%;
     left: 50%;
     transform: translate(-50%, -50%);
+    color: white;
 }
 
 header > nav {
@@ -30,13 +36,19 @@ nav li {
     list-style: none;
 }
 stats {
+    background-color:rgba(255,255,255,.5);
     margin: 10px;
     border: 1px solid black;
     position: absolute;
     width: 10vw;
     padding: 20px;
 }
-
+body {
+    background-image: url(assets/images/the-avengers-background-full.jpg);
+    background-size: cover;
+    padding: 0;
+    margin: 0;
+}
 #game-area {
     margin-left: 25%;
     width: 70%;
@@ -44,22 +56,56 @@ stats {
 .front img,.back img {
     width: 100%;
     height: 100%;
+    border: 2px solid black;
+    border-radius: 5px;
 }
 
-.card {
+.back img {
+    width: 86%;
+    height: 86%;
+    transform: translate(7%,7%);
+
+}
+.card,.noclick {
     position: relative;
     float: left;
-    margin: 5px;
-    width: 110px;
-    height: 160px;
+    margin: 10px;
+    width: 140px;
+    height: 175px;
+}
+
+.back {
+    background: white url('assets/images/avengers_a4_pattern_sheet.jpg');
+    background-size:125px;
+    border: 1px solid black;
+    border-radius: 5px;
 }
 
 .back,.front {
     position: absolute;
     left: 0;
     top: 0;
+    width: 100%;
+    height: 100%;
 }
 
 section {
     margin-top: 10px;
+    color: white;
+}
+
+section a {
+    color: white;
+}
+
+#win {
+    color:white;
+    font-size: 120px;
+    position: fixed;
+    left:50%;
+    top: 50%;
+    font-family: arial;
+    font-weight: bold;
+    transform: translate(-50%, -50%);
+    display:none;
 }
