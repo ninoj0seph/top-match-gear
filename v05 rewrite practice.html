@@ -28,12 +28,12 @@
             $(this).hide();
             //compare if the first_card_click is null (this checks if the card clicked, was the first card, or the second card.
             if (first_card_clicked == null) {
-                //??? why do we need this
+                //TODO ??? why do we need this
                 first_card_clicked = this;
             }
             //but if not, it means that the second card was clicked so we want to compare the cards' sources to see if the images are the same or not
             else {
-                //???why do we need this
+                //TODO ???why do we need this
                 second_card_clicked = this;
                 //set the firstCardClickedSource to it's image source
                 var firstCardClickedSource =$(first_card_clicked).parent().find(".front").find("img").attr("src");
