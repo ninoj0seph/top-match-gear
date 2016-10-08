@@ -19,7 +19,7 @@ var cardFrontImg = [
     "img/usopp.png",
     "img/zoro.png"
 ];
-var deckOfTwoEach = cardFrontImg.concat(cardFrontImg);//add array to an array of itself
+var deckOfTwoEach = cardFrontImg.concat(cardFrontImg);//add the array of img to an array of itself
 var cardBackImg = "img/jollyRoger.png";
 var cardPerRow = 6;
 
@@ -35,9 +35,13 @@ $(document).ready(function()
 //check for matches, increase counter, check win condition
 function cardClicked()
 {
+    if(this===firstCardClicked){
+
+    }
+
     revealFront(this);
 
-//TODO disable clicked on revealed cards
+//TODO alter click handlers on reveal so that clicking on revealed does not increase match counter
     //Has first card been clicked and assigned a card?
     if(firstCardClicked === null)
     {
@@ -55,6 +59,8 @@ function cardClicked()
 
         if(firstCardClickedImg === secondCardClickedImg)
         {
+            fadeCard(firstCardClicked);
+            fadeCard(secondCardClicked);
             matchCounter += 1;//increase match count by one
             firstCardClicked = null;//clear cards clicked
             secondCardClicked = null;
@@ -76,20 +82,23 @@ function cardClicked()
 
 function revealFront(theCard)
 {
-    $(theCard).find(".back").hide();
+    console.log("Before add: ", theCard);
+    $(theCard).addClass("flipped").find(".back").hide();
+    console.log("After add: ", theCard);
 
 }
 
 function coverFront(theCard)
 {
-    $(theCard).find(".back").show();
+
+    $(theCard).removeClass("flipped").find(".back").show();
 }
 
 function noMatch(){
     //hide reveal card fronts
     coverFront(firstCardClicked);
     coverFront(secondCardClicked);
-    //reset comparison values; card flipped status reset
+    //reset stored cards;
     firstCardClicked = secondCardClicked = null;
     //enable card flipping
     $("#game-area").on("click", ".card", cardClicked);
@@ -119,7 +128,7 @@ function calcAccuracy(){
         return ((matchCounter / attemptNum) * 100).toFixed(2);
     }
 }
-//creates a new game area of shuffle cards with 3 rows of 6 cards
+//creates a new game area of 3 rows of 6 cards
 function createGameArea(deck)
 {
     var cardsInDeck = deck.length - 1;
@@ -133,7 +142,7 @@ function createGameArea(deck)
         for(var j = i; j < i + cardPerRow; j++)
         {
             var $cardBox = $("<div>").addClass("col-sm-2 card-col");//column/container for card
-            var $newCard = $("<div>").addClass("card unflipped");
+            var $newCard = $("<div>").addClass("card");
             var $frontImg = $("<img>").addClass("front").attr("src", deckOfTwoEach[j]);
             var $backImg = $("<img>").addClass("back").attr("src", cardBackImg);
 
@@ -146,7 +155,7 @@ function createGameArea(deck)
     }
 
 }
-//shuffles array of img src
+//takes an array and its length-1 and shuffles in place
 function shuffle(deck, deckSize)
 {
     //console.log("Array before", deckOfTwoEach);
@@ -155,11 +164,15 @@ function shuffle(deck, deckSize)
 
     for(var i = deckSize; i > 0; i--)
     {
-        randomNum = Math.floor(Math.random()*deckSize);
+        randomNum = Math.floor(Math.random()*i);
         temp = deck[i];
         deck[i] = deck[randomNum];
         deck[randomNum] = temp;
     }
-    // console.log("Array of img", deckOfTwoEach);
-    // console.log("Length after shuffle", deckOfTwoEach.length)
+    //console.log("Array of img", deckOfTwoEach);
+    //console.log("Length after shuffle", deckOfTwoEach.length)
+}
+
+function fadeCard(card){
+    $(card).find(".front").fadeTo("slow", 0.75);
 }
