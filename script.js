@@ -66,7 +66,9 @@ function cardClicked()
             //Win condition met?
             if(matchCounter === totalPossibleMatches)
             {
-                alert("You won!");
+               setTimeout(function(){
+                   alert("You won!");
+               }, 500);
             }
         }
         else
@@ -123,7 +125,7 @@ function calcAccuracy(){
     if(attemptNum === 0){
         return 0;
     }else {
-        return ((matchCounter / attemptNum) * 100).toFixed(2);
+        return ((matchCounter / attemptNum) * 100).toFixed(0);
     }
 }
 //creates a new game area of 3 rows of 6 cards
@@ -172,5 +174,5 @@ function shuffle(deck, deckSize)
 }
 
 function fadeCard(card){
-    $(card).find(".front").fadeTo("slow", 0.75);
+    $(card).find(".front").fadeTo("slow", 0.65);
 }
