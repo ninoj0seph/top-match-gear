@@ -9,13 +9,13 @@ var matchCounter = 0;
 var totalPossibleMatches = 9;
 //the deck that will be passed into createGameArea
 var cardFrontImg = [
-    "img/brook.png", 
-    "img/chopper.png", 
-    "img/franky.png", 
-    "img/luffy.png", 
-    "img/nami.png", 
+    "img/brook.png",
+    "img/chopper.png",
+    "img/franky.png",
+    "img/luffy.png",
+    "img/nami.png",
     "img/robin.png",
-    "img/sanji.png", 
+    "img/sanji.png",
     "img/usopp.png",
     "img/zoro.png"
 ];
@@ -35,12 +35,11 @@ $(document).ready(function()
 //check for matches, increase counter, check win condition
 function cardClicked()
 {
-    if($(this).hasClass("flipped")){
+    if($(this).hasClass("flipped")){//Immediately exits if card has already flipped
         return;
     }
     revealFront(this);
 
-//TODO alter click handlers on reveal so that clicking on revealed does not increase match counter
     //Has first card been clicked and assigned a card?
     if(firstCardClicked === null)
     {
@@ -66,9 +65,9 @@ function cardClicked()
             //Win condition met?
             if(matchCounter === totalPossibleMatches)
             {
-               setTimeout(function(){
-                   alert("You won!");
-               }, 500);
+                setTimeout(function(){
+                    alert("You won!");
+                }, 500);
             }
         }
         else
