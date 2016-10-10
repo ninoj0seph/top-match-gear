@@ -35,10 +35,9 @@ $(document).ready(function()
 //check for matches, increase counter, check win condition
 function cardClicked()
 {
-    if(this===firstCardClicked){
-
+    if($(this).hasClass("flipped")){
+        return;
     }
-
     revealFront(this);
 
 //TODO alter click handlers on reveal so that clicking on revealed does not increase match counter
@@ -82,9 +81,8 @@ function cardClicked()
 
 function revealFront(theCard)
 {
-    console.log("Before add: ", theCard);
+
     $(theCard).addClass("flipped").find(".back").hide();
-    console.log("After add: ", theCard);
 
 }
 
