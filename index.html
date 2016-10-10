@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <title>Memory Match</title>
     <link rel="stylesheet" type="text/css" href="StyleSheet.css">
-    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
     <!--<script src="http://learning-fuze.github.io/memory_match/v0.1/script.js"></script>-->
     <script>
         //when the page is loaded, then you can click on a card
-        $(document).ready(function () {
+        $(document).ready(function() {
+            make_cards();
             $(".back").click(card_clicked);
-            console.log("hey");
+            $('.reset').click(reset_button);
         });
 
 
@@ -19,7 +20,7 @@
         //set the second_card_clicked to null
         var second_card_clicked = null;
         //define total_possible_matches to use later; this is to compare to match counter
-        var total_possible_matches = 9;
+        var total_possible_matches;
         //set the match_counter to 0, because when the game first starts, there are 0 matches made so far
         var match_counter = 0;
         var matches = 0;
@@ -27,24 +28,11 @@
         var accuracy = 0;
         var games_played = 0;
 
-        function display_stats() {
-            $(".games-played.value").html(games_played);
-            $(".attempts.value").html(attempts);
-            $(".accuracy.value").html(accuracy + "%");
-        }
-        function reset_stats() {
-            accuracy = 0;
-            matches = 0;
-            attempts = 0;
-            display_stats();
-        }
 
-        //        $(".reset").click(attempts=1++);
 
         //when card is clicked, it's going to hide the card, and see if it's the first card or second card / create a function of card_clicked, to hide that card that was clicked,
         function card_clicked() {
             if (first_card_clicked == null || second_card_clicked == null) {
-                //console.log('first card was clicked')
                 $(this).hide();
                 //compare if the first_card_click is null (this checks if the card clicked, was the first card, or the second card.
                 if (first_card_clicked == null) {
@@ -59,8 +47,8 @@
                     var firstCardClickedSource = $(first_card_clicked).parent().find(".front").find("img").attr("src");
                     //set the secondCardClickedSource to it's image source
                     var secondCardClickedSource = $(second_card_clicked).parent().find(".front").find("img").attr("src");
-                    console.log(firstCardClickedSource);
-                    console.log(secondCardClickedSource);
+
+                    attempts++;
 //                console.log($(first_card_clicked).parent().parent().find(".front").find("img").attr("src") == $(second_card_clicked).parent().parent().find(".front").find("img").attr("src"));
                     //compare if the first card and second card  images are the same
                     if (firstCardClickedSource == secondCardClickedSource) {
@@ -71,14 +59,14 @@
                         second_card_clicked = null;
                         //if your match counter and total possible matches are the same, then tell the user that they wont
                         if (match_counter == total_possible_matches) {
-                            alert("You won!")
+                            alert("You won!");
+                            games_played++;
                         }
                     }
                     //if the sources of the first card and second card clicked are not the same, then they are NOT a match, so we want to make the cards flip back over, and show the 'backs of the cards' again / wait 2 seconds and then SHOW the cards because you don't want to have the mismatched cards flip over automatically.. we want to leave time for the user to be able to see the front sides of the cards
                     //before showing teh first card clicked and the second card clicked and set them both equal
                     //to null
                     else {
-                        console.log("line40");
                         //set the timeout
                         setTimeout(function () {
                             //show the first card clicked
@@ -90,21 +78,96 @@
                         }, 2000);
 
                     }
-
+                    accuracy = (match_counter/attempts) * 100;
+                    accuracy = Math.floor(accuracy);
+                    display_stats();
                 }
             }
 
         }
+        //an array with all images so we can shuffle them with reset button
+        function make_cards() {
+            //how do you know what to nest?
+            //function for ALL cards..
+                //loop for EACH card
+
+            //a function to shuffle all the indexes in the card array, to randomize cards
+            var array_cards = ["images/dobby.jpg", "images/draco.jpg", "images/dumbledore.jpg", "images/hagrid.jpg", "images/hermione.jpg", "images/ron.png", "images/snape.jpeg", "images/voldemort.jpeg"];
+            total_possible_matches=array_cards.length;
+            array_cards = array_cards.concat(array_cards);
+            while (array_cards.length) {
+                var i = Math.floor(Math.random()*array_cards.length);
+
+                /*
+                 <div class="card">
+                    <div class="back">
+                        <img src="Images/spellbook.png" alt="spell book">
+                    </div>
+                    <div class="front">
+                        <img src="Images/hermione.jpg" alt="hermione">
+                    </div>
+                 </div>
+                 */
+
+                var card = $("<div>",{
+                    'class': 'card'
+                });
+                var back_div = $("<div>",{
+                    'class': 'back'
+                });
+                var back_img = $("<img>",{
+                    'src': 'images/spellbook.png'
+                });
+                var front_div = $("<div>",{
+                    'class': 'front'
+                });
+                var front_img = $("<img>",{
+                   'src': array_cards[i]
+                });
+                front_img.appendTo(front_div);
+                front_div.appendTo(card);
+                back_img.appendTo(back_div);
+                back_div.appendTo(card);
+                card.appendTo('#game-area');
+                //takes the array_cards[i] and takes it out.
+                array_cards.splice(i,1);
+            }
+        }
+
+   function reset_button(){
+       $('#game-area').empty();
+       reset_stats();
+       make_cards();
+       $(".back").click(card_clicked);
+   }
+        function reset_stats() {
+            accuracy = 0;
+            matches = 0;
+            attempts = 0;
+            display_stats();
+        }
+
+        function display_stats() {
+            //to actually display and show on DOM
+            $(".games-played .value").html(games_played).css('font-family','san-serif');
+            $(".attempts .value").html(attempts);
+            $(".accuracy .value").html(accuracy + "%");
+
+        }
+
+
+
     </script>
 </head>
 <body>
 <header class="topbox">
-    game menu
+        Harry Potter Match Off
+    </div>
 </header>
 
 <section class="games-played">
-    <div class="Games Played">
-        <div class="label">Games Played</div>
+    <div class="games played">
+        <div class="label">games played</div>
         <div class="value"></div>
     </div>
     <div class="attempts">
@@ -115,188 +178,11 @@
         <div class="label">accuracy</div>
         <div class="value"></div>
     </div>
-    <button class="reset">Reset Game</button>
+    <button class="reset">reset</button>
 </section>
-
-
 <section id="game-area">
-    <div class="column1">
-        <div class="card">
-            <div class="back">
-                <img src="Images/spellbook.png" alt="spell book">
-            </div>
-            <div class="front">
-                <img src="Images/hermione.jpg" alt="hermione">
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="back">
-                <img src="Images/spellbook.png" alt="spell book">
-            </div>
-            <div class="front">
-                <img src="Images/harry.jpeg" alt="harry">
-            </div>
-        </div>
-
-
-        <div class="card">
-            <div class="back" id="front3">
-                <img src="Images/spellbook.png" alt="spell book">
-            </div>
-            <div class="front">
-                <img src="Images/ron.png" alt="ron">
-            </div>
-        </div>
-    </div>
-
-
-    <div class="column2">
-        <div class="card">
-            <div class="back" id="front4">
-                <img src="Images/spellbook.png" alt="spell book">
-            </div>
-            <div class="front">
-                <img src="Images/voldemort.jpeg" alt="voldemort">
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="back" id="front5">
-                <img src="Images/spellbook.png" alt="spell book">
-            </div>
-            <div class="front">
-                <img src="Images/snape.jpeg" alt="snape">
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="back" id="front6">
-                <img src="Images/spellbook.png" alt="spell book">
-            </div>
-            <div class="front">
-                <img src="Images/hagrid.jpg" alt="hagrid">
-            </div>
-        </div>
-    </div>
-
-
-    <div class="column3">
-        <div class="card">
-            <div class="back" id="front7">
-                <img src="Images/spellbook.png" alt="spell book">
-            </div>
-            <div class="front">
-                <img src="Images/draco.jpg" alt="voldemort">
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="back" id="front8">
-                <img src="Images/spellbook.png" alt="spell book">
-            </div>
-            <div class="front">
-                <img src="Images/dumbledore.jpg" alt="snape">
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="back" id="front9">
-                <img src="Images/spellbook.png" alt="spell book">
-            </div>
-            <div class="front">
-                <img src="Images/dobby.jpg" alt="hagrid">
-            </div>
-        </div>
-    </div>
-
-    <div class="column4">
-        <div class="card">
-            <div class="back" id="front10">
-                <img src="Images/spellbook.png" alt="spell book">
-            </div>
-            <div class="front">
-                <img src="Images/voldemort.jpeg" alt="voldemort">
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="back" id="front11">
-                <img src="Images/spellbook.png" alt="spell book">
-            </div>
-            <div class="front">
-                <img src="Images/snape.jpeg" alt="snape">
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="back" id="front12">
-                <img src="Images/spellbook.png" alt="spell book">
-            </div>
-            <div class="front">
-                <img src="Images/hagrid.jpg" alt="hagrid">
-            </div>
-        </div>
-    </div>
-
-    <div class="column5">
-        <div class="card">
-            <div class="back" id="front13">
-                <img src="Images/spellbook.png" alt="spell book">
-            </div>
-            <div class="front">
-                <img src="Images/hermione.jpg" alt="voldemort">
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="back" id="front14">
-                <img src="Images/spellbook.png" alt="spell book">
-            </div>
-            <div class="front">
-                <img src="Images/harry.jpeg" alt="snape">
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="back" id="front15">
-                <img src="Images/spellbook.png" alt="spell book">
-            </div>
-            <div class="front">
-                <img src="Images/ron.png" alt="hagrid">
-            </div>
-        </div>
-    </div>
-
-    <div class="column6">
-        <div class="card">
-            <div class="back" id="front16">
-                <img src="Images/spellbook.png" alt="spell book">
-            </div>
-            <div class="front">
-                <img src="Images/dumbledore.jpg" alt="voldemort">
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="back" id="front17">
-                <img src="Images/spellbook.png" alt="spell book">
-            </div>
-            <div class="front">
-                <img src="Images/dobby.jpg" alt="snape">
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="back" id="front18">
-                <img src="Images/spellbook.png" alt="spell book">
-            </div>
-            <div class="front">
-                <img src="Images/draco.jpg" alt="hagrid">
-            </div>
-        </div>
-    </div>
 </section>
-
 </body>
 </html>
+
+
