@@ -6,6 +6,14 @@ body{
     background-size: cover;
     background-position: top right;
 }
+#aboutPage, a{
+    color: white;
+}
+#tahoe{
+    height:40vh;
+    width: auto;
+    display: block ;
+}
 #main-row{
     height: 75vh;
 }
@@ -14,6 +22,7 @@ body{
 }
 #statsArea{
     height: 100%;
+    color: black;
 }
 .card-row{
     height: 33%;
