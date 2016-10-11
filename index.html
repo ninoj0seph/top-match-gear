@@ -8,7 +8,7 @@
     <!--<script src="http://learning-fuze.github.io/memory_match/v0.1/script.js"></script>-->
     <script>
         //when the page is loaded, then you can click on a card
-        $(document).ready(function() {
+        $(document).ready(function () {
             make_cards();
             $(".back").click(card_clicked);
             $('.reset').click(reset_button);
@@ -27,7 +27,6 @@
         var attempts = 0;
         var accuracy = 0;
         var games_played = 0;
-
 
 
         //when card is clicked, it's going to hide the card, and see if it's the first card or second card / create a function of card_clicked, to hide that card that was clicked,
@@ -78,7 +77,7 @@
                         }, 2000);
 
                     }
-                    accuracy = (match_counter/attempts) * 100;
+                    accuracy = (match_counter / attempts) * 100;
                     accuracy = Math.floor(accuracy);
                     display_stats();
                 }
@@ -89,40 +88,40 @@
         function make_cards() {
             //how do you know what to nest?
             //function for ALL cards..
-                //loop for EACH card
+            //loop for EACH card
 
             //a function to shuffle all the indexes in the card array, to randomize cards
             var array_cards = ["images/dobby.jpg", "images/draco.jpg", "images/dumbledore.jpg", "images/hagrid.jpg", "images/hermione.jpg", "images/ron.png", "images/snape.jpeg", "images/voldemort.jpeg"];
-            total_possible_matches=array_cards.length;
+            total_possible_matches = array_cards.length;
             array_cards = array_cards.concat(array_cards);
             while (array_cards.length) {
-                var i = Math.floor(Math.random()*array_cards.length);
+                var i = Math.floor(Math.random() * array_cards.length);
 
                 /*
                  <div class="card">
-                    <div class="back">
-                        <img src="Images/spellbook.png" alt="spell book">
-                    </div>
-                    <div class="front">
-                        <img src="Images/hermione.jpg" alt="hermione">
-                    </div>
+                 <div class="back">
+                 <img src="Images/spellbook.png" alt="spell book">
+                 </div>
+                 <div class="front">
+                 <img src="Images/hermione.jpg" alt="hermione">
+                 </div>
                  </div>
                  */
 
-                var card = $("<div>",{
+                var card = $("<div>", {
                     'class': 'card'
                 });
-                var back_div = $("<div>",{
+                var back_div = $("<div>", {
                     'class': 'back'
                 });
-                var back_img = $("<img>",{
+                var back_img = $("<img>", {
                     'src': 'images/spellbook.png'
                 });
-                var front_div = $("<div>",{
+                var front_div = $("<div>", {
                     'class': 'front'
                 });
-                var front_img = $("<img>",{
-                   'src': array_cards[i]
+                var front_img = $("<img>", {
+                    'src': array_cards[i]
                 });
                 front_img.appendTo(front_div);
                 front_div.appendTo(card);
@@ -130,16 +129,16 @@
                 back_div.appendTo(card);
                 card.appendTo('#game-area');
                 //takes the array_cards[i] and takes it out.
-                array_cards.splice(i,1);
+                array_cards.splice(i, 1);
             }
         }
 
-   function reset_button(){
-       $('#game-area').empty();
-       reset_stats();
-       make_cards();
-       $(".back").click(card_clicked);
-   }
+        function reset_button() {
+            $('#game-area').empty();
+            reset_stats();
+            make_cards();
+            $(".back").click(card_clicked);
+        }
         function reset_stats() {
             accuracy = 0;
             matches = 0;
@@ -149,20 +148,18 @@
 
         function display_stats() {
             //to actually display and show on DOM
-            $(".games-played .value").html(games_played).css('font-family','san-serif');
+            $(".games-played .value").html(games_played).css('font-family', 'san-serif');
             $(".attempts .value").html(attempts);
             $(".accuracy .value").html(accuracy + "%");
 
         }
 
 
-
     </script>
 </head>
 <body>
 <header class="topbox">
-        Harry Potter Match Off
-    </div>
+    Harry Potter Match Off
 </header>
 
 <section class="games-played">
@@ -179,6 +176,9 @@
         <div class="value"></div>
     </div>
     <button class="reset">reset</button>
+    <div>
+        <a href="aboutme.html" id="aboutMe">meet the<br>magician</a>
+    </div>
 </section>
 <section id="game-area">
 </section>

@@ -28,7 +28,7 @@
 }
 
 .label,.reset{
-    margin-top: 50px;
+    margin-top: 34px;
 }
 
 img{
@@ -85,7 +85,7 @@ body{
     text-align: center;
     color:white;
     font-family: 'lumoslatinoimport';
-    font-size:3vh;
+    font-size:3.5vh;
     border: 1px solid white;
 }
 
@@ -99,13 +99,52 @@ header{
     text-align: center;
     color:white;
     font-size:9vh;
-
 }
 
-/*.header_text{*/
-    /*margin:3%;*/
-    /**/
-/*}*/
+
+#aboutMe{
+    font-size: 3vh;
+    color: white;
+    text-align: center;
+    margin-bottom: 5vw;
+}
+
+button{
+    margin-bottom: 15px;
+}
 
 
+.pictureofme{
+    width:20vw;
+    height:60%;
+    display: inline-block;
+    position: relative;
+    left: 19vw;
+    top: 5vh;
+}
 
+.about-me-body{
+    position: relative;
+    bottom: 7vh;
+    left: 20vw;
+    width: 36vw;
+    height: 57vh;
+    display: inline-block;
+    background-color: antiquewhite;
+    background: rgba(0,0,0,0.2);
+    border-radius: 13px;
+    border: 1px solid white;
+
+}
+.about-me-container{
+    position: relative;
+    top: 8vh;
+}
+
+.about-paragraph{
+    padding:13%;
+    position:relative;
+    text-align: center;
+    color: white;
+    font-family: 'lumoslatinoimport';
+}
