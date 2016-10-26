@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Avengers Memory Match</title>
+    <style>
+        @font-face {
+            font-family: backIssue;
+            src: url(assets/fonts/backissuesbb_tt/BackIssuesBB_boldital.ttf);
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <!--<script src="http://learning-fuze.github.io/memory_match/v0.1/script.js"></script>-->
+    <script src="script.js"></script>
+</head>
+<body>
+<header>
+    <a href="index.html"><img src="assets/images/avenger_logo.png"></a>
+    <h1>Avengers Memory Match</h1>
+    <nav>
+        <li><a href="about.html">About This Game</a></li>
+    </nav>
+</header>
+<stats>
+    <div class="container">
+        <div class="container2">
+            <h1>Stats</h1>
+            <div class="games-played">
+                <div class="label">Games Played</div>
+                <div class="value"></div>
+            </div>
+            <div class="attempts">
+                <div class="label">Attempts</div>
+                <div class="value"></div>
+            </div>
+            <div class="accuracy">
+                <div class="label">Accuracy</div>
+                <div class="value"></div>
+            </div>
+            <button id="reset" class="reset">Reset Game</button>
+            <!--<button id="win_btn">Win Button</button>-->
+        </div>
+    </div>
+</stats>
+<div id="game-area">
+</div>
+<div id="win">
+    <h1>YOU WIN!</h1>
+</div>
+<div id="win2">
+    <h1>YOU WIN!</h1>
+</div>
+<div id="win3">
+    <h1>YOU WIN!</h1>
+</div>
+</body>
+</html>
