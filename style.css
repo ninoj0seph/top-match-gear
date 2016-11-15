@@ -1,22 +1,59 @@
+@font-face {
+    font-family: harryP;
+    src: url('font/HARRYP__.TTF');
+}
+@font-face {
+    font-family: lumos;
+    src: url('font/LumosLatino.ttf');
+}
+body {
+    background-image: url("http://corporate.comcast.com/images/harry-potter-hogwarts-hollywood-universal-2.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+}
 .game_header h1, .game_nav{
     margin: 0 auto;
-    width: 100%;
     text-align: center;
+    display: inline-block;
+    font-family: harryP;
+    color:tan;
 }
-.logo img{
+.game_header img{
     width: 10%;
+    display: inline-block;
 }
-.game_nav li {
-    list-style-type: none;
+.game_header h1 {
+    font-size: 57px;
+}
+.game_header .game_nav, .stats_container {
+    font-family: lumos;
+    font-size: 20px;
 }
 .stats_container {
-    width: 20%;
-    float:left;
+    width: 30%;
     border: 1px solid saddlebrown;
+    display: inline-block;
+    margin: 10px;
+}
+.opponent_char {
+    width: 13%;
+    height: 60px;
+    border: 1px solid brown;
+    display:inline-block;
+}
+.game_nav {
+    vertical-align: top;
+}
+.game_nav ul {
+    list-style-type: none;
+    padding:5px;
+ }
+.game_nav ul a{
+    text-decoration: none;
 }
 .game-area{
     width: 76%;
-    float:left;
+    float:right;
 }
 .card {
     width: 14%;
