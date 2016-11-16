@@ -1,0 +1,115 @@
+body{
+    margin:0;
+    padding:0;
+}
+
+header{
+    background-color:black;
+    position:absolute;
+    left:0;
+    top:0;
+    width:100vw;
+    height:20vh;
+    margin:0;
+    padding:0;
+}
+
+nav>ul{
+    list-style: none;
+    text-align:center;
+}
+nav li{
+    display:inline-block;
+    margin: 0 15px 0 15px;
+}
+
+h1{
+    color: #6dd3ff;
+    font-family:Helvetica, Sans-Serif;
+    text-align:center;
+}
+
+#container{
+    background-color:grey;
+    width:100vw;
+    height:100vh;
+    position:relative;
+    top:20vh;
+
+}
+
+#game-area{
+    width:70%;
+    margin:0 auto;
+    height:65%;
+    position:relative;
+    bottom:70vh;
+    left:7vw;
+
+}
+
+.card{
+    width:10vw;
+    height:20vh;
+    display:inline-block;
+    border:1px solid black;
+}
+
+.row_1,
+.row_2,
+.row_3{
+    margin-bottom:10vh;
+    display:flex;
+    justify-content:space-between;
+}
+
+#stats{
+    width:15vw;
+    height:80vh;
+    background-color: #6dd3ff;
+    display:inline-block;
+}
+
+.games-played{
+    width: 80%;
+    height:27%;
+    background-color:red;
+    margin:auto;
+}
+
+.attempts{
+    width: 80%;
+    height:27%;
+    background-color:darkolivegreen;
+    margin:auto;
+}
+
+.accuracy{
+    width: 80%;
+    height:27%;
+    background-color:deepskyblue;
+    margin:auto;
+}
+
+button.reset{
+    width: 50%;
+    height: 5%;
+}
+
+.back {
+    background-image: url("images/cardback1.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height:20vh;
+}
+
+
+
+
+
+
+
+
+
+
