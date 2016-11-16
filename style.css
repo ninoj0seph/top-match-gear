@@ -1,0 +1,139 @@
+@font-face {
+    font-family: harryP;
+    src: url('font/HARRYP__.TTF');
+}
+@font-face {
+    font-family: lumos;
+    src: url('font/LumosLatino.ttf');
+}
+.guessing_game_body {
+    background-image: url("http://corporate.comcast.com/images/harry-potter-hogwarts-hollywood-universal-2.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.game_header h1, .game_nav{
+    margin: 0 auto;
+    text-align: center;
+    display: inline-block;
+    font-family: harryP;
+    color:#d3ac18;
+}
+.game_header img{
+    width: 10%;
+    display: inline-block;
+    margin: 10px;
+}
+.game_header h1 {
+    font-size: 57px;
+}
+.game_header .game_nav, .stats_container {
+    font-family: lumos;
+    font-size: 20px;
+}
+.stats_container {
+    width: 30%;
+    border: 1px solid saddlebrown;
+    display: inline-block;
+    margin: 10px;
+    color: #c8391b;
+}
+.opponent_char {
+    width: 10%;
+    height: 60px;
+    border: 1px solid brown;
+    display:inline-block;
+}
+.game_nav {
+    vertical-align: top;
+}
+.game_nav ul {
+    list-style-type: none;
+    padding:5px;
+ }
+.game_nav ul a{
+    text-decoration: none;
+    color: #c8391b;
+}
+
+.char_health {
+    width:23%;
+    border: 1px solid red;
+    display: inline-block;
+    text-align: center;
+    color: white;
+}
+#game-area{
+    width: 76%;
+    float:right;
+}
+.game-body {
+    margin-top: 20px;
+}
+.card {
+    width: 14%;
+    display: inline-block;
+    margin: 0px 8px 27px;
+    position:relative;
+}
+.card .back, .card .front {
+    width: 100%;
+}
+.card .back {
+    position:absolute;
+    top:0;
+    left:0;
+}
+.card .front img {
+    width: 100%;
+    height: auto;
+}
+.card .back img{
+    position: absolute;
+    width: 100%;
+    height: auto;
+}
+.designer_photo {
+    width:150px;
+}
+.about_body {
+    background-image:url("http://i.imgur.com/3sbD4Tg.jpg");
+    background-size:cover;
+    background-repeat: no-repeat;
+    height:100%;
+}
+.about_group {
+    background-color: black;opacity: 0.6;
+}
+.about_header {
+    font-family: lumos;
+    color:white;
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    font-size: 60px;
+}
+.designer_photo {
+   display: block;
+    margin: 21px auto;
+}
+.game_description_body, .skills_required {
+    text-align: center;
+    color:white;
+    background-color: black; opacity: 0.6;
+}
+.spell_list,.spell_list ul li, .skills_list, .skills_list ul li {
+    list-style-type: none;
+}
+.about_nav {
+  text-align: center;
+}
+.about_nav ul, .about_nav li {
+    list-style-type: none;
+    color: white;
+    font-size: 20px;
+    font-family: lumos;
+    margin-right: 30px;
+}
+.about_nav ul a {
+    text-decoration: none;
+}
