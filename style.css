@@ -6,7 +6,7 @@
     font-family: lumos;
     src: url('font/LumosLatino.ttf');
 }
-body {
+.guessing_game_body {
     background-image: url("http://corporate.comcast.com/images/harry-potter-hogwarts-hollywood-universal-2.jpg");
     background-position: center;
     background-repeat: no-repeat;
@@ -91,4 +91,50 @@ body {
     position: absolute;
     width: 100%;
     height: auto;
+}
+.designer_photo {
+    width:150px;
+}
+.about_body {
+    background-image:url("http://i.imgur.com/3sbD4Tg.jpg");
+    background-size:cover;
+    background-repeat: no-repeat;
+    height:100%;
+}
+.about_group {
+    background-color: black;opacity: 0.6;
+}
+.about_header {
+    font-family: lumos;
+    color:white;
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    font-size: 60px;
+}
+.designer_photo {
+   display: block;
+    margin: 21px auto;
+}
+.game_description_body, .skills_required {
+    text-align: center;
+    color:white;
+    background-color: black; opacity: 0.6;
+}
+.spell_list,.spell_list ul li, .skills_list, .skills_list ul li {
+    list-style-type: none;
+}
+.about_nav {
+  text-align: center;
+}
+.about_nav ul, .about_nav li {
+    list-style-type: none;
+    color: white;
+    font-size: 20px;
+    font-family: lumos;
+    margin-right: 30px;
+
+}
+.about_nav ul a {
+    text-decoration: none;
 }
