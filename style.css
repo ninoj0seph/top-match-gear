@@ -16,11 +16,12 @@ body {
     text-align: center;
     display: inline-block;
     font-family: harryP;
-    color:tan;
+    color:#d3ac18;
 }
 .game_header img{
     width: 10%;
     display: inline-block;
+    margin: 10px;
 }
 .game_header h1 {
     font-size: 57px;
@@ -34,9 +35,10 @@ body {
     border: 1px solid saddlebrown;
     display: inline-block;
     margin: 10px;
+    color: #c8391b;
 }
 .opponent_char {
-    width: 13%;
+    width: 10%;
     height: 60px;
     border: 1px solid brown;
     display:inline-block;
@@ -50,18 +52,43 @@ body {
  }
 .game_nav ul a{
     text-decoration: none;
+    color: #c8391b;
 }
-.game-area{
+
+.char_health {
+    width:23%;
+    border: 1px solid red;
+    display: inline-block;
+    text-align: center;
+    color: white;
+}
+#game-area{
     width: 76%;
     float:right;
 }
+.game-body {
+    margin-top: 20px;
+}
 .card {
     width: 14%;
-    border: 1px solid black;
     display: inline-block;
-    margin: 0px 4px 4px;
+    margin: 0px 8px 27px;
+    position:relative;
+}
+.card .back, .card .front {
+    width: 100%;
+}
+.card .back {
+    position:absolute;
+    top:0;
+    left:0;
+}
+.card .front img {
+    width: 100%;
+    height: auto;
 }
 .card .back img{
+    position: absolute;
     width: 100%;
     height: auto;
 }
