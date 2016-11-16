@@ -7,21 +7,18 @@
     <link href="https://code.jquery.com/jquery-2.1.4.min.js">
     <link href="http://learning-fuze.github.io/memory_match/v0.1/script.js">
     <script>
-//        $("#div3, #div4").addClass ( "card-back")
-//        $("#div3").click (function() {
-//            $(this).toggleClass("flag");
-//        });
-//        $("#div4").click(function() {
-//            $(this).toggleClass("path");
-//        });
-//
-//
-//        //----Write your code above----//
-//        });
-        $(document).ready(function() {
-            $("#card1, #card2").addClass ( "card-back")
 
+        $(document).ready(function() {
+            $(".back").click(function(card_clicked) {
+                $(this).toggle(".font");
+            });
         });
+
+        var first_card_clicked = null;
+        var second_card_clicked = null;
+        var total_possible_matches = 2;
+        var match_counter = 2;
+
     </script>
 </head>
 <body>
@@ -56,77 +53,102 @@
 
     <div id="game_area">
         <div class="card">
-            <div class="back"><img src="images/mario-cards-back.jpg"></div>
-            <div class="font"><img src="images/font-car1.jpg"></div>
+            <div class="font">
+                <img src="images/font-car1.jpg">
+            </div>
+            <div class="back">
+                <img src="images/mario-cards-back.jpg">
+            </div>
+
         </div>
         <div class="card">
-            <div class="back"><img src="images/mario-cards-back.jpg"></div>
-            <div class="font"><img src="images/font-car1.jpg"></div>
-        </div>
-        <div class="card">
-            <div class="back"><img src="images/mario-cards-back.jpg"></div>
-            <div class="font"><img src="images/font-image2.png"></div>
-        </div>
-        <div class="card">
-            <div class="back"><img src="images/mario-cards-back.jpg"></div>
-            <div class="font"><img src="images/font-image2.png"></div>
-        </div>
-        <div class="card">
-            <div class="back"><img src="images/mario-cards-back.jpg"></div>
-            <div class="font"><img src="images/font-image3.png"></div>
-        </div>
-        <div class="card">
-            <div class="back"><img src="images/mario-cards-back.jpg"></div>
-            <div class="font"><img src="images/font-image3.png"></div>
-        </div>
-        <div class="card">
-            <div class="back"><img src="images/mario-cards-back.jpg"></div>
-            <div class="font"><img src="images/font-image4.png"></div>
-        </div>
-        <div class="card">
-            <div class="back"><img src="images/mario-cards-back.jpg"></div>
-            <div class="font"><img src="images/font-image4.png"></div>
-        </div>
-        <div class="card">
-            <div class="back"><img src="images/mario-cards-back.jpg"></div>
-            <div class="font"><img src="images/font-image5.png"></div>
-        </div>
-        <div class="card">
-            <div class="back"><img src="images/mario-cards-back.jpg"></div>
-            <div class="font"><img src="images/font-image5.png"></div>
-        </div>
-        <div class="card">
-            <div class="back"><img src="images/mario-cards-back.jpg"></div>
-            <div class="font"><img src="images/font-image6.png"></div>
-        </div>
-        <div class="card">
-            <div class="back"><img src="images/mario-cards-back.jpg"></div>
-            <div class="font"><img src="images/font-image6.png"></div>
-        </div>
-        <div class="card">
-            <div class="back"><img src="images/mario-cards-back.jpg"></div>
-            <div class="font"><img src="images/font-image7.png"></div>
-        </div>
-        <div class="card">
-            <div class="back"><img src="images/mario-cards-back.jpg"></div>
-            <div class="font"><img src="images/font-image7.png"></div>
-        </div>
-        <div class="card">
-            <div class="back"><img src="images/mario-cards-back.jpg"></div>
-            <div class="font"><img src="images/font-image8.png"></div>
-        </div>
-        <div class="card">
-            <div class="back"><img src="images/mario-cards-back.jpg"></div>
-            <div class="font"><img src="images/font-image8.png"></div>
-        </div>
-        <div class="card">
-            <div class="back"><img src="images/mario-cards-back.jpg"></div>
-            <div class="font"><img src="images/font-image9.png"></div>
-        </div>
-        <div class="card">
-            <div class="back"><img src="images/mario-cards-back.jpg"></div>
-            <div class="font"><img src="images/font-image9.png"></div>
-        </div>
+            <div class="font">
+                <img src="images/font-car1.jpg">
+            </div>
+            <div class="back">
+                <img src="images/mario-cards-back.jpg">
+            </div>
+
+        <!--</div>-->
+        <!--<div class="card">-->
+            <!--<div class="font"><img src="images/font-image2.png"></div>-->
+            <!--<div class="back"><img src="images/mario-cards-back.jpg"></div>-->
+
+        <!--</div>-->
+        <!--<div class="card">-->
+            <!--<div class="font"><img src="images/font-image2.png"></div>-->
+            <!--<div class="back"><img src="images/mario-cards-back.jpg"></div>-->
+        <!--</div>-->
+        <!--<div class="card">-->
+            <!--<div class="font"><img src="images/font-image3.png"></div>-->
+            <!--<div class="back"><img src="images/mario-cards-back.jpg"></div>-->
+
+        <!--</div>-->
+        <!--<div class="card">-->
+            <!--<div class="font"><img src="images/font-image3.png"></div>-->
+            <!--<div class="back"><img src="images/mario-cards-back.jpg"></div>-->
+
+        <!--</div>-->
+        <!--<div class="card">-->
+            <!--<div class="font"><img src="images/font-image4.png"></div>-->
+            <!--<div class="back"><img src="images/mario-cards-back.jpg"></div>-->
+
+        <!--</div>-->
+        <!--<div class="card">-->
+            <!--<div class="font"><img src="images/font-image4.png"></div>-->
+            <!--<div class="back"><img src="images/mario-cards-back.jpg"></div>-->
+
+        <!--</div>-->
+        <!--<div class="card">-->
+            <!--<div class="font"><img src="images/font-image5.png"></div>-->
+            <!--<div class="back"><img src="images/mario-cards-back.jpg"></div>-->
+
+        <!--</div>-->
+        <!--<div class="card">-->
+            <!--<div class="font"><img src="images/font-image5.png"></div>-->
+            <!--<div class="back"><img src="images/mario-cards-back.jpg"></div>-->
+
+        <!--</div>-->
+        <!--<div class="card">-->
+            <!--<div class="font"><img src="images/font-image6.png"></div>-->
+            <!--<div class="back"><img src="images/mario-cards-back.jpg"></div>-->
+
+        <!--</div>-->
+        <!--<div class="card">-->
+            <!--<div class="font"><img src="images/font-image6.png"></div>-->
+            <!--<div class="back"><img src="images/mario-cards-back.jpg"></div>-->
+
+        <!--</div>-->
+        <!--<div class="card">-->
+            <!--<div class="font"><img src="images/font-image7.png"></div>-->
+            <!--<div class="back"><img src="images/mario-cards-back.jpg"></div>-->
+
+        <!--</div>-->
+        <!--<div class="card">-->
+            <!--<div class="font"><img src="images/font-image7.png"></div>-->
+            <!--<div class="back"><img src="images/mario-cards-back.jpg"></div>-->
+
+        <!--</div>-->
+        <!--<div class="card">-->
+            <!--<div class="font"><img src="images/font-image8.png"></div>-->
+            <!--<div class="back"><img src="images/mario-cards-back.jpg"></div>-->
+
+        <!--</div>-->
+        <!--<div class="card">-->
+            <!--<div class="font"><img src="images/font-image8.png"></div>-->
+            <!--<div class="back"><img src="images/mario-cards-back.jpg"></div>-->
+
+        <!--</div>-->
+        <!--<div class="card">-->
+            <!--<div class="font"><img src="images/font-image9.png"></div>-->
+            <!--<div class="back"><img src="images/mario-cards-back.jpg"></div>-->
+
+        <!--</div>-->
+        <!--<div class="card">-->
+            <!--<div class="font"><img src="images/font-image9.png"></div>-->
+            <!--<div class="back"><img src="images/mario-cards-back.jpg"></div>-->
+
+        <!--</div>-->
     </div>
 </div>
 </body>

@@ -1,4 +1,15 @@
 
+.about_me_image {
+    width: 10%;
+    height: 10%;
+}
+.about_me_body {
+    text-align:  center;
+}
+.about_me_body p {
+    font-size: 1.5em;
+}
+
 body {
     height: 100%;
     width: 100%;
@@ -28,13 +39,21 @@ body {
     float:right;
 }
 .back > img,
-.font > img {
+.font >img {
     width: 10vw;
     height: 30vh;
     padding:.2em;
 }
 #game_area {
     width: 85%;
+}
+.back > img{
+    position: absolute;
+
+}
+.font > img {
+    position:relative;
+    float: right;
 }
 
 
