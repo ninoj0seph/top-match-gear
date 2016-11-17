@@ -7,7 +7,6 @@ $(document).ready (function() {
     console.log("loaded");
     $('.back').click(card_clicked);
 });
-
 function card_clicked () {
     $(this).hide();
     if (first_card_clicked == null) {
@@ -16,34 +15,31 @@ function card_clicked () {
         return;
     }
     else {
+        //todo: why second card have to be this? what attr exactly does?
         second_card_clicked = $(this);
         console.log('second card is clicked');
-        if ($(first_card_clicked).attr('class') === $(second_card_clicked).attr('class')) {
+        if (($(first_card_clicked).attr('class')) === ($(second_card_clicked).attr('class')))
+        {
             match_counter++;
             first_card_clicked = null;
             second_card_clicked = null;
             if (total_possible_matches == match_counter) {
                 console.log("You have won!");
-            } else {
+                } else {
+                    return;
+                }
+        }
+        else {
+                setTimeout(timeOut, 2000);
                 return;
             }
-        } else {
-            //this part is not working!
-            //already debug
-            function timeOut() {
-                console.log('time out');
-                $(first_card_clicked).toggleClass('hide_back');
-                $(second_card_clicked).toggleClass('hide_back');
-                first_card_clicked = null;
-                second_card_clicked = null;
-
-            }
-
-            setTimeout(timeOut, 2000);
-            if (first_card_clicked = true) {
-
-            }
-            return;
         }
     }
+//todo: how to know if timeOut() is global function?
+function timeOut() {
+    console.log (' time out ');
+    $(first_card_clicked).show ();
+    $(second_card_clicked).show();
+    first_card_clicked = null;
+    second_card_clicked = null;
 }
