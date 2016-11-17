@@ -42,7 +42,7 @@
     margin: 10px;
     color: #c8391b;
 }
-.games_counter, .attempts_counter, .label {
+.value, .label {
     display: inline-block;
     font-family: lumos;
     font-size: 15px;
