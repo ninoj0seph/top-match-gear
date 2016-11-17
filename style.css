@@ -36,16 +36,17 @@
     font-size: 20px;
 }
 .stats_container {
-    width: 30%;
-    border: 1px solid saddlebrown;
+    width: 20%;
+    /*border: 1px solid saddlebrown;*/
     display: inline-block;
     margin: 10px;
-    color: #c8391b;
+    color: white;
 }
 .value, .label {
     display: inline-block;
-    font-family: lumos;
-    font-size: 15px;
+    font-family: 'Calligraffitti', cursive;
+    font-size: 16px;
+    padding-left: 16px;
 }
 .opponent_char {
     width: 10%;

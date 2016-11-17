@@ -25,13 +25,14 @@ function card_clicked() {
                 second_card_clicked.find(".front > img").attr("src")) {
                 match_counter++;
                 matches++;
-                accuracy = ((matches/attempts)*100);
+                accuracy = (((matches/attempts)*100).toFixed(2));
                 display_stats();
                 first_card_clicked = null;
                 second_card_clicked = null;
                 if (total_possible_matches == match_counter) {
+                    // console.log(match_counter)
                     $("#winning_gif").show();
-                    $(".card").hide();
+                    // $(".card").hide();
                 } else {
                     return;
                 }
@@ -51,7 +52,7 @@ function card_clicked() {
     }
 };
 function display_stats(){
-    ($(".accuracy .value").html(accuracy));
+    ($(".accuracy .value").html((accuracy) + "%"));
     ($(".games_played .value").html(games_played));
     ($(".attempts .value").html(attempts));
 }
@@ -59,6 +60,7 @@ function reset_stats(){
     accuracy = 0;
     matches = 0;
     attempts = 0;
+    match_counter = 0;
     display_stats();
 }
 function reset_button() {
@@ -66,4 +68,8 @@ function reset_button() {
     ($(".games_played .value").html(games_played));
     reset_stats();
     display_stats();
+    first_card_clicked = null;
+    second_card_clicked = null;
+    $(".card .back").show();
+    $("#winning_gif").hide()
 }
