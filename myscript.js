@@ -30,9 +30,8 @@ function card_clicked() {
                 first_card_clicked = null;
                 second_card_clicked = null;
                 if (total_possible_matches == match_counter) {
-                    // console.log(match_counter)
                     $("#winning_gif").show();
-                    // $(".card").hide();
+                    $(".card").hide();
                 } else {
                     return;
                 }
@@ -70,6 +69,7 @@ function reset_button() {
     display_stats();
     first_card_clicked = null;
     second_card_clicked = null;
+    $(".card").show()
     $(".card .back").show();
     $("#winning_gif").hide()
 }
