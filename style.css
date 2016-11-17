@@ -55,6 +55,8 @@ body {
     position:relative;
     float: right;
 }
-
+.back.hide_back {
+    opacity: 0;
+}
 
 
