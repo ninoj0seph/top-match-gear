@@ -2,9 +2,15 @@ var first_card_clicked = null;
 var second_card_clicked = null;
 var total_possible_matches = 9;
 var match_counter = 0;
+var matches = 0;
+var attempts = 0;
+var accuracy = 0;
+var games_played = 0;
 
 $(document).ready(function () {
     $(".card").click(card_clicked);
+    $(".reset").on("click",reset_button);
+    second_card_clicked.click(display_stats);
 });
 function card_clicked() {
     if ($(this).find(".back").is(":visible") == false) {
@@ -14,6 +20,7 @@ function card_clicked() {
             first_card_clicked = $(this);
         } else {
             second_card_clicked = $(this);
+            attempts++;
             if (first_card_clicked.find(".front > img").attr("src") ===
                 second_card_clicked.find(".front > img").attr("src")) {
                 match_counter++;
@@ -39,3 +46,11 @@ function card_clicked() {
         }
     }
 };
+function reset_button() {
+    games_played++;
+    ($(".games_counter").html(games_played));
+}
+function display_stats() {
+    alert("It Works");
+    // ($(".attempts_counter").html(attempts))
+}
