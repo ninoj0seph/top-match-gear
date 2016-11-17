@@ -135,7 +135,14 @@
     color:white;
     background-color: black; opacity: 0.6;
 }
-.spell_list,.spell_list ul li, .skills_list, .skills_list ul li {
+.new_spell_list{
+    width:100%;
+    padding:0px;
+}
+.new_spell_list ul{
+    padding: 5px 10px 0px 0px;
+}
+.spell_list,.spell_list ul li, .skills_list, .skills_list ul li, .new_spell_list li{
     list-style-type: none;
 }
 .about_nav {
