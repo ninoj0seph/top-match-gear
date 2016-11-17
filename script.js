@@ -15,10 +15,9 @@ function card_clicked () {
         return;
     }
     else {
-        //todo: why second card have to be this? what attr exactly does?
         second_card_clicked = $(this);
         console.log('second card is clicked');
-        if (($(first_card_clicked).attr('class')) === ($(second_card_clicked).attr('class')))
+        if (($(first_card_clicked) .attr('class')) === ($(second_card_clicked).attr('class')))
         {
             match_counter++;
             first_card_clicked = null;
@@ -35,7 +34,6 @@ function card_clicked () {
             }
         }
     }
-//todo: how to know if timeOut() is global function?
 function timeOut() {
     console.log (' time out ');
     $(first_card_clicked).show ();
