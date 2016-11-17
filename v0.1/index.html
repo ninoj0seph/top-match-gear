@@ -3,17 +3,67 @@
 <head>
     <title>Memory Match 0.1</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <script>
+        $(document).ready(function() {
+            console.log("loaded");
+            $('.back').click(card_clicked);
+        });
+
+        var first_card_clicked = null;
+        var second_card_clicked = null;
+        var total_possible_matches = 2;
+        var match_counter = 0;
+
+        function card_clicked(){
+            console.log("back was clicked");
+            $(this).toggleClass('hide_back');
+            if (first_card_clicked===null){
+                first_card_clicked=this;
+                console.log("First card clicked", first_card_clicked);
+                return;
+            } //end of: if first card is clicked, do this
+            else{
+                second_card_clicked=this;
+                console.log("Second card clicked", second_card_clicked);
+                if($(first_card_clicked).attr('class')===$(second_card_clicked).attr('class')){
+                    match_counter++;
+                    first_card_clicked=null;
+                    second_card_clicked=null;
+                    if (match_counter===total_possible_matches){
+                        console.log("God dam U Won!");
+                    }
+                    else{
+                        return;
+                    }
+
+                }
+                else{
+                    setTimeout (timeOut, 2000);
+                    return;
+                }
+            } // end of: check if both card clicked are equal
+        } //end of: card clicked function
+
+        function timeOut(){
+        $(first_card_clicked).toggleClass('hide_back');
+        $(second_card_clicked).toggleClass('hide_back');
+        first_card_clicked=null;
+        second_card_clicked=null;
+        }
+    </script>
 </head>
 <body>
 <header>
-    <h1>Planet Matching Game</h1>
+    <h1>Galactic Memory Game</h1>
     <nav>
         <ul>
-            <li><a href="url">link 1</a></li>
-            <li><a href="url">link 2</a></li>
-            <li><a href="url">link 3</a></li>
+            <li><a href="index.html">GAME</a></li>
+            <li><a href="about_me.html">ABOUT ME</a></li>
+            <li><a href="url">LINK 3</a></li>
         </ul>
-    <nav>
+    </nav>
 </header>
 
 <div id="container">
@@ -38,86 +88,95 @@
 
     <div id="game-area">
         <div class="row_1">
-            <div class="card">
-                <div class="front" id="front_card_1"></div>
+            <div class="flip">
+                <div class="card">
+                    <div class="front "><img src="images/Mercury.jpg"></div>
+                    <div class="back mercuryPair"></div>
+                </div>
+            </div>
+            <div class="flip">
+                <div class="card">
+                    <div class="front"><img src="images/Venus.jpg"></div>
+                    <div class="back venusPair"></div>
+                </div>
+            </div>
+            <div class="flip">
+                <div class="card">
+                    <div class="front"><img src="images/Mercury.jpg"></div>
+                    <div class="back mercuryPair"></div>
+                </div>
+            </div>
+            <div class="flip">
+                <div class="card">
+                    <div class="front"><img src="images/Venus.jpg"></div>
+                    <div class="back venusPair"></div>
+                </div>
+            </div>
+            <!--<div class="card">
+                <div class="front"></div>
                 <div class="back"></div>
             </div>
             <div class="card">
-                <div class="front" id="front_card_2"></div>
+                <div class="front"></div>
                 <div class="back"></div>
             </div>
-            <div class="card">
-                <div class="front" id="front_card_3"></div>
-                <div class="back"></div>
-            </div>
-            <div class="card">
-                <div class="front" id="front_card_4"></div>
-                <div class="back"></div>
-            </div>
-            <div class="card">
-                <div class="front" id="front_card_5"></div>
-                <div class="back"></div>
-            </div>
-            <div class="card">
-                <div class="front" id="front_card_6"></div>
-                <div class="back"></div>
-            </div>
-        </div>
+        </div>-->
 
-        <div class="row_2">
-            <div class="card">
-                <div class="front" id="front_card_7"></div>
-                <div class="back"></div>
-            </div>
-            <div class="card">
-                <div class="front" id="front_card_8"></div>
-                <div class="back"></div>
-            </div>
-            <div class="card">
-                <div class="front" id="front_card_9"></div>
-                <div class="back"></div>
-            </div>
-            <div class="card">
-                <div class="front" id="front_card_10"></div>
-                <div class="back"></div>
-            </div>
-            <div class="card">
-                <div class="front" id="front_card_11"></div>
-                <div class="back"></div>
-            </div>
-            <div class="card">
-                <div class="front" id="front_card_12"></div>
-                <div class="back"></div>
-            </div>
-        </div>
+            <!--<div class="row_2">
+                <div class="card">
+                    <div class="front"></div>
+                    <div class="back"></div>
+                </div>
+                <div class="card">
+                    <div class="front"></div>
+                    <div class="back"></div>
+                </div>
+                <div class="card">
+                    <div class="front"></div>
+                    <div class="back"></div>
+                </div>
+                <div class="card">
+                    <div class="front"></div>
+                    <div class="back"></div>
+                </div>
+                <div class="card">
+                    <div class="front"></div>
+                    <div class="back"></div>
+                </div>
+                <div class="card">
+                    <div class="front"></div>
+                    <div class="back"></div>
+                </div>
+            </div>-->
 
-        <div class="row_3">
-            <div class="card">
-                <div class="front" id="front_card_13"></div>
-                <div class="back"></div>
-            </div>
-            <div class="card">
-                <div class="front" id="front_card_14"></div>
-                <div class="back"></div>
-            </div>
-            <div class="card">
-                <div class="front" id="front_card_15"></div>
-                <div class="back"></div>
-            </div>
-            <div class="card">
-                <div class="front" id="front_card_16"></div>
-                <div class="back"></div>
-            </div>
-            <div class="card">
-                <div class="front" id="front_card_17"></div>
-                <div class="back"></div>
-            </div>
-            <div class="card">
-                <div class="front" id="front_card_18"></div>
-                <div class="back"></div>
-            </div>
+            <!--<div class="row_3">
+                <div class="card">
+                    <div class="front"></div>
+                    <div class="back"></div>
+                </div>
+                <div class="card">
+                    <div class="front"></div>
+                    <div class="back"></div>
+                </div>
+                <div class="card">
+                    <div class="front"></div>
+                    <div class="back"></div>
+                </div>
+                <div class="card">
+                    <div class="front"></div>
+                    <div class="back"></div>
+                </div>
+                <div class="card">
+                    <div class="front"></div>
+                    <div class="back"></div>
+                </div>
+                <div class="card">
+                    <div class="front"></div>
+                    <div class="back"></div>
+                </div>
+            </div>-->
         </div>
     </div>
 </div>
 </body>
-<html>
+</html>
