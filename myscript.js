@@ -74,16 +74,20 @@ function reset_button() {
     $("#winning_gif").hide()
     shuffle();
 }
-var makeArray = $(".card").toArray();
-// var theLength = makeArray.length-1
-var swap_card;
-var sub_card;
-
 function shuffle() {
-    for (var i = makeArray.length-1; i > 0; i--) {
+    var makeArray = $(".card").toArray();
+    var swap_card;
+    var sub_card;
+    for (var i = makeArray.length - 1; i > 0; i--) {
         swap_card = Math.floor(Math.random() * i);
         sub_card = makeArray[i];
         makeArray[i] = makeArray[swap_card];
         makeArray[swap_card] = sub_card;
     }
+    $("#game-area").empty();
+    for (var i = 0; i < makeArray.length; i++) {
+        var add_to_array = makeArray[i];
+        $("#game-area").append(add_to_array);
+    }
+    $(".card").click(card_clicked);
 }
