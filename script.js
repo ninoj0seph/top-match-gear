@@ -4,67 +4,81 @@ var total_possible_matches = 2;
 var match_counter = 0;
 
 var matches = 0;
-var attempts = 0;//Every time a user attempts a match (clicks the 2nd card) the attempts should be incremented by 1
-var accuracy = 0;//Accuracy is defined as a percentage of matches / attempts
+var attempts = 0;
+var accuracy = 0;
 
 var games_played = 0;
 
-
 $(document).ready (function() {
-    console.log("loaded");
-    $('.back').click(card_clicked);
+    $('.back').click(card_clicked);//when back card is clicked
+    $('.reset').click(reset_stats);
 });
 function card_clicked () {
-    $(this).hide();
-    if (first_card_clicked == null) {
-        first_card_clicked = $(this);
-        console.log('first card is clicked');
+    $(this).hide();//back card hide
+    if (first_card_clicked == null) { //if first card is clicked
+        first_card_clicked = $(this);//if first card = back
         return;
     }
     else {
-        second_card_clicked = $(this);
+        second_card_clicked = $(this);//if second card is click
         //attempts
         attempts++;
         $('.attempts > .value').text(attempts);
-        console.log ('helloo');
-
-        console.log('result accurate');
-
-        console.log('second card is clicked');
-        if (($(first_card_clicked) .attr('class')) === ($(second_card_clicked).attr('class')))
+        if (($(first_card_clicked) .attr('class')) === ($(second_card_clicked).attr('class'))) //if first and second card is equal
         {
-            //matches counts
-            match_counter++;
+            match_counter++; //matches start counting
             matches++;
             $(".matching > .value").text(matches);
-            //accuracy
-            var accuracy = (matches/attempts)*100+('%');
+
+            var accuracy = (matches/attempts).toFixed(2)*100+('%'); //accuracy
 
             $('.accuracy > .value').text(accuracy);
 
             first_card_clicked = null;
             second_card_clicked = null;
             if (total_possible_matches == match_counter) {
-                console.log("You have won!");
+                //display something if possible matches = match counter
                 } else {
-                    return;
+                    return; //if possible match not equal to match counter return to where?
                 }
         }
         else {
 
             setTimeout(timeOut, 2000);
-
             return;
             }
         }
     }
 function timeOut() {
-    console.log (' time out ');
     $(first_card_clicked).show ();
     $(second_card_clicked).show();
     first_card_clicked = null;
     second_card_clicked = null;
 }
+
+// function display_stats() {
+//     $('.games-played .value').text(games_played); //insert var games_played into element class of value
+//     $('.attempts .value').text(attempts);
+//     $('.accuracy .value').text(accuracy);
+//     console.log('dmcs');
+//     return;
+// }
+function reset_stats (){
+    accuracy = 0;
+    matches = 0;
+    attempts = 0;
+    games_played++;
+
+    $('.back').show();
+    $('.games-played .value').text(games_played);
+    $('.attempts  .value').text(attempts);
+    $(".matching > .value").text(matches);
+    $('.accuracy > .value').text(accuracy);
+    console.log('reset stats');
+    return;
+}
+
+
 //------------------version 1.0--------------
 
 
