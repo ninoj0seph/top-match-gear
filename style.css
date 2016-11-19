@@ -100,10 +100,11 @@
 .spells {
     position:absolute;
     font-family: parsel;
-    font-size: 24px;
-    color:white;
-    top: 40px;
-    left: 15px;
+    font-size: 27px;
+    color:purple;
+    top: 37%;
+    left: 50%;
+    transform: translate(-48%, -70%);
 }
 .card .front img {
     width: 100%;

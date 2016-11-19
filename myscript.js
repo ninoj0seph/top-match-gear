@@ -21,6 +21,7 @@ function card_clicked() {
         } else {
             second_card_clicked = $(this);
             attempts++;
+            accuracy = (((matches/attempts)*100).toFixed(2));
             display_stats();
             if (first_card_clicked.find(".front > img").attr("src") ===
                 second_card_clicked.find(".front > img").attr("src")) {
