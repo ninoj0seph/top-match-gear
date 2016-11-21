@@ -9,7 +9,7 @@ var games_played = 0;
 
 $(document).ready(function () {
     shuffle();
-    $(".card").click(card_clicked);
+    $(".card").click(card_clicked());
     $(".reset").on("click",reset_button);
 });
 function card_clicked() {
