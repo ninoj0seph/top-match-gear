@@ -6,11 +6,12 @@ var matches = 0;
 var attempts = 0;
 var accuracy = null;
 var games_played = 0;
+var last_spell_casted = null;
 
 $(document).ready(function () {
     shuffle();
     $(".card").click(card_clicked());
-    $(".reset").on("click",reset_button);
+    $(".reset_button").on("click",reset_button);
 });
 function card_clicked() {
     if ($(this).find(".back").is(":visible") == false) {
@@ -25,6 +26,7 @@ function card_clicked() {
             display_stats();
             if (first_card_clicked.find(".front > img").attr("src") ===
                 second_card_clicked.find(".front > img").attr("src")) {
+                display_last_card();
                 match_counter++;
                 matches++;
                 accuracy = (((matches/attempts)*100).toFixed(2));
@@ -63,6 +65,7 @@ function reset_stats(){
     attempts = 0;
     match_counter = 0;
     display_stats();
+    last_spell_casted = null;
 }
 function reset_button() {
     games_played++;
@@ -92,4 +95,8 @@ function shuffle() {
         $("#game-area").append(add_to_array);
     }
     $(".card").click(card_clicked);
+}
+function display_last_card() {
+    var last_spell_casted = second_card_clicked.find(".front > p").text();
+    $(".your_last_spell .my_last_spell").html(last_spell_casted);
 }

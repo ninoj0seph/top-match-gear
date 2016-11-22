@@ -5,25 +5,26 @@
     <title>Wizard's Guessing Game</title>
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="myscript.js"></script>
-    <!--<script src="http://learning-fuze.github.io/memory_match/v0.1/script.js"></script>-->
     <link rel="stylesheet" type="text/css" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Calligraffitti" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond" rel="stylesheet">
 </head>
 <body class="guessing_game_body">
     <header class="game_header">
         <img src="http://img11.deviantart.net/759b/i/2012/231/0/6/elder_wand_by_magnetic_flux-d5bmwso.png">
-        <h1>Wizard's Duel</h1>
+        <img class="hp_logo" src="http://vignette3.wikia.nocookie.net/logopedia/images/9/9c/HarryPotter.png/revision/latest?cb=20160624203951">
+        <h1>and the Great Duel</h1>
         <div class="stats_container">
             <div class="games_played">
-                <div class="label">Games Played: </div>
+                <div class="label">Games Played:</div>
                 <div class="value"></div>
             </div>
             <div class="attempts">
-                <div class="label">Attempts: </div>
+                <div class="label">Attempts:</div>
                 <div class="value"></div>
             </div>
             <div class="accuracy">
-                <div class="label">Accuracy: </div>
+                <div class="label">Accuracy:</div>
                 <div class="value"></div>
             </div>
         </div>
@@ -41,6 +42,7 @@
                 <h2>Your Health</h2>
                 <div class="your_last_spell">
                     <p>Last Spell Casted</p>
+                    <div class="my_last_spell"></div>
                 </div>
             </div>
             <div class="opponent_health">
@@ -49,7 +51,6 @@
                     <p>Last Spell Casted</p>
                 </div>
             </div>
-            <button type="button" class="reset">Reset Game</button>
             <ul class="new_spell_list">
                 <li>Spells and their results:
                     <ul>
@@ -65,6 +66,7 @@
                     </ul>
                 </li>
             </ul>
+            <button class="reset_button" type="button" class="reset"><img src="/lfz/memory_match/photo/RESET.png"></button>
             <img id="winning_gif" src="http://big.assets.huffingtonpost.com/harrypottergif.gif">
         </div>
         <div id="game-area">
@@ -232,5 +234,9 @@
             </div>
         </div>
     </div>
+    <audio controls autoplay loop>
+        <source src="/lfz/memory_match/photo/5ebb3487fc8ec53df94d23e796c02755.mp3" type="audio/ogg">
+        Your browser does not support the audio element.
+    </audio>
 </body>
 </html>
