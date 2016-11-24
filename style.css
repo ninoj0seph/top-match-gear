@@ -1,0 +1,69 @@
+
+.about_me_image {
+    width: 10%;
+    height: 20%;
+}
+.about_me_body {
+    text-align:  center;
+}
+.about_me_body p {
+    font-size: 1.5em;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    background-image: url("images/background-body.jpg");
+    background-size: cover;
+}
+#header_container {
+    text-align: center;
+    background-image: url("images/background-logo.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    position:relative;
+    color:black;
+}
+#header_container a {
+    font-size: 1.2em;
+}
+#stats_container {
+    position: relative;
+    float: left;
+    height: 100vh;
+    padding: 3em;
+    width: 7%;
+    background-color: black;
+    color:red;
+    line-height: 2em;
+    top: -2em;
+}
+.value {
+    position: relative;
+}
+#game_area > .card {
+    position: relative;
+    float:right;
+}
+.back > img,
+.front >img {
+    width: 10vw;
+    height: 30vh;
+    padding:.2em;
+}
+#game_area {
+    width: 85%;
+    height: 100%;
+}
+.back > img{
+    position: absolute;
+
+}
+.front > img {
+    position:relative;
+    float: right;
+}
+.hide_back {
+    opacity: 100;
+}
+
