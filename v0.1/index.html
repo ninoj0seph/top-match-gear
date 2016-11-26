@@ -1,0 +1,234 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Memory Match 1.0</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <script>
+        $(document).ready(function() {
+            $('.back').click(card_clicked);
+            $('.games-played .value').text(games_played);
+            $('.attempts .value').text(attempts);
+            $('.accuracy .value').text(accuracy + "%");
+            $(".reset").click(function(){
+                games_played++;
+                $('.games-played .value').text(games_played);
+                $(".back").removeClass("hide_back");  //flips cards to back on reset button
+                reset_stats();
+                console.log("Games Played Will Increment");
+            });
+            console.log("loaded");
+            console.log("refreshed games played");
+
+        });
+
+        var first_card_clicked = null;
+        var second_card_clicked = null;
+        var total_possible_matches = 9;
+        var match_counter = 0;
+        var matches = 0;
+        var attempts  = 0;
+        var accuracy = 0;
+        var games_played = 0;
+        var cards_can_be_clicked = true; //------------new variable for adding/removing clicks---------
+
+        function card_clicked(){
+            //bouncer
+            if(!cards_can_be_clicked){
+                return;
+            }
+            console.log("back was clicked");
+            $(this).toggleClass('hide_back');
+            if (first_card_clicked===null){
+                first_card_clicked=this;
+                console.log("First card clicked", first_card_clicked);
+                return;
+            } //end of: if first card is clicked, do this
+            else{
+                cards_can_be_clicked=false; //---------turns off clicking cards---------
+                second_card_clicked=this;
+                attempts++;
+                display_stats();
+                console.log("Second card clicked", second_card_clicked);
+                if($(first_card_clicked).attr('class')===$(second_card_clicked).attr('class')){
+                    matches++;
+                    match_counter++;
+                    display_stats();
+                    first_card_clicked=null;
+                    second_card_clicked=null;
+                    cards_can_be_clicked=true;
+                    if (match_counter===total_possible_matches){
+                        console.log("God Dam U Won!");  //Displays a message that the user won
+                    }
+                    else{
+                        return;
+                    }
+
+                }
+                else{ //if first card clicked !== second card clicked
+                    setTimeout (timeOut, 2000);
+
+                    return;
+                }
+            } // end of: check if both card clicked are equal
+        } //end of: card clicked function
+
+        function timeOut(){
+        $(first_card_clicked).toggleClass('hide_back');
+        $(second_card_clicked).toggleClass('hide_back');
+        first_card_clicked=null;
+        second_card_clicked=null;
+        cards_can_be_clicked = true; //---------turns on clicking cards---------
+
+        }
+
+        function display_stats(){
+            $('.games-played .value').text(games_played);
+            $('.attempts .value').text(attempts);
+            if (attempts === 0){
+                accuracy = 0 + "%";
+            }
+            else {
+                accuracy = Math.floor((matches / attempts) * 100) + "%";
+            }
+            $('.accuracy .value').text(accuracy);
+            console.log("Display Stats Working");
+            console.log("Matches: " + matches);
+            console.log("Accuracy:" + accuracy);
+        }
+
+        function reset_stats(){
+            matches=0;
+            attempts=0;
+            accuracy=0;
+            display_stats();
+        }
+    </script>
+</head>
+<body>
+<header>
+    <h1>Galactic Memory Game</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">GAME</a></li>
+            <li><a href="about_me.html">ABOUT ME</a></li>
+            <li><a href="url">LINK 3</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div id="container">
+    <aside id="stats">
+        <div class="games-played">
+            <p class="label">Games Played</p>
+            <p class="value"></p>
+        </div>
+
+        <div class="attempts">
+            <p class="label">Attempts</p>
+            <p class="value"></p>
+        </div>
+
+        <div class="accuracy">
+            <p class="label">Accuracy</p>
+            <p class="value"></p>
+        </div>
+
+        <button class="reset">RESET GAME</button>
+    </aside>
+
+    <div id="game-area">
+        <div class="row_1">
+
+                <div class="card">
+                    <div class="front "><img src="images/2mercury.jpg"></div>
+                    <div class="back pair1 glow"></div>
+                </div>
+
+
+                <div class="card">
+                    <div class="front"><img src="images/2venus.jpg"></div>
+                    <div class="back pair2 glow"></div>
+                </div>
+
+
+                <div class="card">
+                    <div class="front"><img src="images/2mercury.jpg"></div>
+                    <div class="back pair1 glow"></div>
+                </div>
+
+
+                <div class="card">
+                    <div class="front"><img src="images/2venus.jpg"></div>
+                    <div class="back pair2 glow"></div>
+                </div>
+
+            <div class="card">
+                <div class="front"><img src="images/2earth.png"></div>
+                <div class="back pair3 glow"></div>
+            </div>
+            <div class="card">
+                <div class="front"><img src="images/2earth.png"></div>
+                <div class="back pair3 glow"></div>
+            </div>
+        </div>
+
+            <div class="row_2">
+                <div class="card">
+                    <div class="front"><img src="images/2mars.png"></div>
+                    <div class="back pair4 glow"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="images/2mars.png"></div>
+                    <div class="back pair4 glow"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="images/2jupiter.png"></div>
+                    <div class="back pair5 glow"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="images/2jupiter.png"></div>
+                    <div class="back pair5 glow"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="images/moon.jpg"></div>
+                    <div class="back pair6 glow"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="images/moon.jpg"></div>
+                    <div class="back pair6 glow"></div>
+                </div>
+            </div>
+
+            <div class="row_3">
+                <div class="card">
+                    <div class="front"><img src="images/2uranus.png"></div>
+                    <div class="back pair7 glow"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="images/2uranus.png"></div>
+                    <div class="back pair7 glow"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="images/2neptune.png"></div>
+                    <div class="back pair8 glow"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="images/2neptune.png"></div>
+                    <div class="back pair8 glow"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="images/2pluto.png"></div>
+                    <div class="back pair9 glow"></div>
+                </div>
+                <div class="card">
+                    <div class="front"><img src="images/2pluto.png"></div>
+                    <div class="back pair9 glow"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
