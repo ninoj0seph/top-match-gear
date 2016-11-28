@@ -1,0 +1,111 @@
+body{
+    background-color: #6ab7ff;
+    font-family:"SansSerif", "Rockwell", "Times New Roman";
+}
+
+h1{
+    font-weight:bold;
+    font-size: 50px;
+}
+h1::first-letter{
+    font-size: 80px;
+    color: red;
+}
+
+.main{
+
+    text-align: center;
+    background-image: url('Images/landscape.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.cards{
+    padding: 20px;
+}
+.card-contain{
+    border-radius: 20px;
+}
+header{
+    background-image: url("Images/background birds.png");
+    padding:5px;
+    border-radius: 25px;
+    margin-top: 5px;
+    margin-bottom:5px;
+
+}
+.bird-cards{
+    border: 1px solid black;
+
+    /*width:100px;*/
+
+}
+/*.back:hover{*/
+    /*z-index: 1;*/
+/*}*/
+/*.front:hover{*/
+    /*z-index: 0;*/
+/*}*/
+
+/*-------------------------------stats--------------------------------------*/
+.bottom-nav{
+    border:1px solid black;
+    margin:40px;
+    text-align: left;
+    background-color: white;
+    border-radius: 25px;
+    margin-top: 80px;
+}
+#stats{
+    display: inline-block;
+    text-align: left;
+
+}
+#reset-game{
+    margin: 8px;
+}
+.back{
+    position:absolute;
+
+}
+.back img{
+    height: 125px;
+    width: 125px;
+}
+.front{
+    position: absolute;
+    z-index: 1;
+}
+.front img{
+    height: 125px;
+    width: 125px;
+}
+.card-contain{
+    position: relative;
+}
+.card-rows{
+    margin: 50px;
+}
+#fish{
+    padding-left: 100px;
+    animatation: pusle
+}
+
+
+/*!*-------*!*/
+/*.card-contain {*/
+    /*-webkit-animation-name: example; !* Chrome, Safari, Opera *!*/
+    /*-webkit-animation-duration: 4s; !* Chrome, Safari, Opera *!*/
+    /*animation-name: example;*/
+    /*animation-duration: 4s;*/
+    /*animation-delay: 1s;*/
+/*}*/
+
+/*!* Chrome, Safari, Opera *!*/
+/*@-webkit-keyframes example {*/
+    /*0%   {left:0px; top:0px;}*/
+    /*25%  {left:200px; top:0px;}*/
+    /*50%  {left:200px; top:200px;}*/
+    /*75%  {left:0px; top:200px;}*/
+    /*100% {left:0px; top:0px;}*/
+/*}*/
