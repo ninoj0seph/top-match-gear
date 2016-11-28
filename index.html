@@ -5,8 +5,47 @@
     <title>Title</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+    <!--<script src="http://learning-fuze.github.io/memory_match/v0.1/script.js"></script>-->
+    <script>
+        var first_card_clicked=null;
+        var second_card_clicked=null;
+        var total_possible_matches=2;
+        var match_counter=0;
+        var card_clicked=function(card){
+            $(card).hide();
+            if(first_card_clicked===null) {
+                first_card_clicked = card;
+
+            }
+            else{
+                second_card_clicked=card;
+                /*
+                console.log($(first_card_clicked).parent().parent().find(".front img").attr("src"));
+                console.log($(second_card_clicked).parent().parent().find(".front img").attr("src"));
+                */
+                if($(first_card_clicked).parent().parent().find(".front img").attr("src")===$(second_card_clicked).parent().parent().find(".front img").attr("src")){
+                    match_counter+=1;
+                    console.log(match_counter);
+                    first_card_clicked=null;
+                    second_card_clicked=null;
+                    if(match_counter===9){
+                        $(".output").html("You won!");
+                    }
+                }
+                else{
+
+                    setTimeout(function(){
+                        $(first_card_clicked).show();
+                        $(second_card_clicked).show();
+                        first_card_clicked=null;
+                        second_card_clicked=null;
+                    },2000);
 
 
+                }
+            }
+        }
+    </script>
 </head>
 <body>
     <div id="header">
@@ -14,6 +53,7 @@
         <a id="a1" href="index.html">Setting</a>
         <a id="a2" href="about.html">About</a>
         <img src="logo.png" width="245" height="110">
+        <div class="output" style="font-size:72px;color:white;text-align:center"></div>
     </div>
     <div id="stats">
         <h1>Stats</h1>
@@ -34,81 +74,82 @@
     </div>
     <div id="game-area">
         <div class="card" id="one">
-            <div class="front"><img onclick="this.style.display='none';" src="曹操.PNG" width="96" height="131"></div>
-            <div class="back"><img onclick="this.style.display='none';" src="images.jpg" width="96" height="131"></div>
+            <div class="front"><img  src="曹操.PNG" width="96" height="131"></div>
+            <div class="back"><img onclick="card_clicked(this)"  src="images.jpg" width="96" height="131"></div>
         </div>
 
         <div class="card" id="two">
-            <div class="front"><img onclick="this.style.display='none';" src="司马懿.PNG" width="96" height="131"></div>
-            <div class="back"><img onclick="this.style.display='none';" src="images.jpg" width="96" height="131"></div>
+            <div class="front"><img src="许褚.PNG" width="96" height="131"></div>
+            <div class="back"><img onclick="card_clicked(this)" src="images.jpg" width="96" height="131"></div>
         </div>
 
         <div class="card" id="three">
-            <div class="front"><img onclick="this.style.display='none';" src="许褚.PNG" width="96" height="131"></div>
-            <div class="back"><img onclick="this.style.display='none';" src="images.jpg" width="96" height="131"></div>
+            <div class="front"><img src="司马懿.PNG" width="96" height="131"></div>
+            <div class="back"><img onclick="card_clicked(this)" src="images.jpg" width="96" height="131"></div>
         </div>
         <div class="card" id="four">
-            <div class="front"><img onclick="this.style.display='none';" src="郭嘉.PNG" width="96" height="131"></div>
-            <div class="back"><img onclick="this.style.display='none';" src="images.jpg" width="96" height="131"></div>
+            <div class="front"><img src="郭嘉.PNG" width="96" height="131"></div>
+            <div class="back"><img onclick="card_clicked(this)" src="images.jpg" width="96" height="131"></div>
         </div>
+
         <div class="card" id="five">
-            <div class="front"><img onclick="this.style.display='none';" src="甄姬.PNG" width="96" height="131"></div>
-            <div class="back"><img onclick="this.style.display='none';" src="images.jpg" width="96" height="131"></div>
+            <div class="front"><img  src="甄姬.PNG" width="96" height="131"></div>
+            <div class="back"><img onclick="card_clicked(this)" src="images.jpg" width="96" height="131"></div>
         </div>
         <div class="card" id="six">
-            <div class="front"><img onclick="this.style.display='none';" src="夏侯惇.PNG" width="96" height="131"></div>
-            <div class="back"><img onclick="this.style.display='none';" src="images.jpg" width="96" height="131"></div>
+            <div class="front"><img  src="夏侯惇.PNG" width="96" height="131"></div>
+            <div class="back"><img onclick="card_clicked(this)" src="images.jpg" width="96" height="131"></div>
         </div>
 
         <div class="card" id="seven">
-            <div class="front"><img onclick="this.style.display='none';" src="张辽.PNG" width="96" height="131"></div>
-            <div class="back"><img onclick="this.style.display='none';" src="images.jpg" width="96" height="131"></div>
+            <div class="front"><img  src="张辽.PNG" width="96" height="131"></div>
+            <div class="back"><img onclick="card_clicked(this)" src="images.jpg" width="96" height="131"></div>
         </div>
 
        <div class="card" id="eight">
-           <div class="front"><img onclick="this.style.display='none';" src="典韦.PNG" width="96" height="131"></div>
-           <div class="back"><img onclick="this.style.display='none';" src="images.jpg" width="96" height="131"></div>
+           <div class="front"><img  src="典韦.PNG" width="96" height="131"></div>
+           <div class="back"><img onclick="card_clicked(this)" src="images.jpg" width="96" height="131"></div>
        </div>
        <div class="card" id="nine">
-           <div class="front"><img onclick="this.style.display='none';" src="荀彧.PNG" width="96" height="131"></div>
-           <div class="back"><img onclick="this.style.display='none';" src="images.jpg" width="96" height="131"></div>
+           <div class="front"><img  src="荀彧.PNG" width="96" height="131"></div>
+           <div class="back"><img onclick="card_clicked(this)" src="images.jpg" width="96" height="131"></div>
        </div>
        <div class="card" id="ten">
-           <div class="front"><img onclick="this.style.display='none';" src="曹操.PNG" width="96" height="131"></div>
-           <div class="back"><img onclick="this.style.display='none';" src="images.jpg" width="96" height="131"></div>
+           <div class="front"><img  src="曹操.PNG" width="96" height="131"></div>
+           <div class="back"><img onclick="card_clicked(this)" src="images.jpg" width="96" height="131"></div>
        </div>
        <div class="card" id="eleven">
-           <div class="front"><img onclick="this.style.display='none';" src="司马懿.PNG" width="96" height="131"></div>
-           <div class="back"><img onclick="this.style.display='none';" src="images.jpg" width="96" height="131"></div>
+           <div class="front"><img  src="司马懿.PNG" width="96" height="131"></div>
+           <div class="back"><img onclick="card_clicked(this)" src="images.jpg" width="96" height="131"></div>
        </div>
        <div class="card" id="twelve">
-           <div class="front"><img onclick="this.style.display='none';" src="甄姬.PNG" width="96" height="131"></div>
-           <div class="back"><img onclick="this.style.display='none';" src="images.jpg" width="96" height="131"></div>
+           <div class="front"><img  src="甄姬.PNG" width="96" height="131"></div>
+           <div class="back"><img onclick="card_clicked(this)" src="images.jpg" width="96" height="131"></div>
        </div>
 
        <div class="card" id="thirteen">
-           <div class="front"><img onclick="this.style.display='none';" src="郭嘉.PNG" width="96" height="131"></div>
-           <div class="back"><img onclick="this.style.display='none';" src="images.jpg" width="96" height="131"></div>
+           <div class="front"><img  src="郭嘉.PNG" width="96" height="131"></div>
+           <div class="back"><img onclick="card_clicked(this)" src="images.jpg" width="96" height="131"></div>
        </div>
        <div class="card" id="fourteen">
-           <div class="front"><img onclick="this.style.display='none';" src="张辽.PNG" width="96" height="131"></div>
-           <div class="back"><img onclick="this.style.display='none';" src="images.jpg" width="96" height="131"></div>
+           <div class="front"><img  src="张辽.PNG" width="96" height="131"></div>
+           <div class="back"><img onclick="card_clicked(this)" src="images.jpg" width="96" height="131"></div>
        </div>
        <div class="card" id="fifteen">
-           <div class="front"><img onclick="this.style.display='none';" src="夏侯惇.PNG" width="96" height="131"></div>
-           <div class="back"><img onclick="this.style.display='none';" src="images.jpg" width="96" height="131"></div>
+           <div class="front"><img  src="夏侯惇.PNG" width="96" height="131"></div>
+           <div class="back"><img onclick="card_clicked(this)" src="images.jpg" width="96" height="131"></div>
        </div>
        <div class="card" id="sixteen">
-           <div class="front"><img onclick="this.style.display='none';" src="许褚.PNG" width="96" height="131"></div>
-           <div class="back"><img onclick="this.style.display='none';" src="images.jpg" width="96" height="131"></div>
+           <div class="front"><img  src="许褚.PNG" width="96" height="131"></div>
+           <div class="back"><img onclick="card_clicked(this)" src="images.jpg" width="96" height="131"></div>
        </div>
        <div class="card" id="seventeen">
-           <div class="front"><img onclick="this.style.display='none';" src="典韦.PNG" width="96" height="131"></div>
-           <div class="back"><img onclick="this.style.display='none';" src="images.jpg" width="96" height="131"></div>
+           <div class="front"><img  src="典韦.PNG" width="96" height="131"></div>
+           <div class="back"><img onclick="card_clicked(this)" src="images.jpg" width="96" height="131"></div>
        </div>
        <div class="card" id="eighteen">
-           <div class="front"><img onclick="this.style.display='none';" src="荀彧.PNG" width="96" height="131"></div>
-           <div class="back"><img onclick="this.style.display='none';" src="images.jpg" width="96" height="131"></div>
+           <div class="front"><img  src="荀彧.PNG" width="96" height="131"></div>
+           <div class="back"><img onclick="card_clicked(this)" src="images.jpg" width="96" height="131"></div>
        </div>
 
 
