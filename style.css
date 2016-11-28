@@ -1,0 +1,40 @@
+header > div {
+    width: 19.5%;
+    height: 75px;
+    background-color: darkblue;
+    display: inline-block;
+    color: white;
+    text-align: center;
+    /*margin: 0 auto;*/
+}
+
+#reset {
+    /*need to fix this div's alignment - will not stay on same level as others divs unless floated right...?*/
+    color: black;
+    float: right;
+    display: inline-block;
+}
+
+#reset a {
+    color: white;
+}
+
+#game-area {
+    margin: 20px 60px;
+    /* need to center this div on body; equal margins on both sides */
+}
+
+.card {
+    display: inline-block;
+    width: 12vw;
+    height: 12vw;
+    margin: 20px;
+    border: 3px solid white;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+img.back, img.front {
+    height: 100%;
+    width: auto;
+}
