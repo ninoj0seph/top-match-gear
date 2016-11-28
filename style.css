@@ -1,0 +1,61 @@
+body{
+    width: 100vw;
+    height: 100vh;
+    background-image: url(img/background1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top right;
+}
+#aboutPage, a{
+    color: white;
+}
+#tahoe{
+    height:40vh;
+    width: auto;
+    display: block ;
+}
+#main-row{
+    height: 75vh;
+}
+#game-area{
+    height: 100%;
+}
+#statsArea{
+    height: 100%;
+    color: black;
+}
+.card-row{
+    height: 33%;
+}
+.card-col{
+    height: 100%;
+}
+.card{
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 95%;
+    width: 85%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10%;
+    border: 1px solid black;
+}
+.front, .back{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+.front{
+    background-image: url(img/wood.jpg);
+    background-size: contain;
+}
+.back{
+    background-color: black;
+}
+p.value{
+    color: white;
+}
