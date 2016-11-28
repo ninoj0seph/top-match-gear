@@ -1,0 +1,90 @@
+@font-face{
+    font-family: Thrones; /*create name for new font family*/
+    src: url(thrones.ttf); /*provide url for new font family*/
+}
+header {
+    position: relative; /*position header to enable absolute positioning of children*/
+    width: 100%; /*full width of screen*/
+    height: 20vh; /*takes up 20% of viewport height*/
+    margin-bottom: 5vh; /*margin between header and elements lower on the page*/
+}
+header > * {
+    /*move header children down 50% of header's height, then back up 50% of their own height to center them vertically within header*/
+    top: 50%;
+    transform: translateY(-50%);
+    /*give text a gradient color from darkred to orangered*/
+    background: -webkit-linear-gradient(darkred, orangered);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+body {
+    background-image: url('background.jpg'); /*set background image*/
+    background-size: cover; /*background image takes up full document*/
+    font-family: Thrones; /*all body elements have Thrones font family*/
+}
+button {
+    font-family: Thrones; /*button has Thrones font family*/
+    padding: 5px; /*space between text and edge of button*/
+}
+.logo {
+    height: 30px; /*set logo to fixed height*/
+    width: 160px; /*set logo to fixed width*/
+    display: inline-block; /*logo is inline-block*/
+}
+h1 {
+    position: absolute; /*h1 is positioned relative to header*/
+    margin: 0; /*no margins*/
+    /*move h1 halfway across the page and then back left half its own width to center it horizontally in header*/
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 5px; /*space between text and edge of box*/
+    font-size: 2em; /*set h1 font size*/
+    display: inline-block; /*inline-block instead of block*/
+    text-shadow: 0 0 100px darkred, 5px 5px  150px orange; /*red-to-orange blur around words*/
+}
+.navLinks {
+    float: right; /*float nav links to the right*/
+    text-decoration: none; /*no underlines/blue/purple etc */
+    display: inline-block;/*nav links are inline-block*/
+    position: relative; /*positioned relative to default*/
+    font-size: 1em; /*set font size*/
+    padding: 1%; /*space between text and edge of box*/
+    text-shadow: 0 0 100px darkred, 5px 5px  150px orange; /*red-to-orange blur around words*/
+}
+.stats {
+    height: 100vh; /*stats container takes up full height of viewport so cards don't slide to the left*/
+}
+.stats > * {
+    font-size: 1em; /*set font size for all elements in stats container*/
+}
+.card {
+    position: relative; /*position cards so children can be positioned absolutely*/
+    height: 150px; /*set card height*/
+    width: 100px; /*set card width*/
+    padding: 0; /*no padding*/
+    margin: 10px; /*10 pixel margins*/
+}
+.card img {
+    position: absolute; /*card images are positioned relative to their card container*/
+    height: 95%; /*card images take up 95% of their div height*/
+    width: 95%; /*card images take up 95% of their div width*/
+    border: 1px solid darkgrey; /*cards have thin grey border*/
+    border-radius: 5px; /*border is rounded*/
+}
+@media(max-width: 480px){ /*for screens with width less than 480px*/
+    h1 {
+        font-size: 1em; /*smaller h1*/
+    }
+    .stats > *, .navLinks {
+        font-size: .5em /*small nav links and stats text*/
+    }
+    .logo { /*smaller logo*/
+        height: 22px;
+        width: 120px;
+    }
+}
+@media(max-height: 600px){ /*for screens width height less than 600px*/
+    h1{
+        font-size: 1em; /*smaller h1*/
+    }
+}
