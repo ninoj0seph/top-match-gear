@@ -89,17 +89,15 @@ header li{
 #game-area{
     background-color:white;
     display: inline-block;
-    position:relative;
     width:85%;
     height:80%;
     text-align: center;
 }
 .card{
+    position:relative;
     display: inline-block;
-    position: relative;
     width: 12.5vw;
     height: 12.5vw;
-
     margin-right:1vw;
     margin-top:1vh;
 }
@@ -114,12 +112,15 @@ header li{
 .front > img{
     display: inline-block;
     height:10vw;
-    position:relative;
     top:1vw;
 }
 .back > img{
     display: inline-block;
     height:12.5vw;
+}
+.you_won{
+    font-size : 100px;
+    color : Blue;
 }
 /* ---------------- */
 #about_body{
