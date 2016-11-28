@@ -1,0 +1,156 @@
+* {
+    font-family: Veranda, sans-serif;
+}
+
+header {
+    position: relative;
+    display: inline-block;
+    height: 20vh;
+    border: 1px dashed red;
+    width: 100%;
+    text-align: center;
+    color: black;
+}
+
+.header_links {
+    height: 15%;
+}
+
+.header_links p {
+    display: inline-block;
+    width: 20vw;
+
+}
+
+.header_links a {
+    text-decoration: none;
+}
+
+.game_title {
+    position: relative;
+    padding-left: 4%;
+    font-size: 1.5em;
+}
+
+body {
+    /*background-image: url("images/BG_mem_game.jpg");*/
+    background-color: lightgray;
+}
+/*------------------------------ CARD SPECS BELOW --------------------------*/
+
+div .card {
+    border: 1px solid black;
+    display: inline-block;
+    width: 15%;
+    height: 100%;
+    position: relative;
+    border-radius: 5%;
+    background-color: black;
+    background-image: url("images/cardBack.png");
+}
+
+
+.card,
+.back {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.card#row1_1.front,
+.card#row3_1.front {
+    background-image: url("images/cal_no_face.jpg");
+    background-color: rgb(235, 224, 196);
+}
+
+.card#row2_1.front,
+.card#row1_3.front {
+    background-image: url("images/hob_stuffed.PNG");
+    background-color: white;
+}
+
+.card#row3_4.front,
+.card#row1_2.front {
+    background-image: url("images/cal_hob_face.PNG");
+    background-color: white;
+}
+
+.card#row1_4.front,
+.card#row2_5.front {
+    background-image: url("images/cal_darts.png");
+    background-color: white;
+}
+
+.card#row1_5.front,
+.card#row3_2.front {
+    background-image: url("images/hob_party.PNG");
+    background-color: white;
+}
+
+.card#row1_6.front,
+.card#row2_3.front {
+    background-image: url("images/cal_hob_hug.PNG");
+    background-color: white;
+}
+
+.card#row2_4.front,
+.card#row2_2.front {
+    background-image: url("images/cal_face.PNG");
+    background-color: white;
+}
+
+.card#row2_6.front,
+.card#row3_6.front {
+    background-image: url("images/hob_no_face.jpg");
+    background-color: rgb(235, 224, 196);
+}
+
+.card#row3_3.front,
+.card#row3_5.front {
+    background-image: url("images/hob_darts.jpg");
+    background-color: white;
+}
+
+
+/*------------------------------ END  CARD SPECS --------------------------*/
+
+.game-area {
+    /*border: 1px dashed black;*/
+    height: 20vh;
+    width: 50%;
+    text-align: center;
+    /*margin: 0 auto;*/
+    float: right;
+    margin-right: 24%; /*change this too if more cards are added */
+    margin-top: 2%;
+
+}
+
+.sidebar {
+    float: left;
+    position: relative;
+    border: 1px dashed red;
+    width: 17vw;
+    height: 70vh;
+    margin-top: 2%;
+
+}
+
+/* ---------------------------- about me -----------------------*/
+
+.about_me {
+    width: 75%;
+    height: 75%;
+    display: block;
+    margin: auto;
+
+}
+
+.my_img{
+    float: left;
+}
+
+.bio {
+    float: right;
+    width: 70%;
+}
