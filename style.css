@@ -1,0 +1,50 @@
+.stats_Container div{
+     display: inline-block;
+     padding: 0;
+ }
+
+ul li{
+    list-style-type: none;
+}
+button{
+    display: block;
+    margin-left: 3vw;
+}
+.card{
+    display: inline-block;
+    position: relative;
+    width: 140px;
+    height: 196px;
+    margin: 10px 10px 0 0;
+}
+
+.front{
+    width: 100%;
+    height: 100%;
+}
+
+.front img{
+    width: 100%;
+    height: 100%;
+}
+
+.back{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.back img{
+    width: 100%;
+    height: 100%;
+}
+
+.cardHide{
+    display: none;
+}
+
+.notification-area{
+    font-size: 3em;
+    padding-left: 5%;
+}
