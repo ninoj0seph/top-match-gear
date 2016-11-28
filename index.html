@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+
+
+</head>
+<body>
+    <div id="header">
+        <h1>Memory match</h1>
+        <a id="a1" href="index.html">Setting</a>
+        <a id="a2" href="about.html">About</a>
+        <img src="logo.png" width="245" height="110">
+    </div>
+    <div id="stats">
+        <h1>Stats</h1>
+        <div class="games-played">
+            <div class="label">Games Played</div>
+            <div class="value"></div>
+        </div>
+        <div class="attempts">
+            <div class="label">Attempts</div>
+            <div class="value"></div>
+        </div>
+        <div class="accuracy">
+            <div class="label">Accuracy</div>
+            <div class="value"></div>
+        </div>
+        <button id="button">Reset Game</button>
+
+    </div>
+    <div id="game-area">
+        <div class="card" id="one">
+            <div class="front"><img onclick="this.style.display='none';" src="曹操.PNG" width="96" height="131"></div>
+            <div class="back"><img onclick="this.style.display='none';" src="images.jpg" width="96" height="131"></div>
+        </div>
+
+        <div class="card" id="two">
+            <div class="front"><img onclick="this.style.display='none';" src="司马懿.PNG" width="96" height="131"></div>
+            <div class="back"><img onclick="this.style.display='none';" src="images.jpg" width="96" height="131"></div>
+        </div>
+
+        <div class="card" id="three">
+            <div class="front"><img onclick="this.style.display='none';" src="许褚.PNG" width="96" height="131"></div>
+            <div class="back"><img onclick="this.style.display='none';" src="images.jpg" width="96" height="131"></div>
+        </div>
+        <div class="card" id="four">
+            <div class="front"><img onclick="this.style.display='none';" src="郭嘉.PNG" width="96" height="131"></div>
+            <div class="back"><img onclick="this.style.display='none';" src="images.jpg" width="96" height="131"></div>
+        </div>
+        <div class="card" id="five">
+            <div class="front"><img onclick="this.style.display='none';" src="甄姬.PNG" width="96" height="131"></div>
+            <div class="back"><img onclick="this.style.display='none';" src="images.jpg" width="96" height="131"></div>
+        </div>
+        <div class="card" id="six">
+            <div class="front"><img onclick="this.style.display='none';" src="夏侯惇.PNG" width="96" height="131"></div>
+            <div class="back"><img onclick="this.style.display='none';" src="images.jpg" width="96" height="131"></div>
+        </div>
+
+        <div class="card" id="seven">
+            <div class="front"><img onclick="this.style.display='none';" src="张辽.PNG" width="96" height="131"></div>
+            <div class="back"><img onclick="this.style.display='none';" src="images.jpg" width="96" height="131"></div>
+        </div>
+
+       <div class="card" id="eight">
+           <div class="front"><img onclick="this.style.display='none';" src="典韦.PNG" width="96" height="131"></div>
+           <div class="back"><img onclick="this.style.display='none';" src="images.jpg" width="96" height="131"></div>
+       </div>
+       <div class="card" id="nine">
+           <div class="front"><img onclick="this.style.display='none';" src="荀彧.PNG" width="96" height="131"></div>
+           <div class="back"><img onclick="this.style.display='none';" src="images.jpg" width="96" height="131"></div>
+       </div>
+       <div class="card" id="ten">
+           <div class="front"><img onclick="this.style.display='none';" src="曹操.PNG" width="96" height="131"></div>
+           <div class="back"><img onclick="this.style.display='none';" src="images.jpg" width="96" height="131"></div>
+       </div>
+       <div class="card" id="eleven">
+           <div class="front"><img onclick="this.style.display='none';" src="司马懿.PNG" width="96" height="131"></div>
+           <div class="back"><img onclick="this.style.display='none';" src="images.jpg" width="96" height="131"></div>
+       </div>
+       <div class="card" id="twelve">
+           <div class="front"><img onclick="this.style.display='none';" src="甄姬.PNG" width="96" height="131"></div>
+           <div class="back"><img onclick="this.style.display='none';" src="images.jpg" width="96" height="131"></div>
+       </div>
+
+       <div class="card" id="thirteen">
+           <div class="front"><img onclick="this.style.display='none';" src="郭嘉.PNG" width="96" height="131"></div>
+           <div class="back"><img onclick="this.style.display='none';" src="images.jpg" width="96" height="131"></div>
+       </div>
+       <div class="card" id="fourteen">
+           <div class="front"><img onclick="this.style.display='none';" src="张辽.PNG" width="96" height="131"></div>
+           <div class="back"><img onclick="this.style.display='none';" src="images.jpg" width="96" height="131"></div>
+       </div>
+       <div class="card" id="fifteen">
+           <div class="front"><img onclick="this.style.display='none';" src="夏侯惇.PNG" width="96" height="131"></div>
+           <div class="back"><img onclick="this.style.display='none';" src="images.jpg" width="96" height="131"></div>
+       </div>
+       <div class="card" id="sixteen">
+           <div class="front"><img onclick="this.style.display='none';" src="许褚.PNG" width="96" height="131"></div>
+           <div class="back"><img onclick="this.style.display='none';" src="images.jpg" width="96" height="131"></div>
+       </div>
+       <div class="card" id="seventeen">
+           <div class="front"><img onclick="this.style.display='none';" src="典韦.PNG" width="96" height="131"></div>
+           <div class="back"><img onclick="this.style.display='none';" src="images.jpg" width="96" height="131"></div>
+       </div>
+       <div class="card" id="eighteen">
+           <div class="front"><img onclick="this.style.display='none';" src="荀彧.PNG" width="96" height="131"></div>
+           <div class="back"><img onclick="this.style.display='none';" src="images.jpg" width="96" height="131"></div>
+       </div>
+
+
+
+    </div>
+</body>
+</html>
