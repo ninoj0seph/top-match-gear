@@ -1,0 +1,202 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+	background: url(images/court.jpg) repeat;
+}
+
+.container {
+	width: 70%;
+	margin: 0 auto;
+}
+
+header {
+	height: 84px;
+}
+
+.logo, .title, .links {
+	display: inline-block;
+	width: 33%;
+}
+
+.logo img {
+	width: 149px;
+	height: 84px;
+	border-radius: 20px;
+}
+
+.title:before,
+.links:before {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.title, .links {
+	margin: 0;
+	vertical-align: middle;
+	height: 100%;
+	position: relative;
+	bottom: 50%;
+	text-align: center;
+}
+
+.title {
+	font-family: 'Helvetica', sans-serif;
+}
+
+.links {
+	text-align: right;
+}
+
+section {
+	margin-top: 50px;
+}
+
+.stats, .game-area {
+	display: block;
+	margin: 20px auto;
+}
+
+.stats {
+	text-align: center;
+	font-family : 'Oswald',Arial,sans;
+	color: white;
+	width: 450px;
+	background: black;
+	padding: 10px;
+	border-radius: 10px;
+}
+
+/* led like counters */
+.display{
+  width : 100px;
+  position:relative;
+  text-align:center;
+  display: inline-block;
+}
+
+.label{
+  font-family : 'Oswald',Arial,sans;
+  font-size:0.8em;
+  margin-top:5px;
+  text-align:center;
+}
+
+.led-off{
+  color:#430710;
+}
+
+.count{
+  font-family: 'VT323', monospace;
+  color : #DC0D29;
+  padding : 0px;
+  font-size : 2em;
+  width : 50px;
+  background-color: #32050C;
+  position:relative;
+  border : 4px solid #222;
+  border-radius : 10px;
+  margin:auto;
+}
+/* led like counters end */
+
+.accuracy .count {
+	width: 75px;
+}
+
+.percent-sign {
+	font-size: 0.5em;
+}
+
+.reset {
+	border: none;
+	padding: 10px;
+	border-radius: 5px;
+	background: #430710;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	color: white;
+}
+
+.reset:hover {
+	background: #DC0D29;
+	cursor: pointer;
+}
+
+.win-text {	
+	visibility: hidden;
+	margin: 5px 0;
+}
+
+.visible {
+	visibility: visible;
+}
+
+.game-area {
+	width: 900px;
+}
+
+.card {
+  width: 150px;
+  height: 200px;
+  border: 1px solid transparent;
+  position: relative;
+  float: left;
+}
+
+.back, .front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-transition: -webkit-transform 0.3s;
+          transition: transform 0.3s;
+}
+
+.back {
+  background-color: #0253a4;
+}
+
+.front {
+  background-color: black;
+  text-align: center;
+	-webkit-transform: rotateY(-180deg);
+        transform: rotateY(-180deg);
+}
+
+.card.clicked .front {
+	-webkit-transform: rotateY(0);
+          transform: rotateY(0);
+}
+
+.card.clicked .back {
+	  -webkit-transform: rotateY(-180deg);
+          transform: rotateY(-180deg);
+}
+
+
+/* Centering image in card div */
+.front:before,
+.back:before {
+	display: inline-block;
+  content: "";
+  height: 100%;
+  vertical-align: middle;
+}
+
+.front img,
+.back img {
+	vertical-align: middle;
+}
+/* End of centering image */
+
+
