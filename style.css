@@ -161,12 +161,27 @@ div#row3.rows {
     float: left;
     height: 15vh;
 }
-#game-area .rows .card {
-    overflow: hidden;
-    width: 10vw;
-    height: 15vw;
-    margin: 0;
+/*#game-area .rows .card {*/
+    /*overflow: hidden;*/
+    /*width: 10vw;*/
+    /*height: 15vw;*/
+    /*margin: 0;*/
+/*}*/
+.card {
+    position: relative;
+    display: inline-block;
+    margin: 10px;
+    height: 300px;
+    width: 200px;
+
 }
+
+.front, .back {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
 .card > div {
     height: 15vw;
 }
