@@ -1,0 +1,111 @@
+.hidden{
+    display: none;
+}
+body{
+    background-image: url("assets/images/background.jpg");
+}
+@font-face {
+    font-family: metalGear;
+    src: url(assets/custom_fonts/title.TTF);
+}
+@font-face {
+    font-family: codecFont;
+    src: url(assets/custom_fonts/MGS2.ttf);
+}
+@font-face {
+    font-family: numbers;
+    src: url(assets/custom_fonts/menu.ttf);
+}
+.value {
+    font-family: numbers, sans-serif;
+}
+p {
+    font-family: metalGear, sans-serif;
+    color: #72c5b0;
+    text-shadow: 2px 2px black;
+    font-size: 3vw;
+    text-align: center;
+}
+ul, a, span{
+    font-family: codecFont, sans-serif;
+    text-align: center;
+}
+.victory > img {
+    margin: auto;
+    display: block;
+}
+.victory{
+    margin: auto;
+    display: none;
+}
+/*/////// HEADER STYLING ///////*/
+header{
+    background-color: #e0ebe9;
+    height: 20vh;
+}
+header img{
+    height: 90%;
+    width: auto;
+    padding: 8px;
+}
+header > div{
+    display: inline-block;
+    width: 87%;
+    position: absolute;
+}
+li{
+    display: inline-block;
+    list-style: none;
+}
+ul{
+    padding: inherit;
+}
+/*/////// MENU STYLING ///////*/
+aside{
+    background-color: #89a9a1;
+    width: 15vw;
+    float: left;
+}
+p.label{
+    font-size: 1rem;
+}
+#game-area {
+    width: 75vw;
+    display: inline-block;
+    padding-left: 1vw;
+}
+main {
+    margin: 5% 2%;
+    padding-left: 2%;
+}
+button{
+    display: block;
+    border: transparent;
+    margin: auto;
+}
+/*/////// CARD STYLING? ///////*/
+.card{
+    background-color: #6a6969;
+    position: relative;
+    height: 393px;
+    width: 150px;
+    display: inline-block;
+}
+.back, .front{
+    background-color: #283733;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+.front img{
+    height: 393px;
+    width: 150px;
+}
+.back img{
+    width: inherit;
+}
+/*/////////*/
+.about {
+    font-size: 3vw;
+    display: block;
+}
