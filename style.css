@@ -28,57 +28,13 @@ header{
 }
 
 
-.midContent{
-    display: inline-flex;
-    width: 100vw;
-}
-
-#stats{
-    font-size: 30px;
-    color:	#E3DEDB;
-    width: 156px;
-    position: relative;
-    top: 100px;
-    height: 500px;
-    margin-right: 5%;
-}
-
-#game-area{
-    height: 70vh;
-    width: 100vw;
-    position: relative;
-    min-width: 900px;
-    max-width: 1040px;
-}
-
-.card{
-    float: left;
-    width: 200px;
-    height: 98px;
-    margin: 5px;
-    border-radius: 10px;
-    position: relative;
-    max-width: 198px;
-    max-height: 96px;
-}
-
-.card img{
-    width: auto;
-    height: 98px;
-}
-
-.card div{
-    margin: 0;
-    position: absolute;
-}
-
 .freeway{
     width: 250px;
     height: 140px;
     background-color: #308446;
     border-radius: 10px;
     position: relative;
-    margin-left: 200px;
+    margin-left: 20%;
     left: 75px;
 }
 
@@ -104,3 +60,66 @@ header{
     width: 250px;
     height: auto;
 }
+
+/******* Header END ********/
+/******* Stats Game Area ********/
+
+.midContent{
+    display: inline-flex;
+    width: 100vw;
+}
+
+#stats{
+    font-size: 30px;
+    color:	#E3DEDB;
+    width: 156px;
+    position: relative;
+    top: 100px;
+    height: 500px;
+    margin-right: 5%;
+}
+
+#game-area{
+    height: 70vh;
+    width: 100vw;
+    position: relative;
+    min-width: 900px;
+    max-width: 1040px;
+}
+
+/******* Cards ********/
+
+.card{
+    float: left;
+    width: 200px;
+    height: 98px;
+    margin: 5px;
+    border-radius: 10px;
+    position: relative;
+    max-width: 198px;
+    max-height: 96px;
+}
+
+.card img{
+    width: auto;
+    height: 98px;
+}
+
+.card div{
+    margin: 0;
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.flip{
+    transform: rotateY(180deg);
+}
+
+.flipBack{
+    transform: rotateY(180deg);
+}
+
+
+/******* Cards END ********/
+
+/******* Stats Game Area END ********/
