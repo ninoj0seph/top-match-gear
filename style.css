@@ -74,9 +74,9 @@ header{
     color:	#E3DEDB;
     width: 156px;
     position: relative;
-    top: 100px;
     height: 500px;
-    margin-right: 5%;
+    margin-right: 50px;
+    text-align: center;
 }
 
 #game-area{
@@ -116,7 +116,7 @@ header{
 }
 
 .flipBack{
-    transform: rotateY(180deg);
+    transform: rotateY(-180deg);
 }
 
 
