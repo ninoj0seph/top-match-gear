@@ -74,5 +74,3 @@ function card_clicked() {
     }
     display_stats();
 }
-
-//working
