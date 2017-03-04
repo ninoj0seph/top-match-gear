@@ -1,0 +1,159 @@
+body{
+    font-family: "Magneto Bold";
+    background-image: url("images/background.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: black;
+}
+
+#logoPicture{
+    width: 250px;
+    height: auto;
+    position: absolute;
+}
+
+header{
+    width: 99vw;
+    height: 150px;
+    display: inline-flex;
+    margin: 5px 0 5px 0;
+}
+
+.headerContent{
+    width: 530px;
+    height:200px;
+    font-size: 30px;
+    position: relative;
+    left: 700px;
+}
+
+.freeway{
+    width: 250px;
+    height: 140px;
+    margin-right: 200px;
+    left: 390px;
+    position: relative;
+    border-radius: 10px;
+}
+
+.freeway{
+    background-color: #308446;
+}
+
+.freeway a{
+    font-family: "ClearviewATT Book Italic";
+    bottom: 100px;
+    font-size: 40px;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.freeway a:hover{
+    color: #FFC200;
+}
+
+.eightySign{
+    width: 25%;
+    height: auto;
+}
+
+.exitSign{
+    width: 250px;
+    height: auto;
+}
+
+/******* Header END ********/
+/******* Stats Game Area ********/
+
+.midContent{
+    display: inline-flex;
+    width: 1250px;
+    height: 440px;
+}
+
+#stats{
+    font-size: 30px;
+    color:	#E3DEDB;
+    width: 156px;
+    position: relative;
+    height: 500px;
+    margin-right: 50px;
+    text-align: center;
+}
+
+#game-area{
+    height: 400px;
+    width: 1050px;
+    position: relative;
+}
+
+/******* Cards ********/
+
+.card{
+    float: left;
+    width: 200px;
+    height: 98px;
+    margin: 5px;
+    border-radius: 10px;
+    position: relative;
+    max-width: 198px;
+    max-height: 96px;
+}
+
+
+.back img{
+    border-radius: 10px;
+}
+.card img{
+    width: auto;
+    height: 98px;
+}
+
+.card div{
+    margin: 0;
+    position: absolute;
+    backface-visibility: hidden;
+}
+
+.flip{
+    transform: rotateY(180deg);
+}
+
+
+
+/******* Cards END ********/
+
+/******* Stats Game Area END ********/
+
+.lapTime{
+    width: 1230px;
+    position: relative;
+    border-radius: 10px;
+    background-color: #199cec;
+    border: 1px solid black;
+    display: inline-block;
+}
+
+.dinocoLogo{
+    width: 85px;
+    height: auto;
+    float: right;
+}
+
+.pistonCupLogo{
+    width: 230px;
+    height: auto;
+}
+
+.lapTime div{
+    display: inline-block;
+}
+
+.raceStatsInfo{
+    position: relative;
+    bottom: 20px;
+    font-size: 22px;
+    margin: 0 14px 0 15px;
+    text-align: center;
+}

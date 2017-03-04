@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/html">
     <head>
-        <title>Memory Match</title>
+        <title>Memory Cars</title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <!--<script src="http://learning‑fuze.github.io/memory_match/v0.1/script.js"></script>-->
         <link rel="stylesheet" href="magneto/style.css">
@@ -25,17 +25,17 @@
         </header>
         <div class="midContent">
             <div id="stats">
-                <div id="games-played">
-                    <p class="label">Games Played</p>
-                    <p class="value">0</p>
-                </div>
+                <!--<div id="games-played">-->
+                    <!--<p class="label">Games Played</p>-->
+                    <!--<p class="value">0</p>-->
+                <!--</div>-->
                 <div id="attempts">
                     <p class="label">Attempts</p>
                     <p class="value">0</p>
                 </div>
                 <div id="accuracy">
                     <p class="label">Accuracy</p>
-                    <p class="value">0</p>
+                    <p class="value">100.00%</p>
                 </div>
                 <button class="resetGame">Game Reset</button>
             </div>
@@ -120,6 +120,28 @@
                     <div class="front"><img src="images/bob.png"/></div>
                     <div class="back"><img src="images/Cars3HD.jpg"/></div>
                 </div>
+            </div>
+        </div>
+        <div class="lapTime">
+            <div>
+                <img class="dinocoLogo" src="images/dinoco.png"/>
+            </div>
+            <div class="racingStats">
+                <div class="raceStatsInfo">Current Position<br>
+                    <div class="racingPosition">43th</div>
+                </div>
+                <div class="raceStatsInfo">Current Lap<br>
+                    <div id="games-played">0</div>
+                </div>
+                <div class="raceStatsInfo">Current Lap Time<br>
+                    <div class="currentTime">0:00.00</div>
+                </div>
+                <div class="raceStatsInfo">Best Lap Time<br>
+                    <div class="bestTime">0:00.00</div>
+                </div>
+            </div>
+            <div>
+                <img class="pistonCupLogo" src="images/pistonCup.png"/>
             </div>
         </div>
     </body>

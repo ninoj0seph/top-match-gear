@@ -27,15 +27,17 @@ header{
     left: 700px;
 }
 
-
 .freeway{
     width: 250px;
     height: 140px;
-    background-color: #308446;
-    border-radius: 10px;
+    margin-right: 200px;
+    left: 390px;
     position: relative;
-    margin-left: 20%;
-    left: 75px;
+    border-radius: 10px;
+}
+
+.freeway{
+    background-color: #308446;
 }
 
 .freeway a{
@@ -66,7 +68,8 @@ header{
 
 .midContent{
     display: inline-flex;
-    width: 100vw;
+    width: 1250px;
+    height: 440px;
 }
 
 #stats{
@@ -80,11 +83,9 @@ header{
 }
 
 #game-area{
-    height: 70vh;
-    width: 100vw;
+    height: 400px;
+    width: 1050px;
     position: relative;
-    min-width: 900px;
-    max-width: 1040px;
 }
 
 /******* Cards ********/
@@ -100,6 +101,10 @@ header{
     max-height: 96px;
 }
 
+
+.back img{
+    border-radius: 10px;
+}
 .card img{
     width: auto;
     height: 98px;
@@ -115,11 +120,40 @@ header{
     transform: rotateY(180deg);
 }
 
-.flipBack{
-    transform: rotateY(-180deg);
-}
 
 
 /******* Cards END ********/
 
 /******* Stats Game Area END ********/
+
+.lapTime{
+    width: 1230px;
+    position: relative;
+    border-radius: 10px;
+    background-color: #199cec;
+    border: 1px solid black;
+    display: inline-block;
+}
+
+.dinocoLogo{
+    width: 85px;
+    height: auto;
+    float: right;
+}
+
+.pistonCupLogo{
+    width: 230px;
+    height: auto;
+}
+
+.lapTime div{
+    display: inline-block;
+}
+
+.raceStatsInfo{
+    position: relative;
+    bottom: 20px;
+    font-size: 22px;
+    margin: 0 14px 0 15px;
+    text-align: center;
+}
