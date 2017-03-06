@@ -63,9 +63,6 @@ header{
     height: auto;
 }
 
-/******* Header END ********/
-/******* Stats Game Area ********/
-
 .midContent{
     display: inline-flex;
     width: 1250px;
@@ -74,12 +71,12 @@ header{
 
 #stats{
     font-size: 30px;
-    color:	#E3DEDB;
     width: 156px;
     position: relative;
     height: 500px;
     margin-right: 50px;
     text-align: center;
+    color: #199cec;
 }
 
 #game-area{
@@ -88,7 +85,6 @@ header{
     position: relative;
 }
 
-/******* Cards ********/
 
 .card{
     float: left;
@@ -120,18 +116,11 @@ header{
     transform: rotateY(180deg);
 }
 
-
-
-/******* Cards END ********/
-
-/******* Stats Game Area END ********/
-
 .lapTime{
     width: 1230px;
     position: relative;
     border-radius: 10px;
     background-color: #199cec;
-    border: 1px solid black;
     display: inline-block;
 }
 

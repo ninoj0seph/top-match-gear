@@ -8,10 +8,9 @@ var settings = {
     "watch" : null,
     "totalMatchCount" : 0
 };
-var statistics = {matches: 0, attempts: 0, gamesPlayed: 0, accuracy : 0, racingPosition : 0, bestLapTime : 0};
-var time = {milisecond : 0, second : 0, minutes : 0};
-var firstBack = null;
-var secondBack = null;
+var statistics = {matches: 0, attempts: 0, gamesPlayed: 0, accuracy : 0, racingPosition : 0};
+var time = {milisecond : 0, bestLapTime : undefined};
+var firstBack ,secondBack = null;
 
 $(document).ready(function (){
     click_handler();
@@ -25,9 +24,10 @@ function click_handler() {
 }
 
 function display_stats() {
-    $("#games-played").text(statistics.gamesPlayed);
-    $("#attempts .value").text(statistics.attempts);
-    $(".racingPosition").text(statistics.racingPosition + (statistics.racingPosition === 3 ? "rd" : statistics.racingPosition === 2 ? "nd" : statistics.racingPosition === 1 ? "st" : "th"));
+    $("#games-played").text(statistics.gamesPlayed == 0 ? "Practice Lap" : statistics.gamesPlayed);
+    $("#attempts .value").text(statistics.attempts + (statistics.attempts == 1 ? " mile" : " miles"));
+    $("#remainMatch .value").text(settings.total_possible_matches - statistics.matches);
+    $(".racingPosition").text(statistics.racingPosition == 0 ? "43th" : statistics.racingPosition);
 }
 
 function hardReset_game(wantToQuit) {
@@ -35,28 +35,24 @@ function hardReset_game(wantToQuit) {
         for (var i in statistics) {
             statistics[i] = 0;
         }
-        for(var x in time){
-            time[x] = 0;
-        }
+        time.milisecond = 0;
         $(".back").removeClass("flip");
         resetCardValuesToNull();
         display_stats();
         clearInterval(settings.watch);
         settings.game_won = false;
         settings.first_click = true;
-        // not the prettiest but should look great from the outside
         $(".currentTime").text("0:00.00");
         $(".bestTime").text("0:00.00");
+        $(".racingPosition").text("43th");
         settings.totalMatchCount = 0;
+        time.bestLapTime = undefined;
     }
 }
 
 function softReset_game() {
     $(".back").removeClass("flip");
-    for(var x in time){
-        time[x] = 0;
-    }
-    statistics.matches = 0;
+    time.milisecond, statistics.matches = 0;
     resetCardValuesToNull();
     settings.game_won = false;
     settings.first_click = true;
@@ -72,64 +68,69 @@ function backFlip(){
     $(secondBack).removeClass("flip");
 }
 
+function stopWatch(){
+    time.milisecond++;
+    $(".currentTime").text(convertMs(time.milisecond));
+}
+
+function calculateRacingPosition(){
+    var returnValue =  ~~(Math.abs(((settings.totalMatchCount / statistics.accuracy) * 43) - 42));
+    return returnValue + (returnValue === 3 ? "rd" : returnValue === 2 ? "nd" : returnValue === 1 ? "st" : "th");
+}
+
+function convertMs(ms){
+    var seconds = ((ms / 100) % 60).toFixed(2);
+    var minutes = ~~(ms / 6000);
+    return minutes + ":" + seconds;
+}
+
+function setBest(){
+    if(!time.bestLapTime || time.milisecond < time.bestLapTime){
+        time.bestLapTime = time.milisecond;
+    }
+    return time.bestLapTime;
+}
+
 function card_clicked() {
     if(settings.first_click){
         settings.watch = setInterval(stopWatch, 1);
         settings.first_click = false;
     }
     $(this).addClass("flip");
+    statistics.attempts++;
     if(settings.first_card_clicked === null){
         firstBack = this;
         settings.first_card_clicked = $(this).parent().find(".front img").attr("src");
-        $("#attempts .value").text(statistics.attempts);
+        display_stats();
     } else {
         secondBack = this;
         settings.second_card_clicked = $(this).parent().find(".front img").attr("src");
-        $("#attempts .value").text(statistics.attempts);
+        display_stats();
         if(settings.first_card_clicked === settings.second_card_clicked){
+            statistics.accuracy++;
             settings.totalMatchCount++;
-            statistics.attempts++;
             statistics.matches++;
             statistics.racingPosition = calculateRacingPosition();
-            console.log(statistics.racingPosition);
+            display_stats();
             resetCardValuesToNull();
             setTimeout(function () {
-                if(settings.total_possible_matches === statistics.matches){
-                    settings.game_won = true;
-                    statistics.gamesPlayed++;
-                    clearInterval(settings.watch);
-                    alert("You Win!");
-                    display_stats();
-                    softReset_game();
+                    if(settings.total_possible_matches === statistics.matches){
+                        settings.game_won = true;
+                        statistics.gamesPlayed++;
+                        clearInterval(settings.watch);
+                        $(".bestTime").text(convertMs(setBest()));
+                        display_stats();
+                        softReset_game();
+                        alert(statistics.gamesPlayed % 5 === 0 ? "Hitting the pit stop would be great :)" : "Ready for a better lap time?" );
+                    }
                 }
-            }
-            , 75);
+                , 75);
         } else {
-            statistics.attempts++;
+            statistics.accuracy++;
             statistics.racingPosition = calculateRacingPosition();
-            console.log(statistics.racingPosition);
             setTimeout(backFlip, 500);
             resetCardValuesToNull();
+            display_stats();
         }
     }
-    display_stats();
 }
-
-function stopWatch(){
-    time.milisecond++;
-    if(time.milisecond === 100){
-        time.second++;
-        time.milisecond = 0;
-    } else if(time.second === 60){
-        time.minutes++;
-        time.second = 0;
-    }
-    settings.current_time = time.minutes+":"+time.second+"."+time.milisecond;
-    $(".currentTime").text(settings.current_time);
-}
-
-function calculateRacingPosition(){
-    return Math.floor(Math.abs(((settings.totalMatchCount / statistics.attempts) * 43) - 42));
-}
-
-
