@@ -6,14 +6,18 @@ var settings = {
     "first_click" : true,
     "current_time" : null,
     "watch" : null,
-    "totalMatchCount" : 0
+    "totalMatchCount" : 0,
+    "can_click" : true,
+    "firstBack" : null,
+    "secondBack" : null
 };
 var statistics = {matches: 0, attempts: 0, gamesPlayed: 0, accuracy : 0, racingPosition : 0};
 var time = {milisecond : 0, bestLapTime : undefined};
-var firstBack ,secondBack = null;
 
 $(document).ready(function (){
-    click_handler();
+    if(settings.can_click) {
+        click_handler();
+    }
 });
 
 function click_handler() {
@@ -25,7 +29,7 @@ function click_handler() {
 
 function display_stats() {
     $("#games-played").text(statistics.gamesPlayed == 0 ? "Practice Lap" : statistics.gamesPlayed);
-    $("#attempts .value").text(statistics.attempts + (statistics.attempts == 1 ? " mile" : " miles"));
+    $("#attempts .value").text(statistics.attempts);
     $("#remainMatch .value").text(settings.total_possible_matches - statistics.matches);
     $(".racingPosition").text(statistics.racingPosition == 0 ? "43th" : statistics.racingPosition);
 }
@@ -47,6 +51,7 @@ function hardReset_game(wantToQuit) {
         $(".racingPosition").text("43th");
         settings.totalMatchCount = 0;
         time.bestLapTime = undefined;
+        settings.can_click = true;
     }
 }
 
@@ -64,8 +69,9 @@ function resetCardValuesToNull() {
 }
 
 function backFlip(){
-    $(firstBack).removeClass("flip");
-    $(secondBack).removeClass("flip");
+    $(settings.firstBack).removeClass("flip");
+    $(settings.secondBack).removeClass("flip");
+    settings.can_click = true;
 }
 
 function stopWatch(){
@@ -92,18 +98,24 @@ function setBest(){
 }
 
 function card_clicked() {
+    if(!settings.can_click){
+        return;
+    }
+
     if(settings.first_click){
         settings.watch = setInterval(stopWatch, 1);
         settings.first_click = false;
     }
+
     $(this).addClass("flip");
     statistics.attempts++;
     if(settings.first_card_clicked === null){
-        firstBack = this;
+        settings.firstBack = this;
         settings.first_card_clicked = $(this).parent().find(".front img").attr("src");
         display_stats();
     } else {
-        secondBack = this;
+        settings.can_click = false;
+        settings.secondBack = this;
         settings.second_card_clicked = $(this).parent().find(".front img").attr("src");
         display_stats();
         if(settings.first_card_clicked === settings.second_card_clicked){
@@ -113,6 +125,7 @@ function card_clicked() {
             statistics.racingPosition = calculateRacingPosition();
             display_stats();
             resetCardValuesToNull();
+            settings.can_click = true;
             setTimeout(function () {
                     if(settings.total_possible_matches === statistics.matches){
                         settings.game_won = true;
@@ -126,6 +139,7 @@ function card_clicked() {
                 }
                 , 75);
         } else {
+            settings.can_click = false;
             statistics.accuracy++;
             statistics.racingPosition = calculateRacingPosition();
             setTimeout(backFlip, 500);
