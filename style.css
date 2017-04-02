@@ -134,6 +134,20 @@ body{
     height : 100%;
 }
 
+.manufacturerName{
+    color: #C0C0C0;
+    font-size: 3em;
+    position: absolute;
+    font-family: helvetica;
+    font-style: oblique;
+    font-stretch: condensed;
+    font-weight: 900;
+    left: 7%;
+    top: 5%;
+}
+
+
+
 /* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
 @media screen and (max-height: 450px) {
     .overlay a {

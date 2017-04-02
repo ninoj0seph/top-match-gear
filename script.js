@@ -1,6 +1,7 @@
 $(document).ready(function () {
-    var memoryMatch = new memoryMatchConstructor();
-    memoryMatch.startSequence();
+    $('.overlay').toggleClass('showOverlay');
+    // var memoryMatch = new memoryMatchConstructor();
+    // memoryMatch.startSequence();
 })
 
 function memoryMatchConstructor() {
@@ -111,7 +112,6 @@ function memoryMatchConstructor() {
                 alert('working' + this);
             });
             youTube.showManufacturerVideo(gameMechanics.randomizeArray(youTube.videosId[lastManufacturer]));
-            $('#myModal').modal('show');
         };
 
         this.softReset = function () {
