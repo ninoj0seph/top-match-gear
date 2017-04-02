@@ -1,144 +1,51 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/html">
+<html lang="en">
     <head>
-        <title>Memory Cars</title>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-        <!--<script src="http://learning‑fuze.github.io/memory_match/v0.1/script.js"></script>-->
-        <link rel="stylesheet" href="magneto/style.css">
-        <link rel="stylesheet" href="clearviewatt/style.css">
+        <title>Memory Match</title>
+        <script src="http://www.youtube.com/player_api"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <link href="style.css" rel="stylesheet" type="text/css">
-        <script src="script.js"></script>
+        <script src="script.js"></script>x
     </head>
     <body>
-        <header>
-            <img id="logoPicture" src="images/cars_logo.png"/>
-            <div class="freeway">
-                <img class="eightySign" src="images/80.png"/>
-                <a href="about.html">About</a>
-                <img class="exitSign" src="images/exit1.png"/>
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand pull-left" href="#">
+                        <img src="logo/topGearWalpaper.jpg">
+                        <img src="logo/topGear.png"/>
+                    </a>
+                </div>
+                <ul class="nav navbar-nav pull-right">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#">Page 1</a></li>
+                    <li><a href="#">Page 2</a></li>
+                    <li><a href="#">Page 3</a></li>
+                </ul>
             </div>
-            <div class="freeway">
-                <img class="eightySign" src="images/80.png"/>
-                <a href="">Settings</a>
-                <img class="exitSign" src="images/exit1.png"/>
-            </div>
-        </header>
-        <div class="midContent">
-            <div id="stats">
-                <div id="attempts">
-                    <p class="label">Miles Driven</p>
-                    <p class="value">0</p>
-                </div>
-                <div id="remainMatch">
-                    <p class="label">Remaining Matches</p>
-                    <p class="value">10</p>
-                </div>
-                <button class="resetGame">Game Reset</button>
-            </div>
-            <div id="game-area">
-                <div class="card">
-                    <div class="front"><img src="images/mcqueen.png"/></div>
-                    <div class="back"><img src="images/Cars3HD.jpg"/></div>
-                </div>
-                <div class="card">
-                    <div class="front"><img src="images/mater.png"/></div>
-                    <div class="back"><img src="images/Cars3HD.jpg"/></div>
-                </div>
-                <div class="card">
-                    <div class="front"><img src="images/doc.png"/></div>
-                    <div class="back"><img src="images/Cars3HD.jpg"/></div>
-                </div>
-                <div class="card">
-                    <div class="front"><img src="images/sally.png"/></div>
-                    <div class="back"><img src="images/Cars3HD.jpg"/></div>
-                </div>
-                <div class="card">
-                    <div class="front"><img src="images/Ramone.png"/></div>
-                    <div class="back"><img src="images/Cars3HD.jpg"/></div>
-                </div>
-                <div class="card">
-                    <div class="front"><img src="images/Flo.png"/></div>
-                    <div class="back"><img src="images/Cars3HD.jpg"/></div>
-                </div>
-                <div class="card">
-                    <div class="front"><img src="images/chick.png"/></div>
-                    <div class="back"><img src="images/Cars3HD.jpg"/></div>
-                </div>
-                <div class="card">
-                    <div class="front"><img src="images/sally.png"/></div>
-                    <div class="back"><img src="images/Cars3HD.jpg"/></div>
-                </div>
-                <div class="card">
-                    <div class="front"><img src="images/Snot.png"/></div>
-                    <div class="back"><img src="images/Cars3HD.jpg"/></div>
-                </div>
-                <div class="card">
-                    <div class="front"><img src="images/Ramone.png"/></div>
-                    <div class="back"><img src="images/Cars3HD.jpg"/></div>
-                </div>
-                <div class="card">
-                    <div class="front"><img src="images/bob.png"/></div>
-                    <div class="back"><img src="images/Cars3HD.jpg"/></div>
-                </div>
-                <div class="card">
-                    <div class="front"><img src="images/chick.png"/></div>
-                    <div class="back"><img src="images/Cars3HD.jpg"/></div>
-                </div>
-                <div class="card">
-                    <div class="front"><img src="images/body.png"/></div>
-                    <div class="back"><img src="images/Cars3HD.jpg"/></div>
-                </div>
-                <div class="card">
-                    <div class="front"><img src="images/mcqueen.png"/></div>
-                    <div class="back"><img src="images/Cars3HD.jpg"/></div>
-                </div>
-                <div class="card">
-                    <div class="front"><img src="images/Flo.png"/></div>
-                    <div class="back"><img src="images/Cars3HD.jpg"/></div>
-                </div>
-                <div class="card">
-                    <div class="front"><img src="images/Snot.png"/></div>
-                    <div class="back"><img src="images/Cars3HD.jpg"/></div>
-                </div>
-                <div class="card">
-                    <div class="front"><img src="images/body.png"/></div>
-                    <div class="back"><img src="images/Cars3HD.jpg"/></div>
-                </div>
-                <div class="card">
-                    <div class="front"><img src="images/doc.png"/></div>
-                    <div class="back"><img src="images/Cars3HD.jpg"/></div>
-                </div>
-                <div class="card">
-                    <div class="front"><img src="images/mater.png"/></div>
-                    <div class="back"><img src="images/Cars3HD.jpg"/></div>
-                </div>
-                <div class="card">
-                    <div class="front"><img src="images/bob.png"/></div>
-                    <div class="back"><img src="images/Cars3HD.jpg"/></div>
-                </div>
-            </div>
+        </nav>
+        
+        <div class="videoContainer">
+            <div id="player"></div>
         </div>
-        <div class="lapTime">
-            <div>
-                <img class="dinocoLogo" src="images/dinoco.png"/>
-            </div>
-            <div class="racingStats">
-                <div class="raceStatsInfo">Current Position<br>
-                    <div class="racingPosition">43th</div>
-                </div>
-                <div class="raceStatsInfo">Current Lap<br>
-                    <div id="games-played">Dry Run!</div>
-                </div>
-                <div class="raceStatsInfo">Current Lap Time<br>
-                    <div class="currentTime">0:00.00</div>
-                </div>
-                <div class="raceStatsInfo">Best Lap Time<br>
-                    <div class="bestTime">0:00.00</div>
-                </div>
-            </div>
-            <div>
-                <img class="pistonCupLogo" src="images/pistonCup.png"/>
-            </div>
+
+        <div class="cardsContainer">
         </div>
-    </body>
+
+        <div id="myNav" class="overlay">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+            <!-- Overlay content -->
+            <div class="overlay-content">
+                <div id="brandVideo"></div>
+            </div>
+
+        </div>
+
+        <span onclick="openNav()">open</span>
+
 </html>
