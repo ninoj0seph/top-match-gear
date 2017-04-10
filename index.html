@@ -12,34 +12,37 @@
         <script src="script.js"></script>
     </head>
     <body>
-        <nav class="navbar navbar-inverse">
-            <div class="container-fluid">
+    <div class="example3">
+        <nav class="navbar navbar-inverse navbar-static-top">
+            <div class="container">
                 <div class="navbar-header">
-                    <a class="navbar-brand pull-left" href="#">
-                        <img src="logo/topGearWalpaper.jpg">
-                        <img src="logo/topGear.png"/>
-                    </a>
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar3">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#"><img src="logo/topGear.png"></a>
                 </div>
-                <ul class="nav navbar-nav pull-right">
-                    <li class="active"><a href="#">Home</a></li>
-                    <li><a href="#">Reset Game</a></li>
-                    <li><a href="#">Page 2</a></li>
-                    <li><a href="#">Page 3</a></li>
-                </ul>
+                <div id="navbar3" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a class="matches"></a></li>
+                        <li><a class="accuracy"></a></li>
+                        <li><a class="gamePlayed"></a></li>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Reset Game</a></li>
+                    </ul>
+                </div>
             </div>
         </nav>
-        <div class="videoContainer">
-            <div id="player"></div>
-        </div>
-        <div class="cardsContainer">
-        </div>
-        <div class="overlay">
-            <div class="manufacturerName">Honda Cars</div>
-            <a href="javascript:void(0)" class="closebtn"">&times;</a>
-            <div class="overlay-content">
-                <iframe id="ytplayer" type="text/html" width="640" height="360"
-                        src="https://www.youtube.com/embed/M7lc1UVf-VE?autoplay=1&origin=http://example.com"
-                        frameborder="0"></iframe>
-            </div>
-        </div>
+    </div>
+    <div class="videoContainer">
+        <div id="player"></div>
+    </div>
+    <div class="cardsContainer"></div>
+    <div class="overlay">
+        <div class="manufacturerName"></div>
+        <a href="javascript:void(0)" class="closebtn">&times;</a>
+        <div class="overlay-content"></div>
+    </div>
 </html>

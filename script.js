@@ -1,26 +1,37 @@
 $(document).ready(function () {
-    $('.overlay').toggleClass('showOverlay');
-    // var memoryMatch = new memoryMatchConstructor();
-    // memoryMatch.startSequence();
+    var memoryMatch = new memoryMatchConstructor();
+    memoryMatch.startSequence();
 })
 
 function memoryMatchConstructor() {
     var gameMechanics = new gameMechanicsConstructor();
     var display = new displayConstructor();
     var youTube = new youTubeConstructor();
-    var clickHandlers = new clickHandlersConstructor();
+    var eventHandlers = new eventHandlersConstructor();
     this.startSequence = function () {
-        clickHandlers.declare();
+        eventHandlers.declare();
+        $('.creditsContainer').hide();
         youTube.showIntroVideo();
-        gameMechanics.hardReset();
     };
 
-    function clickHandlersConstructor() {
+    function eventHandlersConstructor() {
         this.declare = function () {
-            $('.navbar-nav li:nth-child(2)').click(gameMechanics.hardReset);
+            $('.navbar-nav li:last-of-type').click(function (){
+                console.log('working');
+                gameMechanics.hardReset();
+                display.stats();
+            });
             $('.closebtn').click(function () {
                 $('#brandVideo').remove();
                 display.toggleOverlay()
+            });
+            $(".navbar-nav li").slice(-2).on({
+                mouseenter: function () {
+                    $(this).toggleClass('active');
+                },
+                mouseleave: function () {
+                    $(this).toggleClass('active');
+                }
             });
         };
 
@@ -38,9 +49,10 @@ function memoryMatchConstructor() {
             cardBack : "back",
             cardFront : "front"
         };
+
         this.createCardElements = function (currentMake) {
             var mainCardDiv = $("<div>",{
-                class : this.cardDivClasses.cardContainer
+                class : this.cardDivClasses.cardContainer,
             }).on("click",function (){
                 gameMechanics.assignCards(this);
             });
@@ -52,7 +64,6 @@ function memoryMatchConstructor() {
         this.appendCardElements = function () {
             youTube.startSearch(gameMechanics.vehicleBrands);
             gameMechanics.vehicleBrands = gameMechanics.randomizeArray(gameMechanics.vehicleBrands.concat(gameMechanics.vehicleBrands));
-            console.log(gameMechanics.vehicleBrands);
             for(var x = 0; x  < gameMechanics.vehicleBrands.length; x++){
                 $(".cardsContainer").append(this.createCardElements(gameMechanics.vehicleBrands[x]));
             }
@@ -60,26 +71,31 @@ function memoryMatchConstructor() {
 
         this.toggleOverlay = function () {
             $('.overlay').toggleClass('showOverlay');
-        }
+        };
+
+        this.stats = function () {
+            $('.matches').text("Total Matches : " + gameMechanics.matchCount);
+            $('.accuracy').text("Accuracy : " + ~~((gameMechanics.matchCount / gameMechanics.tryCount) * 200) + "%");
+            $('.gamePlayed').text("Games Played : " + gameMechanics.gamesPlayed);
+        };
     }
 
     function gameMechanicsConstructor() {
+        this.gamesPlayed = 0;
         this.assignCards = function (clickedElement) {
+            this.tryCount++;
             $('.card').off('click');
             if(!this.clicked.first){
-                this.clicked.allowed = false;
                 this.clicked.first = clickedElement;
                 $(clickedElement).addClass("flip");
-                this.clicked.allowed = true;
                 setTimeout(function () {
-                    clickHandlers.turnCardOn();
-                },800);
+                    eventHandlers.turnCardOn();
+                },1000);
             } else if(!this.clicked.second){
-                this.clicked.allowed = false;
                 this.clicked.second = clickedElement;
                 $(clickedElement).addClass("flip");
-                this.clicked.allowed = true;
                 this.checkCardMatch();
+                display.stats();
             }
         };
 
@@ -89,7 +105,9 @@ function memoryMatchConstructor() {
                 if(this.matchCount === (this.vehicleBrands.length / 2)){
                     setTimeout(this.winningCondition,1000)
                 } else {
-                    clickHandlers.turnCardOn();
+                    setTimeout(function () {
+                        eventHandlers.turnCardOn();
+                    },1000);
                     gameMechanics.softReset();
                 }
             } else {
@@ -98,7 +116,7 @@ function memoryMatchConstructor() {
                 },1000);
                 setTimeout(function () {
                     $(gameMechanics.clicked.first).add(gameMechanics.clicked.second).removeClass("flip");
-                    clickHandlers.turnCardOn();
+                    eventHandlers.turnCardOn();
                     gameMechanics.softReset();
                 } ,2500);
             }
@@ -107,11 +125,10 @@ function memoryMatchConstructor() {
         this.winningCondition = function () {
             var lastManufacturer = ($(gameMechanics.clicked.first).find(".back").css("background-image")).toString().replace('url("http://localhost:63342/lfz/memory_match/logo/','');
             lastManufacturer = lastManufacturer.replace('.png")','');
-            $('.front').remove();
             $('.card').on('click',function () {
                 alert('working' + this);
             });
-            youTube.showManufacturerVideo(gameMechanics.randomizeArray(youTube.videosId[lastManufacturer]));
+            youTube.showManufacturerVideo(lastManufacturer);
         };
 
         this.softReset = function () {
@@ -123,6 +140,7 @@ function memoryMatchConstructor() {
             // this.vehicleBrands = ["audiOfAmerica","bmwUsa","mbUsa","lamborghini","bugattiSocial","ferrariWorld","lexusVehicles","mclarenAutomotiveTv","astonMartin","bentleyMotors","landRover","miniUsa","jaguarCarsLimited","porsche","maserati"];
             this.vehicleBrands = ["bmwUsa","audiOfAmerica"];
             this.matchCount = 0;
+            this.tryCount = 0;
             this.softReset();
             $('.cardsContainer').empty();
             display.appendCardElements();
@@ -131,7 +149,7 @@ function memoryMatchConstructor() {
         this.randomizeArray = function (arrayToRandomize) {
             var arrayLength = arrayToRandomize.length;
             while(arrayLength){
-                var randomIndex = ~~(Math.random() * arrayLength--);
+                var randomIndex = ~~( Math.random() * arrayLength-- );
                 arrayToRandomize[randomIndex] = [arrayToRandomize[arrayLength],arrayToRandomize[arrayLength] = arrayToRandomize[randomIndex]][0];
             }
             return arrayToRandomize;
@@ -140,7 +158,6 @@ function memoryMatchConstructor() {
 
     function youTubeConstructor() {
         this.videosId = {};
-        this.counter = 0;
         this.startSearch = function (manufacturers) {
             for(var i = 0; i  < manufacturers.length; i++){
                 this.getChannelId(manufacturers[i]);
@@ -148,7 +165,6 @@ function memoryMatchConstructor() {
         };
 
         this.getChannelId = function (carMake) {
-            this.counter++;
             $.ajax({
                 'dataType' : 'json',
                 'method' : 'get',
@@ -181,13 +197,18 @@ function memoryMatchConstructor() {
         };
 
         this.showIntroVideo = function () {
-            $('.cardsContainer').hide();
             var tag = document.createElement('script');
             tag.src = "https://www.youtube.com/iframe_api";
             var firstScriptTag = document.getElementsByTagName('script')[0];
             firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
             this.player = new YT.Player('player', {
                 videoId: 'qAe0P6rhgtQ',
+                playerVars : {
+                    showinfo : 0,
+                    modestbranding : 1,
+                    controls : 1,
+                    autohide : 1
+                },
                 events: {
                     onReady: onPlayerReady,
                     onStateChange: onPlayerStateChange
@@ -201,12 +222,13 @@ function memoryMatchConstructor() {
             function onPlayerStateChange(event) {
                 if(event.data === 0) {
                     $(".videoContainer").remove()
-                    $(".cardsContainer").show();
+                    gameMechanics.hardReset();
                 }
             }
         };
 
-        this.showManufacturerVideo = function (videoIdToPlay){
+        this.showManufacturerVideo = function (make){
+            $('.manufacturerName').text(make.replace(/([A-Z])/g, ' $1').trim());
             var playerDiv = $('<div>').attr('id','brandVideo');
             $('.overlay-content').append(playerDiv);
             display.toggleOverlay();
@@ -215,14 +237,13 @@ function memoryMatchConstructor() {
             var firstScriptTag = document.getElementsByTagName('script')[0];
             firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
             this.player = new YT.Player('brandVideo', {
-              videoId: videoIdToPlay.shift(),
               events: {
                   onReady: onPlayerReady,
               }
             });
             function onPlayerReady(event) {
                 event.target.playVideo();
-                event.target.loadPlaylist({playlist: videoIdToPlay});
+                event.target.loadPlaylist({playlist: gameMechanics.randomizeArray(youTube.videosId[make])});
             }
         };
     }
