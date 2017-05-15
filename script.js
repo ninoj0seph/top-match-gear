@@ -136,8 +136,7 @@ function memoryMatchConstructor() {
         this.hardReset = function () {
             // NOTE : this array is associated with the file names of the pictures and their names was based on their youtube channel name so that we could reuse the same data when we search in the youtube API.
             this.vehicleBrands = ["audiOfAmerica","bmwUsa","mbUsa","lamborghini","bugattiSocial","ferrariWorld","lexusVehicles","mclarenAutomotiveTv","astonMartin","bentleyMotors","landRover","miniUsa","jaguarCarsLimited","porsche","maserati"];
-			this.vehicleBrands = ["audiOfAmerica","bmwUsa","mbUsa"];
-			this.matchCount = 0;
+	    ßthis.matchCount = 0;
             this.tryCount = 0;
             this.softReset();
             $('.cardsContainer').empty();
