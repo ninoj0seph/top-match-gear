@@ -17,7 +17,6 @@ function memoryMatchConstructor() {
     function eventHandlersConstructor() {
         this.declare = function () {
             $('.navbar-nav li:last-of-type').click(function (){
-                console.log('working');
                 gameMechanics.hardReset();
                 display.stats();
             });
@@ -53,10 +52,11 @@ function memoryMatchConstructor() {
         this.createCardElements = function (currentMake) {
             var mainCardDiv = $("<div>",{
                 class : this.cardDivClasses.cardContainer,
+				value : currentMake
             }).on("click",function (){
                 gameMechanics.assignCards(this);
             });
-            $(mainCardDiv).append($("<div>").addClass(this.cardDivClasses.cardBack).css("background-image","url('logo/"+ currentMake +".png')"));
+            $(mainCardDiv).append($("<div>").addClass(this.cardDivClasses.cardBack).css("background-image","url('logo/"+ currentMake +".png')").val(currentMake));
             $(mainCardDiv).append($("<div>").addClass(this.cardDivClasses.cardFront));
             return mainCardDiv;
         };
@@ -100,7 +100,7 @@ function memoryMatchConstructor() {
         };
 
         this.checkCardMatch = function () {
-            if($(this.clicked.first).find(".back").css("background-image") === $(this.clicked.second).find(".back").css("background-image")){
+            if($(this.clicked.first).find(".back").val() === $(this.clicked.second).find(".back").val()){
                 this.matchCount++;
                 if(this.matchCount === (this.vehicleBrands.length / 2)){
                     setTimeout(this.winningCondition,1000)
@@ -123,12 +123,10 @@ function memoryMatchConstructor() {
         };
 
         this.winningCondition = function () {
-            var lastManufacturer = ($(gameMechanics.clicked.first).find(".back").css("background-image")).toString().replace('url("http://localhost:63342/lfz/memory_match/logo/','');
-            lastManufacturer = lastManufacturer.replace('.png")','');
             $('.card').on('click',function () {
                 alert('working' + this);
             });
-            youTube.showManufacturerVideo(lastManufacturer);
+            youTube.showManufacturerVideo($(gameMechanics.clicked.first).find(".back").val());
         };
 
         this.softReset = function () {
@@ -137,9 +135,9 @@ function memoryMatchConstructor() {
 
         this.hardReset = function () {
             // NOTE : this array is associated with the file names of the pictures and their names was based on their youtube channel name so that we could reuse the same data when we search in the youtube API.
-            // this.vehicleBrands = ["audiOfAmerica","bmwUsa","mbUsa","lamborghini","bugattiSocial","ferrariWorld","lexusVehicles","mclarenAutomotiveTv","astonMartin","bentleyMotors","landRover","miniUsa","jaguarCarsLimited","porsche","maserati"];
-            this.vehicleBrands = ["bmwUsa","audiOfAmerica"];
-            this.matchCount = 0;
+            this.vehicleBrands = ["audiOfAmerica","bmwUsa","mbUsa","lamborghini","bugattiSocial","ferrariWorld","lexusVehicles","mclarenAutomotiveTv","astonMartin","bentleyMotors","landRover","miniUsa","jaguarCarsLimited","porsche","maserati"];
+			this.vehicleBrands = ["audiOfAmerica","bmwUsa","mbUsa"];
+			this.matchCount = 0;
             this.tryCount = 0;
             this.softReset();
             $('.cardsContainer').empty();
