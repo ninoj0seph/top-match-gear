@@ -136,7 +136,7 @@ function memoryMatchConstructor() {
         this.hardReset = function () {
             // NOTE : this array is associated with the file names of the pictures and their names was based on their youtube channel name so that we could reuse the same data when we search in the youtube API.
             this.vehicleBrands = ["audiOfAmerica","bmwUsa","mbUsa","lamborghini","bugattiSocial","ferrariWorld","lexusVehicles","mclarenAutomotiveTv","astonMartin","bentleyMotors","landRover","miniUsa","jaguarCarsLimited","porsche","maserati"];
-	    ßthis.matchCount = 0;
+	        this.matchCount = 0;
             this.tryCount = 0;
             this.softReset();
             $('.cardsContainer').empty();
@@ -194,32 +194,43 @@ function memoryMatchConstructor() {
         };
 
         this.showIntroVideo = function () {
-            var tag = document.createElement('script');
-            tag.src = "https://www.youtube.com/iframe_api";
-            var firstScriptTag = document.getElementsByTagName('script')[0];
-            firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-            this.player = new YT.Player('player', {
-                videoId: 'qAe0P6rhgtQ',
-                playerVars : {
-                    showinfo : 0,
-                    modestbranding : 1,
-                    controls : 1,
-                    autohide : 1
-                },
-                events: {
-                    onReady: onPlayerReady,
-                    onStateChange: onPlayerStateChange
-                }
-            });
+            if (typeof(YT) == 'undefined' || typeof(YT.Player) == 'undefined') {
+                var tag = document.createElement('script');
+                tag.src = "https://www.youtube.com/iframe_api";
+                var firstScriptTag = document.getElementsByTagName('script')[0];
+                firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-            function onPlayerReady(event) {
-                event.target.playVideo();
+                window.onYouTubePlayerAPIReady = function() {
+                    onYouTubePlayer();
+                };
+            } else {
+                onYouTubePlayer();
             }
 
-            function onPlayerStateChange(event) {
-                if(event.data === 0) {
-                    $(".videoContainer").remove()
-                    gameMechanics.hardReset();
+            function onYouTubePlayer() {
+                this.player = new YT.Player('player', {
+                    videoId: 'qAe0P6rhgtQ',
+                    playerVars : {
+                        showinfo : 0,
+                        modestbranding : 1,
+                        controls : 1,
+                        autohide : 1
+                    },
+                    events: {
+                        onReady: onPlayerReady,
+                        onStateChange: onPlayerStateChange
+                    }
+                });
+
+                function onPlayerReady(event) {
+                    event.target.playVideo();
+                }
+
+                function onPlayerStateChange(event) {
+                    if(event.data === 0) {
+                        $(".videoContainer").remove()
+                        gameMechanics.hardReset();
+                    }
                 }
             }
         };
