@@ -1,7 +1,7 @@
 $(document).ready(function () {
     var memoryMatch = new memoryMatchConstructor();
     memoryMatch.startSequence();
-})
+});
 
 function memoryMatchConstructor() {
     var gameMechanics = new gameMechanicsConstructor();
@@ -16,10 +16,6 @@ function memoryMatchConstructor() {
 
     function eventHandlersConstructor() {
         this.declare = function () {
-            $('.navbar-nav li:last-of-type').click(function (){
-                gameMechanics.hardReset();
-                display.stats();
-            });
             $('.closebtn').click(function () {
                 $('#brandVideo').remove();
                 display.toggleOverlay()
@@ -228,7 +224,12 @@ function memoryMatchConstructor() {
 
                 function onPlayerStateChange(event) {
                     if(event.data === 0) {
-                        $(".videoContainer").remove()
+                        $(".videoContainer").remove();
+                        // Declare Click Handler for Reset Button
+                        $('.navbar-nav li:last-of-type').click(function (){
+                            gameMechanics.hardReset();
+                            display.stats();
+                        });
                         gameMechanics.hardReset();
                     }
                 }
