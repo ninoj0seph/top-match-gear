@@ -15,6 +15,7 @@ An application guided to help educate consumers about cars.
 - Home button that diverts back to game creator's portfolio.
 - An overlay that shows commercials and more information about the last vehicle matched.
 - Allows users to click on the matched vehicle brand logo that shows more information about the given manufacturer.
+- Image logo names matches the YouTube Channel name of each brand.
        
 ## Stacks Used
 -   Object Oriented Programming

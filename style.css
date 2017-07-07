@@ -1,9 +1,9 @@
 body{
     background-color: black;
-    font-family: helvetica;
-    font-style: oblique;
+    font-family: "Helvetica Neue";
+    font-weight: bold;
     font-stretch: condensed;
-    font-weight: 900;
+    font-style: oblique;
 }
 
 .example3 .navbar-brand {
@@ -19,25 +19,10 @@ body{
     margin: 25px 15px 25px 0;
 }
 
-
-/*.container-fluid {*/
-    /*min-height: 13vh;*/
-    /*background-color: black;*/
-/*}*/
 .navbar-brand img{
     width: auto;
     height: 100%;
 }
-
-/*.navbar-brand img:first-of-type{*/
-    /*position: absolute;*/
-    /*left:335px;*/
-/*}*/
-
-/*.navbar-brand img:nth-of-type(2){*/
-    /*background-color: transparent;*/
-
-/*}*/
 
 .cardsContainer{
     width: 100vw
@@ -46,12 +31,11 @@ body{
 .card {
     height: 20vw;
     max-height: 28vh;
-    position: absolute;
     backface-visibility: hidden;
     transition: 1.0s;
     transform-style: preserve-3d;
     position: relative;
-    background-image: url("logo/stig.jpg");
+    background-image: url("images/stig.jpg");
     padding: 0 !important;
     margin: 0 10px 0 10px;
     background-repeat:no-repeat;
@@ -65,7 +49,7 @@ body{
 }
 
 .front {
-    background-image: url("logo/stig.jpg");
+    background-image: url("images/stig.jpg");
     z-index: 2;
     transform: rotateY(0deg);
 }

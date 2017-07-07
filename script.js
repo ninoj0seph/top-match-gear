@@ -52,7 +52,7 @@ function memoryMatchConstructor() {
             }).on("click",function (){
                 gameMechanics.assignCards(this);
             });
-            $(mainCardDiv).append($("<div>").addClass(this.cardDivClasses.cardBack).css("background-image","url('logo/"+ currentMake +".png')").val(currentMake));
+            $(mainCardDiv).append($("<div>").addClass(this.cardDivClasses.cardBack).css("background-image","url('images/"+ currentMake +".png')").val(currentMake));
             $(mainCardDiv).append($("<div>").addClass(this.cardDivClasses.cardFront));
             return mainCardDiv;
         };
@@ -208,8 +208,8 @@ function memoryMatchConstructor() {
                     videoId: 'qAe0P6rhgtQ',
                     playerVars : {
                         showinfo : 0,
-                        modestbranding : 1,
-                        controls : 1,
+                        modestbranding : 0,
+                        controls : 0,
                         autohide : 1
                     },
                     events: {
